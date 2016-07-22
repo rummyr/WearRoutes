@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+        class="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/mapfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill"
+            map:ambientEnabled="true"
+            map:liteMode="false"
+        tools:layout="@layout/truly_empty_layout">
+        <!-- tools:layout flags which layout to use because it can't render -->
+
+
+        <!-- in this case (4 fragments) lite mode saving is only about 3MB (16 vs 19MB), but speed is faster -->
+    <!--     __class="com.google.android.gms.maps.SupportMapFragment" -->
+    <!--
+         tools:ignore="MissingPrefix"
+        map:uiZoomControls="true"
+        map:uiCompass="true"
+        map:uiZoomGestures="true"
+        map:uiScrollGestures="true"
+        map:uiRotateGestures="true"
+        map:uiTiltGestures="true"
+        map:liteMode="false"
+    -->
+</fragment>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tilt"
+        android:textColor="@color/red"
+        android:id="@+id/textViewTiltDisplay"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tilt"
+        android:textColor="@color/red"
+        android:id="@+id/textViewMapNumber"
+        android:layout_gravity="center|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom"
+        android:textColor="@color/red"
+        android:id="@+id/textViewZoomDisplay"
+        android:layout_gravity="left|top" />
+
+</FrameLayout>

@@ -1,0 +1,69 @@
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.me.ponies.wearroutes.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        app:layout_box="all">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/blue"
+            android:weightSum="2"
+            android:showDividers="beginning|middle|end">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Recording"
+                android:id="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                style="@style/TextAppearance.Wearable.Large" />
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:measureWithLargestChild="false"
+                android:gravity="center_vertical"
+                android:layout_weight="1">
+                <Space
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent"
+                    android:layout_width="wrap_content"/>
+                <android.support.wearable.view.CircularButton
+                    android:layout_weight="1.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/materialdesignicons_clock_end_red"
+                    />
+                <Space
+                    android:layout_weight="1.25"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <android.support.wearable.view.CircularButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/materialdesignicons_clock_end_red"
+                    />
+                <Space
+                    android:layout_weight="1.25"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</android.support.wearable.view.BoxInsetLayout>

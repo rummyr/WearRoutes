@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uk.me.ponies.wearroutes">
+
+    <uses-sdk
+        android:minSdkVersion="20"
+        android:targetSdkVersion="22" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- seems to be required for ambient mode (probably other stuff too) -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!--
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.Light">
+
+        <!-- was         android:theme="@style/AppTheme" -->
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+
+        <activity
+            android:name="uk.me.ponies.wearroutes.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uk.me.ponies.wearroutes.MyDenleyPreferencesActivity"
+            android:label="Preferences"></activity>
+        <activity
+            android:name="uk.me.ponies.wearroutes.prefs.MyPreferenceActivity"
+            android:label="Preferences"></activity>
+        <activity
+            android:name="uk.me.ponies.wearroutes.developerCommands.DeveloperCommandsActivity"
+            android:label="Developer Commands"></activity>
+        <activity
+            android:name="uk.me.ponies.wearroutes.manageroutes.ManageRoutesActivity"
+            android:label="@string/title_activity_manage_routes"
+            android:theme="@android:style/Theme.DeviceDefault.Light"></activity>
+        <activity
+            android:name="uk.me.ponies.wearroutes.mainactionpages.DelayedStopRecordingActivity"
+            android:label="Confirm Stop Recording"
+            >
+        </activity>
+        <activity
+            android:name="android.support.wearable.activity.ConfirmationActivity">
+        </activity>
+        <!--
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
+            <!- - 2016-06-17 added single instance attribute - ->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+    </application>
+
+</manifest>

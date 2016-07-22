@@ -1,0 +1,142 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="Prefs">
+
+
+
+
+    <ListPreference
+        android:key="pref_wear_when_on_map_shows"
+        android:title="When ON Show..."
+        android:defaultValue="MapTrack"
+        android:icon="@android:drawable/ic_input_add"
+        android:entries="@array/strings_track_and_map_display"
+        android:entryValues="@array/values_track_and_map_display"
+        app:wear_entryIcons="@array/when_on_icons_track_and_map_display"
+        app:wear_entryAsSummary="false"
+        />
+    <!-- entryAsSummary . it's either UPPER CASE or blank, let the icon be the description -->
+
+    <ListPreference
+        android:key="pref_wear_when_ambient_map_shows"
+        android:title="When OFF Show..."
+        android:defaultValue="GridNoTrack"
+        android:icon="@android:drawable/ic_input_add"
+        android:entries="@array/strings_track_and_map_display"
+        android:entryValues="@array/values_track_and_map_display"
+        app:wear_entryIcons="@array/when_off_icons_track_and_map_display"
+        app:wear_entryAsSummary="false"
+        />
+    <!-- entryAsSummary . it's either UPPER CASE or blank, let the icon speak for itself-->
+
+    <SwitchPreference
+        android:key="pref_wear_GPS"
+        android:title="Use Watch GPS"
+        android:summaryOn="Occasionally"
+        android:summaryOff="Never"
+        android:defaultValue="true"
+        app:wear_iconOn="@drawable/materialdesignicons_cellphone_and_watch"
+        app:wear_iconOff="@drawable/materialdesignicons_cellphone_android"
+        />
+
+
+
+    <SwitchPreference
+        android:key="pref_wear_direction_of_travel_up"
+        android:title="Rotate Map"
+        android:defaultValue="true"
+        app:wear_iconOn="@drawable/materialdesignicons_check"
+        app:wear_iconOff="@drawable/materialdesignicons_close"
+
+        />
+    <SwitchPreference
+        android:key="pref_wear_ambient_few_updates"
+        android:title="Update less often in Ambient"
+        android:defaultValue="true"
+        app:wear_iconOn="@drawable/materialdesignicons_check"
+        app:wear_iconOff="@drawable/materialdesignicons_close"
+
+        />
+
+    <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:title="Map ..."
+        android:icon="@drawable/materialdesignicons_dots_horizontal_white"
+        >
+
+        <SwitchPreference
+            android:key="pref_wear_map_show_zoom"
+            android:title="Show Zoom buttons on map"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+
+        <SwitchPreference
+            android:key="pref_wear_map_tap_to_zoom"
+            android:title="Tab to Zoom"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+    </PreferenceScreen>
+
+    <!--
+
+    Developer Options
+
+    -->
+
+    <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:title="Dev Options..."
+        android:icon="@drawable/materialdesignicons_dots_horizontal_white">
+
+        <SwitchPreference
+            android:key="pref_developer_option_performance_reuse_gmap_fragments"
+            android:title="Reuse Google Map fragments"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+
+        <CheckBoxPreference
+            android:key="pref_developer_option_performance_dont_get_map"
+            android:title="Dont initialize Google Map"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+
+            />
+
+        <CheckBoxPreference
+            android:key="pref_developer_option_performance_only_tilted_map"
+            android:title="Only Tilted Map"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+        />
+
+        <CheckBoxPreference
+            android:key="pref_developer_option_map_toast_on_fling"
+            android:title="Show Toast on Fling"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+    </PreferenceScreen>
+    <!--
+    <ListPreference
+        android:key="language"
+        android:title="@string/title_language"
+        android:icon="@drawable/ic_language_white_24dp"
+        android:entries="@array/entries_language"
+        android:entryValues="@array/values_language"
+        app:wear_entryIcons="@array/icons_language"
+        android:defaultValue="en"
+        />
+-->
+</PreferenceScreen>

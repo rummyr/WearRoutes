@@ -1,0 +1,107 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="@string/pref_shared_map_settings_title"
+        android:key="pref_shared_map_settings">
+        <!-- Two Finger Rotate -->
+        <ListPreference
+            android:defaultValue="HereAndWear"
+            android:key="allow_user_rotation"
+            android:title="@string/allow_user_rotation"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+        <!-- North UP -->
+        <ListPreference
+            android:defaultValue="HereAndWear"
+            android:key="map_north_always_up"
+            android:title="@string/map_north_always_up"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+        <!-- Show North Arrow on Map-->
+        <ListPreference
+            android:defaultValue="HereOnly"
+            android:key="@string/key_chrome_show_north_arrow"
+            android:title="@string/chrome_show_north_arrow"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+        <!-- Show Compass -->
+        <ListPreference
+            android:defaultValue="HereOnly"
+            android:key="@string/key_chrome_show_compass"
+            android:title="@string/chrome_show_compass"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+        <!-- Show View Radar -->
+        <ListPreference
+            android:defaultValue="HereOnly"
+            android:key="chrome_show_view_direction"
+            android:title="@string/chrome_show_view_direction"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_shared_route_settings_title"
+        android:key="pref_shared_route_settings">
+<!--
+        <ListPreference
+            android:defaultValue="HereAndWear"
+            android:key="show_trail"
+            android:title="@string/show_trail"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+-->
+
+        <ListPreference
+            android:defaultValue="Here"
+            android:key="@string/key_show_map_on_HB"
+            android:title="@string/chrome_show_map"
+            android:entries="@array/NeverHereOrBothOptions"
+            android:entryValues="@array/NeverHereOrBothValues"
+            android:summary="%s"
+            />
+
+        <ListPreference
+            android:defaultValue="T"
+            android:key="wear_show_options"
+            android:title="@string/wear_show_options"
+            android:entries="@array/ambientDisplayOptions"
+            android:entryValues="@array/ambientDisplayValues"
+            android:summary="%s"
+            >
+
+        </ListPreference>
+        <ListPreference
+            android:defaultValue="T"
+            android:key="ambient_show_options"
+            android:title="@string/ambient_show_options"
+            android:entries="@array/ambientDisplayOptions"
+            android:entryValues="@array/ambientDisplayValues"
+            android:summary="%s"
+            >
+
+        </ListPreference>
+    </PreferenceCategory>
+
+
+
+
+</PreferenceScreen>
