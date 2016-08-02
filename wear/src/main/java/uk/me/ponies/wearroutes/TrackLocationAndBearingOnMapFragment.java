@@ -11,15 +11,23 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.lang.ref.WeakReference;
 
 import uk.me.ponies.wearroutes.common.BearingSectorizer;
+import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
+import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
 
 /**
      * Created by rummy on 16/05/2016.
      */
     public class TrackLocationAndBearingOnMapFragment implements LocationListener {
-        public static final String TAG = "TrackLocBearingOnMapFrg";
+
+    static final double TORAD = Math.PI / 180.0;
+    static final int REarthMeters = 6371 * 1000;
+
+    public static final String TAG = "TrackLocBearingOnMapFrg";
         /* Use soft reference to avoid memory pin leaks,
          * as long as the original exists then this will be valid! */
         WeakReference<MapSwipeToZoomFragment> mapRef = new WeakReference<>(null);
@@ -119,18 +127,21 @@ import uk.me.ponies.wearroutes.common.BearingSectorizer;
             } finally {
                 mPreviousLocation = location;
             }
+
+            // post the event out
+            EventBus.getDefault().post(new LocationEvent(location));
+            EventBus.getDefault().post(new LocationProcessedEvent());
+
         }// end on Location Changed
 
         /** Only accurate for short distances (don't use great circles! or any other stuff)
          *
-         * @param latitude
-         * @param longitude
          * @param latitude1
          * @param longitude1
+         * @param latitude2
+         * @param longitude2
          * @return
          */
-        static final double TORAD = Math.PI / 180.0;
-        static final int REarthMeters = 6371 * 1000;
         private float shortDistanceBetween(double latitude1, double longitude1, double latitude2, double longitude2) {
             double λ1 = latitude1 * TORAD;
             double λ2 = latitude2 * TORAD;

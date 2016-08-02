@@ -26,4 +26,14 @@ public abstract class Keys {
     public static final String KEY_MAP_SHOW_ZOOM_BUTTONS = "pref_wear_map_show_zoom";
     public static final String KEY_PREF_DEVOPT_MAP_TOAST_ON_FLING = "pref_developer_option_map_toast_on_fling";
 
+    public static final String KEY_PREF_SPEED_UNITS = "pref_wear_speed_units";
+    public static final String KEY_PREF_SPEED_UNIT_KPH = "kph";
+    public static final String KEY_PREF_SPEED_UNIT_MPH = "mph";
+
+
+    public static final String KEY_PREF_DISTANCE_UNITS = "pref_wear_distance_units";
+    public static final String KEY_PREF_DISTANCE_UNIT_KM = "km";
+    public static final String KEY_PREF_DISTANCE_UNIT_MILES = "miles";
+
+
 }

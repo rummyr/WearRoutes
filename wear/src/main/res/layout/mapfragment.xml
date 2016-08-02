@@ -52,9 +52,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zoom"
+        android:text="ZoomMapF"
         android:textColor="@color/red"
         android:id="@+id/textViewZoomDisplay"
         android:layout_gravity="left|top" />
+
+    <uk.me.ponies.wearroutes.utils.MapScaleBarOverlay
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ScaleBarF"
+        android:textColor="@color/red"
+        android:id="@+id/customScaleBar"
+        android:layout_gravity="right"
+        android:layout_marginTop="40dp"
+        android:elevation="1dp"/>
 
 </FrameLayout>

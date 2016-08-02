@@ -54,16 +54,23 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import uk.me.ponies.wearroutes.controller.Controller;
+import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
+import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.CPUMeasurer;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.utils.MapScaleBarOverlay;
 
-public class MapSwipeToZoomFragment extends Fragment implements GridViewPagerListener {
+public class MapSwipeToZoomFragment extends Fragment implements IGridViewPagerListener {
     private static final LatLng SHEFFIELD = new LatLng(53.5089423,-1.7025131);
     private static final String TAG = "MapSwipeToZoomFrag";
     private  View myMapFragment;
@@ -80,6 +87,7 @@ public class MapSwipeToZoomFragment extends Fragment implements GridViewPagerLis
     private static final String KEY_RESUME_CAM_POS = "camLastPos";
     private boolean mVisible = false; // hopefully we will be called with visible before we actually ARE!
     private CameraUpdate mLastCamUpdate = null;
+    private Polyline mHistoryPolyline;
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -560,6 +568,8 @@ private void createInnerGoogleMapFragment() {
         BEGIN("onResume");
         Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onResume called, visible is " + isVisible());
         super.onResume();
+        EventBus.getDefault().register(this);
+
 
 
         boolean b = getView().isFocusable();
@@ -588,6 +598,11 @@ private void createInnerGoogleMapFragment() {
                         Polyline p = map.addPolyline(srcPolyline);
                         mMapPolyLines.put(routeName, p);
                     }
+
+
+                    // and set the camera zoom
+                    map.moveCamera(CameraUpdateFactory.zoomTo(zoom));
+                    // TODO: may need to update position also?
                 }
             }
         });
@@ -599,6 +614,7 @@ private void createInnerGoogleMapFragment() {
         Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onPause called");
         // removing fragment here causes:
         removeInnerMapAndReturnToPool();
+        EventBus.getDefault().unregister(this);
         super.onPause();
     }
 
@@ -682,7 +698,7 @@ private void createInnerGoogleMapFragment() {
         if (map == null) {
             Log.d(TAG, "Not animating camera as the map doesn't exist");
         }
-        if (mVisible == false) {
+        if (!mVisible) {
             Log.d(TAG, "Not animating camera as the map isn't visible");
         }
         if (map != null && mVisible) {
@@ -696,7 +712,7 @@ private void createInnerGoogleMapFragment() {
         if (map == null) {
             Log.d(TAG, "Not moving camera as the map doesn't exist");
         }
-        if (mVisible == false) {
+        if (!mVisible) {
             Log.d(TAG, "Not moving camera as the map isn't visible");
         }
 
@@ -776,8 +792,6 @@ private void createInnerGoogleMapFragment() {
             matchMapUIToConfig();
             setupMap();
 
-
-
         }// end onMapReady
     }
 
@@ -801,6 +815,11 @@ private void createInnerGoogleMapFragment() {
         }
 
         CameraUpdate cam = CameraUpdateFactory.newCameraPosition(camPos);
+        final MapScaleBarOverlay scaleBarOverlay = (MapScaleBarOverlay)getView().findViewById(R.id.customScaleBar);
+        final TextView textViewZoomDisplay = (TextView) getView().findViewById(R.id.textViewZoomDisplay);
+        final TextView textViewTiltDisplay = (TextView) getView().findViewById(R.id.textViewTiltDisplay);
+        final TextView textViewMapNumber = ((TextView) getView().findViewById(R.id.textViewMapNumber));
+        scaleBarOverlay.setMap(map);
 
 
 
@@ -808,27 +827,27 @@ private void createInnerGoogleMapFragment() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
                 Log.d("TAG", "Camera Changed for Map " + fragmentName);
+                // hide the zoom bar while it is (potentially) invalid
+                scaleBarOverlay.mapZooming();
+
+                // register a callback for when the map has finished loading
 
                 map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
                     @Override
                     public void onMapLoaded() {
                         Log.d("MAP", "MapContainingFragment" + fragmentName + " onCameraChange Map now Loaded zoom is " + map.getCameraPosition().zoom +" wanted " + zoom + " on map:"+map );
-                        View view = getView();
-                        TextView t;
-                        if (view != null) {
-                            t = (TextView) view.findViewById(R.id.textViewZoomDisplay);
-                            if (t != null) {
-                                t.setText(String.valueOf(map.getCameraPosition().zoom));
-                            }
-                            t = (TextView) view.findViewById(R.id.textViewTiltDisplay);
-                            if (t != null) {
-                                t.setText(String.valueOf(map.getCameraPosition().tilt));
-                            }
-                            t = ((TextView) view.findViewById(R.id.textViewMapNumber));
-                            if (t != null) {
-                                t.setText(fragmentName);
-                            }
-                        } // if view is not null
+                        if (textViewZoomDisplay  != null) {
+                            textViewZoomDisplay.setText(String.valueOf(map.getCameraPosition().zoom));
+                        }
+                        if (textViewTiltDisplay != null) {
+                            textViewTiltDisplay.setText(String.valueOf(map.getCameraPosition().tilt));
+                        }
+                        if (textViewMapNumber != null) {
+                            textViewMapNumber.setText(fragmentName);
+                        }
+                        if (scaleBarOverlay != null) {
+                            scaleBarOverlay.mapLoaded();
+                        }
                     }// end OnMapLoaded
                 });//end set on mapLoadedCallback
             }// end onCameraChanged
@@ -868,6 +887,13 @@ private void createInnerGoogleMapFragment() {
         map.getUiSettings().setAllGesturesEnabled(false);
         map.getUiSettings().setZoomControlsEnabled(showZoom);
         map.getUiSettings().setZoomGesturesEnabled(tapToZoom);
+        map.setBuildingsEnabled(false);
+        map.setTrafficEnabled(false);
+        map.setIndoorEnabled(false);
+        //TODO: looks like we can set a location source for the map.. probably ought to use "ours"
+        //map.setLocationSource();
+
+
         // map.setPadding(0,75,0,0);
 
         //map.getUiSettings().setScrollGesturesEnabled(false);
@@ -911,6 +937,30 @@ private void createInnerGoogleMapFragment() {
     }
     public int getZoom() {
         return zoom;
+    }
+
+    @Subscribe
+    /** after a location event has been processed this will be called
+     * we update the "history" trail polyline
+     */
+    public void onLocationProcessedEvent(LocationProcessedEvent dummy) {
+     // TODO: cull offscreen (if it looks like the gmaps api isn't efficient enough
+        if (map == null) {
+            return; // not doing anything on a null map!
+        }
+        LatLngLogger lll = Controller.getInstance().getLatLngLogger();
+        if (lll == null) {
+            return;
+        }
+        PolylineOptions plo = new PolylineOptions()
+                .geodesic(false)
+                .width(3)
+                .color(Color.BLACK)
+                .addAll(lll.getHistory());
+        if (mHistoryPolyline != null) {
+            mHistoryPolyline.remove();
+        }
+        mHistoryPolyline = map.addPolyline(plo);
     }
 }
 

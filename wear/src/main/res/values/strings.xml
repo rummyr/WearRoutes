@@ -44,6 +44,26 @@
         <item>GridNoTrack</item>
         <item>GridTrack</item>
     </string-array>
+
+    <string-array name="speed_units_display" tools:translatable="true">
+        <item>kph</item>
+        <item>mph</item>
+    </string-array>
+    <string-array name="speed_units_values" tools:translatable="false">
+        <item>kph</item>
+        <item>mph</item>
+    </string-array>
+
+    <string-array name="distance_units_display" tools:translatable="true">
+        <item>km</item>
+        <item>miles</item>
+    </string-array>
+    <string-array name="distance_units_values" tools:translatable="false">
+        <item>km</item>
+        <item>miles</item>
+    </string-array>
+
+
     <string name="title_activity_manage_routes">ManageRoutesActivity</string>
     <string name="hello_world">Hello World!</string>
     <string name="hidden">Hidden</string>

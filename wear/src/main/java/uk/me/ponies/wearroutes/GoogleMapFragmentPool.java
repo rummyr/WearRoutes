@@ -22,7 +22,7 @@ public class GoogleMapFragmentPool {
 
     static Set<MapFragment> gcStopper = Collections.synchronizedSet(new HashSet<MapFragment>());
 
-    static Set<MapFragment> innerMapFragmentPool = Collections.synchronizedSet(new HashSet<MapFragment>());
+    static final Set<MapFragment> innerMapFragmentPool = Collections.synchronizedSet(new HashSet<MapFragment>());
     static Map<MapFragment, GoogleMap> innerMapMapPool = Collections.synchronizedMap(new WeakHashMap<MapFragment, GoogleMap>());
     static int creationNumber;
 

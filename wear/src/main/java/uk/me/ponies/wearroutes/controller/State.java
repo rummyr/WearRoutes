@@ -6,5 +6,6 @@ package uk.me.ponies.wearroutes.controller;
 public  class State {
     static int recordingState = StateConstants.STATE_STOPPED;
     static long recordingStartTime = 0;
+    static long recordingEndTime = 0;
     static long recordingPausedTime = 0;
 }

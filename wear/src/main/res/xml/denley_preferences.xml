@@ -59,6 +59,29 @@
 
         />
 
+    <ListPreference
+        android:key="pref_wear_speed_units"
+        android:title="Speed units"
+        android:defaultValue="kph"
+        android:entries="@array/speed_units_display"
+        android:entryValues="@array/speed_units_values"
+        app:wear_entryAsSummary="true"
+        />
+    <!--
+        app:wear_entryIcons="@array/when_on_icons_track_and_map_display"
+        android:icon="@android:drawable/ic_input_add"
+    -->
+
+    <ListPreference
+        android:key="pref_wear_distance_units"
+        android:title="Distance units"
+        android:defaultValue="km"
+        android:entries="@array/distance_units_display"
+        android:entryValues="@array/distance_units_values"
+        app:wear_entryAsSummary="true"
+        />
+
+
     <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"

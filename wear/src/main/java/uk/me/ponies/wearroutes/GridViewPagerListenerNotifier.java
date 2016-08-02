@@ -109,12 +109,12 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
     private void callOnScreen(int y, int x) {
         FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter)mGridViewPager.getAdapter();
         Fragment f = adapter.getFragment(y, x);
-        if (f instanceof GridViewPagerListener) {
+        if (f instanceof IGridViewPagerListener) {
             if (!visibleState.containsKey(f)) { // lazy init
                 visibleState.put(f,false);
             }
             if (!visibleState.get(f)) { // only send visible if it was previously "invisible"
-                ((GridViewPagerListener) f).onOnScreenPage();
+                ((IGridViewPagerListener) f).onOnScreenPage();
                 visibleState.put(f, true);
             }
         }
@@ -122,12 +122,12 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
     private void callOffScreen(int y, int x) {
         FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter)mGridViewPager.getAdapter();
         Fragment f = adapter.getFragment(y, x);
-        if (f instanceof GridViewPagerListener) {
+        if (f instanceof IGridViewPagerListener) {
             if (!visibleState.containsKey(f)) { // lazy init
                 visibleState.put(f,true);
             }
             if (visibleState.get(f)) { // only send visible if it was previously "visible"
-                ((GridViewPagerListener) f).onOffScreenPage();
+                ((IGridViewPagerListener) f).onOffScreenPage();
                 visibleState.put(f, false);
             }
         }

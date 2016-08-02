@@ -49,16 +49,19 @@ import com.google.android.gms.wearable.CapabilityInfo;
 import com.google.android.gms.wearable.DataApi;
 import com.google.android.gms.wearable.Wearable;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.lang.ref.WeakReference;
 import java.util.concurrent.TimeUnit;
 
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.controller.StateConstants;
+import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
 
-public class MainActivity extends WearableActivity
+public class MainWearActivity extends WearableActivity
         {
     private static DataApi.DataListener mDataApiListener;
     private static CapabilityApi.CapabilityListener mCapabilityApiListener;
@@ -213,6 +216,7 @@ public class MainActivity extends WearableActivity
 
         Controller.startup(sampleGridPagerAdapter);
         mController = Controller.getInstance();
+        mController.setContext(getApplicationContext());
 
         /* Snackbars don't work on Wear
         Snackbar.make(mainPagerView, R.string.intro_text, Snackbar.LENGTH_INDEFINITE)
@@ -230,6 +234,7 @@ public class MainActivity extends WearableActivity
         Log.d("TAB", "Main: before onEnterAmbient current isAmbient state is " + isAmbient());
         super.onEnterAmbient(ambientDetails);
         sampleGridPagerAdapter.onEnterAmbient(ambientDetails);
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.ENTER, ambientDetails));
         Log.d("TAB", "Main: after onEnterAmbient current isAmbient state is " + isAmbient());
     }
 
@@ -238,16 +243,23 @@ public class MainActivity extends WearableActivity
         Log.d("TAG", "Main: onExitAmbient");
         Log.d("TAB", "Main: before onExitAmbient current isAmbient state is " + isAmbient());
         sampleGridPagerAdapter.onExitAmbient();
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE,null));
         super.onExitAmbient();
         Log.d("TAB", "Main: after onExitAmbient current isAmbient state is " + isAmbient());
 
 
         Log.d("TAG", "Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:");
-        MainActivity.this.findViewById(android.R.id.content).getRootView().invalidate();
+        MainWearActivity.this.findViewById(android.R.id.content).getRootView().invalidate();
 
     }
 
-    private void doPermissionsCheck(Context context) {
+            @Override
+            public void onUpdateAmbient() {
+                super.onUpdateAmbient();
+                EventBus.getDefault().post(new AmbientEvent(AmbientEvent.UPDATE,null));
+            }
+
+            private void doPermissionsCheck(Context context) {
         PackageInfo info;
         try {
             info = getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
@@ -330,7 +342,7 @@ public class MainActivity extends WearableActivity
                             .setContentText("Context Text")
                             // Set a content intent to return to this sample
                             .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0,
-                                    new Intent(getApplicationContext(), MainActivity.class), 0))
+                                    new Intent(getApplicationContext(), MainWearActivity.class), 0))
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setPriority(Notification.PRIORITY_MAX) //TODO: only enabel if started
                             .setOngoing(true) // cant dismiss?
@@ -352,13 +364,13 @@ public class MainActivity extends WearableActivity
             @Override
             public void onConnected(Bundle connectionHint) {
                 Log.d(TAG, "onConnected(): Successfully connected to Google API client");
-                Wearable.DataApi.addListener(mGoogleApiClient, MainActivity.mDataApiListener);
+                Wearable.DataApi.addListener(mGoogleApiClient, MainWearActivity.mDataApiListener);
                 //Wearable.MessageApi.addListener(mGoogleApiClient, this);
 
                 Wearable.CapabilityApi.addListener(
-                        mGoogleApiClient, MainActivity.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
+                        mGoogleApiClient, MainWearActivity.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
 
-                int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION);
+                int permissionCheck = ContextCompat.checkSelfPermission(MainWearActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION);
                 if (permissionCheck == android.content.pm.PackageManager.PERMISSION_GRANTED) {
                     // Create the LocationRequest object
                     LocationRequest locationRequest = LocationRequest.create();
@@ -376,7 +388,7 @@ public class MainActivity extends WearableActivity
                     } catch (java.lang.SecurityException se) {
                         Log.e(TAG, "WTF! I was told we had this permission!, time to moan to the user!");
                         //BUG: must moan to user about having access fine location removed!
-                        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                        AlertDialog.Builder alert = new AlertDialog.Builder(MainWearActivity.this);
                         alert.setTitle("Permission Problem")
                                 .setMessage("Wear Routes has been denied access to your location, please enable it in Settings>Permissions.")
                                 .setPositiveButton("I'll do that", new DialogInterface.OnClickListener() {

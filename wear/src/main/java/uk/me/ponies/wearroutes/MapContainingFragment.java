@@ -116,7 +116,7 @@ public class MapContainingFragment extends Fragment {
     //BUG: no way should this go live!
     private static int DBG_SLEEP_BETWEEN_STEPS = 0;
 
-    int zoom = 1;
+    int zoom = Options.WEAR_DEFAULT_STARTING_ZOOM;
     int tilt = 0;
     private String timingLabel;
     private long startCPU;

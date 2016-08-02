@@ -2,8 +2,47 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/panelTableLayout"
     android:background="@color/black">
 
+    <!-- clock that doesn't auto update itself -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:07:43 AM"
+            android:id="@+id/panel1StaticClock"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </TableRow>
+
+    <!-- duration -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="00:13:24"
+            android:id="@+id/panel1StaticChronometer"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white" />
+    </TableRow>
+
+
+    <!-- clock -->
+<!--
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +61,9 @@
             android:format24Hour="HH:mm:ss"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </TableRow>
-
+-->
+    <!-- duration -->
+<!--
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +79,8 @@
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white" />
     </TableRow>
-
+-->
+    <!-- instantaneous speed -->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,13 +91,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textView3"
+            android:text="12kph"
+            android:id="@+id/panel1SpeedInstant"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
             />
     </TableRow>
 
+    <!-- average speed -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="12kph"
+            android:id="@+id/panel1SpeedAverage"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            />
+    </TableRow>
+
+    <!-- distance -->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -67,7 +128,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="12:05:52"
-            android:id="@+id/textView4"
+            android:id="@+id/panel1Distance"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white" />
     </TableRow>

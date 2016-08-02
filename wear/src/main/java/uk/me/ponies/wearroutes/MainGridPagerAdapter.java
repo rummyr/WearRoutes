@@ -103,7 +103,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
 
         mRows.add(new Row(
-                firstCard, mControlButtonsCard,
+                /*firstCard, */ mControlButtonsCard,
                 new ActionPageManageRoutesFragment(),
                 new ActionPagePreferencesFragment().setUseDenly(true),
                 new ActionPageLaunchDeveloperCommandsFragment(),
