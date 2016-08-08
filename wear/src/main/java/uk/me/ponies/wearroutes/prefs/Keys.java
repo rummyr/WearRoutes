@@ -35,5 +35,7 @@ public abstract class Keys {
     public static final String KEY_PREF_DISTANCE_UNIT_KM = "km";
     public static final String KEY_PREF_DISTANCE_UNIT_MILES = "miles";
 
+    public static final String KEY_GPS_UPDATES_LESS_IN_AMBIENT = "pref_wear_ambient_few_updates";
+
 
 }

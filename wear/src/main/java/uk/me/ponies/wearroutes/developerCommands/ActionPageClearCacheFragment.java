@@ -28,8 +28,11 @@ import java.io.File;
 
 import uk.me.ponies.wearroutes.R;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 
 public class ActionPageClearCacheFragment extends Fragment {
+    private final static String TAG = ActionPageClearCacheFragment.class.getSimpleName();
     Context mContext;
 
 
@@ -39,11 +42,9 @@ public class ActionPageClearCacheFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         android.support.wearable.view.ActionPage preferencesPage =
-                (android.support.wearable.view.ActionPage)inflater.inflate(R.layout.fragment_developer_commands_action_page_clear_cache, container, false);
-
-
+                (android.support.wearable.view.ActionPage) inflater.inflate(R.layout.fragment_developer_commands_action_page_clear_cache, container, false);
 
 
         preferencesPage.setOnClickListener(
@@ -90,12 +91,14 @@ public class ActionPageClearCacheFragment extends Fragment {
         // don't go wild!
         if (String.valueOf(dir).endsWith(".dex")) {
             // leave this alone!
-            Log.d("TrimCache", "Not deleting " + dir);
+            if (tagEnabled(TAG)) Log.d("TrimCache", "Not deleting " + dir);
             return true;
+        } else if (dir != null){
+            if (tagEnabled(TAG)) Log.d("TrimCache", "Deleting " + dir);
+            return dir.delete();
         }
         else {
-            Log.d("TrimCache", "Deleting " + dir);
-            return dir.delete();
+            return true;
         }
     }
 

@@ -9,13 +9,15 @@ import android.util.Log;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Scans through the gridViewPager/gridViewPagerAdapter
  * telling the fragments if they are offScreen or possibly onScreen
  * Only works for WEAR devices where there is a SINGLE top-level-fragment visible at a time
  * Created by rummy on 15/07/2016.
  */
-public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChangeListener{
+public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChangeListener {
     private static final String TAG = "GridViewPagerNotifier";
     private static final int UP = 1;
     private static final int DOWN = 2;
@@ -44,13 +46,13 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
 
     @Override
     public void onPageSelected(int row, int column) {
-        Log.d(TAG, "onPageSelected row:" + row + " column:" + column);
+        if (tagEnabled(TAG))            Log.d(TAG, "onPageSelected row:" + row + " column:" + column);
         updateScreenVisibility(UP | DOWN | LEFT | RIGHT); // to be entirely sure!
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-        Log.d(TAG, "onPageScrollStateChanged state:" + state);
+        if (tagEnabled(TAG)) Log.d(TAG, "onPageScrollStateChanged state:" + state);
         switch (state) {
             case GridViewPager.SCROLL_STATE_CONTENT_SETTLING: {
                 break;
@@ -86,7 +88,7 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
                 callOffScreen(currentPoint.y, currentPoint.x - 1);
             }
         }
-        if (RIGHT == (flags & RIGHT )) {
+        if (RIGHT == (flags & RIGHT)) {
             if (currentPoint.x < columnCount - 1) { // Right on same row
                 callOffScreen(currentPoint.y, currentPoint.x + 1);
             }
@@ -107,11 +109,11 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
     }
 
     private void callOnScreen(int y, int x) {
-        FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter)mGridViewPager.getAdapter();
+        FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter) mGridViewPager.getAdapter();
         Fragment f = adapter.getFragment(y, x);
         if (f instanceof IGridViewPagerListener) {
             if (!visibleState.containsKey(f)) { // lazy init
-                visibleState.put(f,false);
+                visibleState.put(f, false);
             }
             if (!visibleState.get(f)) { // only send visible if it was previously "invisible"
                 ((IGridViewPagerListener) f).onOnScreenPage();
@@ -119,12 +121,13 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
             }
         }
     }
+
     private void callOffScreen(int y, int x) {
-        FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter)mGridViewPager.getAdapter();
+        FragmentGridPagerAdapter adapter = (FragmentGridPagerAdapter) mGridViewPager.getAdapter();
         Fragment f = adapter.getFragment(y, x);
         if (f instanceof IGridViewPagerListener) {
             if (!visibleState.containsKey(f)) { // lazy init
-                visibleState.put(f,true);
+                visibleState.put(f, true);
             }
             if (visibleState.get(f)) { // only send visible if it was previously "visible"
                 ((IGridViewPagerListener) f).onOffScreenPage();

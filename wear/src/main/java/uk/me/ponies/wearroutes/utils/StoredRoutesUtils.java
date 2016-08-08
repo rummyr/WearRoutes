@@ -17,6 +17,8 @@ import java.util.List;
 import uk.me.ponies.wearroutes.keys.WearUIKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 
 /**
  * Created by rummy on 04/07/2016.
@@ -48,7 +50,7 @@ public class StoredRoutesUtils {
 
                 boolean isHidden = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(WearUIKeys.HIDE_PREFIX + route.getName(),false);
                 route.setTHidden(isHidden);
-                Log.d(TAG, "Read " + route);
+                if (tagEnabled(TAG))Log.d(TAG, "Read " + route);
                 rv.add(route);
 
             } catch (IOException ioe) {

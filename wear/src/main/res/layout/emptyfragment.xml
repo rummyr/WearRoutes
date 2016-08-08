@@ -48,7 +48,7 @@
     <uk.me.ponies.wearroutes.utils.MapScaleBarOverlay
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SBE"
+        android:text=""
         android:textColor="@color/red"
         android:id="@+id/customScaleBar"
         android:layout_gravity="bottom|right"

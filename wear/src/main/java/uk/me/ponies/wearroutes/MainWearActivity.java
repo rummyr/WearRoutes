@@ -23,6 +23,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -54,15 +55,18 @@ import org.greenrobot.eventbus.EventBus;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.TimeUnit;
 
+import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.controller.StateConstants;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
+import uk.me.ponies.wearroutes.utils.ActivityLifeCycleLogger;
 import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
-public class MainWearActivity extends WearableActivity
-        {
+
+public class MainWearActivity extends WearableActivity {
     private static DataApi.DataListener mDataApiListener;
     private static CapabilityApi.CapabilityListener mCapabilityApiListener;
     MainGridPagerAdapter sampleGridPagerAdapter;
@@ -70,19 +74,35 @@ public class MainWearActivity extends WearableActivity
     private static final String TAG = "WearMainActivity";
     private ConnectionCallBacksHandler mConnectionCallBacksHandler;
     private ConnectionFailedListener mConnectionFailedListener;
-    private TrackLocationAndBearingOnMapFragment mMapLocationAndBearingTracker; // here to stop garbage collection
+    private MainLocationHandler mMainLocationListener;
     private MapSwipeToZoomFragment mMapFragmentContainer;
     private Controller mController;
     private GridViewPagerListenerNotifier mGridViewPagerListenerNotifier;
 
-            @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getApplication().registerActivityLifecycleCallbacks(new ActivityLifeCycleLogger());
+
+        DebugEnabled.enableTag("WearMainActivity");
+        DebugEnabled.enableTag("MapSwipeToZoomFrag");
+        DebugEnabled.enableTag("SpeedPanel1");
+        DebugEnabled.enableTag("ActivityLifeCycleLogger");
+        DebugEnabled.enableTag("GridViewPagerNotifier");
+        DebugEnabled.enableTag("Loader");
+        DebugEnabled.enableTag("ColumnHistorian");
+        DebugEnabled.enableTag("MainLocationHandler");
+        DebugEnabled.enableTag("FragmentLifecycleLogger");
+        DebugEnabled.enableTag("BearingSectorizer");
+        DebugEnabled.enableTag("MainGridPagerAdapter");
+        DebugEnabled.enableTag("MyGridViewPager");
+        DebugEnabled.setDefaultEnablement(true);
+
+
         super.onCreate(savedInstanceState);
         setAmbientEnabled();
 
 
         setContentView(R.layout.activity_main);
-        View mainPagerView = findViewById(R.id.pager);
         final Resources res = getResources();
         final GridViewPager pager = (GridViewPager) findViewById(R.id.pager);
         pager.setOnApplyWindowInsetsListener(new OnApplyWindowInsetsListener() {
@@ -112,7 +132,7 @@ public class MainWearActivity extends WearableActivity
         pager.setAdapter(sampleGridPagerAdapter);
 
         mGridViewPagerListenerNotifier = new GridViewPagerListenerNotifier(pager);
-                pager.setOnPageChangeListener(mGridViewPagerListenerNotifier );
+        pager.setOnPageChangeListener(mGridViewPagerListenerNotifier);
 
         DotsPageIndicator dotsPageIndicator = (DotsPageIndicator) findViewById(R.id.page_indicator);
         dotsPageIndicator.setPager(pager);
@@ -121,39 +141,40 @@ public class MainWearActivity extends WearableActivity
         pager.setOnPageChangeListener(new GridViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int row, int col, float v, float v1, int i2, int i3) {
-                Log.d("TAG", "onPageScrolled: " + row + "," + col);
+                if (tagEnabled(TAG)) Log.d(TAG, "onPageScrolled: " + row + "," + col);
             }
 
             @Override
             public void onPageSelected(int row, int col) {
-                Log.d("TAG", "onPageSelected: " + row + "," + col);
+                if (tagEnabled(TAG)) Log.d(TAG, "onPageSelected: " + row + "," + col);
             }
 
             final boolean reFlipPages = false; // true if the row is zoomin, map, zoomout
+
             @Override
             public void onPageScrollStateChanged(int state) {
                 String[] states = {"IDLE", "DRAGGING", "SETTLING", "SCROLL_STATE_CONTENT_SETTLING", "UNKNOWN4"};
-                Log.d("TAG", "onPageScrollStateChanged state: " + state + " " + states[state]);
+                if (tagEnabled(TAG)) Log.d(TAG, "onPageScrollStateChanged state: " + state + " " + states[state]);
 
                 if (state == 2) {
-                    Log.d("InnerMapFragment", "Dump of Google maps fragments created");
+                    if (tagEnabled(TAG)) Log.d("InnerMapFragment", "Dump of Google maps fragments created");
                     // Dump out state of mapFragments
                     int gcd = 0;
                     for (String index : GoogleMapFragmentPool.googleMapFragmentRecording.keySet()) {
                         WeakReference<com.google.android.gms.maps.MapFragment> ref = GoogleMapFragmentPool.googleMapFragmentRecording.get(index);
                         com.google.android.gms.maps.MapFragment f = ref.get();
                         if (f == null) {
-                            Log.d("InnerMapFragment", "Google maps fragment " + index + " has been GC'd");
+                            if (tagEnabled(TAG)) Log.d("InnerMapFragment", "Google maps fragment " + index + " has been GC'd");
                             gcd++;
                         } else {
-                            Log.d("InnerMapFragment", "Google maps fragment " + index + (f) + " Parent Fragment is " + f.getParentFragment());
+                            if (tagEnabled(TAG)) Log.d("InnerMapFragment", "Google maps fragment " + index + (f) + " Parent Fragment is " + f.getParentFragment());
                         }
                     }
-                    Log.d("InnerMapFragment", "Google maps fragments created contains: " + GoogleMapFragmentPool.googleMapFragmentRecording.size());
-                    Log.d("InnerMapFragment", "Google maps innerMap Pool is pooling: " + GoogleMapFragmentPool.innerMapFragmentPool.size());
+                    if (tagEnabled(TAG)) Log.d("InnerMapFragment", "Google maps fragments created contains: " + GoogleMapFragmentPool.googleMapFragmentRecording.size());
+                    if (tagEnabled(TAG)) Log.d("InnerMapFragment", "Google maps innerMap Pool is pooling: " + GoogleMapFragmentPool.innerMapFragmentPool.size());
                 }
                 if (state == 2) { // settling - doesn't work!
-                    Log.d("TAG","onPageScrollStateChaged, SETTLING, currentposition is " + pager.getCurrentItem());
+                    if (tagEnabled(TAG)) Log.d(TAG, "onPageScrollStateChaged, SETTLING, currentposition is " + pager.getCurrentItem());
                     if (false) { // doesn't work if we change the position here
                         final int row = pager.getCurrentItem().y;
                         final int column = pager.getCurrentItem().x;
@@ -170,8 +191,8 @@ public class MainWearActivity extends WearableActivity
                     }
                 }
 
-            if (state == 0) { // idle
-                    Log.d("TAG","onPageScrollStateChaged, IDLE, currentposition is " + pager.getCurrentItem());
+                if (state == 0) { // idle
+                    if (tagEnabled(TAG)) Log.d(TAG, "onPageScrollStateChaged, IDLE, currentposition is " + pager.getCurrentItem());
                     if (true && reFlipPages) { // WORKS
                         final int row = pager.getCurrentItem().y;
                         final int column = pager.getCurrentItem().x;
@@ -191,7 +212,7 @@ public class MainWearActivity extends WearableActivity
         }); // end pager onPageChangeListener
 
         mMapFragmentContainer = sampleGridPagerAdapter.getMapFragment();
-        mMapLocationAndBearingTracker = new TrackLocationAndBearingOnMapFragment(mMapFragmentContainer);
+        mMainLocationListener = new MainLocationHandler(this);
         mConnectionCallBacksHandler = new ConnectionCallBacksHandler();
         mConnectionFailedListener = new ConnectionFailedListener();
         mDataApiListener = new DataApiListener(mMapFragmentContainer, getFilesDir());
@@ -208,7 +229,7 @@ public class MainWearActivity extends WearableActivity
 
         doPermissionsCheck(this);
 
-        for (StoredRoute route : StoredRoutesUtils.readStoredRoutes(getApplicationContext(),getFilesDir())) {
+        for (StoredRoute route : StoredRoutesUtils.readStoredRoutes(getApplicationContext(), getFilesDir())) {
             if (mMapFragmentContainer != null) {
                 mMapFragmentContainer.addRoute(route);
             }
@@ -216,7 +237,7 @@ public class MainWearActivity extends WearableActivity
 
         Controller.startup(sampleGridPagerAdapter);
         mController = Controller.getInstance();
-        mController.setContext(getApplicationContext());
+        // mController.setContext(getApplicationContext());
 
         /* Snackbars don't work on Wear
         Snackbar.make(mainPagerView, R.string.intro_text, Snackbar.LENGTH_INDEFINITE)
@@ -230,36 +251,35 @@ public class MainWearActivity extends WearableActivity
 
     @Override
     public void onEnterAmbient(Bundle ambientDetails) {
-        Log.d("TAG", "Main: onEnterAmbient");
-        Log.d("TAB", "Main: before onEnterAmbient current isAmbient state is " + isAmbient());
+        if (tagEnabled(TAG)) Log.d(TAG, "before onEnterAmbient current isAmbient state is " + isAmbient());
         super.onEnterAmbient(ambientDetails);
         sampleGridPagerAdapter.onEnterAmbient(ambientDetails);
         EventBus.getDefault().post(new AmbientEvent(AmbientEvent.ENTER, ambientDetails));
-        Log.d("TAB", "Main: after onEnterAmbient current isAmbient state is " + isAmbient());
+        if (tagEnabled(TAG)) Log.d(TAG, "after onEnterAmbient current isAmbient state is " + isAmbient());
     }
 
     @Override
     public void onExitAmbient() {
-        Log.d("TAG", "Main: onExitAmbient");
-        Log.d("TAB", "Main: before onExitAmbient current isAmbient state is " + isAmbient());
+        if (tagEnabled(TAG)) Log.d(TAG, "before onExitAmbient current isAmbient state is " + isAmbient());
         sampleGridPagerAdapter.onExitAmbient();
-        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE,null));
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE, null));
         super.onExitAmbient();
-        Log.d("TAB", "Main: after onExitAmbient current isAmbient state is " + isAmbient());
+        if (tagEnabled(TAG)) Log.d(TAG, "after onExitAmbient current isAmbient state is " + isAmbient());
 
 
-        Log.d("TAG", "Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:");
+        if (tagEnabled(TAG)) Log.d(TAG, "Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:");
         MainWearActivity.this.findViewById(android.R.id.content).getRootView().invalidate();
 
     }
 
-            @Override
-            public void onUpdateAmbient() {
-                super.onUpdateAmbient();
-                EventBus.getDefault().post(new AmbientEvent(AmbientEvent.UPDATE,null));
-            }
+    @Override
+    public void onUpdateAmbient() {
+        if (tagEnabled(TAG)) Log.d(TAG, "onUpdateAmbient Called");
+        super.onUpdateAmbient();
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.UPDATE, null));
+    }
 
-            private void doPermissionsCheck(Context context) {
+    private void doPermissionsCheck(Context context) {
         PackageInfo info;
         try {
             info = getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
@@ -276,7 +296,7 @@ public class MainWearActivity extends WearableActivity
             int permissionCheck = ContextCompat.checkSelfPermission(this,
                     permission);
             if (permissionCheck == android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                Log.d(TAG, permission + " Granted");
+                if (tagEnabled(TAG)) Log.d(TAG, permission + " Granted");
             } else {
                 //TODO: MUST INFORM USER!
                 Log.e(TAG, permission + " Denied!!");
@@ -292,7 +312,7 @@ public class MainWearActivity extends WearableActivity
                             1234);
 
                 } else {
-                    Log.d(TAG, permission + " is a safe Permission");
+                    if (tagEnabled(TAG)) Log.d(TAG, permission + " is a safe Permission");
                     // No explanation needed, we can request the permission.
 
                     ActivityCompat.requestPermissions(this,
@@ -308,108 +328,72 @@ public class MainWearActivity extends WearableActivity
             }
         }
     }
-            @Override
-            protected void onStart() {
-                super.onStart();
-                ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
-                        .cancel(001);
-            }
-            @Override
-            protected void onDestroy() {
-                super.onDestroy();
-                Log.d(TAG, "onDestroy called");
-            }
 
-            @Override
-            protected void onResume() {
-                super.onResume();
-                // dismiss our notification?
-                // is it even visible?
-            }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
+                .cancel(001);
+    }
 
-            @Override
-            protected void onPause() {
-                super.onPause();
-                Log.d(TAG, "onPause Called");
-            }
 
-            @Override
-            protected void onStop() {
-                Log.d(TAG, "onStop called");
-                if (mController.getRecordingState() != StateConstants.STATE_STOPPED) {
-                    Notification n = new Notification.Builder(getApplicationContext())
-                            .setContentTitle("TITLE:Simple Notification")
-                            .setContentText("Context Text")
-                            // Set a content intent to return to this sample
-                            .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0,
-                                    new Intent(getApplicationContext(), MainWearActivity.class), 0))
-                            .setSmallIcon(R.mipmap.ic_launcher)
-                            .setPriority(Notification.PRIORITY_MAX) //TODO: only enabel if started
-                            .setOngoing(true) // cant dismiss?
-                            //TODO: only api 21 .setCategory(Notification.CATEGORY_STATUS)
-                            // .setWhen().setShowWhen() // TODO:later api
-                            .build();
-                    // and now display it
-                    ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
-                            .notify(001, n);
-                }
-                super.onStop();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // dismiss our notification?
+        // is it even visible?
+    }
 
-                if (Options.FINISH_ON_STOP && mController.getRecordingState() == StateConstants.STATE_STOPPED ) {
-                    finish();
-                }
-            }
 
-            private class ConnectionCallBacksHandler implements GoogleApiClient.ConnectionCallbacks{
-            @Override
-            public void onConnected(Bundle connectionHint) {
-                Log.d(TAG, "onConnected(): Successfully connected to Google API client");
-                Wearable.DataApi.addListener(mGoogleApiClient, MainWearActivity.mDataApiListener);
-                //Wearable.MessageApi.addListener(mGoogleApiClient, this);
+    @Override
+    protected void onStop() {
+        if (tagEnabled(TAG)) Log.d(TAG, "onStop called");
+        if (mController.getRecordingState() != StateConstants.STATE_STOPPED) {
+            Notification n = new Notification.Builder(getApplicationContext())
+                    .setContentTitle("TITLE:Simple Notification")
+                    .setContentText("Context Text")
+                    // Set a content intent to return to this sample
+                    .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0,
+                            new Intent(getApplicationContext(), MainWearActivity.class), 0))
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setPriority(Notification.PRIORITY_MAX) //TODO: only enabel if started
+                    .setOngoing(true) // cant dismiss?
+                    //TODO: only api 21 .setCategory(Notification.CATEGORY_STATUS)
+                    // .setWhen().setShowWhen() // TODO:later api
+                    .build();
+            // and now display it
+            ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
+                    .notify(001, n);
+        }
+        super.onStop();
 
-                Wearable.CapabilityApi.addListener(
-                        mGoogleApiClient, MainWearActivity.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
+        // exit completely if we aren't recording
+        if (Options.FINISH_ON_STOP && mController.getRecordingState() == StateConstants.STATE_STOPPED) {
+            finish();
+        }
+    }
 
-                int permissionCheck = ContextCompat.checkSelfPermission(MainWearActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION);
-                if (permissionCheck == android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                    // Create the LocationRequest object
-                    LocationRequest locationRequest = LocationRequest.create();
-                    // Use high accuracy
-                    locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-                    // Set the update interval to 2 seconds
-                    locationRequest.setInterval(TimeUnit.SECONDS.toMillis(2));
-                    // Set the fastest update interval to 2 seconds
-                    locationRequest.setFastestInterval(TimeUnit.SECONDS.toMillis(2));
-                    // Set the minimum displacement
-                    locationRequest.setSmallestDisplacement(2);
+    private class ConnectionCallBacksHandler implements GoogleApiClient.ConnectionCallbacks {
+        @Override
+        public void onConnected(Bundle connectionHint) {
+            if (tagEnabled(TAG)) Log.d(TAG, "onConnected(): Successfully connected to Google API client");
+            Wearable.DataApi.addListener(mGoogleApiClient, MainWearActivity.mDataApiListener);
+            //Wearable.MessageApi.addListener(mGoogleApiClient, this);
 
-                    try {
-                        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, locationRequest, mMapLocationAndBearingTracker);
-                    } catch (java.lang.SecurityException se) {
-                        Log.e(TAG, "WTF! I was told we had this permission!, time to moan to the user!");
-                        //BUG: must moan to user about having access fine location removed!
-                        AlertDialog.Builder alert = new AlertDialog.Builder(MainWearActivity.this);
-                        alert.setTitle("Permission Problem")
-                                .setMessage("Wear Routes has been denied access to your location, please enable it in Settings>Permissions.")
-                                .setPositiveButton("I'll do that", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                //Your action here
-                            }
-                        })
-                        .show();
-                    }
-                }
-            } // end onConnected
+            Wearable.CapabilityApi.addListener(
+                    mGoogleApiClient, MainWearActivity.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
+        } // end onConnected
 
 
         @Override
         public void onConnectionSuspended(int cause) {
-            Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
+            if (tagEnabled(TAG)) Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
         }
 
     }
 
-    private class ConnectionFailedListener implements GoogleApiClient.OnConnectionFailedListener{
+
+    private class ConnectionFailedListener implements GoogleApiClient.OnConnectionFailedListener {
         @Override
         public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
             Log.e(TAG, "onConnectionFailed(): Failed to connect, with result: " + connectionResult);
@@ -419,7 +403,7 @@ public class MainWearActivity extends WearableActivity
     private class CapabilityApiListener implements CapabilityApi.CapabilityListener {
         @Override
         public void onCapabilityChanged(CapabilityInfo capabilityInfo) {
-            Log.d(TAG, "onCapabilityChanged: " + capabilityInfo);
+            if (tagEnabled(TAG)) Log.d(TAG, "onCapabilityChanged: " + capabilityInfo);
             /// mDataFragment.appendItem("onCapabilityChanged", capabilityInfo.toString());
         }
     }

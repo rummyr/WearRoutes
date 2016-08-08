@@ -7,6 +7,7 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -16,8 +17,11 @@ import org.greenrobot.eventbus.EventBus;
 import java.lang.ref.WeakReference;
 
 import uk.me.ponies.wearroutes.common.BearingSectorizer;
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
+
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
      * Created by rummy on 16/05/2016.
@@ -42,7 +46,7 @@ import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
 
         @Override
         public void onLocationChanged(Location location) {
-            Log.d(TAG, "onLocationChanged Called with " + location);
+            if (tagEnabled(TAG)) Log.d(TAG, "onLocationChanged Called with " + location);
 
             // quick check, if our map has dissapeared!!!
             MapSwipeToZoomFragment mapSwipeToZoomFragment = mapRef.get();
@@ -61,7 +65,7 @@ import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
                 }
                 if (!location.hasBearing() && mPreviousLocation != null) {
                     // simulate a bearing
-                    Log.d(TAG, "Need to simulate a bearing");
+                    if (tagEnabled(TAG)) Log.d(TAG, "Need to simulate a bearing");
                     if (mPreviousLocation != null) {
                         double bearingDegrees = mPreviousLocation.bearingTo(mCurrentLocation);
                         location.setBearing((float) bearingDegrees);
@@ -70,7 +74,7 @@ import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
                 }
                 if (!location.hasSpeed() && mPreviousLocation != null) {
                     // simulate a speed
-                    Log.d(TAG, "Need to simulate a speed");
+                    if (tagEnabled(TAG)) Log.d(TAG, "Need to simulate a speed");
                     double duration = location.getElapsedRealtimeNanos() - mPreviousLocation.getElapsedRealtimeNanos();
                     double speed = distance / duration;
                     location.setSpeed((float) speed);
@@ -95,7 +99,7 @@ import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
                         // use this to see if map need fixing up!
                     }
                     // only update target cameraPosition IFF it has moved by enough
-                    if (Options.I_MOVE_MAP) {
+                    if (Defeat.TRUE()) {
                         if (mPreviousLocation == null) {
                             // if NO previous location, then update camera location
                             targetPos.target(new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude()));
@@ -169,6 +173,6 @@ import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
 
             return (float) (REarthMeters * c);
         }
-    }
+}
 
 

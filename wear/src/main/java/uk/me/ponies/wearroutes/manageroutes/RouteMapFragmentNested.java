@@ -26,10 +26,13 @@ import uk.me.ponies.wearroutes.R;
 import uk.me.ponies.wearroutes.keys.WearUIKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Created by rummy on 05/07/2016.
  */
 public class RouteMapFragmentNested extends Fragment {
+    private  String TAG = getClass().getSimpleName();
     StoredRoute info;
     GoogleMap mMap;
     @Nullable
@@ -39,7 +42,7 @@ public class RouteMapFragmentNested extends Fragment {
         View v = inflater.inflate(R.layout.manage_route_map_fragment_in_layout, container, false);
         // inner map fragment is created in the layout
         MapFragment innerMapFragment = (MapFragment) this.getChildFragmentManager().findFragmentById(R.id.mapfragment);
-        Log.d("TAG", "MapContainingFragment (not the view) is " + innerMapFragment);
+        if (tagEnabled(TAG))Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
         this.setRetainInstance(true);
 
         ToggleButton tb = ((ToggleButton)v.findViewById(R.id.hideRoute));
@@ -101,7 +104,7 @@ public class RouteMapFragmentNested extends Fragment {
     public void hideButtonClicked(CompoundButton tb, boolean newState) {
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         editor.putBoolean(WearUIKeys.HIDE_PREFIX + info.getName(), newState);
-        editor.commit();
+        editor.apply();
         info.setTHidden(newState);
     }
 }

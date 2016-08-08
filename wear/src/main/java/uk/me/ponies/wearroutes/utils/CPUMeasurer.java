@@ -22,6 +22,7 @@ public abstract class CPUMeasurer {
             long sTime = Long.parseLong(toks[14]);
             long cuTime = Long.parseLong(toks[15]);
             long csTime = Long.parseLong(toks[16]);
+            //noinspection UnnecessaryLocalVariable
             long cpu1 =  uTime + sTime + cuTime + csTime;
 
             return cpu1;

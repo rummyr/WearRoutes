@@ -117,8 +117,7 @@ public class StoredRoute implements Serializable{
             for (LatLng ll : getPoints()) {
                 b.include(ll);
             }
-            LatLngBounds tmp = b.build();
-            tBounds = tmp;
+            tBounds = b.build();
         }
         return tBounds;
     }

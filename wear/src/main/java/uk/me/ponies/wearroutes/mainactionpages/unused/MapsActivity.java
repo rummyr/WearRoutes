@@ -48,6 +48,8 @@ import uk.me.ponies.wearroutes.CustomUrlTileProvider;
 import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.R;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 public class MapsActivity extends WearableActivity implements OnMapReadyCallback,
         GoogleMap.OnMapLongClickListener
 
@@ -194,7 +196,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
      @Override
      public void onConnected(Bundle connectionHint) {
-         Log.d(TAG, "onConnected(): Successfully connected to Google API client");
+         if (tagEnabled(TAG)) Log.d(TAG, "onConnected(): Successfully connected to Google API client");
          Wearable.DataApi.addListener(mGoogleApiClient, this);
          //Wearable.MessageApi.addListener(mGoogleApiClient, this);
          Wearable.CapabilityApi.addListener(
@@ -220,7 +222,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
      @Override
      public void onConnectionSuspended(int cause) {
-         Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
+         if (tagEnabled(TAG)) Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
      }
 
      @Override
@@ -231,7 +233,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
      @Override
      public void onCapabilityChanged(CapabilityInfo capabilityInfo) {
-         Log.d(TAG, "onCapabilityChanged: " + capabilityInfo);
+         if (tagEnabled(TAG)) Log.d(TAG, "onCapabilityChanged: " + capabilityInfo);
          /// mDataFragment.appendItem("onCapabilityChanged", capabilityInfo.toString());
      }
     @Override
@@ -305,24 +307,24 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
 
     private void setupDataAPI() {
-        Log.d(TAG, "setupDataAPI called");
+        if (tagEnabled(TAG)) Log.d(TAG, "setupDataAPI called");
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
                     public void onConnected(Bundle connectionHint) {
-                        Log.d(TAG, "onConnected: " + connectionHint);
+                        if (tagEnabled(TAG)) Log.d(TAG, "onConnected: " + connectionHint);
                         Wearable.DataApi.addListener(mGoogleApiClient, MapsActivity.this);
                         // Now you can use the Data Layer API
                     }
                     @Override
                     public void onConnectionSuspended(int cause) {
-                        Log.d(TAG, "onConnectionSuspended: " + cause);
+                        if (tagEnabled(TAG)) Log.d(TAG, "onConnectionSuspended: " + cause);
                     }
                 })
                 .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult result) {
-                        Log.d(TAG, "onConnectionFailed: " + result);
+                        if (tagEnabled(TAG)) Log.d(TAG, "onConnectionFailed: " + result);
                     }
                 })
                 // Request access only to the Wearable API
@@ -333,13 +335,13 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
      //@Override
      public void onDataChanged(DataEventBuffer dataEvents) {
-         Log.d(TAG, "onDataChanged(): " + dataEvents);
+         if (tagEnabled(TAG)) Log.d(TAG, "onDataChanged(): " + dataEvents);
 
          for (DataEvent event : dataEvents) {
              String path = event.getDataItem().getUri().getPath();
-             Log.d(TAG, "DataItem URI is" + event.getDataItem().getUri());
+             if (tagEnabled(TAG)) Log.d(TAG, "DataItem URI is" + event.getDataItem().getUri());
              if (event.getType() == DataEvent.TYPE_CHANGED) {
-                 Log.d(TAG, "Received a Data Changed Event for path:" + path);
+                 if (tagEnabled(TAG)) Log.d(TAG, "Received a Data Changed Event for path:" + path);
                  if ("/RouteDisplayGMapsWear/addRoute".equals(path)) {
                      // unpack the message
                      DataMapItem dataMapItem = DataMapItem.fromDataItem(event.getDataItem());
@@ -353,7 +355,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
                      List<LatLng> myList = new ArrayList<>();
                      parcel.readList(myList,this.getClassLoader());
                      parcel.recycle();
-                     Log.d(TAG,"Recieved " + myList.size() + " points");
+                     if (tagEnabled(TAG)) Log.d(TAG,"Recieved " + myList.size() + " points");
 
                      PolylineOptions rectOptions = new PolylineOptions().addAll(myList);
                      rectOptions.color(Color.RED); // TODO: make configurable
@@ -374,9 +376,9 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
                      Log.w(TAG,"Unrecognised path:" + path);
                  }
              } else if (event.getType() == DataEvent.TYPE_DELETED) {
-                 Log.d(TAG, "Received a Data Deleted Event for path:" + path);
+                 if (tagEnabled(TAG)) Log.d(TAG, "Received a Data Deleted Event for path:" + path);
              } else {
-                 Log.d(TAG, "Received an unknown Data Event for path:" + path);
+                 if (tagEnabled(TAG)) Log.d(TAG, "Received an unknown Data Event for path:" + path);
              }
          }
      }
@@ -399,7 +401,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
              int permissionCheck = ContextCompat.checkSelfPermission(this,
                      permission);
              if (permissionCheck == android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                 Log.d(TAG, permission + " Granted");
+                 if (tagEnabled(TAG)) Log.d(TAG, permission + " Granted");
              } else {
                  //TODO: MUST INFORM USER!
                  Log.e(TAG, permission + " Denied!!");
@@ -415,7 +417,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
                              1234);
 
                  } else {
-                     Log.d(TAG, permission + " is a safe Permission");
+                     if (tagEnabled(TAG)) Log.d(TAG, permission + " is a safe Permission");
                      // No explanation needed, we can request the permission.
 
                      ActivityCompat.requestPermissions(this,

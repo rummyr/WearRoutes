@@ -56,8 +56,6 @@ public class RouteInfoFragment  extends Fragment{
         // and clear it from the shared prefs
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         editor.remove(WearUIKeys.HIDE_PREFIX + info.getName());
-        editor.commit();
-
-        String.valueOf(rv);
+        editor.apply();
     }
 }

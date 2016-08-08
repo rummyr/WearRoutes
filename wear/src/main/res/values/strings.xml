@@ -68,6 +68,10 @@
     <string name="hello_world">Hello World!</string>
     <string name="hidden">Hidden</string>
     <string name="hide">hide</string>
+    <string name="chronometerNotStarted">Not Started</string>
+    <string name="overview_of_the_route">Overview of the route</string>
+    <string name="delete_the_route_button">delete the route button</string>
+    <string name="recording">Recording</string>
 
 
 </resources>

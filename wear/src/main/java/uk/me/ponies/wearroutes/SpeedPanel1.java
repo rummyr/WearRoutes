@@ -16,22 +16,14 @@
 
 package uk.me.ponies.wearroutes;
 
-import android.app.Fragment;
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-
-
 import android.text.format.DateUtils;
-import android.transition.Transition;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
@@ -49,13 +41,15 @@ import java.util.TimeZone;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
-import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.UpdateDisplayedData;
 import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
 import uk.me.ponies.wearroutes.prefs.Keys;
+import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
+
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
-public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAmbientHandler {
+public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPagerListener, IAmbientHandler {
     private static final String TAG = "SpeedPanel1";
     //TextClock mClockView; // probably not required
     // mChronometer;
@@ -73,19 +67,22 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
     private final NumberFormat distanceFormatKM = new DecimalFormat("###.## " + KM);
     private final NumberFormat distanceFormatMiles = new DecimalFormat("###.## " + MILES);
     private final SimpleDateFormat chronometerTimeFormat = new SimpleDateFormat("HH:mm:ss");
-    {chronometerTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));}
+
+    {
+        chronometerTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+    }
+
     private String mSavedPreviousDistanceString = "-";
     private TableLayout mSpeedPanel1Table;
     private TextView mStaticClock; // only updated when we get a updateDisplayEvent
     private TextView mStaticChronometer; // only updated when we get a updateDisplayEvent
-    private boolean mVisibleToUser = true; // ?? by default assume we can be seen
     private Calendar mCalendar = Calendar.getInstance(); // to avoid needing to get one too often
     private Rect tmpVisibilityRect = new Rect();
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.speed_panel1, container, false);
         mSpeedPanel1Table = (TableLayout) v.findViewById(R.id.panelTableLayout);
@@ -95,12 +92,12 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
 //        mChronometer = ((Chronometer)v.findViewById(R.id.panel1Chronometer));
 //        mChronometer.setBase(SystemClock.elapsedRealtime() - 1000*60*60);
 
-        mSpeedInstant = (TextView)v.findViewById(R.id.panel1SpeedInstant);
-        mSpeedAverage = (TextView)v.findViewById(R.id.panel1SpeedAverage);
-        mDistance = (TextView)v.findViewById(R.id.panel1Distance);
+        mSpeedInstant = (TextView) v.findViewById(R.id.panel1SpeedInstant);
+        mSpeedAverage = (TextView) v.findViewById(R.id.panel1SpeedAverage);
+        mDistance = (TextView) v.findViewById(R.id.panel1Distance);
 
 
-        mStaticClock = (TextView)v.findViewById(R.id.panel1StaticClock);
+        mStaticClock = (TextView) v.findViewById(R.id.panel1StaticClock);
         mStaticChronometer = (TextView) v.findViewById(R.id.panel1StaticChronometer);
         // mChronometer.start();
         return v;
@@ -108,105 +105,8 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
 
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
-        Log.d(TAG,"onHiddenChanged called" );
-        super.onHiddenChanged(hidden);
-    }
-
-    @Override
-    public void setMenuVisibility(boolean menuVisible) {
-        Log.d(TAG,"setMenuVisibility called" );
-        super.setMenuVisibility(menuVisible);
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        Log.d(TAG,"setUserVisibleHint called" );
-        super.setUserVisibleHint(isVisibleToUser);
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        Log.d(TAG,"onAttach called" );
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onStart() {
-        Log.d(TAG,"onStart called" );
-        super.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        Log.d(TAG,"onStop called" );
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroy() {
-        Log.d(TAG,"onDestroy called" );
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDestroyView() {
-        Log.d(TAG,"onDestroyView called" );
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDetach() {
-        Log.d(TAG,"onDetach called" );
-        super.onDetach();
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Log.d(TAG,"onCreateOptionsMenu called" );
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        Log.d(TAG,"onPrepareOptionsMenu called" );
-        super.onPrepareOptionsMenu(menu);
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        Log.d(TAG,"onCreateContextMenu called" );
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
-
-    @Override
-    public void setEnterTransition(Transition transition) {
-        Log.d(TAG,"setEnterTransition called" );
-        super.setEnterTransition(transition);
-    }
-
-    @Override
-    public void setReturnTransition(Transition transition) {
-        Log.d(TAG,"setReturnTransition called" );
-        super.setReturnTransition(transition);
-    }
-
-    @Override
-    public void setExitTransition(Transition transition) {
-        Log.d(TAG,"setExitTransition called" );
-        super.setExitTransition(transition);
-    }
-
-    @Override
-    public void setReenterTransition(Transition transition) {
-        Log.d(TAG,"setReenterTransition called" );
-        super.setReenterTransition(transition);
-    }
-
-    @Override
     public void onPause() {
-        Log.d(TAG,"onPause called" );
+        if (tagEnabled(TAG)) Log.d(TAG, "onPause called");
         super.onPause();
         EventBus.getDefault().unregister(this);
         // should we also pause the Clock and Chronometer and so on?
@@ -214,38 +114,27 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
 
     @Override
     public void onResume() {
-        Log.d(TAG,"onResume called" );
+        if (tagEnabled(TAG)) Log.d(TAG, "onResume called");
         EventBus.getDefault().register(this);
         super.onResume();
     }
 
-//    public void startChronometer(long baseTime) {
-//        mChronometer.setBase(baseTime);
-//        mChronometer.start();
-//    }
-
-//    public void stopChronometer() {
-//        mChronometer.stop();
-//    }
 
     /* restarts the clock. This is CRUDELY done by setting the clock to VISIBLE */
     @Override
     public void onOnScreenPage() {
-        // mClockView.setVisibility(View.VISIBLE);
-        mSpeedInstant.setText(mSavedPreviousSpeedString); // restore this
-        mDistance.setText(mSavedPreviousDistanceString);
+        if (mSpeedInstant != null) {
+            mSpeedInstant.setText(mSavedPreviousSpeedString); // restore this
+        }
+        if (mDistance != null) {
+            mDistance.setText(mSavedPreviousDistanceString);
+        }
 
-        mVisibleToUser = true;
-        //TODO: perhaps simply call onResume?
     }
 
     @Override
     /* stops the clock. This is CRUDELY done by setting the clock to GONE */
     public void onOffScreenPage() {
-        //mClockView.setVisibility(View.GONE);
-        //TODO: perhaps simply call onPause?
-        mVisibleToUser = false;
-
     }
 
 
@@ -266,6 +155,7 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
             }
         }
     }
+
     @Override
     public void handleEnterAmbientEvent(Bundle ambientDetails) {
         // set colours to black on white
@@ -304,23 +194,20 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
     @Subscribe
     public void newLocation(LocationEvent locationEvent) {
         Location l = locationEvent.getLocation();
-        final String speedUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_SPEED_UNITS,Keys.KEY_PREF_SPEED_UNIT_KPH);
+        final String speedUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_SPEED_UNITS, Keys.KEY_PREF_SPEED_UNIT_KPH);
 
         final String speedString;
         if (l.hasSpeed()) {
             float speedMetersPerSecond = l.getSpeed();
             if (Keys.KEY_PREF_SPEED_UNIT_KPH.equals(speedUnits)) {
-                speedString = speedFormatKPH.format(speedMetersPerSecond * 3600/1000);
-            }
-            else {
+                speedString = speedFormatKPH.format(speedMetersPerSecond * 3600 / 1000);
+            } else {
                 speedString = speedFormatMPH.format(speedMetersPerSecond * 2.2369);
             }
-        }
-        else {
+        } else {
             if (Keys.KEY_PREF_SPEED_UNIT_KPH.equals(speedUnits)) {
                 speedString = "- " + KPH;
-            }
-            else {
+            } else {
                 speedString = "- " + MPH;
             }
         }
@@ -330,12 +217,15 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
         if (!speedString.equals(mSpeedInstant.getText())) {
             mSpeedInstant.setText(speedString);
         }
+
+        // when the location changes, *that* is when we update the GPS related data
+        updateGPSRelatedData();
     }
 
 
-    private  void updateDistanceAndAverageSpeed() {
-        final String distanceUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_DISTANCE_UNITS,Keys.KEY_PREF_DISTANCE_UNIT_KM);
-        final String speedUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_SPEED_UNITS,Keys.KEY_PREF_SPEED_UNIT_KPH);
+    private void updateGPSRelatedData() {
+        final String distanceUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_DISTANCE_UNITS, Keys.KEY_PREF_DISTANCE_UNIT_KM);
+        final String speedUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_SPEED_UNITS, Keys.KEY_PREF_SPEED_UNIT_KPH);
 
 
         LatLngLogger lll = Controller.getInstance().getLatLngLogger();
@@ -344,9 +234,8 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
 
         final String distanceString;
         if (Keys.KEY_PREF_DISTANCE_UNIT_KM.equals(distanceUnits)) {
-                distanceString = lll == null ? "N/A " + KM : distanceFormatKM.format(cumulativeDistanceMeters*0.001);
-        }
-        else {
+            distanceString = lll == null ? "N/A " + KM : distanceFormatKM.format(cumulativeDistanceMeters * 0.001);
+        } else {
             distanceString = lll == null ? "N/A " + MILES : distanceFormatMiles.format(cumulativeDistanceMeters * 0.000621371);
         }
 
@@ -359,52 +248,56 @@ public class SpeedPanel1 extends Fragment implements IGridViewPagerListener, IAm
         }
 
         // update average speed
-        double recordingTimeSeconds = Controller.getInstance().getRecordingDurationMs()/1000.0;
+        double recordingTimeSeconds = Controller.getInstance().getRecordingDurationMs() / 1000.0;
         double averageSpeedMetersPerSecond = cumulativeDistanceMeters / recordingTimeSeconds;
 
         final String avgSpeedString;
-         if (Keys.KEY_PREF_SPEED_UNIT_KPH.equals(speedUnits)) {
-                avgSpeedString = lll == null ? "N/A " + KPH : speedFormatKPH.format(averageSpeedMetersPerSecond * 3600/1000);
-            }
-            else {
-                avgSpeedString = lll == null ? "N/A " + MPH : speedFormatMPH.format(averageSpeedMetersPerSecond * 2.2369);
-            }
-        if (!avgSpeedString .equals(mSpeedAverage.getText())) {
+        if (Keys.KEY_PREF_SPEED_UNIT_KPH.equals(speedUnits)) {
+            avgSpeedString = lll == null ? "N/A " + KPH : speedFormatKPH.format(averageSpeedMetersPerSecond * 3600 / 1000);
+        } else {
+            avgSpeedString = lll == null ? "N/A " + MPH : speedFormatMPH.format(averageSpeedMetersPerSecond * 2.2369);
+        }
+        if (!avgSpeedString.equals(mSpeedAverage.getText())) {
             mSpeedAverage.setText(avgSpeedString);
         }
     }
 
 
     @Subscribe
-    public void event(UpdateDisplayedData notUsed) {
+    public void eventUpdateDisplayedData(UpdateDisplayedData notUsed) {
 
-        boolean isVisibleToUser = getView().getLocalVisibleRect(tmpVisibilityRect );
+        View v = getView();
+        if (v == null) {
+            return; // no view, can't update
+        }
+        boolean isVisibleToUser = v.getLocalVisibleRect(tmpVisibilityRect);
 
         // only if visible!!!
         if (!isVisibleToUser) {
             return;
         }
 
+        updateClockRelatedData();
 
 
+        // distance and avg speed are updated when the location changes
+
+    }// end eventUpdateDisplayedData
+
+    private void updateClockRelatedData() {
         //TODO: Localization for Clock
         mCalendar.setTimeInMillis(System.currentTimeMillis());
         mStaticClock.setText(android.text.format.DateFormat.format("HH:mm:ss", mCalendar));
-        // DateFormat mFormat = android.text.format.DateFormat.getTimeFormat(getActivity());
-//            mStaticClock.setText(mFormat.format(mCalendar.getTime()));
 
         long recordingDuration = Controller.getInstance().getRecordingDurationMs();
-        if (recordingDuration <=0) {
-            mStaticChronometer.setText("Not Started");
-        }
-        else {
-            CharSequence newText = DateUtils.formatElapsedTime(recordingDuration/1000);
+        if (recordingDuration <= 0) {
+            mStaticChronometer.setText(R.string.chronometerNotStarted);
+        } else {
+            CharSequence newText = DateUtils.formatElapsedTime(recordingDuration / 1000);
             if (!mStaticChronometer.getText().equals(newText)) {
                 mStaticChronometer.setText(newText);
             }
         }
-
-        updateDistanceAndAverageSpeed();
-    }// end eventUpdateDisplayedData
+    }
 
 }

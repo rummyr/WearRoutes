@@ -32,7 +32,7 @@ public class WearPreferenceScreen extends WearPreferenceItem {
         try {
             context.startActivity(intent);
         }catch(Exception e) {
-            Log.d("Cause", "", e.getCause());
+            Log.e("Cause", "", e.getCause());
             throw e;
         }
     }

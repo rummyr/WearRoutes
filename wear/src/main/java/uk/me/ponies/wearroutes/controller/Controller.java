@@ -1,8 +1,6 @@
 package uk.me.ponies.wearroutes.controller;
 
-import android.content.Context;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -11,8 +9,10 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import uk.me.ponies.wearroutes.MainGridPagerAdapter;
+import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.FlushLogsEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.UpdateDisplayedData;
@@ -21,25 +21,22 @@ import uk.me.ponies.wearroutes.historylogger.GPXLogger;
 import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
 
 /**
- * Created by rummy on 07/07/2016.
+ * Handles quite a lot of the coordination
  */
 public class Controller {
     private static final String TAG = Controller.class.getSimpleName();
     private static Controller instance;
     final MainGridPagerAdapter mPagerAdapter;
-    private Context mContext;
+
     private CSVLogger mCSVLogger;
     private GPXLogger mGPXLogger;
-    private final long UPDATE_INTERVAL_WHEN_ON = 1 * 1000;
-    private final long UPDATE_INTERVAL_WHEN_AMBIENT = 30 * 1000;
 
-    private long LOG_FLUSH_FREQUENCY_MS = 60*1000;
     private Ticker mUpdateDisplayTicker;
     private Ticker mFlushLogsTicker;
-    private FlushLogsEvent flushLogsEvent = new FlushLogsEvent();
+    private static final FlushLogsEvent FLUSH_LOGS_EVENT = new FlushLogsEvent();
     private Runnable sendFlushLogsEvent = new Runnable() { public void run() {
         if (EventBus.getDefault().hasSubscriberForEvent(FlushLogsEvent.class)) {
-            EventBus.getDefault().post(flushLogsEvent);
+            EventBus.getDefault().post(FLUSH_LOGS_EVENT);
         }}};
 
     @Nullable
@@ -59,7 +56,7 @@ public class Controller {
 
         instance.startUpdateDisplayEventTicker();
         instance.startFlushLogsTicker();
-        // register ourselves with the eventbus .. at a minimum we want to know when we go ambient
+        // register ourselves with the EventBus .. at a minimum we want to know when we go ambient
         EventBus.getDefault().register(instance);
 
     }
@@ -91,11 +88,11 @@ public class Controller {
 
         File logDir = new File(Environment.getExternalStorageDirectory().getPath() + "/wearRoutes/");
         if (!logDir.exists()) {
-            boolean ok = logDir.mkdirs();
-            String.valueOf(ok); // optimizer dead variable defeater for debugging
+            //noinspection ResultOfMethodCallIgnored
+            logDir.mkdirs();
         }
 
-        //DISABLED mCSVLogger = new CSVLogger(logDir); // mContext.getFilesDir());
+        //DISABLED mCSVLogger = new CSVLogger(logDir);
         mLatLngLogger = new LatLngLogger();
         mGPXLogger = new GPXLogger(logDir);
 
@@ -114,7 +111,6 @@ public class Controller {
         mPagerAdapter.getStartRecordingFragment().updateButton(State.recordingState);
         mPagerAdapter.getStopRecordingFragment().updateButton(State.recordingState);
         mPagerAdapter.getControlButtonsFragment().updatePage(State.recordingState);
-        // mPagerAdapter.getPanel1().stopChronometer();
         State.recordingEndTime = SystemClock.elapsedRealtime();
 
         //TODO: much more stuff here
@@ -132,23 +128,13 @@ public class Controller {
 
     }
 
-
-    private long getChronometerTimeBase() {
-        //TODO: fix this for "paused" calculations
-        return SystemClock.elapsedRealtime();
-    }
-
-    public void setContext(Context context) {
-        this.mContext = context;
-    }
-
     public void startUpdateDisplayEventTicker() {
         final UpdateDisplayedData mEvent = new UpdateDisplayedData();
         mUpdateDisplayTicker = new Ticker(new Runnable() { public void run() {
             if (EventBus.getDefault().hasSubscriberForEvent(UpdateDisplayedData.class)) {
                 EventBus.getDefault().post(mEvent);
             }
-        }},UPDATE_INTERVAL_WHEN_ON);
+        }}, TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_ON_SECS));
         mUpdateDisplayTicker.startTicker();
     }
 
@@ -158,9 +144,8 @@ public class Controller {
 
 
     public void startFlushLogsTicker() {
-        final FlushLogsEvent mEvent = new FlushLogsEvent();
-        mFlushLogsTicker = new Ticker(sendFlushLogsEvent,LOG_FLUSH_FREQUENCY_MS);
-            mFlushLogsTicker.startTicker();
+        mFlushLogsTicker = new Ticker(sendFlushLogsEvent, TimeUnit.SECONDS.toMillis(Options.LOG_FLUSH_FREQUENCY_SECS));
+        mFlushLogsTicker.startTicker();
     }
 
 
@@ -180,11 +165,11 @@ public class Controller {
     public void event(AmbientEvent evt) {
         switch (evt.getType()) {
             case AmbientEvent.ENTER: {
-                changeEventTickerFrequencyMs(UPDATE_INTERVAL_WHEN_AMBIENT);
+                changeEventTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_AMBIENT_SECS));
                 break;
             }
             case AmbientEvent.LEAVE: {
-                changeEventTickerFrequencyMs(UPDATE_INTERVAL_WHEN_ON);
+                changeEventTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_ON_SECS));
                 // and tickle the ticker
                 break;
             }

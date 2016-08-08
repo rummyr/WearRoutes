@@ -1,33 +1,27 @@
 package uk.me.ponies.wearroutes.historylogger;
 
 import android.location.Location;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
-
-import com.google.android.gms.maps.model.LatLng;
 
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import uk.me.ponies.wearroutes.eventBusEvents.FlushLogsEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
- * Created by rummy on 30/07/2016.
+ * Logs to an internal backlog and writes to a GPX file on an EventBus FlushLogsEvent
  */
 
-// TODO: only write on a timed interval
 public class GPXLogger {
     private final static String TAG = "GPXLogger";
     private boolean mIsLogging = false;
@@ -36,18 +30,17 @@ public class GPXLogger {
     private final SimpleDateFormat filenameFormatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
     private final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private final SimpleDateFormat ISODateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-    private final String GPXHEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+    private static final String GPXHEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
             + "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
             + " version=\"1.1\"\n"
             + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
             + " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\"\n"
             + " creator=\"wearRoutes\"\n>\n"
             ;
-    private final String TRK_HEADER = "<trk><name>2015-04-19-08-53-40</name><desc></desc><trkseg>";
-    private final String TRK_FOOTER = "</trkseg></trk></gpx>\n";
+    private static final String TRK_FOOTER = "</trkseg></trk></gpx>\n";
 
 
-    private List<Location> backlog = new ArrayList<>();
+    private final List<Location> backlog = new ArrayList<>();
 
     // possibly add in metadata e.g.
     // <metadata>
@@ -140,12 +133,12 @@ public class GPXLogger {
         writeLocations(copyOfBackLog);
     }
 
-    public void writeLocations(List<Location> locations) {
+    private void writeLocations(List<Location> locations) {
         if (locations == null || locations.isEmpty()) {
             return;
         }
 
-        RandomAccessFile out = null;
+        RandomAccessFile out;
         try {
             out = new RandomAccessFile(mLogFile, "rw");
             out.seek(out.length() - TRK_FOOTER.length()); // seek to before the footer
@@ -169,7 +162,7 @@ public class GPXLogger {
             }
             try {
                 out.writeBytes(line);
-                Log.d(TAG, "Written " + line);
+                if (tagEnabled(TAG))Log.d(TAG, "Written " + line);
             } catch (IOException ioe) {
                 //TODO: what do we want to do with a failed write?
                 Log.e(TAG, "failed to log " + line);
@@ -179,9 +172,10 @@ public class GPXLogger {
             out.writeBytes(TRK_FOOTER);
             out.close();
         } catch (IOException ioe) {
+            //TODO: what do we want to do with a failed write?
             Log.e(TAG, "IOException trying to write gpx end tag to output gpx." + ioe);
             return; // nothing more we can do!
         }
-    }
+    } // end writeLocations
 
 }

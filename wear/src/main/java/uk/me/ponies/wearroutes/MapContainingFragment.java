@@ -45,73 +45,18 @@ import java.lang.ref.WeakReference;
 
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.CPUMeasurer;
+import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
 
-public class MapContainingFragment extends Fragment {
-    private static final LatLng SHEFFIELD = new LatLng(53.5089423,-1.7025131);
-    private  View myMapFragment;
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
+public class MapContainingFragment extends FragmentLifecycleLogger {
+    private static final String TAG = MapContainingFragment.class.getSimpleName();
+    private static final LatLng SHEFFIELD = new LatLng(53.5089423, -1.7025131);
+    private View myMapFragment;
     String fragmentName;
     MapFragment innerMapFragment;
     private GoogleMap map;
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Log.d("Lifecycle", fragmentName + " " +"onCreateOptionsMenu called");
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        Log.d("Lifecycle", fragmentName + " " +"onPrepareOptionsMenu called");
-        super.onPrepareOptionsMenu(menu);
-    }
-
-    @Override
-    public void onDestroyOptionsMenu() {
-        Log.d("Lifecycle", fragmentName + " " +"onDestroyOptionsMenu called");
-        super.onDestroyOptionsMenu();
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        Log.d("Lifecycle", fragmentName + " " +"onCreateContextMenu called");
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
-
-    @Override
-    public void onViewStateRestored(Bundle savedInstanceState) {
-        Log.d("Lifecycle", fragmentName + " " +"onViewStateRestored called");
-        super.onViewStateRestored(savedInstanceState);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        Log.d("Lifecycle", fragmentName + " " +"onActivityCreated called");
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        Log.d("Lifecycle", fragmentName + " " +"onViewCreatedCalled");
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        Log.d("Lifecycle", fragmentName + " " +"onCreate called");
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
-        Log.d("Lifecycle", fragmentName + " " +"onInflate called");
-        super.onInflate(context, attrs, savedInstanceState);
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        Log.d("Lifecycle", fragmentName + " " +"onHiddenChanged called");
-        super.onHiddenChanged(hidden);
-    }
 
     //BUG: no way should this go live!
     private static int DBG_SLEEP_BETWEEN_STEPS = 0;
@@ -121,10 +66,11 @@ public class MapContainingFragment extends Fragment {
     private String timingLabel;
     private long startCPU;
     private long startTime;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        boolean sharedGMapFragments = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(Keys.KEY_DEVOPT_PERF_REUSE_GMAP_FRAGMENTS, false );
+        boolean sharedGMapFragments = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(Keys.KEY_DEVOPT_PERF_REUSE_GMAP_FRAGMENTS, false);
         // doesn't work, because there is NO action bar
         setHasOptionsMenu(true); // doesn't but allows us to track some more lifecycle events
         if (sharedGMapFragments) {
@@ -133,17 +79,19 @@ public class MapContainingFragment extends Fragment {
             return onCreateViewFragmentInLayout(inflater, container, savedInstanceState);
         }
     }
+
     // @Override
     public View onCreateViewFragmentInLayout(LayoutInflater inflater, ViewGroup container,
                                              Bundle savedInstanceState) {
-        Log.d("TAG", "MapContainingFragment " + fragmentName + " onCreateView called");
+        if (tagEnabled(TAG))
+            Log.d(TAG, "MapContainingFragment " + fragmentName + " onCreateView called");
         myMapFragment = null;
         if (myMapFragment == null) {
             myMapFragment = inflater.inflate(R.layout.mapfragment, container, false);
             // getFragmentManager().findFragmentById(R.id.mapfragment) returns null.
 
-            innerMapFragment =  (MapFragment) this.getChildFragmentManager().findFragmentById(R.id.mapfragment);
-            Log.d("TAG", "MapContainingFragment (not the view) is " + innerMapFragment );
+            innerMapFragment = (MapFragment) this.getChildFragmentManager().findFragmentById(R.id.mapfragment);
+            Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
 
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
             final boolean dontInitMap = prefs.getBoolean(Keys.KEY_DEVOPT_PERF_DONT_INIT_MAP, false);
@@ -162,7 +110,7 @@ public class MapContainingFragment extends Fragment {
             // this is probably where we'd ACTUALLY do fragment stuff perhaps .. not sure!
         }
         //  myMapFragment.setRetainInstance(true);
-        return  myMapFragment;
+        return myMapFragment;
         // return inflater.inflate(R.layout.mapfragment, container, false);
     }
 
@@ -183,14 +131,14 @@ public class MapContainingFragment extends Fragment {
     // @Override
     public View onCreateViewEmptyFragmentAddMapProgramatticaly(LayoutInflater inflater, ViewGroup container,
                                                                Bundle savedInstanceState) {
-        Log.d("TAG", "MapContainingFragment " + fragmentName + " onCreateView called");
+        Log.d(TAG, "MapContainingFragment " + fragmentName + " onCreateView called");
 
 
         //BEGIN("inflate self");
         myMapFragment = inflater.inflate(R.layout.emptyfragment, container, false);
         //END();
 
-        if (false){
+        if (false) {
             {
 
                 final boolean reusingInnerMapFragment;
@@ -200,15 +148,14 @@ public class MapContainingFragment extends Fragment {
                 //END();
 
                 if (GoogleMapFragmentPool.innerMapFragmentPool.isEmpty()) {
-                    Log.d("InnerMapFragment", "creating a new InnerMapFragment");
+                    if (tagEnabled(TAG)) Log.d(TAG, "creating a new InnerMapFragment");
                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
                     final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
 
                     GoogleMapOptions options;
                     if (!directionOfTravelUp) {
                         options = new GoogleMapOptions().liteMode(true);
-                    }
-                    else {
+                    } else {
                         options = new GoogleMapOptions();
                     }
                     //BEGIN("newInstance of Google MapFragment");
@@ -221,11 +168,10 @@ public class MapContainingFragment extends Fragment {
                     WeakReference<MapFragment> refToMap = new WeakReference<MapFragment>(innerMapFragment);
                     GoogleMapFragmentPool.googleMapFragmentRecording.put(String.valueOf(++GoogleMapFragmentPool.creationNumber), refToMap);
                     reusingInnerMapFragment = false;
-                }
-                else {
+                } else {
                     // get one from the pool
                     synchronized (GoogleMapFragmentPool.innerMapFragmentPool) {
-                        Log.d("InnerMapFragment", "getting an old InnerMapFragment");
+                        if (tagEnabled(TAG)) Log.d(TAG, "getting an old InnerMapFragment");
                         innerMapFragment = GoogleMapFragmentPool.getFragment();
                         map = GoogleMapFragmentPool.getMapForFragment(innerMapFragment);
                         mustGetMap = true;
@@ -243,7 +189,7 @@ public class MapContainingFragment extends Fragment {
 
                 int children = container.getChildCount();
                 String.valueOf(children);
-                for (int i=0;i<children;i++) {
+                for (int i = 0; i < children; i++) {
                     Object o = container.getChildAt(i);
                     String.valueOf(o);
                 }
@@ -251,13 +197,12 @@ public class MapContainingFragment extends Fragment {
                 // gcStopper.add(innerMapFragment);
 
 
-
-                Log.d("TAG", "MapContainingFragment (not the view) is " + innerMapFragment );
+                if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
                 final boolean dontInitMap = prefs.getBoolean(Keys.KEY_DEVOPT_PERF_DONT_INIT_MAP, false);
 
                 if (mustGetMap) { // we HAVE to get the map because we didn't get it from the pool
-                    Log.d("MAP", "CreateView " + fragmentName + " getting MapAsync ");
+                    if (tagEnabled(TAG)) Log.d(TAG, "CreateView " + fragmentName + " getting MapAsync ");
                     BEGIN("getting the map once");
                     innerMapFragment.getMapAsync(new OnMapReadyCallbackImpl());
                     // map = innerMapFragment.getMap();
@@ -272,11 +217,10 @@ public class MapContainingFragment extends Fragment {
                 this.setRetainInstance(true); // seems to stop map loading delay?
 
             }
-        }
-        else {
+        } else {
             myMapFragment = inflater.inflate(R.layout.emptyfragment, container, false);
 
-           // createInnerGoogleMapFragment();
+            // createInnerGoogleMapFragment();
         }
 
         this.setRetainInstance(true); // seems to help with map loading delay?
@@ -285,91 +229,86 @@ public class MapContainingFragment extends Fragment {
             // this is probably where we'd ACTUALLY do fragment stuff perhaps .. not sure!
         }
         //  myMapFragment.setRetainInstance(true);
-        Log.d("CPU", "CreateView completed");
-        return  myMapFragment;
+        if (tagEnabled(TAG)) Log.d(TAG, "CreateView completed");
+        return myMapFragment;
         // return inflater.inflate(R.layout.mapfragment, container, false);
     }
 
 
-private void createInnerGoogleMapFragment() {
+    private void createInnerGoogleMapFragment() {
 
-    final boolean reusingInnerMapFragment;
-    final boolean mustGetMap;
-    //BEGIN("inflate self");
-    //myMapFragment = inflater.inflate(R.layout.emptyfragment, container, false);
-    //END();
-
-    if (GoogleMapFragmentPool.innerMapFragmentPool.isEmpty()) {
-        Log.d("InnerMapFragment", "creating a new InnerMapFragment");
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
-
-        GoogleMapOptions options;
-        if (!directionOfTravelUp) {
-            options = new GoogleMapOptions().liteMode(true);
-        }
-        else {
-            options = new GoogleMapOptions();
-        }
-        //BEGIN("newInstance of Google MapFragment");
-        innerMapFragment = MapFragment.newInstance(options);
+        final boolean reusingInnerMapFragment;
+        final boolean mustGetMap;
+        //BEGIN("inflate self");
+        //myMapFragment = inflater.inflate(R.layout.emptyfragment, container, false);
         //END();
 
-        mustGetMap = true;
-        // setupMap will be called from the callback
+        if (GoogleMapFragmentPool.innerMapFragmentPool.isEmpty()) {
+            if (tagEnabled(TAG)) Log.d(TAG, "creating a new InnerMapFragment");
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
 
-        WeakReference<MapFragment> refToMap = new WeakReference<MapFragment>(innerMapFragment);
-        GoogleMapFragmentPool.googleMapFragmentRecording.put(String.valueOf(++GoogleMapFragmentPool.creationNumber), refToMap);
-        reusingInnerMapFragment = false;
-    }
-    else {
-        // get one from the pool
-        synchronized (GoogleMapFragmentPool.innerMapFragmentPool) {
-            Log.d("InnerMapFragment", "getting an old InnerMapFragment");
-            innerMapFragment = GoogleMapFragmentPool.getFragment();
-            map = GoogleMapFragmentPool.getMapForFragment(innerMapFragment);
+            GoogleMapOptions options;
+            if (!directionOfTravelUp) {
+                options = new GoogleMapOptions().liteMode(true);
+            } else {
+                options = new GoogleMapOptions();
+            }
+            //BEGIN("newInstance of Google MapFragment");
+            innerMapFragment = MapFragment.newInstance(options);
+            //END();
+
             mustGetMap = true;
-            reusingInnerMapFragment = true;
+            // setupMap will be called from the callback
+
+            WeakReference<MapFragment> refToMap = new WeakReference<MapFragment>(innerMapFragment);
+            GoogleMapFragmentPool.googleMapFragmentRecording.put(String.valueOf(++GoogleMapFragmentPool.creationNumber), refToMap);
+            reusingInnerMapFragment = false;
+        } else {
+            // get one from the pool
+            synchronized (GoogleMapFragmentPool.innerMapFragmentPool) {
+                if (tagEnabled(TAG)) Log.d(TAG, "getting an old InnerMapFragment");
+                innerMapFragment = GoogleMapFragmentPool.getFragment();
+                map = GoogleMapFragmentPool.getMapForFragment(innerMapFragment);
+                mustGetMap = true;
+                reusingInnerMapFragment = true;
+            }
         }
+
+        // Then we add it using a FragmentTransaction.
+        //BEGIN("add Google Map Fragment to self");
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        //fragmentTransaction.add(R.id.emptyFragment, innerMapFragment); // could name it I suppose
+        fragmentTransaction.add(R.id.emptyFragment, innerMapFragment); // could name it I suppose
+        fragmentTransaction.commit();
+        //END();
+
+
+        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final boolean dontInitMap = prefs.getBoolean(Keys.KEY_DEVOPT_PERF_DONT_INIT_MAP, false);
+
+        if (mustGetMap) { // we HAVE to get the map because we didn't get it from the pool
+            if (tagEnabled(TAG)) Log.d(TAG, "CreateView " + fragmentName + " getting MapAsync ");
+            BEGIN("getting the map once");
+            innerMapFragment.getMapAsync(new OnMapReadyCallbackImpl());
+            // map = innerMapFragment.getMap();
+            END();
+            //BUG: get async! innerMapFragment.getMapAsync(new OnMapReadyCallbackImpl());
+        } else {
+            setupMap();
+        }
+
+        // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
+        // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
+        this.setRetainInstance(true); // seems to stop map loading delay?
+
     }
-
-    // Then we add it using a FragmentTransaction.
-    //BEGIN("add Google Map Fragment to self");
-    FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-    //fragmentTransaction.add(R.id.emptyFragment, innerMapFragment); // could name it I suppose
-    fragmentTransaction.add(R.id.emptyFragment, innerMapFragment); // could name it I suppose
-    fragmentTransaction.commit();
-    //END();
-
-
-
-
-
-    Log.d("TAG", "MapContainingFragment (not the view) is " + innerMapFragment );
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-    final boolean dontInitMap = prefs.getBoolean(Keys.KEY_DEVOPT_PERF_DONT_INIT_MAP, false);
-
-    if (mustGetMap) { // we HAVE to get the map because we didn't get it from the pool
-        Log.d("MAP", "CreateView " + fragmentName + " getting MapAsync ");
-        BEGIN("getting the map once");
-        innerMapFragment.getMapAsync(new OnMapReadyCallbackImpl());
-        // map = innerMapFragment.getMap();
-        END();
-        //BUG: get async! innerMapFragment.getMapAsync(new OnMapReadyCallbackImpl());
-    } else {
-        setupMap();
-    }
-
-    // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
-    // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
-    this.setRetainInstance(true); // seems to stop map loading delay?
-
-}
 
 
     private void BEGIN(String s) {
         timingLabel = s;
-        Log.d("CPU", "Beginning step " + s);
+        if (tagEnabled(TAG)) Log.d(TAG, "Beginning step " + s);
         startCPU = CPUMeasurer.currentCPUUsed();
         startTime = System.currentTimeMillis();
     }
@@ -377,11 +316,11 @@ private void createInnerGoogleMapFragment() {
     private void END() {
         long endTime = System.currentTimeMillis();
         long endCPU = CPUMeasurer.currentCPUUsed();
-        Log.d("CPU", "Step " + timingLabel + " ENDED used " + (endCPU - startCPU) + " took " + (endTime - startTime));
+        if (tagEnabled(TAG)) Log.d(TAG, "Step " + timingLabel + " ENDED used " + (endCPU - startCPU) + " took " + (endTime - startTime));
 
         if (DBG_SLEEP_BETWEEN_STEPS > 0) {
             try {
-                Thread.sleep(DBG_SLEEP_BETWEEN_STEPS/2);
+                Thread.sleep(DBG_SLEEP_BETWEEN_STEPS / 2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -391,7 +330,7 @@ private void createInnerGoogleMapFragment() {
             //    Math.sqrt(Math.PI);
             //}
             try {
-                Thread.sleep(DBG_SLEEP_BETWEEN_STEPS/2);
+                Thread.sleep(DBG_SLEEP_BETWEEN_STEPS / 2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -399,21 +338,10 @@ private void createInnerGoogleMapFragment() {
 
     }
 
-    @Override
-    public void onAttach(Context context) {
-        Log.d("Lifecycle", fragmentName + " " +"MapContainingFragment:" + fragmentName + " onAttach called");
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onDetach() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onDetach called");
-        super.onDetach();
-    }
 
     @Override
     public void onStart() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onStart called with zoom:" + zoom);
+        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onStart called with zoom:" + zoom);
         BEGIN("onStart");
         super.onStart();
         END();
@@ -422,7 +350,8 @@ private void createInnerGoogleMapFragment() {
     @Override
     public void onResume() {
         BEGIN("onResume");
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onResume called, visible is " + isVisible());
+        if (tagEnabled(TAG))
+            Log.d(TAG, "MapContainingFragment:" + fragmentName + " onResume called, visible is " + isVisible());
         super.onResume();
         createInnerGoogleMapFragment();
         END();
@@ -430,7 +359,8 @@ private void createInnerGoogleMapFragment() {
 
     @Override
     public void onPause() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onPause called");
+        if (tagEnabled(TAG))
+            Log.d(TAG, "MapContainingFragment:" + fragmentName + " onPause called");
         // removing fragment here causes:
         removeInnerMapAndReturnToPool();
         super.onPause();
@@ -438,21 +368,16 @@ private void createInnerGoogleMapFragment() {
 
     @Override
     public void onStop() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onStop called");
+        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onStop called");
         // remove and pool works but dies if another app is opened!
         // fragmentManager reports: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
         super.onStop();
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onSaveInstanceState called");
-        super.onSaveInstanceState(outState);
-    }
 
     @Override
     public void onDestroyView() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onDestroyView called");
+        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onDestroyView called");
         // could potentially remove our inner map fragment here, seems to work
         //NOTE: leaking memory like crazy when switch between apps?!
         //removeInnerMapAndReturnToPool();
@@ -462,7 +387,7 @@ private void createInnerGoogleMapFragment() {
 
     @Override
     public void onDestroy() {
-        Log.d("Lifecycle","MapContainingFragment:"  + fragmentName + " onDestroy called");
+        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onDestroy called");
         // cant remove the innerMap here .. get an exception
         super.onDestroy();
     }
@@ -472,9 +397,9 @@ private void createInnerGoogleMapFragment() {
     }
 
     private void removeInnerMapAndReturnToPool() {
-        boolean sharedGMapFragments = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(Keys.KEY_DEVOPT_PERF_REUSE_GMAP_FRAGMENTS, false );
+        boolean sharedGMapFragments = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(Keys.KEY_DEVOPT_PERF_REUSE_GMAP_FRAGMENTS, false);
         if (sharedGMapFragments) {
-            Log.d("InnerMapFragment", "Removing inner map");
+            if (tagEnabled(TAG)) Log.d(TAG, "Removing inner map");
             FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
             fragmentTransaction.remove(innerMapFragment);
             fragmentTransaction.commit();
@@ -486,13 +411,14 @@ private void createInnerGoogleMapFragment() {
 
 
     public void onEnterAmbient(Bundle ambientDetails) {
-        Log.d("TAG", "Fragment:" + fragmentName + " onEnterAmbient");
+        if (tagEnabled(TAG)) Log.d(TAG, "Fragment:" + fragmentName + " onEnterAmbient");
         if (innerMapFragment != null) {
             innerMapFragment.onEnterAmbient(ambientDetails);
         }
     }
+
     public void onExitAmbient() {
-        Log.d("TAG", "Fragment:" + fragmentName + " onExitAmbient");
+        if (tagEnabled(TAG)) Log.d(TAG, "Fragment:" + fragmentName + " onExitAmbient");
 
         if (innerMapFragment != null) {
             innerMapFragment.onExitAmbient();
@@ -506,13 +432,12 @@ private void createInnerGoogleMapFragment() {
             setupMap();
 
 
-
         }// end onMapReady
     }
 
     // we may not have had to get the map, but we still need to set zoom etc
     public void setupMap() {
-        Log.d("MAP", "SetupMap Called " + fragmentName);
+        if (tagEnabled(TAG)) Log.d(TAG, "SetupMap Called " + fragmentName);
         BEGIN("Setting up the Map, not moving camera");
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String whenOnMapShowsVal = prefs.getString(Keys.KEY_WEAR_WHEN_ON_MAP_SHOWS, Keys.MAP_TRACK_VAL);
@@ -521,8 +446,7 @@ private void createInnerGoogleMapFragment() {
 
         if (showGrid) {
             map.setMapType(GoogleMap.MAP_TYPE_NONE);
-        }
-        else {
+        } else {
             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
 
@@ -538,16 +462,16 @@ private void createInnerGoogleMapFragment() {
         CameraUpdate cam = CameraUpdateFactory.newCameraPosition(camPos);
 
 
-
         map.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
-                Log.d("TAG", "Camera Changed for Map " + fragmentName);
+                if (tagEnabled(TAG)) Log.d(TAG, "Camera Changed for Map " + fragmentName);
 
                 map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
                     @Override
                     public void onMapLoaded() {
-                        Log.d("MAP", "MapContainingFragment" + fragmentName + " Loaded");
+                        if (tagEnabled(TAG))
+                            Log.d(TAG, "MapContainingFragment" + fragmentName + " Loaded");
                         View view = getView();
                         TextView t;
                         if (view != null) {
@@ -570,7 +494,8 @@ private void createInnerGoogleMapFragment() {
         });// end setCameraChangedListener
 
         // map.animateCamera(cam);
-        Log.d("MAP", "SetupMap " + fragmentName + " moving camera to zoom" + zoom);
+        if (tagEnabled(TAG))
+            Log.d(TAG, "SetupMap " + fragmentName + " moving camera to zoom" + zoom);
 
         END();
         BEGIN("Moving Camera..possibly");
@@ -589,10 +514,12 @@ private void createInnerGoogleMapFragment() {
                     .build();
 
             CameraUpdate cam = CameraUpdateFactory.newCameraPosition(camPos);
-            Log.d("MAP", "setZoom " + fragmentName + " moving camera to zoom" + zoom);
+            if (tagEnabled(TAG))
+                Log.d(TAG, "setZoom " + fragmentName + " moving camera to zoom" + zoom);
             map.moveCamera(cam);
         }
     }
+
     public int getZoom() {
         return zoom;
     }

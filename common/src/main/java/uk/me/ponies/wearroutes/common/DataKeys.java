@@ -1,7 +1,7 @@
 package uk.me.ponies.wearroutes.common;
 
 /**
- * Created by rummy on 06/07/2016.
+ * Keys used when transferring data via the Data API
  */
 public class DataKeys {
     public static final String DATA_KEY_NAME ="Name" ;

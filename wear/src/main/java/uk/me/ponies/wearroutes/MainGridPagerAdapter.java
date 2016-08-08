@@ -26,6 +26,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.LruCache;
@@ -33,6 +34,7 @@ import android.support.wearable.view.CardFragment;
 import android.support.wearable.view.FragmentGridPagerAdapter;
 import android.support.wearable.view.GridPagerAdapter;
 import android.support.wearable.view.GridViewPager;
+import android.util.DebugUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,21 +52,24 @@ import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStartFragment;
 import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStopFragment;
 import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStopResumeFragment;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Constructs fragments as requested by the GridViewPager. For each row a different background is
  * provided.
- * <p>
+ * <p/>
  * Always avoid loading resources from the main thread. In this sample, the background images are
  * loaded from an background task and then updated using {@link #notifyRowBackgroundChanged(int)}
  * and {@link #notifyPageBackgroundChanged(int, int)}.
  */
 public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
     private static final int TRANSITION_DURATION_MILLIS = 100;
+    private static String TAG = "MainGridPagerAdapter";
     private final ActionPageStartFragment mStartCard;
     private final ActionPageStopFragment mStopCard;
     private final ActionPageControlButtonsFragment mControlButtonsCard;
     private final SpeedPanel1 mPanel1;
-    int ONE_MAP_AND_ZOOM_ROW =-1;
+    int ONE_MAP_AND_ZOOM_ROW = -1;
     ColumnHistorian mHistorian;
     private final Context mContext;
     private List<Row> mRows;
@@ -74,7 +79,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
     @Override
     protected void applyItemPosition(Object object, Point position) {
-        Log.d("TAG", "GridPageAdapter, applyItemPosition called for " + object + " position " + position);
+        if (tagEnabled(TAG)) Log.d(TAG, "GridPageAdapter, applyItemPosition called for " + object + " position " + position);
         super.applyItemPosition(object, position);
     }
 
@@ -112,24 +117,28 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
         mRows.add(new Row(
                 mPanel1,
-                CardFragment.create("Information Row","This would show speed etc")
+                CardFragment.create("Information Row", "This would show speed etc")
         ));
 
         mRows.add(new Row(
                 mf00
         ));
-        ONE_MAP_AND_ZOOM_ROW= mRows.size()-1;
+        ONE_MAP_AND_ZOOM_ROW = mRows.size() - 1;
 
-        mRows.add(new Row(CardFragment.create("Tutorial","Possibly put a start tutorial item here?")));
+        mRows.add(new Row(CardFragment.create("Tutorial", "Possibly put a start tutorial item here?")));
 
 
-        CardFragment lastCard = (CardFragment)cardFragment(R.string.dismiss_title, R.string.dismiss_text);
+        CardFragment lastCard = (CardFragment) cardFragment(R.string.dismiss_title, R.string.dismiss_text);
         mRows.add(new Row(lastCard));
 
 
-
-        mDefaultBg = new ColorDrawable(R.color.dark_grey);
-        mClearBg = new ColorDrawable(android.R.color.transparent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            mDefaultBg = new ColorDrawable(ctx.getResources().getColor(R.color.dark_grey, ctx.getTheme()));
+            mClearBg = new ColorDrawable(ctx.getResources().getColor(android.R.color.transparent, ctx.getTheme()));
+        } else {
+            mDefaultBg = new ColorDrawable(ctx.getResources().getColor(R.color.dark_grey));
+            mClearBg = new ColorDrawable(ctx.getResources().getColor(android.R.color.transparent));
+        }
 
 
     }
@@ -141,7 +150,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
             new DrawableLoadingTask(mContext) {
                 @Override
                 protected void onPostExecute(Drawable result) {
-                    TransitionDrawable background = new TransitionDrawable(new Drawable[] {
+                    TransitionDrawable background = new TransitionDrawable(new Drawable[]{
                             mDefaultBg,
                             result
                     });
@@ -163,7 +172,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
                 new DrawableLoadingTask(mContext) {
                     @Override
                     protected void onPostExecute(Drawable result) {
-                        TransitionDrawable background = new TransitionDrawable(new Drawable[] {
+                        TransitionDrawable background = new TransitionDrawable(new Drawable[]{
                                 mClearBg,
                                 result
                         });
@@ -188,7 +197,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
         return fragment;
     }
 
-    static final int[] BG_IMAGES = new int[] {
+    static final int[] BG_IMAGES = new int[]{
             R.drawable.debug_background_1,
             R.drawable.debug_background_2,
             R.drawable.debug_background_3,
@@ -199,7 +208,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
     public void onEnterAmbient(Bundle ambientDetails) {
         Set<Fragment> visited = new HashSet<>();
         for (Row r : mRows) {
-            for (int i = 0;i<r.getColumnCount();i++) {
+            for (int i = 0; i < r.getColumnCount(); i++) {
                 Fragment f = r.getColumn(i);
                 if (!visited.contains(f)) {
                     if (f instanceof MapContainingFragment) {
@@ -218,7 +227,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
     public void onExitAmbient() {
         Set<Fragment> visited = new HashSet<>();
         for (Row r : mRows) {
-            for (int i = 0;i<r.getColumnCount();i++) {
+            for (int i = 0; i < r.getColumnCount(); i++) {
                 Fragment f = r.getColumn(i);
                 if (!visited.contains(f)) {
                     if (f instanceof MapContainingFragment) {
@@ -231,16 +240,18 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
                     }
                 }
             }
-        }    }
+        }
+    }
 
     /* so it can be added to appropriate listeners.
     Though it may be better if the fragment does all of this itself!
      */
-    public @Nullable MapSwipeToZoomFragment getMapFragment() {
+    public
+    @Nullable
+    MapSwipeToZoomFragment getMapFragment() {
         if (ONE_MAP_AND_ZOOM_ROW >= 0) {
             return (MapSwipeToZoomFragment) getFragment(ONE_MAP_AND_ZOOM_ROW, 0);
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -248,6 +259,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
     public ActionPageFragment getStartRecordingFragment() {
         return mStartCard;
     }
+
     public ActionPageFragment getStopRecordingFragment() {
         return mStopCard;
     }
@@ -260,7 +272,9 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
         return mPanel1;
     }
 
-    /** A convenient container for a row of fragments. */
+    /**
+     * A convenient container for a row of fragments.
+     */
     private class Row {
         final List<Fragment> columns = new ArrayList<>();
 
@@ -285,17 +299,16 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
     @Override
     public Fragment getFragment(int row, int col) {
-        Log.d("TAG", "getFragment called for row:" + row + " column:" + col);
+        if (tagEnabled(TAG))            Log.d(TAG, "getFragment called for row:" + row + " column:" + col);
         Row adapterRow = mRows.get(row);
         Fragment nextFragment = adapterRow.getColumn(col);
         if (nextFragment instanceof MapContainingFragment) {
             // remove from the current and return;
             //  possibly FragmentManager.
-            ((MapContainingFragment) nextFragment).zoom = col+5;
+            ((MapContainingFragment) nextFragment).zoom = col + 5;
             if (row == UNTILTED_ROW) {
                 ((MapContainingFragment) nextFragment).tilt = 0;
-            }
-            else if (row == TILTED_ROW){
+            } else if (row == TILTED_ROW) {
                 ((MapContainingFragment) nextFragment).tilt = 70; // actually clamped by zoom to less than this 30 .. 67.5 in fact
             }
 
@@ -318,14 +331,14 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
             //noinspection ConstantConditions
             if (false && prev instanceof MapContainingFragment) {
                 // lets see if we can remove it!
-                MapContainingFragment prevMF = (MapContainingFragment)prev;
+                MapContainingFragment prevMF = (MapContainingFragment) prev;
                 prevMF.getChildFragmentManager().beginTransaction().remove(prevMF.innerMapFragment).commit();
                 // prev.getChildFragmentManager().beginTransaction().replace(mRows.get(1).getColumn(1)).commit();
             }
             //noinspection ConstantConditions
             if (false && next instanceof MapContainingFragment) {
                 // lets see if we can remove it!
-                MapContainingFragment nextMF = (MapContainingFragment)next;
+                MapContainingFragment nextMF = (MapContainingFragment) next;
                 nextMF.getChildFragmentManager().beginTransaction().remove(nextMF.innerMapFragment).commit();
                 // prev.getChildFragmentManager().beginTransaction().replace(mRows.get(1).getColumn(1)).commit();
             }
@@ -378,38 +391,38 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
         @Override
         protected Drawable doInBackground(Integer... params) {
-            Log.d(TAG, "Loading asset 0x" + Integer.toHexString(params[0]));
+            if (tagEnabled(TAG))Log.d(TAG, "Loading asset 0x" + Integer.toHexString(params[0]));
             return context.getResources().getDrawable(params[0]);
         }
     }
 
     @Override
     public void startUpdate(ViewGroup container) {
-        Log.d("TAG", "GridPagerAdapter: startUpdate Called id:" + container.getId());
+        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: startUpdate Called id:" + container.getId());
         super.startUpdate(container);
     }
 
     @Override
     public void finishUpdate(ViewGroup container) {
-        Log.d("TAG", "GridPagerAdapter: finishUpdate Called id:" + container.getId());
+        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: finishUpdate Called id:" + container.getId());
         super.finishUpdate(container);
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        //Log.d("TAG", "isViewFromObject called");
+        //if (tagEnabled(TAG)) Log.d(TAG, "isViewFromObject called");
         return super.isViewFromObject(view, object);
     }
 
     @Override
     public Fragment findExistingFragment(int row, int column) {
-        Log.d("TAG", "GridPagerAdapter: findExistingFragment " + row + "," + column + " called");
+        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: findExistingFragment " + row + "," + column + " called");
         return super.findExistingFragment(row, column);
     }
 
     @Override
     public int getCurrentColumnForRow(int row, int currentColumn) {
-        /// Log.d("TAG", "GridPagerAdapter: getCurrentColumnForRow" + row + "," + currentColumn + " called - it is to find is a scroll up/down doesn't go to the first column");
+        /// if (tagEnabled(TAG))Log.d(TAG, "GridPagerAdapter: getCurrentColumnForRow" + row + "," + currentColumn + " called - it is to find is a scroll up/down doesn't go to the first column");
         // return super.getCurrentColumnForRow(row, currentColumn);
         return mHistorian.getColumnForRow(row);
     }
@@ -418,19 +431,20 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
         mHistorian = historian;
 
         // register that these 2 rows are in fact synchronised
-        if (UNTILTED_ROW >=0 && TILTED_ROW >=0 && UNTILTED_ROW != TILTED_ROW)
-            mHistorian.setSyncedRows(UNTILTED_ROW,UNTILTED_ROW+1);
-    }
-    public ColumnHistorian  getColumnHistorian() {
-        return mHistorian;
+        if (UNTILTED_ROW >= 0 && TILTED_ROW >= 0 && UNTILTED_ROW != TILTED_ROW)
+            mHistorian.setSyncedRows(UNTILTED_ROW, UNTILTED_ROW + 1);
     }
 
+    public ColumnHistorian getColumnHistorian() {
+        return mHistorian;
+    }
 
 
     /**
      * Created by rummy on 22/06/2016.
      */
-    public class ColumnHistorian implements GridViewPager.OnPageChangeListener{
+    public class ColumnHistorian implements GridViewPager.OnPageChangeListener {
+        private String TAG = "ColumnHistorian";
         HashMap<Integer, Integer> history = new HashMap<>();
 
         HashMap<Integer, Integer> syncThisRowWithThat = new HashMap<>();
@@ -439,14 +453,14 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
         @Override
         public void onPageScrolled(int positionX, int positionY, float offsetX, float offsetY, int offsetLeftPx, int offsetTopPx) {
-            Log.d("TAG", "onPageScrolled: Pos:" + positionX + "," + positionY
-                    + " Off:" + offsetX+","+offsetY
-                    +"PxLeftTopOff:" + offsetLeftPx + "," + offsetTopPx);
+            if (tagEnabled(TAG)) Log.d(TAG, "onPageScrolled: Pos:" + positionX + "," + positionY
+                    + " Off:" + offsetX + "," + offsetY
+                    + "PxLeftTopOff:" + offsetLeftPx + "," + offsetTopPx);
         }
 
         @Override
         public void onPageSelected(int row, int column) {
-            Log.d("ColumnHistorian", "Selected Page is " + row + "," + column);
+            if (tagEnabled(TAG)) Log.d(TAG, "Selected Page is " + row + "," + column);
             history.put(row, column);
             if (syncThatRowWithThis.containsKey(row)) {
                 history.put(syncThatRowWithThis.get(row), column);
@@ -471,11 +485,12 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
         }
 
         @Override
-        public void onPageScrollStateChanged(int state) {}
+        public void onPageScrollStateChanged(int state) {
+        }
 
-        public void setSyncedRows(int thisRow, int thatRow){
-            syncThisRowWithThat.put(thisRow,thatRow);
-            syncThatRowWithThis.put(thatRow,thisRow);
+        public void setSyncedRows(int thisRow, int thatRow) {
+            syncThisRowWithThat.put(thisRow, thatRow);
+            syncThatRowWithThis.put(thatRow, thisRow);
         }
 
         public void setPager(GridViewPager pager) {
@@ -489,7 +504,7 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
             // zoom out change when first column is selected
             // really need to work on this UI component!
             if ((column == 0 || column == 2)
-                    && (row == ONE_MAP_AND_ZOOM_ROW)){
+                    && (row == ONE_MAP_AND_ZOOM_ROW)) {
 
                 final int newColumn;
                 if (column == 0) {
@@ -503,23 +518,20 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
                     MapSwipeToZoomFragment mCFrag = (MapSwipeToZoomFragment) f;
                     final int newZoom;
                     if (column == 0) {
-                        newZoom = mCFrag.getZoom()-1;
-                    }
-                    else {
-                        newZoom = mCFrag.getZoom()+1;
+                        newZoom = mCFrag.getZoom() - 1;
+                    } else {
+                        newZoom = mCFrag.getZoom() + 1;
                     }
 
-                    Log.d("ColumnHistorian", "Zooming " + mCFrag.fragmentName + " to zoom:" + newZoom);
+                    if (tagEnabled(TAG))                        Log.d(TAG, "Zooming " + mCFrag.fragmentName + " to zoom:" + newZoom);
                     mCFrag.setZoom(newZoom);
                     if (mPager != null) {
                         // mPager.scrollTo(column + 1,row); // yes, X,Y - column, row!
-                    }else
-                    {
+                    } else {
                         Log.w("ColumnHistorian", "No pager set");
                     }
                     return new Point(newColumn, row);
-                }
-                else {
+                } else {
                     Log.e("ColumnHistorian", "Card to right is not a map fragment!");
                 }
 
@@ -527,7 +539,6 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
             return null;
         } // end detectAndZoom
     }// end Column Historian
-
 
 
 }

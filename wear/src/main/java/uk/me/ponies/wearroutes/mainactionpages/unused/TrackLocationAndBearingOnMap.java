@@ -13,6 +13,8 @@ import java.lang.ref.WeakReference;
 
 import uk.me.ponies.wearroutes.Options;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Created by rummy on 16/05/2016.
  */
@@ -31,7 +33,7 @@ public class TrackLocationAndBearingOnMap implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        Log.d(TAG, "onLocationChanged Called with " + location);
+        if (tagEnabled(TAG)) Log.d(TAG, "onLocationChanged Called with " + location);
 
         // quick check, if our map has dissapeared!!!
         GoogleMap osmDMap = mapRef.get();

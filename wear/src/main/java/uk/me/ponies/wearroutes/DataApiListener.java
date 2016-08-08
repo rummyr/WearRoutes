@@ -24,6 +24,8 @@ import java.util.Date;
 import uk.me.ponies.wearroutes.common.DataKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Created by rummy on 02/07/2016.
  */
@@ -39,13 +41,13 @@ class DataApiListener implements DataApi.DataListener {
 
     //@Override
     public void onDataChanged(DataEventBuffer dataEvents) {
-        Log.d(TAG, "onDataChanged(): " + dataEvents);
+        if (tagEnabled(TAG)) Log.d(TAG, "onDataChanged(): " + dataEvents);
 
         for (DataEvent event : dataEvents) {
             String path = event.getDataItem().getUri().getPath();
-            Log.d(TAG, "DataItem URI is" + event.getDataItem().getUri());
+            if (tagEnabled(TAG)) Log.d(TAG, "DataItem URI is" + event.getDataItem().getUri());
             if (event.getType() == DataEvent.TYPE_CHANGED) {
-                Log.d(TAG, "Received a Data Changed Event for path:" + path);
+                if (tagEnabled(TAG)) Log.d(TAG, "Received a Data Changed Event for path:" + path);
                 if ("/WearRoutes/addRoute".equals(path)) {
 
 
@@ -58,16 +60,14 @@ class DataApiListener implements DataApi.DataListener {
                     final Date receivedDate;
                     if (dateReceived <= 0) {
                         receivedDate = new Date();
-                    }
-                    else {
+                    } else {
                         receivedDate = new Date(dateReceived);
                     }
 
                     String polyLineStr;
                     if (true) {
                         polyLineStr = dataMapItem.getDataMap().getString(DataKeys.DATA_KEY_ENCODED_POLYLINE_STR);
-                    }
-                    else {
+                    } else {
                         byte[] marshalledData = dataMapItem.getDataMap()
                                 .getByteArray("LatLngList");
                         final Parcel parcel = Parcel.obtain();
@@ -75,15 +75,13 @@ class DataApiListener implements DataApi.DataListener {
                         //TODO: is this really important, apparently it is
                         // TODO: STOP abusing parcel
                         parcel.setDataPosition(0); // this is extremely important!
-                        ArrayList<LatLng> myList= new ArrayList<>();
+                        ArrayList<LatLng> myList = new ArrayList<>();
                         parcel.readList(myList, this.getClass().getClassLoader());
                         parcel.recycle();
                         polyLineStr = PolyUtil.encode(myList);
 
-                        Log.d(TAG, "Recieved " + name + " With " + myList.size() + " points");
+                        if (tagEnabled(TAG)) Log.d(TAG, "Received " + name + " With " + myList.size() + " points");
                     }
-
-
 
 
                     //TODO: persist to cache?
@@ -95,8 +93,8 @@ class DataApiListener implements DataApi.DataListener {
                         baseName = name + ".route";
                     }
 
-                    File routeFilename = new File(storageDirectory,baseName);
-                    StoredRoute data=new StoredRoute(name, receivedDate, polyLineStr);
+                    File routeFilename = new File(storageDirectory, baseName);
+                    StoredRoute data = new StoredRoute(name, receivedDate, polyLineStr);
 
 
                     try {
@@ -109,7 +107,7 @@ class DataApiListener implements DataApi.DataListener {
                         //out.writeObject(data);
                         //out.close();
                     } catch (IOException ioe) {
-                        Log.e(TAG,"Unable to save "+ name + " because " + ioe);
+                        Log.e(TAG, "Unable to save " + name + " because " + ioe);
                         /*TODO: show a dialog
                         mDialog
                                 .setTitle(android.R.string.dialog_alert_title)
@@ -124,8 +122,7 @@ class DataApiListener implements DataApi.DataListener {
                                 .create()
                                 .show();
                        */
-                    }
-                    catch (JSONException jse) {
+                    } catch (JSONException jse) {
                         Log.e(TAG, "Writing json failed because:" + jse);
                     }
 
@@ -138,17 +135,16 @@ class DataApiListener implements DataApi.DataListener {
                     MapSwipeToZoomFragment mapFragmentContainer = mFragmentRef.get();
                     if (mapFragmentContainer == null) {
                         Log.e(TAG, "mapFragmentContainer has been garbage collected!");
-                    }
-                    else {
+                    } else {
                         mapFragmentContainer.addPolyline(rectOptions, name, data.getBounds(), true); // true = and zoom to
                     }
                 } else {
                     Log.w(TAG, "Unrecognised path:" + path);
                 }
             } else if (event.getType() == DataEvent.TYPE_DELETED) {
-                Log.d(TAG, "Received a Data Deleted Event for path:" + path);
+                if (tagEnabled(TAG)) Log.d(TAG, "Received a Data Deleted Event for path:" + path);
             } else {
-                Log.d(TAG, "Received an unknown Data Event for path:" + path);
+                if (tagEnabled(TAG)) Log.d(TAG, "Received an unknown Data Event for path:" + path);
             }
         }
     }

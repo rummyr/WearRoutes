@@ -21,12 +21,15 @@ import java.util.TimeZone;
 
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 
+import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+
 /**
  * Created by rummy on 30/07/2016.
  */
 
 // TODO: only write on a timed interval
 public class CSVLogger {
+    private String TAG = getClass().getSimpleName();
     private boolean mIsLogging = false;
     private final File mBaseDir;
     private File mLogFile;
@@ -72,7 +75,7 @@ public class CSVLogger {
             out.close();
         }
         catch (IOException ioe) {
-            Log.e("CSVLogger", "Exception writing csv header!" + ioe);
+            Log.e(TAG, "Exception writing csv header!" + ioe);
         }
     }
 
@@ -141,7 +144,7 @@ public class CSVLogger {
         try {
             PrintWriter out = new PrintWriter(new FileWriter(mLogFile, true)); // true = append
             out.println(line);
-            Log.d("CSVLogger", "Written " + line);
+            if (tagEnabled(TAG))Log.d(TAG, "Written " + line);
             out.close();
         } catch (IOException ioe) {
             //TODO: what do we want to do with a failed write?
