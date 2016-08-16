@@ -5,10 +5,14 @@ import com.google.android.gms.maps.model.UrlTileProvider;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
+
 /**
  * Created by rummy on 20/06/2016.
  */
 public class CustomUrlTileProvider extends UrlTileProvider {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
     private String baseUrl;
 

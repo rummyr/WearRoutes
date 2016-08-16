@@ -8,4 +8,5 @@ public  class State {
     static long recordingStartTime = 0;
     static long recordingEndTime = 0;
     static long recordingPausedTime = 0;
+    private State() {}
 }

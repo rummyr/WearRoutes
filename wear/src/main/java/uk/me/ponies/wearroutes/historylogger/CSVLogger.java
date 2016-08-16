@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
@@ -14,12 +13,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
-import java.util.TimeZone;
 
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -30,6 +27,8 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 // TODO: only write on a timed interval
 public class CSVLogger {
     private String TAG = getClass().getSimpleName();
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
     private boolean mIsLogging = false;
     private final File mBaseDir;
     private File mLogFile;

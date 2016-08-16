@@ -25,11 +25,14 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import uk.me.ponies.wearroutes.common.LocationAugmentor;
+import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 import uk.me.ponies.wearroutes.prefs.Keys;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -41,12 +44,13 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
  * due to the battery drain on a watch.
  */
 public class MainLocationHandler implements LocationListener {
-    //TODO: temporary
-    //private TrackLocationAndBearingOnMapFragment mMapLocationAndBearingTracker; // here to stop garbage collection
-    //mMapLocationAndBearingTracker = new TrackLocationAndBearingOnMapFragment(mMapFragmentContainer);
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private final Context mContext;
     private final String mAppName; // used only for displaying an error dialog!
     private final String TAG = getClass().getSimpleName();
+    private Location prevLocation;
 
     private final LocationRequest whenOnLocationRequest = LocationRequest.create()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY) // Use high accuracy
@@ -58,17 +62,24 @@ public class MainLocationHandler implements LocationListener {
             .setInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS)) // Set the update interval to 2 seconds
             .setFastestInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS)) // Set the fastest update interval to 2 seconds
             .setSmallestDisplacement(2); // Set the minimum displacement to quite small indeed
+    private final LocationRequest tryForMoreAccurateLocationRequest = LocationRequest.create()
+            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY) // Use high accuracy
+            .setInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_RETRYING_SECS)) // Set the update interval to 2 seconds
+            .setFastestInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_RETRYING_SECS)) // Set the fastest update interval to 2 seconds
+            .setSmallestDisplacement(2); // Set the minimum displacement to quite small indeed
 
     private final LocationAugmentor mLocationAugmentor = new LocationAugmentor();
 
 
     // api and callbacks
     private final GoogleApiClient mGoogleApiClient;
+    @SuppressWarnings("FieldCanBeLocal")
     private final ConnectionCallBacksHandler mConnectionCallBacksHandler;
     private boolean mConnected = false;
 
-    private LocationRequest updateFrequency = whenOnLocationRequest;
-
+    private LocationRequest mCurrentlyActiveLocRequest = whenOnLocationRequest; // start with this
+    private AtomicBoolean mIsCurrentlyTryingForABetterLocation = new AtomicBoolean(false);
+    private LocationListener mRetryLocationListener = new RetryLocationListener();
 
     public MainLocationHandler(Activity activity) {
         this.mContext = activity.getApplicationContext();
@@ -97,7 +108,18 @@ public class MainLocationHandler implements LocationListener {
         EventBus.getDefault().register(this);
     }
 
-    public void start(LocationRequest locRequest) {
+
+    /** stops the main poller, and cancels the retryer */
+    private void stop() {
+        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+        cancelTryingForABetterLocation();
+    }
+
+    /** after some permission checks cancels any previous requestforlocations and starts it again
+     * does NOT cancel the retryer if its running.
+     * @param locRequest the locationRequest to use
+     */
+    private void start(LocationRequest locRequest) {
         if (!mConnected) {
             return;
         }
@@ -125,34 +147,128 @@ public class MainLocationHandler implements LocationListener {
             }
         } else {
             //TODO: handle FINE_LOCATION permission denied .. not that it should happen, but you never know
+            Log.e(TAG, "FINE_LOCATION permission is denied, this need handling!");
         }
     }
 
+    /** Request just a single location, only works if connected, keep going until either
+     * a) we've waited too long
+     * b) we have a location that has .. speed, elevation, accuracy meeting internal requirements
+     *
+     * requests at a faster interval,
+     * cancels when a good enough reading is received
+     * automatically when it expires (set to roughly just before the next location is expected to land)
+     *
+     */
+    private void tryForABetterLocation() {
+        boolean currentlyTrying = mIsCurrentlyTryingForABetterLocation.getAndSet(true);
+        if (currentlyTrying) {
+            return;
+        }
+        if (!mConnected) {
+            return;
+        }
+
+        // a tryForMoreAccurateLocationRequest requests more frequently, but only for a limited length of time
+        //TODOLOW: retry expiry isn't absolutely accurate
+        // set the expiry to roughly 1 second before the next one is due to land (probably)
+        //BUG: when it expires we don't get a notification! so we still think it's RUNNING! This needs a serious rethink!
+        long mCurrentlyActiveLocRequestIntervalMillis = mCurrentlyActiveLocRequest.getInterval();
+        tryForMoreAccurateLocationRequest.setExpirationDuration(mCurrentlyActiveLocRequestIntervalMillis - TimeUnit.SECONDS.toMillis(1));
+
+        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, tryForMoreAccurateLocationRequest, mRetryLocationListener);
+    }
+    private void cancelTryingForABetterLocation() {
+        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,mRetryLocationListener);
+        mIsCurrentlyTryingForABetterLocation.getAndSet(false);
+
+    }
 
     @Override
     public void onLocationChanged(Location location) {
-        mLocationAugmentor.addSpeedAndBearing(location);
+        boolean unusableLocation = false;
+        if (location == null) { // might as well handle it though it should never happen
+            return;
+        }
 
-        EventBus.getDefault().post(new LocationEvent(location));
+        // perform some simple filtering on the data
+        if (prevLocation != null
+                && location.getLatitude() == prevLocation.getLatitude()
+                && location.getLongitude() == location.getLongitude()) {
+                Log.w(TAG, "Location seen with duplicate location (different timestamps)");
+        }
+
+        if (!isAcceptableLocation(location)) {
+            unusableLocation = true;
+        }
+
+        if (!unusableLocation) {
+            EventBus.getDefault().post(new LocationEvent(location));
+            mLocationAugmentor.addSpeedAndBearing(location);
+            cancelTryingForABetterLocation(); // just in case
+        }
+        else {
+            tryForABetterLocation();
+        }
+        prevLocation = location;
+
     }
 
+    /** Checks to see if the location result is suitable ..
+     * needs to be
+     * accurate enough
+     * has an elevation not 0.000000
+     * -- should we check speed? Probably not
+     * and not the same time as the previous location
+     * @param location as received from google
+     * @return true if the location seems good
+     */
+    private boolean isAcceptableLocation(Location location) {
+        if (location == null) {
+            return false;
+        }
+        if (Controller.getInstance().isRecording()) {
+            if (location.getAccuracy() > Options.MIN_ALLOWED_ACCURACY_METERS_RECORDING) {
+                Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy());
+                return false;
+            }
+            if (location.getAltitude() == 0.0000 && !location.isFromMockProvider()) {
+                Log.w(TAG, "Location seen with zero elevation");
+                return false;
+            }
+            if (prevLocation != null && location.getTime() == prevLocation.getTime()) {
+                Log.w(TAG, "Location seen with duplicate timestamp");
+                return false;
+            }
+        }
+        else {
+            // not recording, we can be more lenient
+            if (location.getAccuracy() > Options.MIN_ALLOWED_ACCURACY_METERS_NOT_RECORDING) {
+                Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy());
+                return false;
+            }
+            // we also accept no elevation data when NOT recording
+            // and also duplicate timestamps
+        }
+        return true;
+    }
 
     /**
      * change the update frequency when in/out of ambient mode
      */
     @Subscribe
     public void onAmbientEvent(AmbientEvent evt) {
-        if (AmbientEvent.ENTER == evt.getType()) {
+        if (AmbientEvent.ENTER_AMBIENT == evt.getType()) {
             boolean updateInfrequentlyInAmbient = PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean(Keys.KEY_GPS_UPDATES_LESS_IN_AMBIENT, true);
             if (updateInfrequentlyInAmbient) {
-                updateFrequency = whenAmbientLocationRequest;
+                mCurrentlyActiveLocRequest = whenAmbientLocationRequest;
             } else {
-                updateFrequency = whenOnLocationRequest;
+                mCurrentlyActiveLocRequest = whenOnLocationRequest;
             }
-            start(updateFrequency);
-        } else if (AmbientEvent.LEAVE == evt.getType()) {
-            updateFrequency = whenOnLocationRequest;
-            start(updateFrequency);
+            start(mCurrentlyActiveLocRequest);
+        } else if (AmbientEvent.LEAVE_AMBIENT == evt.getType()) {
+            mCurrentlyActiveLocRequest = whenOnLocationRequest;
+            start(mCurrentlyActiveLocRequest);
         }
     }
 
@@ -171,6 +287,8 @@ public class MainLocationHandler implements LocationListener {
         public void onConnectionSuspended(int cause) {
             //TODO: check suspended = NOT Connected
             mConnected = false;
+            MainLocationHandler.this.stop();
+            cancelTryingForABetterLocation();
             if (tagEnabled(TAG)) Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
         }
 
@@ -180,4 +298,19 @@ public class MainLocationHandler implements LocationListener {
             Log.e(TAG, "onConnectionFailed(): Failed to connect, with result: " + connectionResult);
         }
     }
+
+    private class RetryLocationListener implements LocationListener{
+            @Override
+            public void onLocationChanged(Location location) {
+                if (isAcceptableLocation(location)) { // is good enough
+                    // mark as good
+                    mIsCurrentlyTryingForABetterLocation.set(false);
+                    // cancel these frequent retries
+                    LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,this);
+                    // do usual processing on the data
+                    MainLocationHandler.this.onLocationChanged(location);
+                }
+            }
+        }
+
 }

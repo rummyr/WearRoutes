@@ -16,8 +16,8 @@ public class AmbientEvent {
 
     private Bundle bundle;
     private int type;
-    public static final int ENTER = 0;
-    public static final int LEAVE = 1;
+    public static final int ENTER_AMBIENT = 0;
+    public static final int LEAVE_AMBIENT = 1;
     public static final int UPDATE= 2;
 
     public AmbientEvent(int type, Bundle bundle) {

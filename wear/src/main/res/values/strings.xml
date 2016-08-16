@@ -72,6 +72,16 @@
     <string name="overview_of_the_route">Overview of the route</string>
     <string name="delete_the_route_button">delete the route button</string>
     <string name="recording">Recording</string>
+    <string name="clock">clock</string>
+    <string name="sample_clock_time">20:07:43</string>
+    <string name="timer">timer</string>
+    <string name="sample_chronometer_duration">00:13:24</string>
+    <string name="speed">speed</string>
+    <string name="sample_speed">13.6 kph</string>
+    <string name="average_speed">avg spd</string>
+    <string name="sample_average_speed">10.8 kph</string>
+    <string name="distance_short">dist</string>
+    <string name="sample_distance">13.27 km</string>
 
 
 </resources>

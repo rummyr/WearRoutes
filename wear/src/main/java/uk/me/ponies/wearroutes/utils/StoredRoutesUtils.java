@@ -26,6 +26,8 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 public class StoredRoutesUtils {
     private static String TAG = StoredRoutesUtils.class.getSimpleName();
 
+    private StoredRoutesUtils() {}
+
     public static List<StoredRoute> readStoredRoutes(Context context, File storedRoutesDirectory) {
         List<StoredRoute> rv = new ArrayList<>();
 

@@ -6,10 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
+
 /**
  * Created by rummy on 22/06/2016.
  */
 public class ChainedOnPageListener implements GridViewPager.OnPageChangeListener {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     List<GridViewPager.OnPageChangeListener> listeners = Collections.synchronizedList(new ArrayList<GridViewPager.OnPageChangeListener>());
 
     @Override

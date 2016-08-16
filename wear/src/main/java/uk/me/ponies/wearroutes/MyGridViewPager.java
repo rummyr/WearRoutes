@@ -9,12 +9,17 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
+
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
  * Created by rummy on 22/06/2016.
  */
 public class MyGridViewPager extends GridViewPager {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static String TAG = "MyGridViewPager";
 
     ChainedOnPageListener masterListener = new ChainedOnPageListener();

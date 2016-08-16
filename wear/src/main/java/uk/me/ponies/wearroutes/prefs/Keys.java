@@ -38,4 +38,5 @@ public abstract class Keys {
     public static final String KEY_GPS_UPDATES_LESS_IN_AMBIENT = "pref_wear_ambient_few_updates";
 
 
+    public static final String KEY_DEVOPT_DEBUG_LOG_ENABLED = "pref_wear_debug_log_enabled";
 }

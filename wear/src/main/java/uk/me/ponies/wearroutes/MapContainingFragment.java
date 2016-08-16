@@ -46,10 +46,14 @@ import java.lang.ref.WeakReference;
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.CPUMeasurer;
 import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 public class MapContainingFragment extends FragmentLifecycleLogger {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static final String TAG = MapContainingFragment.class.getSimpleName();
     private static final LatLng SHEFFIELD = new LatLng(53.5089423, -1.7025131);
     private View myMapFragment;

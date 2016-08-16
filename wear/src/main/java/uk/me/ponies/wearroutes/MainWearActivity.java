@@ -16,20 +16,20 @@
 
 package uk.me.ponies.wearroutes;
 
-import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -43,7 +43,6 @@ import android.view.WindowInsets;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.wearable.CapabilityApi;
 import com.google.android.gms.wearable.CapabilityInfo;
@@ -52,14 +51,18 @@ import com.google.android.gms.wearable.Wearable;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.File;
 import java.lang.ref.WeakReference;
-import java.util.concurrent.TimeUnit;
 
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.controller.StateConstants;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
+import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
+import uk.me.ponies.wearroutes.historylogger.SimpleTextLogger;
+import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.ActivityLifeCycleLogger;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 
@@ -67,22 +70,33 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
 public class MainWearActivity extends WearableActivity {
-    private static DataApi.DataListener mDataApiListener;
-    private static CapabilityApi.CapabilityListener mCapabilityApiListener;
-    MainGridPagerAdapter sampleGridPagerAdapter;
+    private static final String TAG = "MainWearActivity";
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
+
+    private DataApi.DataListener mDataApiListener;
+    private CapabilityApi.CapabilityListener mCapabilityApiListener;
+    private MainGridPagerAdapter sampleGridPagerAdapter;
     private GoogleApiClient mGoogleApiClient;
-    private static final String TAG = "WearMainActivity";
-    private ConnectionCallBacksHandler mConnectionCallBacksHandler;
-    private ConnectionFailedListener mConnectionFailedListener;
-    private MainLocationHandler mMainLocationListener;
-    private MapSwipeToZoomFragment mMapFragmentContainer;
     private Controller mController;
-    private GridViewPagerListenerNotifier mGridViewPagerListenerNotifier;
+
+    private ConnectionCallBacksHandler noGCConnectionCallBacksHandler;
+    private ConnectionFailedListener noGCConnectionFailedListener;
+    private PollingLocationHandler noGCMainLocationPoller;
+    private MapSwipeToZoomFragment noGCMapFragmentContainer;
+    private GridViewPagerListenerNotifier noGCGridViewPagerListenerNotifier;
+    private MyPreferenceChangeListener noGCSharedPreferenceListener;
+    private SimpleTextLogger mSimpleTextLogger;
+
+
+    //BUG: multiple instances are launched? Or perhaps just MULTIPLE instances of existing components!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e(TAG, "onCreate called savedinstanceState is null:" + (savedInstanceState == null));
         getApplication().registerActivityLifecycleCallbacks(new ActivityLifeCycleLogger());
-
+/*
         DebugEnabled.enableTag("WearMainActivity");
         DebugEnabled.enableTag("MapSwipeToZoomFrag");
         DebugEnabled.enableTag("SpeedPanel1");
@@ -95,7 +109,12 @@ public class MainWearActivity extends WearableActivity {
         DebugEnabled.enableTag("BearingSectorizer");
         DebugEnabled.enableTag("MainGridPagerAdapter");
         DebugEnabled.enableTag("MyGridViewPager");
-        DebugEnabled.setDefaultEnablement(true);
+*/
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean defaultDebugLogEnablement = sharedPrefs.getBoolean(Keys.KEY_DEVOPT_DEBUG_LOG_ENABLED, true);
+        DebugEnabled.setDefaultEnablement(defaultDebugLogEnablement);
+        noGCSharedPreferenceListener = new MyPreferenceChangeListener();
+        sharedPrefs.registerOnSharedPreferenceChangeListener(noGCSharedPreferenceListener);
 
 
         super.onCreate(savedInstanceState);
@@ -131,8 +150,8 @@ public class MainWearActivity extends WearableActivity {
         pager.setOnPageChangeListener(columnHistorian);
         pager.setAdapter(sampleGridPagerAdapter);
 
-        mGridViewPagerListenerNotifier = new GridViewPagerListenerNotifier(pager);
-        pager.setOnPageChangeListener(mGridViewPagerListenerNotifier);
+        noGCGridViewPagerListenerNotifier = new GridViewPagerListenerNotifier(pager);
+        pager.setOnPageChangeListener(noGCGridViewPagerListenerNotifier);
 
         DotsPageIndicator dotsPageIndicator = (DotsPageIndicator) findViewById(R.id.page_indicator);
         dotsPageIndicator.setPager(pager);
@@ -211,18 +230,18 @@ public class MainWearActivity extends WearableActivity {
             }
         }); // end pager onPageChangeListener
 
-        mMapFragmentContainer = sampleGridPagerAdapter.getMapFragment();
-        mMainLocationListener = new MainLocationHandler(this);
-        mConnectionCallBacksHandler = new ConnectionCallBacksHandler();
-        mConnectionFailedListener = new ConnectionFailedListener();
-        mDataApiListener = new DataApiListener(mMapFragmentContainer, getFilesDir());
+        noGCMapFragmentContainer = sampleGridPagerAdapter.getMapFragment();
+        noGCMainLocationPoller = new PollingLocationHandler(this);
+        noGCConnectionCallBacksHandler = new ConnectionCallBacksHandler();
+        noGCConnectionFailedListener = new ConnectionFailedListener();
+        mDataApiListener = new DataApiListener(noGCMapFragmentContainer, getFilesDir());
         mCapabilityApiListener = new CapabilityApiListener();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
                 .addApi(LocationServices.API)
-                .addConnectionCallbacks(mConnectionCallBacksHandler)
-                .addOnConnectionFailedListener(mConnectionFailedListener)
+                .addConnectionCallbacks(noGCConnectionCallBacksHandler)
+                .addOnConnectionFailedListener(noGCConnectionFailedListener)
                 .build();
         mGoogleApiClient.connect();
 
@@ -230,8 +249,8 @@ public class MainWearActivity extends WearableActivity {
         doPermissionsCheck(this);
 
         for (StoredRoute route : StoredRoutesUtils.readStoredRoutes(getApplicationContext(), getFilesDir())) {
-            if (mMapFragmentContainer != null) {
-                mMapFragmentContainer.addRoute(route);
+            if (noGCMapFragmentContainer != null) {
+                noGCMapFragmentContainer.addRoute(route);
             }
         }
 
@@ -254,7 +273,9 @@ public class MainWearActivity extends WearableActivity {
         if (tagEnabled(TAG)) Log.d(TAG, "before onEnterAmbient current isAmbient state is " + isAmbient());
         super.onEnterAmbient(ambientDetails);
         sampleGridPagerAdapter.onEnterAmbient(ambientDetails);
-        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.ENTER, ambientDetails));
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.ENTER_AMBIENT, ambientDetails));
+        EventBus.getDefault().post(new LogEvent("Ambient Entered", "Ambient"));
+
         if (tagEnabled(TAG)) Log.d(TAG, "after onEnterAmbient current isAmbient state is " + isAmbient());
     }
 
@@ -262,7 +283,8 @@ public class MainWearActivity extends WearableActivity {
     public void onExitAmbient() {
         if (tagEnabled(TAG)) Log.d(TAG, "before onExitAmbient current isAmbient state is " + isAmbient());
         sampleGridPagerAdapter.onExitAmbient();
-        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE, null));
+        EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE_AMBIENT, null));
+        EventBus.getDefault().post(new LogEvent("Ambient Exited", "Ambient"));
         super.onExitAmbient();
         if (tagEnabled(TAG)) Log.d(TAG, "after onExitAmbient current isAmbient state is " + isAmbient());
 
@@ -332,8 +354,19 @@ public class MainWearActivity extends WearableActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        // cancel any displayed notification
         ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
                 .cancel(001);
+
+        File logDir = new File(Environment.getExternalStorageDirectory().getPath() + "/wearRoutes/");
+        if (!logDir.exists()) {
+            //noinspection ResultOfMethodCallIgnored
+            logDir.mkdirs();
+        }
+        mSimpleTextLogger = new SimpleTextLogger(logDir,"TextLogger");
+        mSimpleTextLogger.setLogging(true);
+        EventBus.getDefault().register(mSimpleTextLogger);
+
     }
 
 
@@ -356,7 +389,7 @@ public class MainWearActivity extends WearableActivity {
                     .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0,
                             new Intent(getApplicationContext(), MainWearActivity.class), 0))
                     .setSmallIcon(R.mipmap.ic_launcher)
-                    .setPriority(Notification.PRIORITY_MAX) //TODO: only enabel if started
+                    .setPriority(Notification.PRIORITY_MAX)
                     .setOngoing(true) // cant dismiss?
                     //TODO: only api 21 .setCategory(Notification.CATEGORY_STATUS)
                     // .setWhen().setShowWhen() // TODO:later api
@@ -367,8 +400,16 @@ public class MainWearActivity extends WearableActivity {
         }
         super.onStop();
 
+
         // exit completely if we aren't recording
         if (Options.FINISH_ON_STOP && mController.getRecordingState() == StateConstants.STATE_STOPPED) {
+            Log.w(TAG, "Finishing activity in onStop");
+
+            mSimpleTextLogger.setLogging(false);
+            EventBus.getDefault().unregister(mSimpleTextLogger);
+            mSimpleTextLogger = null;
+
+
             finish();
         }
     }
@@ -377,11 +418,11 @@ public class MainWearActivity extends WearableActivity {
         @Override
         public void onConnected(Bundle connectionHint) {
             if (tagEnabled(TAG)) Log.d(TAG, "onConnected(): Successfully connected to Google API client");
-            Wearable.DataApi.addListener(mGoogleApiClient, MainWearActivity.mDataApiListener);
+            Wearable.DataApi.addListener(mGoogleApiClient, MainWearActivity.this.mDataApiListener);
             //Wearable.MessageApi.addListener(mGoogleApiClient, this);
 
             Wearable.CapabilityApi.addListener(
-                    mGoogleApiClient, MainWearActivity.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
+                    mGoogleApiClient, MainWearActivity.this.mCapabilityApiListener, Uri.parse("wear://"), CapabilityApi.FILTER_REACHABLE);
         } // end onConnected
 
 
@@ -407,4 +448,15 @@ public class MainWearActivity extends WearableActivity {
             /// mDataFragment.appendItem("onCapabilityChanged", capabilityInfo.toString());
         }
     }
+
+    private class MyPreferenceChangeListener implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (Keys.KEY_DEVOPT_DEBUG_LOG_ENABLED.equals(key)) {
+                boolean defaultDebugLogEnablement = sharedPreferences.getBoolean(key, true);
+                DebugEnabled.setDefaultEnablement(defaultDebugLogEnablement);
+            } // end DEBUG_LOG_ENABLED
+        } // end onSharedPreferenceChanged
+    } // end inner class MyPreferenceChangeListener
 }

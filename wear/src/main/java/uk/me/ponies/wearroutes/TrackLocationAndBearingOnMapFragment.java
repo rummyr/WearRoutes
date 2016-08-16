@@ -20,6 +20,7 @@ import uk.me.ponies.wearroutes.common.BearingSectorizer;
 import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -27,6 +28,8 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
      * Created by rummy on 16/05/2016.
      */
     public class TrackLocationAndBearingOnMapFragment implements LocationListener {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
     static final double TORAD = Math.PI / 180.0;
     static final int REarthMeters = 6371 * 1000;

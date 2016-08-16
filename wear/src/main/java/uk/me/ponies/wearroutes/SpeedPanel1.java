@@ -45,11 +45,15 @@ import uk.me.ponies.wearroutes.eventBusEvents.UpdateDisplayedData;
 import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
 public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPagerListener, IAmbientHandler {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static final String TAG = "SpeedPanel1";
     //TextClock mClockView; // probably not required
     // mChronometer;
@@ -67,6 +71,11 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     private final NumberFormat distanceFormatKM = new DecimalFormat("###.## " + KM);
     private final NumberFormat distanceFormatMiles = new DecimalFormat("###.## " + MILES);
     private final SimpleDateFormat chronometerTimeFormat = new SimpleDateFormat("HH:mm:ss");
+    private TextView mSpeedInstantLabel;
+    private TextView mDistanceLabel;
+    private TextView mSpeedAverageLabel;
+    private TextView mChronometerLabel;
+    private TextView mClockLabel;
 
     {
         chronometerTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -84,7 +93,8 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.speed_panel1, container, false);
+        View v = inflater.inflate(R.layout.speed_panel_with_labels, container, false);
+        //TODO: make labels optional and make "gone" if disabled
         mSpeedPanel1Table = (TableLayout) v.findViewById(R.id.panelTableLayout);
 
 //        mClockView = ((TextClock)v.findViewById(R.id.panel1TextClock));
@@ -93,12 +103,17 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
 //        mChronometer.setBase(SystemClock.elapsedRealtime() - 1000*60*60);
 
         mSpeedInstant = (TextView) v.findViewById(R.id.panel1SpeedInstant);
+        mSpeedInstantLabel = (TextView) v.findViewById(R.id.labelSpeed);
         mSpeedAverage = (TextView) v.findViewById(R.id.panel1SpeedAverage);
+        mSpeedAverageLabel = (TextView) v.findViewById(R.id.labelAvgSpeed);
         mDistance = (TextView) v.findViewById(R.id.panel1Distance);
+        mDistanceLabel = (TextView)v.findViewById(R.id.labelDistance);
 
 
         mStaticClock = (TextView) v.findViewById(R.id.panel1StaticClock);
+        mClockLabel = (TextView)v.findViewById(R.id.labelClock);
         mStaticChronometer = (TextView) v.findViewById(R.id.panel1StaticChronometer);
+        mChronometerLabel = (TextView)v.findViewById(R.id.labelChronometer);
         // mChronometer.start();
         return v;
     }
@@ -141,11 +156,11 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     @Subscribe
     public void event(AmbientEvent evt) {
         switch (evt.getType()) {
-            case AmbientEvent.ENTER: {
+            case AmbientEvent.ENTER_AMBIENT: {
                 handleEnterAmbientEvent(evt.getBundle());
                 break;
             }
-            case AmbientEvent.LEAVE: {
+            case AmbientEvent.LEAVE_AMBIENT: {
                 handleExitAmbientEvent();
                 break;
             }
@@ -159,8 +174,8 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     @Override
     public void handleEnterAmbientEvent(Bundle ambientDetails) {
         // set colours to black on white
-        int fgColor = Color.BLACK;
-        int bgColor = Color.WHITE;
+        int fgColor = Color.WHITE;
+        int bgColor = Color.BLACK;
         // mChronometer.setTextColor(fgColor);
         mStaticChronometer.setTextColor(fgColor);
         mSpeedAverage.setTextColor(fgColor);
@@ -169,6 +184,12 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         // mClockView.setTextColor(fgColor);
         mStaticClock.setTextColor(fgColor);
         mSpeedPanel1Table.setBackgroundColor(bgColor);
+
+        mSpeedInstantLabel.setTextColor(fgColor);
+        mDistanceLabel.setTextColor(fgColor);
+        mSpeedAverageLabel.setTextColor(fgColor);
+        mChronometerLabel.setTextColor(fgColor);
+        mClockLabel.setTextColor(fgColor);
     }
 
     @Override
@@ -179,8 +200,8 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     @Override
     public void handleExitAmbientEvent() {
         // set colours to black on white
-        int fgColor = Color.WHITE;
-        int bgColor = Color.BLACK;
+        int fgColor = Color.BLACK;
+        int bgColor = Color.WHITE;
         //mChronometer.setTextColor(fgColor);
         mStaticChronometer.setTextColor(fgColor);
         mSpeedAverage.setTextColor(fgColor);
@@ -189,6 +210,11 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         // mClockView.setTextColor(fgColor);
         mStaticClock.setTextColor(fgColor);
         mSpeedPanel1Table.setBackgroundColor(bgColor);
+        mSpeedInstantLabel.setTextColor(fgColor);
+        mDistanceLabel.setTextColor(fgColor);
+        mSpeedAverageLabel.setTextColor(fgColor);
+        mChronometerLabel.setTextColor(fgColor);
+        mClockLabel.setTextColor(fgColor);
     }
 
     @Subscribe

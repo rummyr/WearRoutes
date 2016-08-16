@@ -23,6 +23,7 @@ import java.util.Date;
 
 import uk.me.ponies.wearroutes.common.DataKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -33,6 +34,9 @@ class DataApiListener implements DataApi.DataListener {
     private static final String TAG = "DataApiListener";
     private final WeakReference<MapSwipeToZoomFragment> mFragmentRef;
     private final File storageDirectory;
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
 
     public DataApiListener(MapSwipeToZoomFragment mapFragment, File storageDirectory) {
         mFragmentRef = new WeakReference<MapSwipeToZoomFragment>(mapFragment);

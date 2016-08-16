@@ -19,17 +19,24 @@ import uk.me.ponies.wearroutes.eventBusEvents.UpdateDisplayedData;
 import uk.me.ponies.wearroutes.historylogger.CSVLogger;
 import uk.me.ponies.wearroutes.historylogger.GPXLogger;
 import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
+import uk.me.ponies.wearroutes.historylogger.SimpleTextLogger;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 /**
  * Handles quite a lot of the coordination
  */
-public class Controller {
+public class Controller  {
     private static final String TAG = Controller.class.getSimpleName();
     private static Controller instance;
     final MainGridPagerAdapter mPagerAdapter;
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
 
     private CSVLogger mCSVLogger;
     private GPXLogger mGPXLogger;
+
+
 
     private Ticker mUpdateDisplayTicker;
     private Ticker mFlushLogsTicker;
@@ -138,7 +145,7 @@ public class Controller {
         mUpdateDisplayTicker.startTicker();
     }
 
-    private void changeEventTickerFrequencyMs(long newFrequencyMs) {
+    private void changeUpdateDisplayTickerFrequencyMs(long newFrequencyMs) {
         mUpdateDisplayTicker.changeTickerFrequencyMs(newFrequencyMs);
     }
 
@@ -164,12 +171,12 @@ public class Controller {
     @Subscribe
     public void event(AmbientEvent evt) {
         switch (evt.getType()) {
-            case AmbientEvent.ENTER: {
-                changeEventTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_AMBIENT_SECS));
+            case AmbientEvent.ENTER_AMBIENT: {
+                changeUpdateDisplayTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_AMBIENT_SECS));
                 break;
             }
-            case AmbientEvent.LEAVE: {
-                changeEventTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_ON_SECS));
+            case AmbientEvent.LEAVE_AMBIENT: {
+                changeUpdateDisplayTickerFrequencyMs(TimeUnit.SECONDS.toMillis(Options.DISPLAY_UPDATE_INTERVAL_WHEN_ON_SECS));
                 // and tickle the ticker
                 break;
             }

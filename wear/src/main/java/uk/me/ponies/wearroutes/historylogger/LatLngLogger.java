@@ -4,7 +4,6 @@ import android.location.Location;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
@@ -12,11 +11,15 @@ import java.util.Collections;
 import java.util.List;
 
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 /**
  * Created by rummy on 30/07/2016.
  */
-public class LatLngLogger {
+public class LatLngLogger  {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private boolean mIsLogging = false;
     private List<LatLng> mHistory = new ArrayList<>();
     private float mCumulativeDistance = 0;

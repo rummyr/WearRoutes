@@ -99,7 +99,7 @@
 
         <SwitchPreference
             android:key="pref_wear_map_tap_to_zoom"
-            android:title="Tab to Zoom"
+            android:title="Tap to Zoom"
             android:defaultValue="false"
             app:wear_iconOn="@drawable/materialdesignicons_check"
             app:wear_iconOff="@drawable/materialdesignicons_close"
@@ -147,6 +147,14 @@
             android:key="pref_developer_option_map_toast_on_fling"
             android:title="Show Toast on Fling"
             android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+
+        <CheckBoxPreference
+            android:key="pref_wear_debug_log_enabled"
+            android:title="Enable Debug Logging"
+            android:defaultValue="true"
             app:wear_iconOn="@drawable/materialdesignicons_check"
             app:wear_iconOff="@drawable/materialdesignicons_close"
             />

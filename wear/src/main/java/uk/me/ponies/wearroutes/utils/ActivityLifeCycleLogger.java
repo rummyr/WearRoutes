@@ -21,38 +21,38 @@ public class ActivityLifeCycleLogger implements Application.ActivityLifecycleCal
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityCreated called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityCreated called");
     }
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityDestroyed called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityDestroyed called");
     }
 
     @Override
     public void onActivityResumed(Activity activity) {
         ++resumed;
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityResumed called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityResumed called");
 
     }
 
     @Override
     public void onActivityPaused(Activity activity) {
         ++paused;
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityPaused called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityPaused called");
 
         Log.w("test", "application is in foreground: " + (resumed > paused));
     }
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivitySaveInstance called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivitySaveInstance called");
     }
 
     @Override
     public void onActivityStarted(Activity activity) {
         ++started;
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityStarted called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityStarted called");
 
     }
 
@@ -60,7 +60,7 @@ public class ActivityLifeCycleLogger implements Application.ActivityLifecycleCal
     public void onActivityStopped(Activity activity) {
         ++stopped;
         Log.w("test", "application is visible: " + (started > stopped));
-        if (tagEnabled(TAG))Log.d(TAG, activity.getLocalClassName() + " onActivityStopped called");
+        if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityStopped called");
 
     }
 }

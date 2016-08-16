@@ -9,6 +9,8 @@ import android.util.Log;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
+
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
@@ -18,6 +20,9 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
  * Created by rummy on 15/07/2016.
  */
 public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChangeListener {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static final String TAG = "GridViewPagerNotifier";
     private static final int UP = 1;
     private static final int DOWN = 2;

@@ -16,6 +16,7 @@
 
 package uk.me.ponies.wearroutes;
 
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -47,6 +48,7 @@ import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -73,10 +75,14 @@ import uk.me.ponies.wearroutes.utils.CPUMeasurer;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
 import uk.me.ponies.wearroutes.utils.MapScaleBarOverlay;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements IGridViewPagerListener {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static final LatLng SHEFFIELD = new LatLng(53.5089423, -1.7025131);
     private static final String TAG = "MapSwipeToZoomFrag";
     private static final int AMBIENT_TEXT_COLOR = Color.BLACK;
@@ -106,13 +112,17 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     private final BearingSectorizer mBearingSectorizer = new BearingSectorizer(Options.BEARING_SECTORS); // 20 degree sectors
     private boolean firstLocation = true;
     // cached values
-    private Rect mCachedMiddleScreeRect;
+    private Rect mCachedMiddleScreeRect; // a rectangle boxing the area we want the point to stay within
+    private Point mCachedScreenAnchor; // a point we want the blue dot to stay near
+    private int mCachedScreenAnchorRadiusSquared; // how far we allow the point to deviate from the target anchor
+
     private int zoom = Options.WEAR_DEFAULT_STARTING_ZOOM;
     private String timingLabel;
     private long startCPU;
     private long startTime;
     /** For reuse purposes, to reduce GCs */
-    private Rect tmpVisibilityRect = new Rect();
+    private final Rect tmpVisibilityRect = new Rect();
+    private final Point tmpIdealLocationPoint = new Point();
 
 
     @Override
@@ -122,7 +132,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
         View mAttachListenerTo;
-        ViewParent vp1 = myMapFragment.getParent(); // vp1 = MyGridViewPager << probably recieves touch events
+        ViewParent vp1 = myMapFragment.getParent(); // vp1 = MyGridViewPager << probably receives touch events
         ViewParent vp2 = vp1.getParent(); // vp2 = FrameLayout
         ViewParent vp3 = vp2.getParent(); // vp3 = SwipeDismissLayout
 
@@ -220,7 +230,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     // Using getFragmentManager ... only 1st card shows a map .. it seems we're messing up!
     // removing the innerMapFragment in on Destroy - java.lang.IllegalStateException: Activity has been destroyed!
     // removing the innerMapFragment in on DestroyView -- seems OK, though it is still reporting parent!
-    // pooling the innerMapFragment works (returned in onDestroyView) .. no noticable performance improvement yet
+    // pooling the innerMapFragment works (returned in onDestroyView) .. no noticeable performance improvement yet
     // as above, but done in onStop() .. works, still slow .. dies if open another app
     // as above, but done in onPause() .. seems to work, and Works if open another app!
     // avoid camera updating if re-using .. doesn't work!
@@ -312,7 +322,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
         // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
-        // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
+        // mapFragment.setRetainInstance(true);// exception:  Can't retain fragments that are nested in other fragments
         this.setRetainInstance(true); // seems to stop map loading delay?
 
     }
@@ -355,14 +365,15 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         // and from 1/6 of the bottom to 1/5 of the top .. not symmetrical because it's nicer to have near the bottom part of the screen
         mCachedMiddleScreeRect = new Rect(screenWidth / 6, screenHeight / 5, screenWidth - screenWidth / 6, screenHeight - screenHeight / 6);
 
-
+        mCachedScreenAnchor = new Point(screenWidth/2, 2*screenHeight/3); // try to keep the point near the middle and 1/3rd up
+        mCachedScreenAnchorRadiusSquared = screenWidth*screenWidth/9;
 
         END();
 
         // correct the dynamic parts of the UI (buttons, etc)
         matchMapUIToConfig();
         // adding the polylines back in on the Main Event Thread seems to work.
-        //Most likely because what's actually hapenning is that it's running after the map's onResume
+        //Most likely because what's actually happening is that it's running after the map's onResume
         //TODO: fix having to re-add polylines after a delay on main thread
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
@@ -381,6 +392,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
                     // and set the camera zoom
+                    map.stopAnimation();
                     map.moveCamera(CameraUpdateFactory.zoomTo(zoom));
                     // TODO: may need to update position also?
                 }
@@ -539,6 +551,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
         if (map != null && isVisibleToUser) {
             if (tagEnabled(TAG)) Log.d(TAG, "moving camera as the map exists and is visible");
+            map.stopAnimation();
             map.moveCamera(newCam);
         }
         mLastCamUpdate = newCam;
@@ -583,8 +596,8 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
     @Override
     public void onOnScreenPage() {
-        mVisible = true;
         boolean camWasVisible = mVisible;
+        mVisible = true;
 
         if (map != null) {
             map.setMyLocationEnabled(true); // enable this
@@ -616,6 +629,8 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
         map.setLocationSource(mLocationSource);
+        // left, top, right, bottom
+        map.setPadding(0,0,0,0);
 
         CameraPosition camPos;
 
@@ -761,7 +776,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
      * we update the "history" trail polyline
      */
     public void onLocationProcessedEvent(LocationProcessedEvent dummy) {
-        // TODO: cull offscreen (if it looks like the gmaps api isn't efficient enough
+        // TODO: cull offscreen (if it looks like the google maps api isn't efficient enough
         if (map == null) {
             return; // not doing anything on a null map!
         }
@@ -797,7 +812,22 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         if (originalCameraPosition != null) {
             CameraPosition.Builder targetPos = CameraPosition.builder(originalCameraPosition);
             float newBearing = mBearingSectorizer.convertToSectorDegrees(l.getBearing());
+            Projection projection = null;
 
+
+            if (Defeat.FALSE()) {
+                if (projection == null) {
+                    projection = map.getProjection();
+                }
+                // calculate a camera that would place the dot near the bottom .. avoiding chin
+                //TODO: ideal camera location should NOT be hard coded!
+                tmpIdealLocationPoint.set(mCachedMiddleScreeRect.centerX(), 100);
+                LatLng idealLocation = projection.fromScreenLocation(tmpIdealLocationPoint);
+                Point locationOnScreen = projection.toScreenLocation(new LatLng(l.getLatitude(), l.getLongitude()));
+                LatLng reverseLatLng = projection.fromScreenLocation(locationOnScreen);
+                String.valueOf(reverseLatLng);
+                targetPos.target(idealLocation);
+            }
             // update the targetPos and only use it if required
             targetPos.target(new LatLng(l.getLatitude(), l.getLongitude()));
             targetPos.bearing(newBearing); // can set this anyway
@@ -809,7 +839,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                 updateRequired = true;
                 firstLocation = false;
                 updateReason = "First Location";
-            }
+            } // end first time check
 
             // check to see if bearing has changed significantly
             // TODO: check user preferences!
@@ -819,11 +849,11 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                     updateRequired = true;
                     updateReason = "Bearing Change";
                 }
-            }
+            } // end bearing changed check
 
             // check to see if the camera has moved enough (with accuracy taken into account) to justify a move
             // only update target cameraPosition IFF it has moved by enough
-            if (Defeat.FALSE() && !updateRequired) {
+            if (!updateRequired && Defeat.FALSE()) {
                 // only update camera position if it has changed appropriately
                 float distanceFromCam = Utils.haversineDistanceBetween(
                         originalCameraPosition.target.latitude, originalCameraPosition.target.longitude,
@@ -832,16 +862,46 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                     updateRequired = true;
                     updateReason = "Accuracy";
                 }
-            }
+            } // end moved by reasonable distance
+
+            // pretty much guaranteed to need these fields
+            LatLng tmpLatLng = new LatLng(l.getLatitude(), l.getLongitude());
+            LatLngBounds latLngBounds = null;
+
+            // check to see if dot is outside of the target area using screen pixels
+            if (!updateRequired  && Defeat.TRUE()) { // check to see if it is near the edge using pixels
+                if (projection == null) {
+                    projection = map.getProjection();
+                }
+
+                Point dotOnScreenPoint = projection.toScreenLocation(tmpLatLng);
+                if (!mCachedMiddleScreeRect.contains(dotOnScreenPoint.x, dotOnScreenPoint.y)) {
+                    updateRequired = true;
+                    updateReason = "dot outside middle pixels";
+                    if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is outside of middle bounds:" +
+                            "pos:" + dotOnScreenPoint
+                            + "middle: " + mCachedMiddleScreeRect);
+                } else {
+                    if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is INSIDE of middle pixels:" +
+                            "pos:" + dotOnScreenPoint
+                            + "middle: " + mCachedMiddleScreeRect);
+                }
+            } // end if dot is outside middle region as specified by pixels
 
 
-            // check to see if the dot is outside of the target area
+            // check to see if the dot is outside of the target area using the LatLngBounds
             if (!updateRequired) {
-                // use this to see if map need fixing up!
-                LatLngBounds latLngBounds = map.getProjection().getVisibleRegion().latLngBounds;
-                // try to ensure dot is on screen, ideally near the middle
-                LatLng tmpLatLng = new LatLng(l.getLatitude(), l.getLongitude());
 
+                // use this to see if map need fixing up!
+                // try to ensure dot is on screen, ideally near the middle
+                //noinspection ConstantConditions
+                if (latLngBounds == null) {
+                    if (projection == null) {
+                        projection = map.getProjection();
+                    }
+
+                    latLngBounds = projection.getVisibleRegion().latLngBounds;
+                }
                 // if point is completely off screen then just update, no fancy checks
                 if (!latLngBounds.contains(tmpLatLng)) {
                     updateRequired = true; // dot is completely off screen, bring it back!
@@ -849,59 +909,59 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                     if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is outside of bounds:" +
                             "pos:" + tmpLatLng
                             + "bounds: " + latLngBounds);
-                } else if (Defeat.TRUE()) { // check to see if it is near the edge using pixels
-                    Point dotOnScreenPoint = map.getProjection().toScreenLocation(tmpLatLng);
-                    if (!mCachedMiddleScreeRect.contains(dotOnScreenPoint.x, dotOnScreenPoint.y)) {
-                        updateRequired = true;
-                        updateReason = "dot outside middle pixels";
-                        if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is outside of middle bounds:" +
-                                    "pos:" + dotOnScreenPoint
-                                    + "middle: " + mCachedMiddleScreeRect);
-                    } else {
-                        if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is INSIDE of middle pixels:" +
-                                    "pos:" + dotOnScreenPoint
-                                    + "middle: " + mCachedMiddleScreeRect);
-                    }
-                } else if (Defeat.FALSE()) { // check to see if it's near the edge using lat long
-                    double latSpan = latLngBounds.northeast.latitude - latLngBounds.southwest.latitude;
-                    double longSpan = latLngBounds.northeast.longitude - latLngBounds.southwest.longitude;
-                    LatLng center = latLngBounds.getCenter();
-                    double lat1 = center.latitude + latSpan / 3;
-                    double lat2 = center.latitude - latSpan / 3;
-                    double lon1 = center.longitude + longSpan / 3;
-                    double lon2 = center.longitude - longSpan / 3;
-                    // sort them
-                    if (lat1 > lat2) {
-                        double tmp = lat1;
-                        lat1 = lat2;
-                        lat2 = tmp;
-                    }
-                    if (lon1 > lon2) {
-                        double tmp = lon1;
-                        lon1 = lon2;
-                        lon2 = tmp;
+                }
+            } // end if outside latLngBounds
 
+
+
+            if (!updateRequired && Defeat.FALSE()) { // check to see if it's near the edge using lat long
+                //noinspection ConstantConditions
+                if (latLngBounds == null) {
+                    if (projection == null) {
+                        projection = map.getProjection();
                     }
 
-                    LatLng midNorthEast = new LatLng(lat1, lon1);
-                    LatLng midSouthWest = new LatLng(lat2, lon2);
-                    LatLngBounds middleTwoThirds = new LatLngBounds(midNorthEast, midSouthWest);
-                    if (!middleTwoThirds.contains(tmpLatLng)) {
-                        updateReason = "Outside Middle 2/3";
-                        updateRequired = true;
-                        if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is outside of middle bounds:" +
-                                    "pos:" + tmpLatLng
-                                    + "middle: " + middleTwoThirds
-                                    + "bounds: " + latLngBounds);
-                    } else {
-                        if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is INSIDE of middle bounds:" +
-                                    "pos:" + tmpLatLng
-                                    + "middle: " + middleTwoThirds
-                                    + "bounds: " + latLngBounds);
-                    }
+                    latLngBounds = projection.getVisibleRegion().latLngBounds;
+                }
+
+                double latSpan = latLngBounds.northeast.latitude - latLngBounds.southwest.latitude;
+                double longSpan = latLngBounds.northeast.longitude - latLngBounds.southwest.longitude;
+                LatLng center = latLngBounds.getCenter();
+                double lat1 = center.latitude + latSpan / 3;
+                double lat2 = center.latitude - latSpan / 3;
+                double lon1 = center.longitude + longSpan / 3;
+                double lon2 = center.longitude - longSpan / 3;
+                // sort them
+                if (lat1 > lat2) {
+                    double tmp = lat1;
+                    lat1 = lat2;
+                    lat2 = tmp;
+                }
+                if (lon1 > lon2) {
+                    double tmp = lon1;
+                    lon1 = lon2;
+                    lon2 = tmp;
 
                 }
-            }
+
+                LatLng midNorthEast = new LatLng(lat1, lon1);
+                LatLng midSouthWest = new LatLng(lat2, lon2);
+                LatLngBounds middleTwoThirds = new LatLngBounds(midNorthEast, midSouthWest);
+                if (!middleTwoThirds.contains(tmpLatLng)) {
+                    updateReason = "Outside Middle 2/3";
+                    updateRequired = true;
+                    if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is outside of middle bounds:" +
+                                "pos:" + tmpLatLng
+                                + "middle: " + middleTwoThirds
+                                + "bounds: " + latLngBounds);
+                } else {
+                    if (tagEnabled(TAG)) Log.d(TAG, "Location changed: Dot is INSIDE of middle bounds:" +
+                                "pos:" + tmpLatLng
+                                + "middle: " + middleTwoThirds
+                                + "bounds: " + latLngBounds);
+                }
+
+            } // end if dot is outside middle region according to LatLng
 
 
             CameraUpdate newCam = CameraUpdateFactory.newCameraPosition(targetPos.build());
@@ -923,7 +983,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     }
 
     private void addLocationToTrail() {
-        // TODO: cull offscreen (if it looks like the gmaps api isn't efficient enough
+        // TODO: cull offscreen (if it looks like the google maps api isn't efficient enough
         if (map == null) {
             return; // not doing anything on a null map!
         }
@@ -1017,14 +1077,18 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                 if (getActivity() == null) {
                     if (tagEnabled(TAG)) Log.d(TAG, "getActivity is NULL!");
                 }
-                Context context = getActivity().getApplicationContext();
-                if (PreferenceManager.getDefaultSharedPreferences(context)
-                        .getBoolean(Keys.KEY_PREF_DEVOPT_MAP_TOAST_ON_FLING, false)) {
-                    CharSequence text = "Fling! " + (int) e1.getX() + "->" + (int) e2.getX() + " dt:" + (int) deltaT;
-                    int duration = Toast.LENGTH_SHORT;
+                //TODO: activity seems to usually be null here, find an alternative!
+                Activity activity = getActivity();
+                if (activity != null) {
+                    Context context = activity.getApplicationContext();
+                    if (PreferenceManager.getDefaultSharedPreferences(context)
+                            .getBoolean(Keys.KEY_PREF_DEVOPT_MAP_TOAST_ON_FLING, false)) {
+                        CharSequence text = "Fling! " + (int) e1.getX() + "->" + (int) e2.getX() + " dt:" + (int) deltaT;
+                        int duration = Toast.LENGTH_SHORT;
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }
                 }
 
                 // max off path is very small, so no longer using it
@@ -1053,7 +1117,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                     isStraight = true;
                 }
                 if (!isStraight) {
-                    if (tagEnabled(TAG)) Log.d(TAG, "GestureDetector onFling is NOT sraight!");
+                    if (tagEnabled(TAG)) Log.d(TAG, "GestureDetector onFling is NOT straight!");
                 }
 
                 if (!isStraight) {

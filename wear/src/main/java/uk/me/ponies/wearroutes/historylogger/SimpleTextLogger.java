@@ -11,10 +11,12 @@ import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import uk.me.ponies.wearroutes.eventBusEvents.FlushLogsEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
+import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
@@ -23,27 +25,20 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
  * Logs to an internal backlog and writes to a GPX file on an EventBus FlushLogsEvent
  */
 
-public class GPXLogger {
-    private final static String TAG = "GPXLogger";
+public class SimpleTextLogger {
+    private final static String TAG = "SimpleTextLogger";
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
     private boolean mIsLogging = false;
     private final File mBaseDir;
+    private final String mBaseName;
+
     private File mLogFile;
     private final SimpleDateFormat filenameFormatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
     private final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private final SimpleDateFormat ISODateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-    private static final String GPXHEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-            + "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
-            + " version=\"1.1\"\n"
-            + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
-            + " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\"\n"
-            + " creator=\"wearRoutes\"\n>\n"
-            ;
-    private static final String TRK_FOOTER = "</trkseg></trk></gpx>\n";
 
-
-    private final List<Location> backlog = new ArrayList<>();
+    private final List<LogEvent> backlog = new ArrayList<>();
 
     // possibly add in metadata e.g.
     // <metadata>
@@ -59,8 +54,9 @@ public class GPXLogger {
     // </metadata>
     // <trk><name>2015-04-19-08-53-40</name><desc></desc><trkseg>
 
-    public GPXLogger(File baseDir) {
+    public SimpleTextLogger(File baseDir, String baseName) {
         this.mBaseDir = baseDir;
+        this.mBaseName = baseName;
     }
 
 
@@ -86,19 +82,16 @@ public class GPXLogger {
         Calendar calendar = Calendar.getInstance();
         String logFileName;
         synchronized (dateFormatter) {
-            logFileName = "wearRoutes." + filenameFormatter.format(calendar.getTime()) + ".track.gpx";
+            logFileName = mBaseName + "." + filenameFormatter.format(calendar.getTime()) + ".txt";
         }
         mLogFile = new File(mBaseDir, logFileName);
         try {
             RandomAccessFile out = new RandomAccessFile(mLogFile,"rw");
-            out.writeBytes(GPXHEADER);
-            out.writeBytes("<trk><name>"+filenameFormatter.format(calendar.getTime()) +"</name><desc></desc>\n");
-            out.writeBytes("<trkseg>\n");
-            out.writeBytes(TRK_FOOTER);
+            out.writeBytes("Logging Started: " + dateFormatter.format(calendar.getTime()) + "\n");
             out.close();
         }
         catch (IOException ioe) {
-            Log.e(TAG, "Exception writing gpx header!" + ioe);
+            Log.e(TAG, "Exception writing SimpleTextLogger header!" + ioe);
         }
     }
 
@@ -109,24 +102,20 @@ public class GPXLogger {
 
 
     @Subscribe
-    public void newLocation(LocationEvent locationEvent) {
+    public void onLogEvent(LogEvent logEvent) {
         if (!mIsLogging) {
-            return;
-        }
-        Location l = locationEvent.getLocation();
-        if (l == null) {
             return;
         }
 
         synchronized (backlog) {
-            backlog.add(locationEvent.getLocation());
+            backlog.add(logEvent);
         }
     }
 
     /* takes a copy of the backlog and writes them out */
     @Subscribe
     public void flushBackLog(FlushLogsEvent marker) {
-        List<Location> copyOfBackLog;
+        List<LogEvent> copyOfBackLog;
         synchronized (backlog) {
             if (backlog.isEmpty()) {
                 return;
@@ -137,43 +126,38 @@ public class GPXLogger {
         writeLocations(copyOfBackLog);
     }
 
-    private void writeLocations(List<Location> locations) {
-        if (locations == null || locations.isEmpty()) {
+    private void writeLocations(List<LogEvent> lines) {
+        if (lines == null || lines.isEmpty()) {
             return;
         }
 
         RandomAccessFile out;
         try {
             out = new RandomAccessFile(mLogFile, "rw");
-            out.seek(out.length() - TRK_FOOTER.length()); // seek to before the footer
+            out.seek(out.length()); // seek to end
+
         } catch (IOException ioe) {
-            Log.e(TAG, "IOException trying to seek to near end of output gpx." + ioe);
+            Log.e(TAG, "IOException trying to seek to near end of output." + ioe);
             return; // nothing more we can do!
         }
 
-        for (Location l : locations) {
+        for (LogEvent l : lines) {
             String line;
-            synchronized (ISODateFormatter) {
-                line = String.format("<trkpt lat=\"%f\" lon=\"%f\"><ele>%f</ele><time>%s</time><hdop>%.2f</hdop><course>%.1f</course><speed>%.2f</speed></trkpt>\n"
-                        , l.getLatitude()
-                        , l.getLongitude()
-                        , l.getAltitude()
-                        , ISODateFormatter.format(l.getTime()),
-                        l.getAccuracy() / 4.0, // CLUDGE, was 5, but accuracy seemed to be a minimum of 4m (not 5)
-                        l.getBearing(),
-                        l.getSpeed()
+            synchronized (dateFormatter) {
+                line = String.format("%s: %s: %s\n"
+                        , dateFormatter.format(new Date(l.getTimeMs()))
+                        , l.getType()
+                        , l.getLine()
                 );
             }
             try {
                 out.writeBytes(line);
-                if (tagEnabled(TAG))Log.d(TAG, "Written " + line);
             } catch (IOException ioe) {
                 //TODO: what do we want to do with a failed write?
                 Log.e(TAG, "failed to log " + line);
             }
         }
         try {
-            out.writeBytes(TRK_FOOTER);
             out.close();
         } catch (IOException ioe) {
             //TODO: what do we want to do with a failed write?

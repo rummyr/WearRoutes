@@ -51,6 +51,7 @@ import uk.me.ponies.wearroutes.mainactionpages.ActionPageFragment;
 import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStartFragment;
 import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStopFragment;
 import uk.me.ponies.wearroutes.mainactionpages.unused.ActionPageStopResumeFragment;
+import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -63,6 +64,9 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
  * and {@link #notifyPageBackgroundChanged(int, int)}.
  */
 public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
+    @SuppressWarnings("unused")
+    private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+
     private static final int TRANSITION_DURATION_MILLIS = 100;
     private static String TAG = "MainGridPagerAdapter";
     private final ActionPageStartFragment mStartCard;
