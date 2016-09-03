@@ -60,12 +60,14 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import uk.me.ponies.wearroutes.common.BearingSectorizer;
 import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.common.locationUtils.Utils;
+import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
@@ -224,7 +226,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
     // NOTES:
-    // innerMapFragments *do* get GC'd, unless we dod the dirty and stop that happening
+    // innerMapFragments *do* get GC'd, unless we dod the dirty and shutdown that happening
     // attempting to re-use *THIS* object in "onCreate" results in .. "empty" or non-displayable pages.
     // Using GetChildFragmentManager .. works
     // Using getFragmentManager ... only 1st card shows a map .. it seems we're messing up!
@@ -266,7 +268,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         // inner map fragment is created in the layout
         innerMapFragment = (MapFragment) this.getChildFragmentManager().findFragmentById(R.id.mapfragment);
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
-        this.setRetainInstance(true); // seems to stop map loading delay?
+        this.setRetainInstance(true); // seems to shutdown map loading delay?
         innerMapFragment.setRetainInstance(true);
 
 
@@ -323,7 +325,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
         // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
         // mapFragment.setRetainInstance(true);// exception:  Can't retain fragments that are nested in other fragments
-        this.setRetainInstance(true); // seems to stop map loading delay?
+        this.setRetainInstance(true); // seems to shutdown map loading delay?
 
     }
 
@@ -379,16 +381,25 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
             @Override
             public void run() {
                 if (map != null) {
+                    if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "Re-adding polylines during onResume");
                     //map.clear();
                     //mMapPolyLines.clear();
-                    for (String name : mMapPolyLines.keySet()) {
-                        mMapPolyLines.remove(name);
+                    // use an iterator otherwise we are violating the contract by removing an item from a set being iterated
+                    Iterator<String> itr = mMapPolyLines.keySet().iterator();
+                    while (itr.hasNext()) {
+                        String name = itr.next();
+                        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "Re-adding polylines during onResume (remove:" + name + ")");
+                        itr.remove();
+                        // mMapPolyLines.remove(name);
+                        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "Re-adding polylines during onResume (removed:" + name + ")");
                     }
                     for (String routeName : mSrcPolylines.keySet()) {
                         PolylineOptions srcPolyline = mSrcPolylines.get(routeName);
                         Polyline p = map.addPolyline(srcPolyline);
                         mMapPolyLines.put(routeName, p);
                     }
+                    if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "polylines re-added in onResume");
+
 
 
                     // and set the camera zoom
@@ -416,6 +427,10 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onStop called");
         // remove and pool works but dies if another app is opened!
         // fragmentManager reports: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
+        if (map != null) {
+            map.setLocationSource(null);
+        }
+        map = null;
         super.onStop();
     }
 
@@ -558,21 +573,29 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     }
 
     public void addPolyline(PolylineOptions rectOptions, String name, LatLngBounds bounds, boolean zoomTo) {
+        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name);
+
         // save it in case we need to restore it!
         mSrcPolylines.put(name, rectOptions);
         mPolyLineBounds.put(name, bounds);
         if (map != null) {
             Polyline oldPolyLine = mMapPolyLines.get(name);
             if (oldPolyLine != null) {
+                if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name + " removing old one");
                 oldPolyLine.remove(); // clear the old one with the same name
+                if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name + " removed old one");
             }
             Polyline newPolyLine = map.addPolyline(rectOptions);
+            if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name + " adding to map");
             mMapPolyLines.put(name, newPolyLine);
+            if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name + " added to map");
             if (zoomTo) {
                 CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, Options.OPTIONS_ROUTE_ZOOM_PADDING); // padding
                 animateCamera(cu);
             }
         }
+        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "PolyLine added" + name);
+
     }
 
     /**

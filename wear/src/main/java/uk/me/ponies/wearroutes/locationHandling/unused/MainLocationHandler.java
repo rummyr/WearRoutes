@@ -1,4 +1,4 @@
-package uk.me.ponies.wearroutes;
+package uk.me.ponies.wearroutes.locationHandling.unused;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,6 +27,7 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.common.LocationAugmentor;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;

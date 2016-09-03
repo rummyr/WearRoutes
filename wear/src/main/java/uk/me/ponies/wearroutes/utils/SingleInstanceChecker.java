@@ -26,4 +26,10 @@ public class SingleInstanceChecker {
         }
 
     }
+
+    public static void dumpRetainedReferences() {
+        for (Object i: instanceCounts.keySet()) {
+            Log.w("SingleInstanceChecker", "Reference to class " +i.getClass() + "/" + i + " held");
+        }
+    }
 }

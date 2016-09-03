@@ -50,7 +50,7 @@ import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
-public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPagerListener, IAmbientHandler {
+public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPagerListener {
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
@@ -157,31 +157,27 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
     public void event(AmbientEvent evt) {
         switch (evt.getType()) {
             case AmbientEvent.ENTER_AMBIENT: {
-                handleEnterAmbientEvent(evt.getBundle());
+                // set colours to white on black, no anti alias
+                adjustColoursAndAntiAlias(Color.WHITE, Color.BLACK, false);
                 break;
             }
             case AmbientEvent.LEAVE_AMBIENT: {
-                handleExitAmbientEvent();
+                // set colours to black on white , yes anti alias
+                adjustColoursAndAntiAlias(Color.BLACK, Color.WHITE, true);
                 break;
             }
             case AmbientEvent.UPDATE: {
-                handleUpdateAmbientEvent();
                 break;
             }
         }
     }
 
-    @Override
-    public void handleEnterAmbientEvent(Bundle ambientDetails) {
-        // set colours to black on white
-        int fgColor = Color.WHITE;
-        int bgColor = Color.BLACK;
-        // mChronometer.setTextColor(fgColor);
+    /** simple method to group all colour/antialias changes into one place */
+    private void adjustColoursAndAntiAlias(int fgColor, int bgColor, boolean antialias) {
         mStaticChronometer.setTextColor(fgColor);
         mSpeedAverage.setTextColor(fgColor);
         mDistance.setTextColor(fgColor);
         mSpeedInstant.setTextColor(fgColor);
-        // mClockView.setTextColor(fgColor);
         mStaticClock.setTextColor(fgColor);
         mSpeedPanel1Table.setBackgroundColor(bgColor);
 
@@ -190,32 +186,21 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         mSpeedAverageLabel.setTextColor(fgColor);
         mChronometerLabel.setTextColor(fgColor);
         mClockLabel.setTextColor(fgColor);
+
+        mStaticChronometer.getPaint().setAntiAlias(antialias);
+        mSpeedAverage.getPaint().setAntiAlias(antialias);
+        mDistance.getPaint().setAntiAlias(antialias);
+        mSpeedInstant.getPaint().setAntiAlias(antialias);
+        mStaticClock.getPaint().setAntiAlias(antialias);
+
+        mSpeedInstantLabel.getPaint().setAntiAlias(antialias);
+        mDistanceLabel.getPaint().setAntiAlias(antialias);
+        mSpeedAverageLabel.getPaint().setAntiAlias(antialias);
+        mChronometerLabel.getPaint().setAntiAlias(antialias);
+        mClockLabel.getPaint().setAntiAlias(antialias);
+
     }
 
-    @Override
-    public void handleUpdateAmbientEvent() {
-
-    }
-
-    @Override
-    public void handleExitAmbientEvent() {
-        // set colours to black on white
-        int fgColor = Color.BLACK;
-        int bgColor = Color.WHITE;
-        //mChronometer.setTextColor(fgColor);
-        mStaticChronometer.setTextColor(fgColor);
-        mSpeedAverage.setTextColor(fgColor);
-        mDistance.setTextColor(fgColor);
-        mSpeedInstant.setTextColor(fgColor);
-        // mClockView.setTextColor(fgColor);
-        mStaticClock.setTextColor(fgColor);
-        mSpeedPanel1Table.setBackgroundColor(bgColor);
-        mSpeedInstantLabel.setTextColor(fgColor);
-        mDistanceLabel.setTextColor(fgColor);
-        mSpeedAverageLabel.setTextColor(fgColor);
-        mChronometerLabel.setTextColor(fgColor);
-        mClockLabel.setTextColor(fgColor);
-    }
 
     @Subscribe
     public void newLocation(LocationEvent locationEvent) {

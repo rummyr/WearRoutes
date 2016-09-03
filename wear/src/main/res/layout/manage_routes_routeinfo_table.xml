@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/action_button_background"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route Name"
+        android:id="@+id/routeNameLabel"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6sp"
+        android:layout_centerInParent="true"
+/>
+
+    <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/RouteName"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:text="This-is-an-extremely-long-route-name"
+        android:id="@+id/RouteName"
+        android:textAppearance="@style/TextAppearance.Wearable.Medium"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/routeNameLabel"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:textAlignment="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Date Loaded"
-        android:id="@+id/textView6"
+        android:id="@+id/dateLoadedLabel"
         android:layout_below="@+id/RouteName"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="false"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Date Text"
+            android:textAppearance="@style/TextAppearance.Wearable.Medium"
+            android:text="30 August 2016 11:32:24.123"
             android:id="@+id/DateReceived"
-            android:layout_below="@+id/RouteName"
-            android:layout_toEndOf="@+id/textView6" />
+            android:layout_below="@+id/dateLoadedLabel"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
 
     <ImageButton
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/deleteRouteButton"
         android:src="@drawable/materialdesignicons_delete"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:contentDescription="@string/delete_the_route_button"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medium Text"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true" />
+        android:contentDescription="@string/delete_the_route_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false" />
 
 
 </RelativeLayout>
-
+</android.support.wearable.view.BoxInsetLayout>

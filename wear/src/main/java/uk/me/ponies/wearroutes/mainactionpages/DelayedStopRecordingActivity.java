@@ -48,11 +48,11 @@ import uk.me.ponies.wearroutes.controller.Controller;
             mDelayedConfirmationView.setListener(
                     new DelayedConfirmationView.DelayedConfirmationListener() {
                         @Override
-                        /** Timer selected means CANCEL the stop */
+                        /** Timer selected means CANCEL the shutdown */
                         public void onTimerSelected(View view) {
 
                             // simplest approach is to just STOP!
-                            // that should return them to the previous screen which will probably continue to show "stop"
+                            // that should return them to the previous screen which will probably continue to show "shutdown"
                             // cancel the timer!
                             mDelayedConfirmationView.reset();
                             finish();
@@ -60,7 +60,7 @@ import uk.me.ponies.wearroutes.controller.Controller;
                         }
 
                         @Override
-                        /** Timer finished means Cancel the stop */
+                        /** Timer finished means Cancel the shutdown */
                         public void onTimerFinished(View view) {
                             doStop(view);
                         }
@@ -73,7 +73,7 @@ import uk.me.ponies.wearroutes.controller.Controller;
         private void doStop(View view) {
             // tell them we've stopped
             Controller.getInstance().stopRecording(stopTime);
-            mDelayedConfirmationView.setTotalTimeMs(0); // to stop the cancel event firing later
+            mDelayedConfirmationView.setTotalTimeMs(0); // to shutdown the cancel event firing later
 
 
             Intent intent = new Intent(DelayedStopRecordingActivity.this, ConfirmationActivity.class);

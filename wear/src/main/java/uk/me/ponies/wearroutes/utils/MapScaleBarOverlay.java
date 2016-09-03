@@ -25,12 +25,12 @@ public class MapScaleBarOverlay extends TextView {
     private static final String STR_KM = "km";
 
     //Constants and config
-    private static float scaleBarProportion = 0.25f;
+    private static float scaleBarProportion = 0.5f;
     private final float MARGIN_LEFT_DP = 4;
     private final float END_CAP_SIZE_DP = 8;
     private final float MARGIN_TOP_DP = 6;
     private final float MARGIN_BOTTOM_DP = 2;
-    private final float TEXT_SIZE_DP = 12;
+    private final float TEXT_SIZE_DP = 26;
     private final float GAP_SCALE_LINE_TO_TEXT_DP = 1;
     private final int BACKGROUND_RECT_ALPHA = 160; // 80 is faint, but not always strong enough, 128 is close
     private boolean mDrawHalfTick = false; // draw the half way tick on the scale bar

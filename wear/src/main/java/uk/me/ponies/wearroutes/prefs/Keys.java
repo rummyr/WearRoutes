@@ -39,4 +39,12 @@ public abstract class Keys {
 
 
     public static final String KEY_DEVOPT_DEBUG_LOG_ENABLED = "pref_wear_debug_log_enabled";
+    public static final String KEY_KEEP_AWAKE_WHEN_RECORDING = "pref_developer_option_keep_awake_when_recording";
+
+
+    public static final String KEY_PREF_WEAR_RECORDING_LOCATION_INTERVAL ="pref_wear_recording_location_interval";
+    public static final String KEY_PREF_WEAR_RECORDING_LOCATION_ACCURACY = "pref_wear_recording_location_accuracy";
+
+    public static final String KEY_PREF_WEAR_ACCURACY_STATEGY = "pref_wear_accuracy_strategy";
+
 }

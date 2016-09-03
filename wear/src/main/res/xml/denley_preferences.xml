@@ -30,15 +30,7 @@
         />
     <!-- entryAsSummary . it's either UPPER CASE or blank, let the icon speak for itself-->
 
-    <SwitchPreference
-        android:key="pref_wear_GPS"
-        android:title="Use Watch GPS"
-        android:summaryOn="Occasionally"
-        android:summaryOff="Never"
-        android:defaultValue="true"
-        app:wear_iconOn="@drawable/materialdesignicons_cellphone_and_watch"
-        app:wear_iconOff="@drawable/materialdesignicons_cellphone_android"
-        />
+
 
 
 
@@ -82,6 +74,56 @@
         />
 
 
+    <!--- Recording/GPS Control options -->
+    <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:title="Recording Options ..."
+        android:icon="@drawable/materialdesignicons_dots_horizontal_white"
+        >
+
+        <SwitchPreference
+            android:key="pref_wear_GPS"
+            android:title="Use Watch GPS"
+            android:summaryOn="Occasionally"
+            android:summaryOff="Never"
+            android:defaultValue="true"
+            app:wear_iconOn="@drawable/materialdesignicons_cellphone_and_watch"
+            app:wear_iconOff="@drawable/materialdesignicons_cellphone_android"
+            />
+
+        <SwitchPreference
+            android:key="pref_developer_option_keep_awake_when_recording"
+            android:title="Keep Awake when recording"
+            android:defaultValue="false"
+            app:wear_iconOn="@drawable/materialdesignicons_check"
+            app:wear_iconOff="@drawable/materialdesignicons_close"
+            />
+
+
+        <ListPreference
+            android:title="Record Location Accuracy (m)"
+            android:key="pref_wear_recording_location_accuracy"
+            android:defaultValue="40"
+            android:entries="@array/location_accuracy_display"
+            android:entryValues="@array/location_accuracy_values"
+            app:wear_entryAsSummary="true"
+            />
+
+        <ListPreference
+        android:title="Record Location Interval (s)"
+        android:key="pref_wear_recording_location_interval"
+        android:defaultValue="30"
+        android:entries="@array/location_interval_display"
+        android:entryValues="@array/location_interval_values"
+        app:wear_entryAsSummary="true"
+        />
+
+
+    </PreferenceScreen>
+
+
+    <!--- MAP UI options -->
     <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -117,6 +159,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:title="Dev Options..."
         android:icon="@drawable/materialdesignicons_dots_horizontal_white">
+
 
         <SwitchPreference
             android:key="pref_developer_option_performance_reuse_gmap_fragments"

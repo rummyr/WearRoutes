@@ -79,7 +79,7 @@ public class CSVLogger {
     }
 
     private void stopLogging() {
-        //TODO: is anything needed when we stop logging to a csv file?
+        //TODO: is anything needed when we shutdown logging to a csv file?
     }
 
 

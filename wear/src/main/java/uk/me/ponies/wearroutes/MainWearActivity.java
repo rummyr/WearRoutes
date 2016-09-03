@@ -27,8 +27,10 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -53,24 +55,58 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
+import uk.me.ponies.wearroutes.common.StoredRoute;
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 import uk.me.ponies.wearroutes.controller.Controller;
 import uk.me.ponies.wearroutes.controller.StateConstants;
 import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
 import uk.me.ponies.wearroutes.historylogger.SimpleTextLogger;
+import uk.me.ponies.wearroutes.locationHandling.LocationHandler;
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.ActivityLifeCycleLogger;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
-import uk.me.ponies.wearroutes.common.StoredRoute;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
 public class MainWearActivity extends WearableActivity {
     private static final String TAG = "MainWearActivity";
+    private static boolean sLifeCycleLoggerRegistered; // once and once only!
+
+    private LocationHandler mPersistentLocationHandler;
+    String model = Build.MODEL;
+
+    /** A class to hold references to objects that are <b>only</b> held to shutdown Garbage Collection.
+     * makes freeing off a single = null call. */
+    private static class GCStoppers {
+        private static final String TAG = "GCStoppers";
+        Set<Object> pin = Collections.synchronizedSet(new HashSet<>());
+
+        public void add(Object o) {
+            if (pin.contains(o)) {
+                Log.w(TAG, "adding same object to GCStopper:" + o.getClass().getName() + "/" + o);
+            }
+            pin.add(o);
+        }
+
+        public void clear() {
+            pin.clear();
+            connectionCallBacksHandler = null;
+            connectionFailedListener = null;
+
+        }
+
+        private ConnectionCallBacksHandler connectionCallBacksHandler;
+        private ConnectionFailedListener connectionFailedListener;
+    };
+
+    private GCStoppers gcPreventer;
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
@@ -81,21 +117,66 @@ public class MainWearActivity extends WearableActivity {
     private GoogleApiClient mGoogleApiClient;
     private Controller mController;
 
-    private ConnectionCallBacksHandler noGCConnectionCallBacksHandler;
-    private ConnectionFailedListener noGCConnectionFailedListener;
-    private PollingLocationHandler noGCMainLocationPoller;
-    private MapSwipeToZoomFragment noGCMapFragmentContainer;
-    private GridViewPagerListenerNotifier noGCGridViewPagerListenerNotifier;
-    private MyPreferenceChangeListener noGCSharedPreferenceListener;
     private SimpleTextLogger mSimpleTextLogger;
 
 
     //BUG: multiple instances are launched? Or perhaps just MULTIPLE instances of existing components!
 
     @Override
+    protected void onDestroy() {
+        mGoogleApiClient.unregisterConnectionCallbacks(gcPreventer.connectionCallBacksHandler);
+        mGoogleApiClient.unregisterConnectionFailedListener(gcPreventer.connectionFailedListener);
+        mGoogleApiClient.disconnect();
+
+        gcPreventer.clear(); // probably not required.
+        gcPreventer = null;
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("SomethingToPutInSavedInstanceState", true);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onStateNotSaved() {
+        super.onStateNotSaved();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate called savedinstanceState is null:" + (savedInstanceState == null));
-        getApplication().registerActivityLifecycleCallbacks(new ActivityLifeCycleLogger());
+        if (gcPreventer == null) {
+            gcPreventer = new GCStoppers();
+        }
+        else {
+            Log.w(TAG,"gcPreventer is NOT null in onCreate, probably didn't go through destroy?");
+        }
+        if (!sLifeCycleLoggerRegistered) {
+            getApplication().registerActivityLifecycleCallbacks(new ActivityLifeCycleLogger());
+            sLifeCycleLoggerRegistered = true;
+        }
+
+        if (true) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+//                    .detectDiskReads()
+//                    .detectDiskWrites()
+                    .detectNetwork()   // or .detectAll() for all detectable problems
+                    .detectCustomSlowCalls()
+                    .penaltyLog()
+                    .build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectAll()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .detectActivityLeaks()
+                    .detectFileUriExposure()
+                    .detectLeakedRegistrationObjects()
+                    .penaltyLog()
+                    .penaltyLog()
+                    .build());
+        }
 /*
         DebugEnabled.enableTag("WearMainActivity");
         DebugEnabled.enableTag("MapSwipeToZoomFrag");
@@ -113,7 +194,8 @@ public class MainWearActivity extends WearableActivity {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean defaultDebugLogEnablement = sharedPrefs.getBoolean(Keys.KEY_DEVOPT_DEBUG_LOG_ENABLED, true);
         DebugEnabled.setDefaultEnablement(defaultDebugLogEnablement);
-        noGCSharedPreferenceListener = new MyPreferenceChangeListener();
+        MyPreferenceChangeListener noGCSharedPreferenceListener = new MyPreferenceChangeListener();
+        gcPreventer.add(noGCSharedPreferenceListener);
         sharedPrefs.registerOnSharedPreferenceChangeListener(noGCSharedPreferenceListener);
 
 
@@ -124,6 +206,8 @@ public class MainWearActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         final Resources res = getResources();
         final GridViewPager pager = (GridViewPager) findViewById(R.id.pager);
+        //BUG: Is it sensible to massively increase the offscreen page count to allow the mapFragment to live on?
+        pager.setOffscreenPageCount(100);
         pager.setOnApplyWindowInsetsListener(new OnApplyWindowInsetsListener() {
             @Override
             public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
@@ -145,12 +229,14 @@ public class MainWearActivity extends WearableActivity {
         });
 
         sampleGridPagerAdapter = new MainGridPagerAdapter(this, getFragmentManager());
+
         final MainGridPagerAdapter.ColumnHistorian columnHistorian = sampleGridPagerAdapter.getColumnHistorian();
         columnHistorian.setPager(pager);
         pager.setOnPageChangeListener(columnHistorian);
         pager.setAdapter(sampleGridPagerAdapter);
 
-        noGCGridViewPagerListenerNotifier = new GridViewPagerListenerNotifier(pager);
+        GridViewPagerListenerNotifier noGCGridViewPagerListenerNotifier = new GridViewPagerListenerNotifier(pager);
+        gcPreventer.add(noGCGridViewPagerListenerNotifier);
         pager.setOnPageChangeListener(noGCGridViewPagerListenerNotifier);
 
         DotsPageIndicator dotsPageIndicator = (DotsPageIndicator) findViewById(R.id.page_indicator);
@@ -230,10 +316,16 @@ public class MainWearActivity extends WearableActivity {
             }
         }); // end pager onPageChangeListener
 
-        noGCMapFragmentContainer = sampleGridPagerAdapter.getMapFragment();
-        noGCMainLocationPoller = new PollingLocationHandler(this);
-        noGCConnectionCallBacksHandler = new ConnectionCallBacksHandler();
-        noGCConnectionFailedListener = new ConnectionFailedListener();
+        MapSwipeToZoomFragment noGCMapFragmentContainer = sampleGridPagerAdapter.getMapFragment();
+        gcPreventer.add(noGCMapFragmentContainer);
+//        ILocationHandler mPersistentLocationHandler = new PollingLocationHandler(this);
+        mPersistentLocationHandler = new LocationHandler(this, LocationHandler.POLL_USING_ALARMS,LocationHandler.ACCURACY_VELOCITY_ADJUST);
+
+
+        ConnectionCallBacksHandler noGCConnectionCallBacksHandler = new ConnectionCallBacksHandler();
+        gcPreventer.connectionCallBacksHandler = noGCConnectionCallBacksHandler;
+        ConnectionFailedListener noGCConnectionFailedListener = new ConnectionFailedListener();
+        gcPreventer.connectionFailedListener = noGCConnectionFailedListener;
         mDataApiListener = new DataApiListener(noGCMapFragmentContainer, getFilesDir());
         mCapabilityApiListener = new CapabilityApiListener();
 
@@ -254,7 +346,7 @@ public class MainWearActivity extends WearableActivity {
             }
         }
 
-        Controller.startup(sampleGridPagerAdapter);
+        Controller.startup(sampleGridPagerAdapter, getApplicationContext());
         mController = Controller.getInstance();
         // mController.setContext(getApplicationContext());
 
@@ -272,9 +364,9 @@ public class MainWearActivity extends WearableActivity {
     public void onEnterAmbient(Bundle ambientDetails) {
         if (tagEnabled(TAG)) Log.d(TAG, "before onEnterAmbient current isAmbient state is " + isAmbient());
         super.onEnterAmbient(ambientDetails);
+        EventBus.getDefault().post(new LogEvent("Ambient Entered", "PWR"));
         sampleGridPagerAdapter.onEnterAmbient(ambientDetails);
         EventBus.getDefault().post(new AmbientEvent(AmbientEvent.ENTER_AMBIENT, ambientDetails));
-        EventBus.getDefault().post(new LogEvent("Ambient Entered", "Ambient"));
 
         if (tagEnabled(TAG)) Log.d(TAG, "after onEnterAmbient current isAmbient state is " + isAmbient());
     }
@@ -282,9 +374,9 @@ public class MainWearActivity extends WearableActivity {
     @Override
     public void onExitAmbient() {
         if (tagEnabled(TAG)) Log.d(TAG, "before onExitAmbient current isAmbient state is " + isAmbient());
+        EventBus.getDefault().post(new LogEvent("Ambient Exited", "PWR"));
         sampleGridPagerAdapter.onExitAmbient();
         EventBus.getDefault().post(new AmbientEvent(AmbientEvent.LEAVE_AMBIENT, null));
-        EventBus.getDefault().post(new LogEvent("Ambient Exited", "Ambient"));
         super.onExitAmbient();
         if (tagEnabled(TAG)) Log.d(TAG, "after onExitAmbient current isAmbient state is " + isAmbient());
 
@@ -356,7 +448,7 @@ public class MainWearActivity extends WearableActivity {
         super.onStart();
         // cancel any displayed notification
         ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
-                .cancel(001);
+                .cancel(1);
 
         File logDir = new File(Environment.getExternalStorageDirectory().getPath() + "/wearRoutes/");
         if (!logDir.exists()) {
@@ -382,6 +474,9 @@ public class MainWearActivity extends WearableActivity {
     protected void onStop() {
         if (tagEnabled(TAG)) Log.d(TAG, "onStop called");
         if (mController.getRecordingState() != StateConstants.STATE_STOPPED) {
+            // if we are recording DON'T shutdown properly
+            //TODO: implement a "recording" service to handle the stuff that needs to go on in the background, there isn't a huge amount
+
             Notification n = new Notification.Builder(getApplicationContext())
                     .setContentTitle("TITLE:Simple Notification")
                     .setContentText("Context Text")
@@ -397,6 +492,10 @@ public class MainWearActivity extends WearableActivity {
             // and now display it
             ((NotificationManager) getSystemService(NOTIFICATION_SERVICE))
                     .notify(001, n);
+        } else {
+            //TODO: shutdown tasks that are needed even if not foreground, but aren't needed otherwise
+
+
         }
         super.onStop();
 
@@ -405,10 +504,38 @@ public class MainWearActivity extends WearableActivity {
         if (Options.FINISH_ON_STOP && mController.getRecordingState() == StateConstants.STATE_STOPPED) {
             Log.w(TAG, "Finishing activity in onStop");
 
-            mSimpleTextLogger.setLogging(false);
-            EventBus.getDefault().unregister(mSimpleTextLogger);
-            mSimpleTextLogger = null;
+            if (mSimpleTextLogger != null) {
+                mSimpleTextLogger.setLogging(false);
+                EventBus.getDefault().unregister(mSimpleTextLogger);
+                mSimpleTextLogger = null;
+            }
 
+            if (mController != null) {
+                mController.shutdown();
+                mController = null;
+            }
+            if (mPersistentLocationHandler != null) {
+                mPersistentLocationHandler.shutdown();
+                mPersistentLocationHandler = null;
+            }
+            sampleGridPagerAdapter = null;
+
+            //DEBUG see what's left hanging in the EventBus
+            EventBus.getDefault().hasSubscriberForEvent(Object.class);
+
+            if (Options.DEVELOPER_MODE) {
+                try {
+                    Runtime.getRuntime().gc();
+                    Runtime.getRuntime().runFinalization();
+                    Thread.sleep(100);
+                    Runtime.getRuntime().gc();
+                    Runtime.getRuntime().runFinalization();
+                    Thread.sleep(100);
+                } catch (InterruptedException ie) {
+                    DebugEnabled.tagEnabled(TAG);
+                }
+                SingleInstanceChecker.dumpRetainedReferences();
+            }
 
             finish();
         }

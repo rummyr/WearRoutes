@@ -47,7 +47,7 @@ public class LatLngLogger  {
     }
 
     private void stopLogging() {
-        //TODO: is anything needed when we stop logging to a polyLine?
+        //TODO: is anything needed when we shutdown logging to a polyLine?
         mPrevLocation = null;
     }
 

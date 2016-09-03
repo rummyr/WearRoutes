@@ -85,14 +85,7 @@ public class SimpleTextLogger {
             logFileName = mBaseName + "." + filenameFormatter.format(calendar.getTime()) + ".txt";
         }
         mLogFile = new File(mBaseDir, logFileName);
-        try {
-            RandomAccessFile out = new RandomAccessFile(mLogFile,"rw");
-            out.writeBytes("Logging Started: " + dateFormatter.format(calendar.getTime()) + "\n");
-            out.close();
-        }
-        catch (IOException ioe) {
-            Log.e(TAG, "Exception writing SimpleTextLogger header!" + ioe);
-        }
+        onLogEvent(new LogEvent("Logging Started: " + dateFormatter.format(calendar.getTime()) + "\n", "SimpleTextLogger"));
     }
 
     private void stopLogging() {

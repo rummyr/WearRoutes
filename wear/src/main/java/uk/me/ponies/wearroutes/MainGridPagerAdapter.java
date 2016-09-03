@@ -402,14 +402,18 @@ public class MainGridPagerAdapter extends FragmentGridPagerAdapter {
 
     @Override
     public void startUpdate(ViewGroup container) {
-        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: startUpdate Called id:" + container.getId());
+        long st = System.currentTimeMillis();
         super.startUpdate(container);
+        long end = System.currentTimeMillis();
+        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: startUpdate Called id:" + container.getId() + " took " + (end-st) + "ms");
     }
 
     @Override
     public void finishUpdate(ViewGroup container) {
-        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: finishUpdate Called id:" + container.getId());
+        long st = System.currentTimeMillis();
         super.finishUpdate(container);
+        long end = System.currentTimeMillis();
+        if (tagEnabled(TAG))            Log.d(TAG, "GridPagerAdapter: finishUpdate Called id:" + container.getId() + " took " + (end-st) + "ms");
     }
 
     @Override

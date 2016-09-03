@@ -24,7 +24,7 @@ public abstract class CPUMeasurer {
             long csTime = Long.parseLong(toks[16]);
             //noinspection UnnecessaryLocalVariable
             long cpu1 =  uTime + sTime + cuTime + csTime;
-
+            reader.close();
             return cpu1;
         } catch (IOException ex) {
             ex.printStackTrace();

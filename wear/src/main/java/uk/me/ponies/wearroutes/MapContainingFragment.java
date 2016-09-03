@@ -106,7 +106,7 @@ public class MapContainingFragment extends FragmentLifecycleLogger {
             }
             // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
             // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
-            this.setRetainInstance(true); // seems to stop map loading delay?
+            this.setRetainInstance(true); // seems to shutdown map loading delay?
 
         }
 
@@ -120,7 +120,7 @@ public class MapContainingFragment extends FragmentLifecycleLogger {
 
 
     // NOTES:
-    // innerMapFragments *do* get GC'd, unless we dod the dirty and stop that happening
+    // innerMapFragments *do* get GC'd, unless we dod the dirty and shutdown that happening
     // attempting to re-use *THIS* object in "onCreate" results in .. "empty" or non-displayable pages.
     // Using GetChildFragmentManager .. works
     // Using getFragmentManager ... only 1st card shows a map .. it seems we're messing up!
@@ -218,7 +218,7 @@ public class MapContainingFragment extends FragmentLifecycleLogger {
 
                 // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
                 // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
-                this.setRetainInstance(true); // seems to stop map loading delay?
+                this.setRetainInstance(true); // seems to shutdown map loading delay?
 
             }
         } else {
@@ -305,7 +305,7 @@ public class MapContainingFragment extends FragmentLifecycleLogger {
 
         // com.google.android.gms.maps.MapContainingFragment f = (com.google.android.gms.maps.MapContainingFragment)myMapFragment;
         // mapFragment.setRetainInstance(true);// exception:  Can't retain fragements that are nested in other fragments
-        this.setRetainInstance(true); // seems to stop map loading delay?
+        this.setRetainInstance(true); // seems to shutdown map loading delay?
 
     }
 

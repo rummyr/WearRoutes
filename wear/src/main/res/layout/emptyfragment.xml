@@ -9,7 +9,7 @@
     android:id="@+id/emptyFragment">
     <!-- setting padding to 1 fixes an issue where only the middle 1/3rd is shown during swiping from maps -->
     <!-- there seems to be a defect where if the card is full height only the middle 1/3rd of the card is shown when swiping -->
-    <!-- trying fill_parent instead of match_parent .. to make paging stop showing "columns"
+    <!-- trying fill_parent instead of match_parent .. to make paging shutdown showing "columns"
      RESULT: didn't work -->
 
     <!-- trying adding in a spacer to fill things up

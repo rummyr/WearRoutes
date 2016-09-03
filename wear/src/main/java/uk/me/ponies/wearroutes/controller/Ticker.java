@@ -56,4 +56,10 @@ public class Ticker {
         startTicker();
     }
 
+    public void stopTicker() {
+        if (mTickerHandler != null) {
+            mTickerHandler.removeCallbacks(mTicker);
+        }
+    }
+
 }

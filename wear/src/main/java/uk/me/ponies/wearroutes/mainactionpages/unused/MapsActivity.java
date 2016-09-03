@@ -67,7 +67,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
     private DismissOverlayView mDismissOverlay;
     private GoogleApiClient mGoogleApiClient;
     @SuppressWarnings("FieldCanBeLocal")
-    private TrackLocationAndBearingOnMap mMapLocationAndBearingTracker; // here to stop garbage collection
+    private TrackLocationAndBearingOnMap mMapLocationAndBearingTracker; // here to shutdown garbage collection
 
 
      /**
