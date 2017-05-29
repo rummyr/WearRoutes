@@ -6,10 +6,13 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.WeakHashMap;
 
+/* personal version of the Event bus, used for register/unregister tracking
+  required to help diagnose memory leakage.
+ */
 
 public class LoggingEventBus extends EventBus {
     private static final String TAG = "EventBusLogger";
-    WeakHashMap<Object, String> registered = new WeakHashMap<>();
+    private WeakHashMap<Object, String> registered = new WeakHashMap<>();
 
     public LoggingEventBus() {
         super();
