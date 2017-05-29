@@ -1,0 +1,24 @@
+2017-05-24 15:48:41.308: ACT: MainWearActivity onCreate Complete
+2017-05-24 15:48:44.622: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 15:48:49.984: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 15:48:52.657: GPS: Location received:Location[fused 54.146140,-2.280775 acc=34 et=+5h39m51s61ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-24 15:48:52.657: GPS: TTF NormalPoller:4.7
+2017-05-24 15:48:52.657: GPS: Good Location received:Location[fused 54.146140,-2.280775 acc=34 et=+5h39m51s61ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-24 15:48:56.122: GPS: Location received:Location[fused 54.146219,-2.280674 acc=33 et=+5h39m54s525ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-24 15:48:56.122: GPS: TTF NormalPoller:8.2
+2017-05-24 15:48:56.123: GPS: Good Location received:Location[fused 54.146219,-2.280674 acc=33 et=+5h39m54s525ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-24 15:48:58.121: GPS: Location received:Location[fused 54.146259,-2.280624 acc=46 et=+5h39m56s526ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-24 15:48:58.121: GPS: TTF NormalPoller:10.2
+2017-05-24 15:48:58.121: GPS: Good Location received:Location[fused 54.146259,-2.280624 acc=46 et=+5h39m56s526ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-24 15:49:00.129: GPS: Location received:Location[fused 54.146299,-2.280573 acc=39 et=+5h39m58s533ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-24 15:49:00.129: GPS: TTF NormalPoller:12.2
+2017-05-24 15:49:00.129: GPS: Good Location received:Location[fused 54.146299,-2.280573 acc=39 et=+5h39m58s533ms alt=0.0 vel=2.777778 bear=36.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-24 15:49:00.246: PWR: Ambient Entered
+2017-05-24 15:49:33.282: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-24 15:49:33.347: GPS: Location received:Location[fused 54.146831,-2.279524 acc=40 et=+5h40m31s751ms alt=0.0 vel=2.777778 bear=53.0 mock {Bundle[mParcelledData.dataSize=44]}]state is slowPoller
+2017-05-24 15:49:33.347: GPS: TTF SlowPoller:8.3
+2017-05-24 15:49:33.347: GPS: Good Location received:Location[fused 54.146831,-2.279524 acc=40 et=+5h40m31s751ms alt=0.0 vel=2.777778 bear=53.0 mock {Bundle[mParcelledData.dataSize=44]}] fromSlowLocationPollerAlarmWakeup
+2017-05-24 15:49:33.358: GPS: Scheduling a further update in:26642ms
+2017-05-24 15:50:11.521: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-24 15:51:03.025: GPS: Timed out waiting for a good location
+2017-05-24 15:51:03.046: GPS: Scheduling a further update in:26954ms

@@ -1,0 +1,2 @@
+2017-05-24 12:14:54.262: ACT: MainWearActivity onCreate Complete
+2017-05-24 12:15:37.122: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals

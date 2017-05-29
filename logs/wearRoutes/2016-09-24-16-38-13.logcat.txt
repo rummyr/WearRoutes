@@ -1,0 +1,785 @@
+--------- beginning of main
+09-24 16:34:09.631  5495  5582 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:34:09.641  5495  5495 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:34:09.642  5495  5583 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:34:09.683  5495  5495 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 45 lines
+09-24 16:34:11.679  5495  5582 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 4 lines
+09-24 16:34:11.738  5495  5495 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 5 lines
+09-24 16:34:12.030  5495  5614 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:34:12.110  5495  5495 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 10 lines
+09-24 16:34:12.534  5495  5612 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:34:12.546  5495  5495 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 44 lines
+09-24 16:34:12.861  5495  5505 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 2 lines
+09-24 16:34:13.566  5495  5610 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 8 lines
+09-24 16:34:14.586  5495  5614 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 3 lines
+--------- beginning of crash
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: FATAL EXCEPTION: main
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 5495
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.Integer.equals(java.lang.Object)' on a null object reference
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at uk.me.ponies.wearroutes.utils.SingleInstanceChecker.<init>(SingleInstanceChecker.java:23)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at uk.me.ponies.wearroutes.historylogger.SimpleTextLogger.<init>(SimpleTextLogger.java:30)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainWearActivity.onStart(MainWearActivity.java:507)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1237)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.Activity.performStart(Activity.java:6268)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.Activity.performRestart(Activity.java:6314)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.ActivityThread.handleSleeping(ActivityThread.java:3645)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.ActivityThread.-wrap19(ActivityThread.java)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1519)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+09-24 16:34:16.007  5495  5495 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+09-24 16:35:58.445  5668  5668 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 2 lines
+09-24 16:35:59.001  5683  5683 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 4 lines
+09-24 16:36:00.612  5668  5668 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 13 lines
+09-24 16:36:01.942  5668  5709 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:36:01.957  5668  5668 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 3 lines
+09-24 16:36:01.959  5668  5710 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1 line
+09-24 16:36:01.969  5668  5668 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 35 lines
+09-24 16:36:02.485  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onAttach called
+09-24 16:36:02.485  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onCreate called
+09-24 16:36:02.543  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onViewCreated called
+09-24 16:36:02.544  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onActivityCreated called
+09-24 16:36:02.544  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onViewStateRestored called
+09-24 16:36:02.544  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onAttach called
+09-24 16:36:02.544  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onCreate called
+09-24 16:36:02.544  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment Map #00 onCreateView called
+09-24 16:36:02.666  5668  5668 D MapSwipeToZoomFrag: creating a new InnerMapFragment
+09-24 16:36:02.712  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment (not the view) is MapFragment{108428e id=0x7f130092}
+09-24 16:36:02.712  5668  5668 D MapSwipeToZoomFrag: CreateView Map #00 getting MapAsync 
+09-24 16:36:02.714  5668  5668 D MapSwipeToZoomFrag: CreateView completed
+09-24 16:36:02.717  5668  5668 D MapSwipeToZoomFrag: Map #00 onViewCreatedCalled
+09-24 16:36:02.720  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewCreated called
+09-24 16:36:02.737  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onActivityCreated called
+09-24 16:36:02.737  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewStateRestored called
+09-24 16:36:02.752  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 420ms
+09-24 16:36:02.839  5668  5709 D         : HwMemAllocatorImpl Static Counters 0 0
+09-24 16:36:02.839  5668  5709 D         : HwMemAllocatorImpl[adece0a8] totalDeviceAllocSize[0] totalFree[0] maxFree[0] in numSlabs[0]
+09-24 16:36:02.846  5668  5709 I OpenGLRenderer: Initialized EGL, version 1.4
+09-24 16:36:02.846  5668  5709 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-24 16:36:02.877  5668  5668 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+09-24 16:36:02.879  5668  5668 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.LogEvent
+09-24 16:36:02.880  5668  5668 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+09-24 16:36:02.883  5668  5668 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent
+09-24 16:36:02.883  5668  5668 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+09-24 16:36:02.883  5668  5668 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+09-24 16:36:02.887  5668  5668 I Choreographer: Skipped 32 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:02.889  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:02.889  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:02.902  5668  5668 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.0,0.0PxLeftTopOff:0,0
+09-24 16:36:02.902  5668  5668 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:36:02.949  5668  5720 D Loader  : Loading asset 0x7f020072
+09-24 16:36:03.088  5668  5668 I zzae    : Making Creator dynamically
+09-24 16:36:03.388  5668  5668 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi-v7a
+09-24 16:36:03.389  5668  5668 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi
+09-24 16:36:03.534  5668  5668 I Google Maps Android API: Google Play services client version: 9256000
+09-24 16:36:03.553  5668  5668 I Google Maps Android API: Google Play services package version: 9683530
+09-24 16:36:03.759  5668  5674 W art     : Suspending all threads took: 10.986ms
+09-24 16:36:04.093  5668  5668 I c       : Token loaded from file. Expires in: 431890493 ms.
+09-24 16:36:04.093  5668  5668 I c       : Scheduling next attempt in 431590 seconds.
+09-24 16:36:04.796  5668  5668 I Choreographer: Skipped 113 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:04.801  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:04.802  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:05.002  5668  5668 D MapSwipeToZoomFrag: showZoom is false
+09-24 16:36:05.018  5668  5668 D MapSwipeToZoomFrag: SetupMap Called Map #00
+09-24 16:36:05.028  5668  5668 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@bba9826
+09-24 16:36:05.058  5668  5668 D MapSwipeToZoomFrag: SetupMap Map #00 moving camera to zoom15
+09-24 16:36:05.059  5668  5668 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+09-24 16:36:05.074  5668  5668 D MainWearActivity: onConnected(): Successfully connected to Google API client
+09-24 16:36:06.811  5668  5761 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+09-24 16:36:06.818  5668  5761 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:1
+09-24 16:36:06.819  5668  5761 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 1
+09-24 16:36:06.832  5668  5761 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi-v7a
+09-24 16:36:06.833  5668  5761 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi
+09-24 16:36:06.846  5668  5761 D GoogleCertificates: com.google.android.gms.googlecertificates module is loaded
+09-24 16:36:06.949  5668  5761 D GoogleCertificatesImpl: Fetched 172 Google release certificates
+09-24 16:36:06.965  5668  5761 D GoogleCertificatesImpl: Fetched 336 Google certificates
+09-24 16:36:08.960  5668  5668 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityStarted called
+09-24 16:36:09.024  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+09-24 16:36:09.025  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStart called with zoom:15
+09-24 16:36:09.025  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStart called
+09-24 16:36:09.025  5668  5668 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityResumed called
+09-24 16:36:09.026  5668  5668 D SpeedPanel1: onResume called
+09-24 16:36:09.029  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+09-24 16:36:09.029  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onResume called, visible is true
+09-24 16:36:09.029  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onResume called
+09-24 16:36:09.032  5668  5668 D MapSwipeToZoomFrag: showZoom is false
+09-24 16:36:09.110  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:09.110  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:09.132  5668  5668 D MapSwipeToZoomFrag: Re-adding polylines during onResume
+09-24 16:36:09.132  5668  5668 D MapSwipeToZoomFrag: polylines re-added in onResume
+09-24 16:36:09.152  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:09.152  5668  5668 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:09.405  5668  5668 D MainWearActivity: before onExitAmbient current isAmbient state is false
+09-24 16:36:09.410  5668  5668 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+09-24 16:36:09.410  5668  5668 D MainWearActivity: after onExitAmbient current isAmbient state is false
+09-24 16:36:09.410  5668  5668 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+09-24 16:36:09.992  5668  5668 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+09-24 16:36:09.993  5668  5668 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+09-24 16:36:09.993  5668  5668 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+09-24 16:36:10.044  5668  5668 D SpeedPanel1: onPause called
+09-24 16:36:10.044  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onPause called
+09-24 16:36:10.046  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onPause called
+09-24 16:36:10.047  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onPause called
+09-24 16:36:10.049  5668  5668 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityPaused called
+09-24 16:36:10.049  5668  5668 W test    : application is in foreground: false
+09-24 16:36:10.091  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onSaveInstanceState called
+09-24 16:36:10.091  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onSaveInstanceState called
+09-24 16:36:10.092  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onSaveInstanceState called
+09-24 16:36:10.094  5668  5668 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivitySaveInstance called
+09-24 16:36:10.095  5668  5668 D FragmentLifecycleLogger: SpeedPanel1 onStop called
+09-24 16:36:10.095  5668  5668 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStop called
+09-24 16:36:10.095  5668  5668 D MapSwipeToZoomFrag: EventBusLocationSourceForMap deActivated for com.google.android.gms.maps.GoogleMap$12$1@bba9826
+09-24 16:36:10.095  5668  5668 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStop called
+09-24 16:36:10.095  5668  5668 D MainWearActivity: onStop called
+09-24 16:36:10.128  5668  5668 D AndroidRuntime: Shutting down VM
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: FATAL EXCEPTION: main
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 5668
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: java.lang.RuntimeException: Unable to stop activity {uk.me.ponies.wearroutes/uk.me.ponies.wearroutes.MainWearActivity}: java.lang.NullPointerException: Attempt to invoke virtual method 'int uk.me.ponies.wearroutes.controller.Controller.getRecordingState()' on a null object reference
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.ActivityThread.handleSleeping(ActivityThread.java:3624)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.ActivityThread.-wrap19(ActivityThread.java)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1519)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int uk.me.ponies.wearroutes.controller.Controller.getRecordingState()' on a null object reference
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainWearActivity.onStop(MainWearActivity.java:525)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStop(Instrumentation.java:1278)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.Activity.performStop(Activity.java:6395)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	at android.app.ActivityThread.handleSleeping(ActivityThread.java:3621)
+09-24 16:36:10.151  5668  5668 E AndroidRuntime: 	... 8 more
+09-24 16:36:10.235  5668  5668 I Process : Sending signal. PID: 5668 SIG: 9
+09-24 16:36:31.545  5841  5841 I art     : Late-enabling -Xcheck:jni
+09-24 16:36:31.742  5841  5841 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-1/lib/arm
+09-24 16:36:32.202  5841  5841 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-1/lib/arm
+09-24 16:36:32.404  5841  5841 I UnexpectedExceptionHandler: registering unexpectedException Hander on threadmain
+09-24 16:36:32.408  5841  5841 E MainWearActivity: onCreate called savedinstanceState is null:true
+09-24 16:36:32.421  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityCreated called
+09-24 16:36:32.866  5841  5841 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:36:33.247  5841  5841 D MainWearActivity: android.permission.ACCESS_FINE_LOCATION Granted
+09-24 16:36:33.256  5841  5841 D MainWearActivity: android.permission.WAKE_LOCK Granted
+09-24 16:36:33.256  5841  5841 D MainWearActivity: android.permission.WRITE_EXTERNAL_STORAGE Granted
+09-24 16:36:33.257  5841  5841 D MainWearActivity: android.permission.ACCESS_NETWORK_STATE Granted
+09-24 16:36:33.257  5841  5841 D MainWearActivity: android.permission.INTERNET Granted
+09-24 16:36:33.257  5841  5841 D MainWearActivity: android.permission.READ_EXTERNAL_STORAGE Granted
+09-24 16:36:33.270  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityStarted called
+09-24 16:36:33.296  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityResumed called
+09-24 16:36:33.305  5841  5874 D OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true
+09-24 16:36:33.311  5841  5841 D ION     : config: version(0x10001) secure(0xf000) 256M(0x221) fast(0x608) hwwr(0x4)
+09-24 16:36:33.312  5841  5841 I MM_DEVICE: Waiting for mm thread to come up
+09-24 16:36:33.313  5841  5875 I MM_DEVICE: mm_device_thread starting
+09-24 16:36:33.365  5841  5841 I Choreographer: Skipped 41 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:33.375  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:33.376  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:1
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:2
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:3
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:4
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:0 column:5
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:3 column:0
+09-24 16:36:33.377  5841  5841 D MainGridPagerAdapter: getFragment called for row:4 column:0
+09-24 16:36:33.486  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onAttach called
+09-24 16:36:33.486  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onCreate called
+09-24 16:36:33.502  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onViewCreated called
+09-24 16:36:33.502  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onActivityCreated called
+09-24 16:36:33.502  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onViewStateRestored called
+09-24 16:36:33.502  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+09-24 16:36:33.502  5841  5841 D SpeedPanel1: onResume called
+09-24 16:36:33.503  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+09-24 16:36:33.503  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onAttach called
+09-24 16:36:33.504  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onCreate called
+09-24 16:36:33.504  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment Map #00 onCreateView called
+09-24 16:36:33.593  5841  5841 D MapSwipeToZoomFrag: creating a new InnerMapFragment
+09-24 16:36:33.651  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment (not the view) is MapFragment{108428e id=0x7f130092}
+09-24 16:36:33.651  5841  5841 D MapSwipeToZoomFrag: CreateView Map #00 getting MapAsync 
+09-24 16:36:33.652  5841  5841 D MapSwipeToZoomFrag: CreateView completed
+09-24 16:36:33.654  5841  5841 D MapSwipeToZoomFrag: Map #00 onViewCreatedCalled
+09-24 16:36:33.655  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewCreated called
+09-24 16:36:33.664  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onActivityCreated called
+09-24 16:36:33.665  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewStateRestored called
+09-24 16:36:33.690  5841  5841 I zzae    : Making Creator dynamically
+09-24 16:36:33.789  5841  5841 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi-v7a
+09-24 16:36:33.790  5841  5841 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi
+09-24 16:36:33.890  5841  5841 I Google Maps Android API: Google Play services client version: 9256000
+09-24 16:36:33.905  5841  5841 I Google Maps Android API: Google Play services package version: 9683530
+09-24 16:36:34.317  5841  5841 I c       : Token loaded from file. Expires in: 431860269 ms.
+09-24 16:36:34.317  5841  5841 I c       : Scheduling next attempt in 431560 seconds.
+09-24 16:36:34.814  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStart called with zoom:15
+09-24 16:36:34.814  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStart called
+09-24 16:36:34.814  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onResume called, visible is true
+09-24 16:36:34.815  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onResume called
+09-24 16:36:34.816  5841  5841 D MapSwipeToZoomFrag: matchMapUIToConfig -- no map
+09-24 16:36:34.835  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 1458ms
+09-24 16:36:34.900  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:34.900  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:34.937  5841  5874 D         : HwMemAllocatorImpl Static Counters 0 0
+09-24 16:36:34.937  5841  5874 D         : HwMemAllocatorImpl[adece0a8] totalDeviceAllocSize[0] totalFree[0] maxFree[0] in numSlabs[0]
+09-24 16:36:34.946  5841  5874 I OpenGLRenderer: Initialized EGL, version 1.4
+09-24 16:36:34.947  5841  5874 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-24 16:36:34.981  5841  5841 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.0,0.0PxLeftTopOff:0,0
+09-24 16:36:34.981  5841  5841 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:36:35.005  5841  5841 I Choreographer: Skipped 97 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:35.038  5841  5918 D Loader  : Loading asset 0x7f020072
+09-24 16:36:35.411  5841  5841 D MapSwipeToZoomFrag: showZoom is false
+09-24 16:36:35.461  5841  5841 D MapSwipeToZoomFrag: SetupMap Called Map #00
+09-24 16:36:35.476  5841  5841 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@42810b2
+09-24 16:36:35.514  5841  5841 D MapSwipeToZoomFrag: SetupMap Map #00 moving camera to zoom15
+09-24 16:36:35.514  5841  5841 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+09-24 16:36:35.514  5841  5841 D MapSwipeToZoomFrag: Re-adding polylines during onResume
+09-24 16:36:35.515  5841  5841 D MapSwipeToZoomFrag: polylines re-added in onResume
+09-24 16:36:35.542  5841  5841 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:35.557  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:35.557  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:35.584  5841  5841 D LocationHandler: onConnected(): Successfully connected to Google API client
+09-24 16:36:35.586  5841  5841 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+09-24 16:36:35.586  5841  5841 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6fa0380
+09-24 16:36:35.607  5841  5841 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:36:35.607  5841  5841 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:36:35.839  5841  5841 D MainWearActivity: onConnected(): Successfully connected to Google API client
+09-24 16:36:36.231  5841  5847 W art     : Suspending all threads took: 24.993ms
+09-24 16:36:36.270  5841  5841 I Choreographer: Skipped 41 frames!  The application may be doing too much work on its main thread.
+09-24 16:36:36.651  5841  5841 D LocationHandler: Good location received Location[fused 53.512864,-1.679955 acc=19 et=+19h13m35s866ms]
+09-24 16:36:36.673  5841  5841 D MapSwipeToZoomFrag: Location changed, updating because First Location
+09-24 16:36:36.673  5841  5841 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+09-24 16:36:36.675  5841  5841 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@42810b2
+09-24 16:36:36.680  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:36:36.680  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:36:36.859  5841  5916 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+09-24 16:36:36.865  5841  5916 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:1
+09-24 16:36:36.865  5841  5916 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 1
+09-24 16:36:36.876  5841  5916 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi-v7a
+09-24 16:36:36.877  5841  5916 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi
+09-24 16:36:36.890  5841  5916 D GoogleCertificates: com.google.android.gms.googlecertificates module is loaded
+09-24 16:36:36.988  5841  5916 D GoogleCertificatesImpl: Fetched 172 Google release certificates
+09-24 16:36:36.997  5841  5916 D GoogleCertificatesImpl: Fetched 336 Google certificates
+09-24 16:36:40.615  5841  5841 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+09-24 16:36:40.619  5841  5841 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@8d856a
+09-24 16:36:40.624  5841  5841 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 19381 ms in the future aka Sat Sep 24 16:37:00 GMT+01:00 2016
+09-24 16:36:40.627  5841  5841 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:36:40.665  5841  5841 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+09-24 16:36:40.666  5841  5841 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+09-24 16:36:40.705  5841  5841 D SpeedPanel1: onPause called
+09-24 16:36:40.705  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onPause called
+09-24 16:36:40.713  5841  5847 W art     : Suspending all threads took: 5.096ms
+09-24 16:36:40.717  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onPause called
+09-24 16:36:40.717  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onPause called
+09-24 16:36:40.718  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityPaused called
+09-24 16:36:40.718  5841  5841 W test    : application is in foreground: false
+09-24 16:36:40.780  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onSaveInstanceState called
+09-24 16:36:40.780  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onSaveInstanceState called
+09-24 16:36:40.780  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onSaveInstanceState called
+09-24 16:36:40.783  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivitySaveInstance called
+09-24 16:36:40.783  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onStop called
+09-24 16:36:40.783  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStop called
+09-24 16:36:40.787  5841  5841 D MapSwipeToZoomFrag: EventBusLocationSourceForMap deActivated for com.google.android.gms.maps.GoogleMap$12$1@42810b2
+09-24 16:36:40.787  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStop called
+09-24 16:36:40.787  5841  5841 D MainWearActivity: onStop called
+09-24 16:36:40.787  5841  5841 W MainWearActivity: Finishing activity in onStop
+09-24 16:36:40.808  5841  5841 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:36:40.811  5841  5841 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@8d856a
+09-24 16:36:40.854  5841  5841 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+09-24 16:36:40.854  5841  5841 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6fa0380
+09-24 16:36:40.857  5841  5841 I art     : Starting a blocking GC Explicit
+09-24 16:36:40.934  5841  5841 I art     : Explicit concurrent mark sweep GC freed 7613(879KB) AllocSpace objects, 1(20KB) LOS objects, 14% free, 11MB/13MB, paused 1.007ms total 74.798ms
+09-24 16:36:41.037  5841  5841 I art     : Starting a blocking GC Explicit
+09-24 16:36:41.090  5841  5841 I art     : Explicit concurrent mark sweep GC freed 195(10KB) AllocSpace objects, 0(0B) LOS objects, 14% free, 11MB/13MB, paused 1.464ms total 51.788ms
+09-24 16:36:41.194  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.GridViewPagerListenerNotifier/uk.me.ponies.wearroutes.GridViewPagerListenerNotifier@524e6c2 held
+09-24 16:36:41.195  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.DataApiListener/uk.me.ponies.wearroutes.DataApiListener@8794927 held
+09-24 16:36:41.195  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.locationHandling.LocationHandler/uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010 held
+09-24 16:36:41.195  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.controller.Controller/uk.me.ponies.wearroutes.controller.Controller@968cd5b held
+09-24 16:36:41.196  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.SpeedPanel1/SpeedPanel1{bf1a255 #6 id=0x7f130084 android:switcher:2131951748:1} held
+09-24 16:36:41.196  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.MainWearActivity/uk.me.ponies.wearroutes.MainWearActivity@395bfae held
+09-24 16:36:41.196  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.ChainedOnPageListener/uk.me.ponies.wearroutes.ChainedOnPageListener@cf11512 held
+09-24 16:36:41.196  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.MapSwipeToZoomFragment/MapContainingFragment:Map #00 held
+09-24 16:36:41.200  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.MyGridViewPager/uk.me.ponies.wearroutes.MyGridViewPager{167ef74 V.E...... ........ 0,0-320,320 #7f130084 app:id/pager} held
+09-24 16:36:41.201  5841  5841 W SingleInstanceChecker: Reference to class class uk.me.ponies.wearroutes.MainGridPagerAdapter/uk.me.ponies.wearroutes.MainGridPagerAdapter@2bb4599 held
+09-24 16:36:41.201  5841  5841 I UnexpectedExceptionHandler: UNRegistering unexpectedException Hander on threadmain
+09-24 16:36:41.203  5841  5841 W test    : application is visible: false
+09-24 16:36:41.203  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityStopped called
+09-24 16:37:17.840  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityStarted called
+09-24 16:37:17.860  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+09-24 16:37:17.861  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStart called with zoom:15
+09-24 16:37:17.861  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStart called
+09-24 16:37:17.910  5841  5841 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityResumed called
+09-24 16:37:17.918  5841  5841 D SpeedPanel1: onResume called
+09-24 16:37:17.919  5841  5841 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+09-24 16:37:17.919  5841  5841 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onResume called, visible is true
+09-24 16:37:17.919  5841  5841 D FragmentLifecycleLogger: MapSwipeToZoomFragment onResume called
+09-24 16:37:17.919  5841  5841 D MapSwipeToZoomFrag: matchMapUIToConfig -- no map
+09-24 16:37:17.968  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:37:17.969  5841  5841 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 1ms
+09-24 16:37:18.259  5841  5841 D MainWearActivity: before onExitAmbient current isAmbient state is false
+09-24 16:37:18.259  5841  5841 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+09-24 16:37:18.263  5841  5841 D MainWearActivity: after onExitAmbient current isAmbient state is false
+09-24 16:37:18.263  5841  5841 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+09-24 16:37:18.584  5841  5841 D MyGridViewPager: oninterceptTouchEvent is returning false
+09-24 16:37:18.600  5841  5841 D MyGridViewPager: oninterceptTouchEvent is returning false
+09-24 16:37:18.600  5841  5841 D MyGridViewPager: oninterceptTouchEvent is returning false
+09-24 16:37:18.780  5841  5847 W art     : Suspending all threads took: 10.437ms
+09-24 16:37:18.799  5841  5841 D AndroidRuntime: Shutting down VM
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: FATAL EXCEPTION: main
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 5841
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke virtual method 'uk.me.ponies.wearroutes.mainactionpages.ActionPageFragment uk.me.ponies.wearroutes.MainGridPagerAdapter.getStartRecordingFragment()' on a null object reference
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at uk.me.ponies.wearroutes.controller.Controller.startRecording(Controller.java:130)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at uk.me.ponies.wearroutes.mainactionpages.ActionPageControlButtonsFragment$1.onClick(ActionPageControlButtonsFragment.java:45)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.view.View.performClick(View.java:5204)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:21153)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:739)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+09-24 16:37:18.806  5841  5841 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+09-24 16:37:19.817  5841  5847 W art     : Suspending all threads took: 33.966ms
+09-24 16:37:20.548  5841  5841 I Process : Sending signal. PID: 5841 SIG: 9
+09-24 16:38:05.772  6311  6311 I art     : Late-enabling -Xcheck:jni
+09-24 16:38:05.941  6311  6311 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-1/lib/arm
+09-24 16:38:06.802  6311  6311 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-1/lib/arm
+09-24 16:38:07.100  6311  6311 I UnexpectedExceptionHandler: registering unexpectedException Hander on threadmain
+09-24 16:38:07.105  6311  6311 E MainWearActivity: onCreate called savedinstanceState is null:true
+09-24 16:38:07.133  6311  6311 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityCreated called
+09-24 16:38:07.661  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:08.049  6311  6311 D MainWearActivity: android.permission.ACCESS_FINE_LOCATION Granted
+09-24 16:38:08.050  6311  6311 D MainWearActivity: android.permission.WAKE_LOCK Granted
+09-24 16:38:08.051  6311  6311 D MainWearActivity: android.permission.WRITE_EXTERNAL_STORAGE Granted
+09-24 16:38:08.052  6311  6311 D MainWearActivity: android.permission.ACCESS_NETWORK_STATE Granted
+09-24 16:38:08.052  6311  6311 D MainWearActivity: android.permission.INTERNET Granted
+09-24 16:38:08.052  6311  6311 D MainWearActivity: android.permission.READ_EXTERNAL_STORAGE Granted
+09-24 16:38:08.060  6311  6311 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityStarted called
+09-24 16:38:08.101  6311  6311 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@395bfae onActivityResumed called
+09-24 16:38:08.115  6311  6349 D OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true
+09-24 16:38:08.131  6311  6311 D ION     : config: version(0x10001) secure(0xf000) 256M(0x221) fast(0x608) hwwr(0x4)
+09-24 16:38:08.133  6311  6311 I MM_DEVICE: Waiting for mm thread to come up
+09-24 16:38:08.134  6311  6350 I MM_DEVICE: mm_device_thread starting
+09-24 16:38:08.177  6311  6311 I Choreographer: Skipped 44 frames!  The application may be doing too much work on its main thread.
+09-24 16:38:08.184  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:08.184  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:38:08.185  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:1
+09-24 16:38:08.185  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:2
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:3
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:4
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:5
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:3 column:0
+09-24 16:38:08.186  6311  6311 D MainGridPagerAdapter: getFragment called for row:4 column:0
+09-24 16:38:08.318  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onAttach called
+09-24 16:38:08.318  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onCreate called
+09-24 16:38:08.335  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onViewCreated called
+09-24 16:38:08.335  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onActivityCreated called
+09-24 16:38:08.335  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onViewStateRestored called
+09-24 16:38:08.335  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+09-24 16:38:08.335  6311  6311 D SpeedPanel1: onResume called
+09-24 16:38:08.336  6311  6311 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+09-24 16:38:08.336  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onAttach called
+09-24 16:38:08.337  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onCreate called
+09-24 16:38:08.337  6311  6311 D MapSwipeToZoomFrag: MapContainingFragment Map #00 onCreateView called
+09-24 16:38:08.429  6311  6311 D MapSwipeToZoomFrag: creating a new InnerMapFragment
+09-24 16:38:08.462  6311  6311 D MapSwipeToZoomFrag: MapContainingFragment (not the view) is MapFragment{108428e id=0x7f130092}
+09-24 16:38:08.462  6311  6311 D MapSwipeToZoomFrag: CreateView Map #00 getting MapAsync 
+09-24 16:38:08.464  6311  6311 D MapSwipeToZoomFrag: CreateView completed
+09-24 16:38:08.468  6311  6311 D MapSwipeToZoomFrag: Map #00 onViewCreatedCalled
+09-24 16:38:08.468  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewCreated called
+09-24 16:38:08.482  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onActivityCreated called
+09-24 16:38:08.499  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewStateRestored called
+09-24 16:38:08.549  6311  6311 I zzae    : Making Creator dynamically
+09-24 16:38:08.774  6311  6311 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi-v7a
+09-24 16:38:08.775  6311  6311 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000007/n/armeabi
+09-24 16:38:08.895  6311  6311 I Google Maps Android API: Google Play services client version: 9256000
+09-24 16:38:08.914  6311  6311 I Google Maps Android API: Google Play services package version: 9683530
+09-24 16:38:09.274  6311  6311 I c       : Token loaded from file. Expires in: 431765312 ms.
+09-24 16:38:09.275  6311  6311 I c       : Scheduling next attempt in 431465 seconds.
+09-24 16:38:09.501  6311  6321 W art     : Suspending all threads took: 5.554ms
+09-24 16:38:09.514  6311  6321 I art     : Background sticky concurrent mark sweep GC freed 4578(932KB) AllocSpace objects, 2(40KB) LOS objects, 11% free, 7MB/9MB, paused 6.866ms total 58.776ms
+09-24 16:38:09.950  6311  6321 I art     : Background partial concurrent mark sweep GC freed 3555(619KB) AllocSpace objects, 2(40KB) LOS objects, 19% free, 8MB/10MB, paused 2.166ms total 113.494ms
+09-24 16:38:10.119  6311  6311 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStart called with zoom:15
+09-24 16:38:10.120  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStart called
+09-24 16:38:10.120  6311  6311 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onResume called, visible is true
+09-24 16:38:10.120  6311  6311 D FragmentLifecycleLogger: MapSwipeToZoomFragment onResume called
+09-24 16:38:10.129  6311  6311 D MapSwipeToZoomFrag: matchMapUIToConfig -- no map
+09-24 16:38:10.150  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 1964ms
+09-24 16:38:10.230  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:10.230  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:38:10.266  6311  6349 D         : HwMemAllocatorImpl Static Counters 0 0
+09-24 16:38:10.266  6311  6349 D         : HwMemAllocatorImpl[adece0a8] totalDeviceAllocSize[0] totalFree[0] maxFree[0] in numSlabs[0]
+09-24 16:38:10.277  6311  6349 I OpenGLRenderer: Initialized EGL, version 1.4
+09-24 16:38:10.278  6311  6349 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+09-24 16:38:10.306  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.0,0.0PxLeftTopOff:0,0
+09-24 16:38:10.306  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:10.330  6311  6398 D Loader  : Loading asset 0x7f020072
+09-24 16:38:10.331  6311  6311 I Choreographer: Skipped 128 frames!  The application may be doing too much work on its main thread.
+09-24 16:38:10.416  6311  6317 W art     : Suspending all threads took: 10.040ms
+09-24 16:38:10.731  6311  6311 D MapSwipeToZoomFrag: showZoom is false
+09-24 16:38:10.769  6311  6311 D MapSwipeToZoomFrag: SetupMap Called Map #00
+09-24 16:38:10.774  6311  6311 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@5d18803
+09-24 16:38:10.795  6311  6311 D MapSwipeToZoomFrag: SetupMap Map #00 moving camera to zoom15
+09-24 16:38:10.795  6311  6311 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+09-24 16:38:10.795  6311  6311 D MapSwipeToZoomFrag: Re-adding polylines during onResume
+09-24 16:38:10.795  6311  6311 D MapSwipeToZoomFrag: polylines re-added in onResume
+09-24 16:38:10.812  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:10.812  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:38:10.891  6311  6311 D LocationHandler: onConnected(): Successfully connected to Google API client
+09-24 16:38:10.893  6311  6311 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+09-24 16:38:10.893  6311  6311 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@a84adb9
+09-24 16:38:10.912  6311  6317 W art     : Suspending all threads took: 5.004ms
+09-24 16:38:10.924  6311  6311 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:38:10.924  6311  6311 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@d937010
+09-24 16:38:11.067  6311  6311 D MainWearActivity: onConnected(): Successfully connected to Google API client
+09-24 16:38:11.457  6311  6317 W art     : Suspending all threads took: 49.865ms
+09-24 16:38:11.458  6311  6311 D MyGridViewPager: oninterceptTouchEvent is returning false
+09-24 16:38:11.475  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:1
+09-24 16:38:11.475  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 1 DRAGGING
+09-24 16:38:11.475  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.477  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.14747475,0.0PxLeftTopOff:73,0
+09-24 16:38:11.477  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:38:11.477  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:1
+09-24 16:38:11.477  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.525  6311  6321 I art     : Background sticky concurrent mark sweep GC freed 5043(564KB) AllocSpace objects, 1(20KB) LOS objects, 0% free, 11MB/11MB, paused 13.641ms total 167.846ms
+09-24 16:38:11.597  6311  6311 D MyGridViewPager: oninterceptTouchEvent is returning true
+09-24 16:38:11.604  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=300.06232, y[0]=67.78816, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=7, eventTime=40956385, downTime=40956210, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:11.604  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.604  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.3939394,0.0PxLeftTopOff:195,0
+09-24 16:38:11.604  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:38:11.604  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:1
+09-24 16:38:11.604  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.604  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:11.605  6311  6311 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=300.06232, y[0]=67.78816, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40956395, downTime=40956210, deviceId=3, source=0x1002 }
+09-24 16:38:11.605  6311  6311 D MapSwipeToZoomFrag: GestureDetector onFling seen!
+09-24 16:38:11.608  6311  6311 W System.err: java.lang.NullPointerException: Attempt to invoke virtual method 'float android.view.MotionEvent.getY()' on a null object reference
+09-24 16:38:11.622  6311  6321 W art     : Suspending all threads took: 9.185ms
+09-24 16:38:11.624  6311  6311 W System.err: 	at uk.me.ponies.wearroutes.MapSwipeToZoomFragment$SwipeMapGestureDetector.onFling(MapSwipeToZoomFragment.java:1020)
+09-24 16:38:11.624  6311  6311 W System.err: 	at android.view.GestureDetector.onTouchEvent(GestureDetector.java:650)
+09-24 16:38:11.624  6311  6311 W System.err: 	at uk.me.ponies.wearroutes.MapSwipeToZoomFragment$3.onTouch(MapSwipeToZoomFragment.java:199)
+09-24 16:38:11.624  6311  6311 W System.err: 	at android.view.View.dispatchTouchEvent(View.java:9296)
+09-24 16:38:11.624  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2547)
+09-24 16:38:11.624  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2240)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+09-24 16:38:11.625  6311  6311 W System.err: 	at com.android.internal.policy.PhoneWindow$DecorView.superDispatchTouchEvent(PhoneWindow.java:2403)
+09-24 16:38:11.625  6311  6311 W System.err: 	at com.android.internal.policy.PhoneWindow.superDispatchTouchEvent(PhoneWindow.java:1737)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.app.Activity.dispatchTouchEvent(Activity.java:2771)
+09-24 16:38:11.625  6311  6311 W System.err: 	at com.android.internal.policy.PhoneWindow$DecorView.dispatchTouchEvent(PhoneWindow.java:2364)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.View.dispatchPointerEvent(View.java:9520)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$ViewPostImeInputStage.processPointerEvent(ViewRootImpl.java:4239)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$ViewPostImeInputStage.onProcess(ViewRootImpl.java:4105)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$AsyncInputStage.forward(ViewRootImpl.java:3796)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$AsyncInputStage.apply(ViewRootImpl.java:3853)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+09-24 16:38:11.625  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl.deliverInputEvent(ViewRootImpl.java:5933)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl.doProcessInputEvents(ViewRootImpl.java:5907)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl.enqueueInputEvent(ViewRootImpl.java:5868)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl$WindowInputEventReceiver.onInputEvent(ViewRootImpl.java:6036)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.InputEventReceiver.dispatchInputEvent(InputEventReceiver.java:185)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.InputEventReceiver.nativeConsumeBatchedInputEvents(Native Method)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.InputEventReceiver.consumeBatchedInputEvents(InputEventReceiver.java:176)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl.doConsumeBatchedInput(ViewRootImpl.java:6007)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.ViewRootImpl$ConsumeBatchedInputRunnable.run(ViewRootImpl.java:6059)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.Choreographer.doFrame(Choreographer.java:600)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.os.Handler.handleCallback(Handler.java:739)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+09-24 16:38:11.626  6311  6311 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+09-24 16:38:11.626  6311  6311 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 16:38:11.626  6311  6311 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+09-24 16:38:11.626  6311  6311 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+09-24 16:38:11.627  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=300.06232, y[0]=67.78816, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40956395, downTime=40956210, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:11.627  6311  6311 D ColumnHistorian: Selected Page is 1,0
+09-24 16:38:11.627  6311  6311 D GridViewPagerNotifier: onPageSelected row:1 column:0
+09-24 16:38:11.627  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.627  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.627  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:38:11.627  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:11.628  6311  6311 D MapSwipeToZoomFrag: EventBusLocationSourceForMap deActivated for com.google.android.gms.maps.GoogleMap$12$1@5d18803
+09-24 16:38:11.628  6311  6311 D MainWearActivity: onPageSelected: 1,0
+09-24 16:38:11.628  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:2
+09-24 16:38:11.628  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 2 SETTLING
+09-24 16:38:11.636  6311  6311 D InnerMapFragment: Dump of Google maps fragments created
+09-24 16:38:11.640  6311  6311 D InnerMapFragment: Google maps fragments created contains: 0
+09-24 16:38:11.640  6311  6311 D InnerMapFragment: Google maps innerMap Pool is pooling: 0
+09-24 16:38:11.641  6311  6311 D InnerMapFragment: Google maps innerMap Pool has had 0 garbage collected
+09-24 16:38:11.641  6311  6311 D MainWearActivity: onPageScrollStateChaged, SETTLING, current position is Point(0, 1)
+09-24 16:38:11.641  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:11.648  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.648  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.46060607,0.0PxLeftTopOff:228,0
+09-24 16:38:11.648  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.648  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.648  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.658  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.658  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.54747474,0.0PxLeftTopOff:271,0
+09-24 16:38:11.658  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.658  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.658  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.671  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.671  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.6424242,0.0PxLeftTopOff:318,0
+09-24 16:38:11.671  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.671  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.671  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.681  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.682  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.7090909,0.0PxLeftTopOff:351,0
+09-24 16:38:11.682  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.682  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.682  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.698  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.698  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.7878788,0.0PxLeftTopOff:390,0
+09-24 16:38:11.698  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.698  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.698  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.715  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.715  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.85252523,0.0PxLeftTopOff:422,0
+09-24 16:38:11.715  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.715  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.715  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.732  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.732  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.9010101,0.0PxLeftTopOff:446,0
+09-24 16:38:11.732  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.732  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.732  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.747  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.747  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.93333334,0.0PxLeftTopOff:462,0
+09-24 16:38:11.748  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.748  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.748  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.764  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.764  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.95757574,0.0PxLeftTopOff:474,0
+09-24 16:38:11.764  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.764  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.764  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.780  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.780  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.97373736,0.0PxLeftTopOff:482,0
+09-24 16:38:11.780  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.780  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.780  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.797  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.797  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.9838384,0.0PxLeftTopOff:487,0
+09-24 16:38:11.797  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.797  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.797  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.813  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.813  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.9919192,0.0PxLeftTopOff:491,0
+09-24 16:38:11.813  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.813  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.813  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.829  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.829  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.9959596,0.0PxLeftTopOff:493,0
+09-24 16:38:11.829  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.830  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.830  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.845  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.845  6311  6311 D ColumnHistorian: onPageScrolled: Pos:0,0 Off:0.9979798,0.0PxLeftTopOff:494,0
+09-24 16:38:11.845  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.845  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.846  6311  6311 D MainWearActivity: onPageScrolled: 0,0
+09-24 16:38:11.861  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:11.862  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.0,0.0PxLeftTopOff:0,0
+09-24 16:38:11.862  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:11.955  6311  6416 D Loader  : Loading asset 0x7f020073
+09-24 16:38:11.978  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:0
+09-24 16:38:11.978  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:11.978  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.978  6311  6311 D MainGridPagerAdapter: getFragment called for row:0 column:0
+09-24 16:38:11.978  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:11.979  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 0 IDLE
+09-24 16:38:11.979  6311  6311 D MainWearActivity: onPageScrollStateChaged, IDLE, current position is Point(0, 1)
+09-24 16:38:11.979  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:11.979  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:11.999  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 19ms
+09-24 16:38:12.000  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:12.000  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:38:12.026  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:12.026  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:38:12.161  6311  6396 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+09-24 16:38:12.169  6311  6396 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:1
+09-24 16:38:12.169  6311  6396 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 1
+09-24 16:38:12.198  6311  6396 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi-v7a
+09-24 16:38:12.200  6311  6396 W System  : ClassLoader referenced unknown path: /data/user/0/com.google.android.gms/app_chimera/m/00000006/n/armeabi
+09-24 16:38:12.218  6311  6396 D GoogleCertificates: com.google.android.gms.googlecertificates module is loaded
+09-24 16:38:12.332  6311  6396 D GoogleCertificatesImpl: Fetched 172 Google release certificates
+09-24 16:38:12.353  6311  6396 D GoogleCertificatesImpl: Fetched 336 Google certificates
+09-24 16:38:12.975  6311  6311 D MyGridViewPager: oninterceptTouchEvent is returning false
+09-24 16:38:12.976  6311  6311 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=195.38942, y[0]=281.1215, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40957815, downTime=40957815, deviceId=3, source=0x1002 }
+09-24 16:38:12.977  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=195.38942, y[0]=281.1215, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40957815, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:12.977  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.011  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=195.38942, y[0]=281.1215, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=40957846, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.011  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.012  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+09-24 16:38:13.012  6311  6311 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+09-24 16:38:13.033  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=194.77924, y[0]=278.29407, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=40957863, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.033  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.044  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=195.57474, y[0]=268.85855, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=40957879, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.044  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.061  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=199.59985, y[0]=248.84561, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=40957896, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.061  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:1
+09-24 16:38:13.061  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 1 DRAGGING
+09-24 16:38:13.061  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.062  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.036363635,0.0PxLeftTopOff:18,0
+09-24 16:38:13.062  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.062  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.062  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.064  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.099  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=216.33488, y[0]=192.36426, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=4, eventTime=40957929, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.099  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.100  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.14949495,0.0PxLeftTopOff:74,0
+09-24 16:38:13.100  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.100  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.100  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.100  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.116  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=229.69022, y[0]=146.893, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=40957946, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.116  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.119  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.24242425,0.0PxLeftTopOff:120,0
+09-24 16:38:13.119  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.119  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.119  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.119  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.132  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=247.49365, y[0]=97.33297, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=40957963, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.132  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.132  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.34141415,0.0PxLeftTopOff:169,0
+09-24 16:38:13.132  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.132  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.132  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.132  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.140  6311  6428 D Loader  : Loading asset 0x7f020074
+09-24 16:38:13.144  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=259.85812, y[0]=67.558464, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=40957979, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.144  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.144  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.40202022,0.0PxLeftTopOff:199,0
+09-24 16:38:13.144  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.145  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.145  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.145  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.191  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=260.18692, y[0]=66.79128, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40957980, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.191  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.191  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.4040404,0.0PxLeftTopOff:200,0
+09-24 16:38:13.191  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.191  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:1
+09-24 16:38:13.191  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.192  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.195  6311  6311 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=260.18692, y[0]=66.79128, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40957990, downTime=40957815, deviceId=3, source=0x1002 }
+09-24 16:38:13.195  6311  6311 D MapSwipeToZoomFrag: GestureDetector onFling seen!
+09-24 16:38:13.204  6311  6311 D MapSwipeToZoomFrag: GestureDetector onFling diffX:64.7975vs24 velocityX:1109.4576vs875
+09-24 16:38:13.204  6311  6311 D MapSwipeToZoomFrag: GestureDetector onFling diffY:-214.3302vs24 velocityY:-2898.2776vs875
+09-24 16:38:13.204  6311  6311 D MapSwipeToZoomFrag: GestureDetector onFling straight enoughY: 64.7975/-214.3302
+09-24 16:38:13.204  6311  6311 D MapSwipeToZoomFrag: GestureDetector  Swipe Top seen
+09-24 16:38:13.204  6311  6311 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=260.18692, y[0]=66.79128, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=40957990, downTime=40957815, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@395bfae
+09-24 16:38:13.205  6311  6311 D ColumnHistorian: Selected Page is 2,0
+09-24 16:38:13.205  6311  6311 D GridViewPagerNotifier: onPageSelected row:2 column:0
+09-24 16:38:13.205  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.205  6311  6311 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@91557c2
+09-24 16:38:13.205  6311  6311 D MapSwipeToZoomFrag: Map is now visible restoring last camera position
+09-24 16:38:13.205  6311  6311 D MapSwipeToZoomFrag: moving camera as the map exists and is visible
+09-24 16:38:13.208  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.208  6311  6311 D MainGridPagerAdapter: getFragment called for row:3 column:0
+09-24 16:38:13.208  6311  6311 D MainWearActivity: onPageSelected: 2,0
+09-24 16:38:13.208  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:2
+09-24 16:38:13.208  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 2 SETTLING
+09-24 16:38:13.208  6311  6311 D InnerMapFragment: Dump of Google maps fragments created
+09-24 16:38:13.208  6311  6311 D InnerMapFragment: Google maps fragments created contains: 0
+09-24 16:38:13.210  6311  6311 D InnerMapFragment: Google maps innerMap Pool is pooling: 0
+09-24 16:38:13.210  6311  6311 D InnerMapFragment: Google maps innerMap Pool has had 0 garbage collected
+09-24 16:38:13.210  6311  6311 D MainWearActivity: onPageScrollStateChaged, SETTLING, current position is Point(0, 2)
+09-24 16:38:13.210  6311  6311 D MyGridViewPager: onTouchEvent is returning true
+09-24 16:38:13.213  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.214  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.43232325,0.0PxLeftTopOff:214,0
+09-24 16:38:13.214  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.214  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.245  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.246  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.6787879,0.0PxLeftTopOff:336,0
+09-24 16:38:13.246  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.246  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.266  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.266  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.7838384,0.0PxLeftTopOff:388,0
+09-24 16:38:13.266  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.266  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.273  6311  6321 I art     : Background sticky concurrent mark sweep GC freed 2520(330KB) AllocSpace objects, 0(0B) LOS objects, 2% free, 12MB/13MB, paused 5.218ms total 45.989ms
+09-24 16:38:13.282  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.282  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.84646463,0.0PxLeftTopOff:419,0
+09-24 16:38:13.282  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.282  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.297  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.298  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.8929293,0.0PxLeftTopOff:442,0
+09-24 16:38:13.298  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.298  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.314  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.314  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.9292929,0.0PxLeftTopOff:460,0
+09-24 16:38:13.314  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.314  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.330  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.330  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.95151514,0.0PxLeftTopOff:471,0
+09-24 16:38:13.330  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.330  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.354  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.354  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.9757576,0.0PxLeftTopOff:483,0
+09-24 16:38:13.354  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.354  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.372  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.372  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.9878788,0.0PxLeftTopOff:489,0
+09-24 16:38:13.372  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.372  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.383  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.383  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.9919192,0.0PxLeftTopOff:491,0
+09-24 16:38:13.383  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.383  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.410  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.411  6311  6311 D ColumnHistorian: onPageScrolled: Pos:1,0 Off:0.9979798,0.0PxLeftTopOff:494,0
+09-24 16:38:13.411  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.411  6311  6311 D MainWearActivity: onPageScrolled: 1,0
+09-24 16:38:13.425  6311  6317 W art     : Suspending all threads took: 12.817ms
+09-24 16:38:13.443  6311  6311 D MapSwipeToZoomFrag: onScrollChange seen
+09-24 16:38:13.444  6311  6311 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.0,0.0PxLeftTopOff:0,0
+09-24 16:38:13.444  6311  6311 D MainWearActivity: onPageScrolled: 2,0
+09-24 16:38:13.453  6311  6321 I art     : Background partial concurrent mark sweep GC freed 816(92KB) AllocSpace objects, 3(284KB) LOS objects, 13% free, 13MB/15MB, paused 1.403ms total 157.745ms
+09-24 16:38:13.550  6311  6311 D GridViewPagerNotifier: onPageScrollStateChanged state:0
+09-24 16:38:13.550  6311  6311 D MainGridPagerAdapter: getFragment called for row:2 column:0
+09-24 16:38:13.550  6311  6311 D MainGridPagerAdapter: getFragment called for row:1 column:0
+09-24 16:38:13.550  6311  6311 D MainGridPagerAdapter: getFragment called for row:3 column:0
+09-24 16:38:13.552  6311  6311 D MainWearActivity: onPageScrollStateChanged state: 0 IDLE
+09-24 16:38:13.552  6311  6311 D MainWearActivity: onPageScrollStateChaged, IDLE, current position is Point(0, 2)
+09-24 16:38:13.565  6311  6311 D AndroidRuntime: Shutting down VM
+09-24 16:38:13.567  6311  6311 E UnexpectedExceptionHandler: Exception thrown:java.lang.IndexOutOfBoundsException: Invalid index 1, size is 1
+09-24 16:38:13.611  6311  6311 W before  : Logcat save
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: FATAL EXCEPTION: main
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 6311
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: java.lang.IndexOutOfBoundsException: Invalid index 1, size is 1
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at java.util.ArrayList.throwIndexOutOfBoundsException(ArrayList.java:255)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at java.util.ArrayList.get(ArrayList.java:308)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainGridPagerAdapter$Row.getColumn(MainGridPagerAdapter.java:251)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainGridPagerAdapter$ColumnHistorian.detectAndZoom(MainGridPagerAdapter.java:439)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainWearActivity$3.onPageScrollStateChanged(MainWearActivity.java:354)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at uk.me.ponies.wearroutes.ChainedOnPageListener.onPageScrollStateChanged(ChainedOnPageListener.java:37)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.setScrollState(GridViewPager.java:545)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.access$000(GridViewPager.java:41)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager$1.run(GridViewPager.java:92)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.view.Choreographer.doFrame(Choreographer.java:603)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:739)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+09-24 16:38:13.688  6311  6311 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+09-24 16:38:13.944  6311  6317 W art     : Suspending all threads took: 31.677ms
+09-24 16:38:16.508  6311  6311 I Process : Sending signal. PID: 6311 SIG: 9

@@ -1,0 +1,7 @@
+2017-05-22 10:17:03.060: ACT: MainWearActivity onCreate Complete
+2017-05-22 10:17:03.680: PWR: Ambient Entered
+2017-05-22 10:17:25.035: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-22 10:17:25.072: GPS: Location received:Location[fused 54.144163,-2.291551 acc=45 et=+3h52m16s616ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is slowPoller
+2017-05-22 10:17:25.073: GPS: TTF SlowPoller:0.1
+2017-05-22 10:17:25.074: GPS: Good Location received:Location[fused 54.144163,-2.291551 acc=45 et=+3h52m16s616ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromSlowLocationPollerAlarmWakeup
+2017-05-22 10:17:25.147: GPS: Scheduling a further update in:34853ms

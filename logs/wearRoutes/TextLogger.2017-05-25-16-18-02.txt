@@ -1,0 +1,26 @@
+2017-05-25 16:18:02.613: ACT: MainWearActivity onCreate Complete
+2017-05-25 16:18:06.232: PWR: Ambient Entered
+2017-05-25 16:18:07.179: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-25 16:18:07.488: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-25 16:18:11.930: GPS: Location received:Location[fused 53.512842,-1.679979 acc=20 et=+2d2h22m13s857ms]state is NormalPoller
+2017-05-25 16:18:11.931: GPS: TTF NormalPoller:4.5
+2017-05-25 16:18:11.931: GPS: Good Location received:Location[fused 53.512842,-1.679979 acc=20 et=+2d2h22m13s857ms] fromNormalLocationPoller
+2017-05-25 16:18:43.694: GPS: Location received:Location[fused 53.512726,-1.680082 acc=46 et=+2d2h22m45s719ms alt=306.0 vel=0.0]state is NormalPoller
+2017-05-25 16:18:43.694: GPS: TTF NormalPoller:36.3
+2017-05-25 16:18:43.695: GPS: Good Location received:Location[fused 53.512726,-1.680082 acc=46 et=+2d2h22m45s719ms alt=306.0 vel=0.0] fromNormalLocationPoller
+2017-05-25 16:18:46.590: GPS: Location received:Location[fused 53.512768,-1.680030 acc=32 et=+2d2h22m48s616ms alt=318.0 vel=0.0]state is NormalPoller
+2017-05-25 16:18:46.591: GPS: TTF NormalPoller:39.2
+2017-05-25 16:18:46.591: GPS: Good Location received:Location[fused 53.512768,-1.680030 acc=32 et=+2d2h22m48s616ms alt=318.0 vel=0.0] fromNormalLocationPoller
+2017-05-25 16:18:49.587: GPS: Location received:Location[fused 53.512762,-1.679991 acc=18 et=+2d2h22m51s613ms alt=319.0 vel=0.0]state is NormalPoller
+2017-05-25 16:18:49.588: GPS: TTF NormalPoller:42.2
+2017-05-25 16:18:49.588: GPS: Good Location received:Location[fused 53.512762,-1.679991 acc=18 et=+2d2h22m51s613ms alt=319.0 vel=0.0] fromNormalLocationPoller
+2017-05-25 16:19:25.121: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-25 16:19:29.506: GPS: Location received:Location[fused 53.512842,-1.679979 acc=20 et=+2d2h23m31s532ms]state is slowPoller
+2017-05-25 16:19:29.506: GPS: TTF SlowPoller:4.4
+2017-05-25 16:19:29.507: GPS: Good Location received:Location[fused 53.512842,-1.679979 acc=20 et=+2d2h23m31s532ms] fromSlowLocationPollerAlarmWakeup
+2017-05-25 16:19:29.564: GPS: Scheduling a further update in:30436ms
+2017-05-25 16:19:44.642: PWR: Ambient Exited
+2017-05-25 16:19:44.666: GPS: removing a locationListener that is NOT the last registered one! old:null new:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@206ea29
+2017-05-25 16:19:44.666: GPS: Removing a locationListener (uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@206ea29(when we aren't listening for updates!
+2017-05-25 16:19:44.701: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-25 16:19:46.005: ACT: MainWearActivity onStop Full Stopping

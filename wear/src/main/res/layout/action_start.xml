@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.ActionPage
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/action_start"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Begin"
+    android:saveEnabled="false"
+    android:clickable="true"
+    style="@style/Widget.ActionPage"
+    >
+    <!--
+    android:foreground="#c0c0c0"
+    android:src="@drawable/materialdesignicons_clock_start_green"
+    android:src="@android:drawable/ic_menu_preferences"
+    -->
+
+
+
+</android.support.wearable.view.ActionPage>

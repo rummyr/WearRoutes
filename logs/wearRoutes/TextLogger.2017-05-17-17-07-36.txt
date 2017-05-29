@@ -1,0 +1,2 @@
+2017-05-17 17:07:36.348: ACT: MainWearActivity onCreate Complete
+2017-05-17 17:09:10.599: ACT: MainWearActivity onStop Full Stopping

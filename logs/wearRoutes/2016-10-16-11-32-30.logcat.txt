@@ -1,0 +1,1012 @@
+--------- beginning of crash
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: FATAL EXCEPTION: main
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 15045
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: java.lang.RuntimeException: Unable to stop activity {uk.me.ponies.wearroutes/uk.me.ponies.wearroutes.MainWearActivity}: java.lang.NullPointerException: Attempt to invoke virtual method 'int uk.me.ponies.wearroutes.controller.Controller.getRecordingState()' on a null object reference
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:3795)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread.handleDestroyActivity(ActivityThread.java:3849)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread.-wrap5(ActivityThread.java)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1398)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int uk.me.ponies.wearroutes.controller.Controller.getRecordingState()' on a null object reference
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainWearActivity.onStop(MainWearActivity.java:527)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnStop(Instrumentation.java:1278)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.Activity.performStop(Activity.java:6395)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:3790)
+10-15 19:13:37.914 15045 15045 E AndroidRuntime: 	... 9 more
+--------- beginning of system
+10-16 10:37:49.861 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=44.859814, y[0]=189.40811, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229778429, downTime=229778247, deviceId=3, source=0x1002 }
+10-16 10:37:49.861 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=44.859814, y[0]=189.40811, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229778429, downTime=229778247, deviceId=3, source=0x1002 }
+10-16 10:37:49.861 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=44.859814, y[0]=189.40811, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=229778429, downTime=229778247, deviceId=3, source=0x1002 }
+10-16 10:48:04.924 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390312, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:04.956 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390344, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:04.967 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390360, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:04.967 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390360, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:04.967 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390360, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:04.967 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=40.872276, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230390360, downTime=230390312, deviceId=3, source=0x1002 }
+10-16 10:48:08.700 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=31.900312, y[0]=34.89097, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=230394093, downTime=230394093, deviceId=3, source=0x1002 }
+10-16 11:04:40.325 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=272.45212, y[0]=25.313828, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=4, eventTime=231384059, downTime=231383650, deviceId=3, source=0x1002 }
+10-16 11:04:40.371 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=273.14642, y[0]=23.925234, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231384070, downTime=231383650, deviceId=3, source=0x1002 }
+10-16 11:04:40.372 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=273.14642, y[0]=23.925234, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231384085, downTime=231383650, deviceId=3, source=0x1002 }
+10-16 11:04:40.372 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=273.14642, y[0]=23.925234, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231384085, downTime=231383650, deviceId=3, source=0x1002 }
+10-16 11:04:40.372 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=273.14642, y[0]=23.925234, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231384085, downTime=231383650, deviceId=3, source=0x1002 }
+10-16 11:04:40.373 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=273.14642, y[0]=23.925234, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231384085, downTime=231383650, deviceId=3, source=0x1002 }
+--------- beginning of main
+10-16 11:11:25.644 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 67 lines
+10-16 11:11:46.116 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 92 lines
+10-16 11:12:07.691 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 31 lines
+10-16 11:12:19.114 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 19 lines
+10-16 11:12:25.535 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 3 lines
+10-16 11:12:25.593 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 66 lines
+10-16 11:12:50.961 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 45 lines
+10-16 11:13:02.936 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 32 lines
+10-16 11:13:09.300 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:13:14.287 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=15.950156, y[0]=220.31154, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=231898049, downTime=231898049, deviceId=3, source=0x1002 }
+10-16 11:13:14.303 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 52 lines
+10-16 11:13:24.888 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 43 lines
+10-16 11:13:36.799 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 38 lines
+10-16 11:13:37.421 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:13:49.809 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 35 lines
+10-16 11:13:59.989 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 76 lines
+10-16 11:14:05.281 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:14:16.357 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 16 lines
+10-16 11:14:26.507 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 46 lines
+10-16 11:14:28.904 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:14:41.931 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:14:52.084 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 12 lines
+10-16 11:14:55.834 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:14:55.934 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 66 lines
+10-16 11:15:11.863 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 21 lines
+10-16 11:15:15.770 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:15:15.884 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 38 lines
+10-16 11:15:29.794 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 35 lines
+10-16 11:15:39.961 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 35 lines
+10-16 11:15:40.142 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:15:54.738 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 61 lines
+10-16 11:16:04.903 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 43 lines
+10-16 11:16:05.175 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 3 lines
+10-16 11:16:16.472 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 55 lines
+10-16 11:16:29.157 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 32 lines
+10-16 11:16:41.622 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:16:51.644 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 57 lines
+10-16 11:17:01.700 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:17:03.562 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 36 lines
+10-16 11:17:13.722 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:17:24.509 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 39 lines
+10-16 11:17:35.005 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 65 lines
+10-16 11:17:50.343 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 3 lines
+10-16 11:17:55.932 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 59 lines
+10-16 11:18:06.039 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 30 lines
+10-16 11:18:19.540 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:18:29.606 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 28 lines
+10-16 11:18:40.905 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:18:51.876 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 52 lines
+10-16 11:19:07.002 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 31 lines
+10-16 11:19:07.386 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:19:17.618 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 26 lines
+10-16 11:19:34.971 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270037, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.016 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270070, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.033 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270094, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.049 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270110, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.065 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270126, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.081 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270142, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.098 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270159, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.116 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270175, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.119 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 224 lines
+10-16 11:19:35.184 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232270217, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.200 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270233, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.201 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270233, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.201 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270233, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:35.201 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=76.760124, y[0]=205.35826, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232270233, downTime=232270037, deviceId=3, source=0x1002 }
+10-16 11:19:36.393 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=159.50156, y[0]=120.623055, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232271409, downTime=232270443, deviceId=3, source=0x1002 }
+10-16 11:19:36.394 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=159.50156, y[0]=120.623055, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232271417, downTime=232270443, deviceId=3, source=0x1002 }
+10-16 11:19:36.394 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=159.50156, y[0]=120.623055, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232271417, downTime=232270443, deviceId=3, source=0x1002 }
+10-16 11:19:36.394 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=159.50156, y[0]=120.623055, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232271417, downTime=232270443, deviceId=3, source=0x1002 }
+10-16 11:19:36.395 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=159.50156, y[0]=120.623055, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232271417, downTime=232270443, deviceId=3, source=0x1002 }
+10-16 11:19:48.943 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 1903 lines
+10-16 11:19:54.355 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:19:59.751 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=18.940811, y[0]=55.825546, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x3, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232294733, downTime=232287230, deviceId=3, source=0x1002 }
+10-16 11:19:59.758 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=18.940811, y[0]=55.825546, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x3, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232294738, downTime=232287230, deviceId=3, source=0x1002 }
+10-16 11:19:59.758 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=18.940811, y[0]=55.825546, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x3, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232294738, downTime=232287230, deviceId=3, source=0x1002 }
+10-16 11:19:59.759 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=18.940811, y[0]=55.825546, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x3, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232294738, downTime=232287230, deviceId=3, source=0x1002 }
+10-16 11:19:59.759 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=18.940811, y[0]=55.825546, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x3, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232294738, downTime=232287230, deviceId=3, source=0x1002 }
+10-16 11:20:04.914 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 254 lines
+10-16 11:20:05.640 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=91.7134, y[0]=21.931465, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232300479, downTime=232300479, deviceId=3, source=0x1002 }
+10-16 11:20:08.642 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:20:18.183 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 24 lines
+10-16 11:20:28.419 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 930 lines
+10-16 11:20:33.052 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=186.41745, y[0]=94.704056, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232324403, downTime=232322407, deviceId=3, source=0x1002 }
+10-16 11:20:33.053 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=186.41745, y[0]=94.704056, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232324426, downTime=232322407, deviceId=3, source=0x1002 }
+10-16 11:20:33.054 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=186.41745, y[0]=94.704056, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232324426, downTime=232322407, deviceId=3, source=0x1002 }
+10-16 11:20:33.054 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=186.41745, y[0]=94.704056, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232324426, downTime=232322407, deviceId=3, source=0x1002 }
+10-16 11:20:33.104 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=186.41745, y[0]=94.704056, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232324426, downTime=232322407, deviceId=3, source=0x1002 }
+10-16 11:20:36.612 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=1, x[0]=242.243, y[0]=138.56699, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232328017, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.658 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=242.243, y[0]=136.07477, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232328056, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.754 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=244.17825, y[0]=136.57321, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328160, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.771 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=245.21352, y[0]=136.57321, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328177, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.788 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=246.2324, y[0]=136.57321, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232328193, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.804 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=247.2745, y[0]=135.52924, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328210, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.821 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=248.30206, y[0]=134.50168, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328227, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.838 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=250.4362, y[0]=131.26161, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328243, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:36.854 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=259.26483, y[0]=0.4105158, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232328260, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:41.006 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 48 lines
+10-16 11:20:41.075 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=262.1807, y[0]=0.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232332436, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:41.076 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=262.1807, y[0]=0.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232332440, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:41.076 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=262.1807, y[0]=0.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232332440, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:41.077 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=262.1807, y[0]=0.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232332440, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:41.077 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=262.1807, y[0]=0.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232332440, downTime=232328017, deviceId=3, source=0x1002 }
+10-16 11:20:51.226 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 15 lines
+10-16 11:20:55.456 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 3 lines
+10-16 11:20:55.539 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 42 lines
+10-16 11:21:05.909 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:21:15.409 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 41 lines
+10-16 11:21:15.605 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:21:29.209 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:21:37.241 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:21:41.679 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 38 lines
+10-16 11:21:53.506 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 64 lines
+10-16 11:22:06.485 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:22:18.468 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 34 lines
+10-16 11:22:28.209 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:22:31.520 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:22:43.585 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 44 lines
+10-16 11:22:51.691 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 6 lines
+10-16 11:22:55.541 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 49 lines
+10-16 11:23:01.014 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:23:01.802 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 30 lines
+10-16 11:23:06.099 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:23:08.471 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 25 lines
+10-16 11:23:17.174 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:23:23.189 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 39 lines
+10-16 11:23:34.014 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 32 lines
+10-16 11:23:39.993 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:23:41.585 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 39 lines
+10-16 11:23:52.951 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 58 lines
+10-16 11:23:58.915 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:24:03.893 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:24:17.358 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 52 lines
+10-16 11:24:26.886 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:24:28.540 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 38 lines
+10-16 11:24:38.607 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 17 lines
+10-16 11:24:49.777 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 13 lines
+10-16 11:24:53.149 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:24:53.852 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 58 lines
+10-16 11:25:05.346 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 34 lines
+10-16 11:25:15.674 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 36 lines
+10-16 11:25:16.062 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:25:25.014 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 12 lines
+10-16 11:25:25.885 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:25:25.919 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 18 lines
+10-16 11:25:30.924 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:25:32.683 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 36 lines
+10-16 11:25:42.811 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:25:52.004 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:25:53.665 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 55 lines
+10-16 11:26:04.585 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:26:14.631 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 41 lines
+10-16 11:26:14.962 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:26:25.725 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:26:38.029 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 15 lines
+10-16 11:26:38.812 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:26:41.661 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 32 lines
+10-16 11:26:52.002 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 76 lines
+10-16 11:26:53.275 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=64.79751, y[0]=36.884735, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232703669, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.298 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=66.08263, y[0]=35.59962, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703689, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.317 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.241806, y[0]=34.440445, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703708, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.336 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=68.286606, y[0]=33.395638, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703725, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.355 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.78816, y[0]=32.064667, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703746, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.374 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.78816, y[0]=30.897429, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232703765, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.393 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.78816, y[0]=29.719938, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703784, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.412 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.78816, y[0]=28.534739, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703803, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.431 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.78816, y[0]=27.415014, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703821, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.452 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=67.05336, y[0]=26.181086, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703841, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:53.470 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=66.29634, y[0]=25.424059, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232703853, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.412 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=64.79751, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232704793, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.423 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=65.74228, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232704810, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.470 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=66.28196, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232704818, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.471 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=66.28196, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232704851, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.471 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=66.28196, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232704851, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.471 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=66.28196, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232704851, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:26:54.471 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=66.28196, y[0]=9.968847, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232704851, downTime=232703669, deviceId=3, source=0x1002 }
+10-16 11:27:00.184 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:27:02.127 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 10 lines
+10-16 11:27:05.880 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:27:06.001 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 37 lines
+10-16 11:27:16.749 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 31 lines
+10-16 11:27:26.245 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 4 lines
+10-16 11:27:30.370 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 39 lines
+10-16 11:27:40.852 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 111 lines
+10-16 11:27:42.503 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=30.903427, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232752899, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.541 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=27.840677, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=232752932, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.600 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=24.176502, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=3, eventTime=232752991, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.619 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232753011, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.639 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232753019, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.647 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232753043, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.647 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232753043, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.647 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232753043, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:42.647 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=23.925234, y[0]=28.909658, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232753043, downTime=232752899, deviceId=3, source=0x1002 }
+10-16 11:27:43.860 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=41.86916, y[0]=170.4673, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232754189, downTime=232754189, deviceId=3, source=0x1002 }
+10-16 11:27:43.860 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=41.86916, y[0]=170.4673, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232754205, downTime=232754189, deviceId=3, source=0x1002 }
+10-16 11:27:43.860 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=41.86916, y[0]=170.4673, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232754205, downTime=232754189, deviceId=3, source=0x1002 }
+10-16 11:27:43.861 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=41.86916, y[0]=170.4673, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232754205, downTime=232754189, deviceId=3, source=0x1002 }
+10-16 11:27:43.861 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=41.86916, y[0]=170.4673, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232754205, downTime=232754189, deviceId=3, source=0x1002 }
+10-16 11:27:46.080 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=37.881622, y[0]=184.42368, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232756390, downTime=232754475, deviceId=3, source=0x1002 }
+10-16 11:27:46.080 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=37.881622, y[0]=184.42368, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232756390, downTime=232754475, deviceId=3, source=0x1002 }
+10-16 11:27:46.080 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=37.881622, y[0]=184.42368, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232756390, downTime=232754475, deviceId=3, source=0x1002 }
+10-16 11:27:53.154 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 106 lines
+10-16 11:28:00.811 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=161.49533, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232771020, downTime=232770800, deviceId=3, source=0x1002 }
+10-16 11:28:00.811 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=161.49533, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232771020, downTime=232770800, deviceId=3, source=0x1002 }
+10-16 11:28:00.811 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=0, x[0]=36.884735, y[0]=161.49533, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232771020, downTime=232770800, deviceId=3, source=0x1002 }
+10-16 11:28:02.941 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:28:06.631 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 52 lines
+10-16 11:28:19.186 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 30 lines
+10-16 11:28:31.901 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:28:42.061 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 29 lines
+10-16 11:28:46.474 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:28:55.011 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 53 lines
+10-16 11:29:05.615 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 40 lines
+10-16 11:29:16.537 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 62 lines
+10-16 11:29:26.969 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:29:36.142 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 2 lines
+10-16 11:29:40.734 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 117 lines
+10-16 11:29:55.027 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 62 lines
+10-16 11:30:02.863 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:30:05.957 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 33 lines
+10-16 11:30:10.542 17369 17379 I chatty  : uid=10055(uk.me.ponies.wearroutes) HeapTaskDaemon expire 1 line
+10-16 11:30:10.549 17369 17369 I chatty  : uid=10055(uk.me.ponies.wearroutes) expire 304 lines
+10-16 11:30:20.894 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.105050504,0.0PxLeftTopOff:52,0
+10-16 11:30:20.894 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.895 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.895 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.896 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:20.896 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:20.913 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=47.06378, y[0]=18.154125, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232911178, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.913 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:20.915 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.10707071,0.0PxLeftTopOff:53,0
+10-16 11:30:20.915 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.915 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.916 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.931 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=25.919004, y[0]=16.94704, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232911198, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.931 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:20.931 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.10909091,0.0PxLeftTopOff:54,0
+10-16 11:30:20.931 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.937 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.937 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.938 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_POINTER_DOWN(1), actionButton=0, id[0]=0, x[0]=25.919004, y[0]=16.94704, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911198, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:20.938 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_POINTER_DOWN(1), actionButton=0, id[0]=0, x[0]=25.919004, y[0]=16.94704, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911198, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.938 17369 17369 E GridViewPager: Unknown action type: 261
+10-16 11:30:20.938 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.962 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=16.520195, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911224, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.962 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:20.963 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:20.963 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.963 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.963 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.978 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=13.169579, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911241, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.978 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:20.978 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.978 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.981 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:20.994 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=10.770945, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911257, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:20.995 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:20.995 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:20.995 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:20.996 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.009 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=9.002756, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=218.31776, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911272, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.009 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.009 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.009 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.010 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.025 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=8.971963, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=215.95644, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911291, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.026 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.026 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.026 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.026 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.046 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=8.971963, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=214.33954, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911312, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.046 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.046 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.046 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.046 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.066 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=8.971963, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=213.13524, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=2, eventTime=232911332, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.066 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.066 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.066 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.066 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.085 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=8.971963, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.96997, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911351, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.085 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.085 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.085 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.085 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.109 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=7.553102, y[0]=15.950156, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=210.91759, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911369, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.109 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11111111,0.0PxLeftTopOff:55,0
+10-16 11:30:21.109 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.109 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.109 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.123 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=6.5186567, y[0]=14.493735, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911386, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.123 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:21.124 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11515152,0.0PxLeftTopOff:57,0
+10-16 11:30:21.124 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.124 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.124 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.174 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=5.9813085, y[0]=13.956387, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911437, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.174 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11515152,0.0PxLeftTopOff:57,0
+10-16 11:30:21.174 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.174 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.175 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.200 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=5.35244, y[0]=13.327518, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911454, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.200 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:21.215 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11717172,0.0PxLeftTopOff:58,0
+10-16 11:30:21.216 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.216 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.225 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.227 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=3.987539, y[0]=11.962617, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=232911477, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.231 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:21.231 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.11919192,0.0PxLeftTopOff:59,0
+10-16 11:30:21.231 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.231 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.231 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.241 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_POINTER_UP(0), actionButton=0, id[0]=0, x[0]=3.987539, y[0]=11.962617, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911492, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.241 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_POINTER_UP(0), actionButton=0, id[0]=0, x[0]=3.987539, y[0]=11.962617, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=211.33957, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911492, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.241 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.263 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=209.3458, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=232911526, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.263 17369 17369 D MapSwipeToZoomFrag: onScrollChange seen
+10-16 11:30:21.264 17369 17369 D ColumnHistorian: onPageScrolled: Pos:2,0 Off:0.121212125,0.0PxLeftTopOff:60,0
+10-16 11:30:21.264 17369 17369 D MainGridPagerAdapter: getFragment called for row:2 column:0
+10-16 11:30:21.265 17369 17369 D MainWearActivity: onPageScrolled: 2,0
+10-16 11:30:21.265 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.266 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_POINTER_DOWN(0), actionButton=0, id[0]=0, x[0]=286.10593, y[0]=38.878506, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=209.3458, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911526, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.266 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_POINTER_DOWN(0), actionButton=0, id[0]=0, x[0]=286.10593, y[0]=38.878506, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=209.3458, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911526, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.266 17369 17369 E GridViewPager: Unknown action type: 5
+10-16 11:30:21.266 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:30:21.266 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:21.266 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:21.271 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 8734 ms in the future aka Sun Oct 16 11:30:30 GMT+01:00 2016
+10-16 11:30:21.272 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:21.276 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:21.276 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:21.352 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_POINTER_UP(0), actionButton=0, id[0]=0, x[0]=286.10593, y[0]=38.878506, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=209.3458, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911542, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.365 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911559, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.365 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_POINTER_DOWN(0), actionButton=0, id[0]=0, x[0]=147.53894, y[0]=37.881622, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=208.34892, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911559, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.374 17369 17369 W ViewRootImpl: Dropping event due to no window focus: MotionEvent { action=ACTION_POINTER_UP(0), actionButton=0, id[0]=0, x[0]=147.53894, y[0]=37.881622, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=80.747665, y[1]=208.34892, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.375 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.375 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.375 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.375 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.375 17369 17369 D MyGridViewPager: onTouch ambient is trueevent was:MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:30:21.375 17369 17369 D MyGridViewPager: onTouchEvent is returning false
+10-16 11:30:21.376 17369 17369 W ViewRootImpl: Cancelling event due to no window focus: MotionEvent { action=ACTION_CANCEL, actionButton=0, id[0]=1, x[0]=80.747665, y[0]=208.34892, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=232911563, downTime=232910808, deviceId=3, source=0x1002 }
+10-16 11:30:21.564 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:30:21.565 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:21.565 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:21.583 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:21.588 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:30:21.588 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:21.589 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:30:21.590 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:30:21.590 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:30:22.190 17369 17369 D LocationHandler: Good location received Location[fused 53.560134,-1.427533 acc=7 et=+10d5h44m14s293ms alt=101.0 vel=1.18 bear=249.0]
+10-16 11:30:22.191 17369 17369 D BearingSectorizer: clamped to :255.0 from:249.0
+10-16 11:30:22.191 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:30:22.196 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(139, 204)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:22.336 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:22.343 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:22.343 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:23.818 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:23.819 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:23.820 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 6181 ms in the future aka Sun Oct 16 11:30:30 GMT+01:00 2016
+10-16 11:30:23.821 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:23.822 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:23.825 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:24.095 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:30:24.096 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:24.096 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:24.118 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:24.127 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:30:24.127 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:24.128 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:30:24.129 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:30:24.129 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:30:24.608 17369 17369 D LocationHandler: Good location received Location[fused 53.560139,-1.427594 acc=6 et=+10d5h44m16s712ms alt=100.0 vel=1.36 bear=272.0]
+10-16 11:30:24.610 17369 17369 D BearingSectorizer: clamped to :270.0 from:272.0
+10-16 11:30:24.610 17369 17369 D BearingSectorizer: returning changed: 270.0
+10-16 11:30:24.611 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(142, 203)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:24.720 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:24.728 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:24.728 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:25.219 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:25.219 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:25.221 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14781 ms in the future aka Sun Oct 16 11:30:40 GMT+01:00 2016
+10-16 11:30:25.222 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:25.222 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:25.223 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:25.535 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:30:25.536 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:25.536 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:25.569 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:25.569 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:30:25.569 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:25.570 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:30:25.571 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:30:25.571 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:30:26.235 17369 17369 D LocationHandler: Good location received Location[fused 53.560141,-1.427656 acc=6 et=+10d5h44m18s339ms alt=100.0 vel=1.81 bear=265.0]
+10-16 11:30:26.236 17369 17369 D BearingSectorizer: clamped to :270.0 from:265.0
+10-16 11:30:26.237 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(144, 202)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:26.348 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:26.358 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:26.358 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:28.596 17369 17369 D LocationHandler: Good location received Location[fused 53.560135,-1.427721 acc=6 et=+10d5h44m20s701ms alt=100.0 vel=1.94 bear=260.0]
+10-16 11:30:28.598 17369 17369 D BearingSectorizer: clamped to :255.0 from:260.0
+10-16 11:30:28.598 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:30:28.599 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(147, 201)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:28.732 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:28.739 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:28.739 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:32.555 17369 17369 D LocationHandler: Good location received Location[fused 53.560112,-1.427836 acc=5 et=+10d5h44m24s660ms alt=100.0 vel=1.23 bear=256.0]
+10-16 11:30:32.558 17369 17369 D BearingSectorizer: clamped to :255.0 from:256.0
+10-16 11:30:32.559 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(150, 199)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:32.684 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:32.698 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:32.699 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:33.265 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:33.266 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:33.268 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 6734 ms in the future aka Sun Oct 16 11:30:40 GMT+01:00 2016
+10-16 11:30:33.270 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:33.271 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:33.273 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:33.581 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:30:33.582 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:33.582 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:33.606 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:33.607 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:30:33.607 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:33.617 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:30:33.620 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:30:33.621 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:30:34.244 17369 17369 D LocationHandler: Good location received Location[fused 53.560095,-1.427872 acc=6 et=+10d5h44m26s347ms alt=100.0 vel=0.91 bear=237.0]
+10-16 11:30:34.246 17369 17369 D BearingSectorizer: clamped to :240.0 from:237.0
+10-16 11:30:34.246 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:30:34.247 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(151, 198)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:34.355 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:34.378 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:34.378 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:34.795 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:34.796 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:34.798 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 5204 ms in the future aka Sun Oct 16 11:30:40 GMT+01:00 2016
+10-16 11:30:34.799 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:34.800 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:34.801 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:35.079 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:30:35.081 17369 17369 D SlowLocationPollerBase: Wokeup 4919early/late
+10-16 11:30:35.088 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:35.111 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:35.133 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:30:35.134 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:35.159 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:35.164 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:30:35.164 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:35.166 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:30:35.168 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:30:35.168 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:30:36.468 17369 17369 D LocationHandler: Good location received Location[fused 53.560077,-1.427910 acc=7 et=+10d5h44m28s569ms alt=100.0 vel=1.25 bear=227.0]
+10-16 11:30:36.470 17369 17369 D BearingSectorizer: clamped to :225.0 from:227.0
+10-16 11:30:36.470 17369 17369 D BearingSectorizer: returning changed: 225.0
+10-16 11:30:36.472 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(152, 197)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:36.667 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:36.668 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:36.668 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:36.690 17369 17379 I art     : Background partial concurrent mark sweep GC freed 13653(883KB) AllocSpace objects, 25(516KB) LOS objects, 9% free, 18MB/20MB, paused 1.922ms total 108.154ms
+10-16 11:30:38.553 17369 17369 D LocationHandler: Good location received Location[fused 53.560094,-1.427960 acc=8 et=+10d5h44m30s657ms alt=97.0 vel=1.45 bear=246.0]
+10-16 11:30:38.556 17369 17369 D BearingSectorizer: clamped to :240.0 from:246.0
+10-16 11:30:38.556 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:30:38.557 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(155, 197)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:38.677 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:38.688 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:38.688 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:39.722 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:30:39.723 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:39.724 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 10278 ms in the future aka Sun Oct 16 11:30:50 GMT+01:00 2016
+10-16 11:30:39.725 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:30:39.726 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:30:39.728 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:30:43.073 17369 17369 D LocationHandler: Good location received Location[fused 53.560134,-1.428063 acc=10 et=+10d5h44m35s174ms alt=97.0 vel=1.58 bear=276.0]
+10-16 11:30:43.094 17369 17369 D BearingSectorizer: clamped to :270.0 from:276.0
+10-16 11:30:43.094 17369 17369 D BearingSectorizer: returning changed: 270.0
+10-16 11:30:43.096 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(160, 197)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:43.265 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:43.278 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:43.278 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:45.005 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:30:45.013 17369 17369 D SlowLocationPollerBase: Wokeup 4987early/late
+10-16 11:30:45.016 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:45.049 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:46.195 17369 17369 D LocationHandler: Good location received Location[fused 53.560112,-1.428151 acc=11 et=+10d5h44m38s296ms alt=95.0 vel=1.65 bear=249.0]
+10-16 11:30:46.216 17369 17369 D BearingSectorizer: clamped to :255.0 from:249.0
+10-16 11:30:46.216 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:30:46.218 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(163, 195)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:46.386 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:46.397 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:46.401 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:46.414 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 13599 ms in the future aka Sun Oct 16 11:31:00 GMT+01:00 2016
+10-16 11:30:46.417 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:46.417 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:46.421 17369 17369 D LocationHandler: Good location received Location[fused 53.560112,-1.428151 acc=11 et=+10d5h44m38s296ms alt=95.0 vel=1.65 bear=249.0]
+10-16 11:30:46.480 17369 17369 D BearingSectorizer: clamped to :255.0 from:249.0
+10-16 11:30:46.480 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(163, 195)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:46.679 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:46.690 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:46.690 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:51.602 17369 17369 D LocationHandler: Good location received Location[fused 53.560060,-1.428334 acc=4 et=+10d5h44m43s704ms alt=98.0 vel=2.29 bear=258.0]
+10-16 11:30:51.625 17369 17369 D BearingSectorizer: clamped to :255.0 from:258.0
+10-16 11:30:51.627 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(168, 191)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:51.823 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:51.838 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:51.838 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:55.016 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:30:55.023 17369 17369 D SlowLocationPollerBase: Wokeup 4977early/late
+10-16 11:30:55.025 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:55.054 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:55.383 17369 17369 D LocationHandler: Good location received Location[fused 53.560039,-1.428488 acc=5 et=+10d5h44m47s484ms alt=98.0 vel=1.75 bear=267.0]
+10-16 11:30:55.404 17369 17369 D BearingSectorizer: clamped to :270.0 from:267.0
+10-16 11:30:55.404 17369 17369 D BearingSectorizer: returning changed: 270.0
+10-16 11:30:55.405 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(173, 188)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:55.576 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:55.587 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:30:55.604 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:30:55.606 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14397 ms in the future aka Sun Oct 16 11:31:10 GMT+01:00 2016
+10-16 11:30:55.608 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:55.608 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:55.620 17369 17369 D LocationHandler: Good location received Location[fused 53.560039,-1.428488 acc=5 et=+10d5h44m47s484ms alt=98.0 vel=1.75 bear=267.0]
+10-16 11:30:55.647 17369 17369 D BearingSectorizer: clamped to :270.0 from:267.0
+10-16 11:30:55.655 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(173, 188)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:55.858 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:55.868 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:55.868 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:30:59.528 17369 17369 D LocationHandler: Good location received Location[fused 53.559992,-1.428615 acc=7 et=+10d5h44m51s631ms alt=100.0 vel=1.63 bear=240.0]
+10-16 11:30:59.549 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:30:59.550 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(176, 185)middle: Rect(53, 64 - 267, 267)
+10-16 11:30:59.724 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:30:59.738 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:30:59.738 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:00.147 17369 17369 D GPXLogger: Written <trkpt lat="53.560172" lon="-1.427074"><ele>109.000000</ele><time>2016-10-16T11:29:50.000+0100</time><hdop>1.75</hdop><course>269.0</course><speed>1.22</speed></trkpt>
+10-16 11:31:00.150 17369 17369 D GPXLogger: Written <trkpt lat="53.560177" lon="-1.427168"><ele>105.000000</ele><time>2016-10-16T11:29:54.000+0100</time><hdop>1.75</hdop><course>270.0</course><speed>0.91</speed></trkpt>
+10-16 11:31:00.152 17369 17369 D GPXLogger: Written <trkpt lat="53.560145" lon="-1.427236"><ele>104.000000</ele><time>2016-10-16T11:29:58.000+0100</time><hdop>2.00</hdop><course>212.0</course><speed>1.44</speed></trkpt>
+10-16 11:31:00.156 17369 17369 D GPXLogger: Written <trkpt lat="53.560142" lon="-1.427482"><ele>102.000000</ele><time>2016-10-16T11:30:08.000+0100</time><hdop>2.00</hdop><course>222.0</course><speed>1.07</speed></trkpt>
+10-16 11:31:00.167 17369 17369 D GPXLogger: Written <trkpt lat="53.560134" lon="-1.427533"><ele>101.000000</ele><time>2016-10-16T11:30:10.000+0100</time><hdop>1.75</hdop><course>249.0</course><speed>1.18</speed></trkpt>
+10-16 11:31:00.169 17369 17369 D GPXLogger: Written <trkpt lat="53.560139" lon="-1.427594"><ele>100.000000</ele><time>2016-10-16T11:30:12.000+0100</time><hdop>1.50</hdop><course>272.0</course><speed>1.36</speed></trkpt>
+10-16 11:31:00.171 17369 17369 D GPXLogger: Written <trkpt lat="53.560141" lon="-1.427656"><ele>100.000000</ele><time>2016-10-16T11:30:14.000+0100</time><hdop>1.50</hdop><course>265.0</course><speed>1.81</speed></trkpt>
+10-16 11:31:00.177 17369 17369 D GPXLogger: Written <trkpt lat="53.560135" lon="-1.427721"><ele>100.000000</ele><time>2016-10-16T11:30:16.000+0100</time><hdop>1.50</hdop><course>260.0</course><speed>1.94</speed></trkpt>
+10-16 11:31:00.179 17369 17369 D GPXLogger: Written <trkpt lat="53.560112" lon="-1.427836"><ele>100.000000</ele><time>2016-10-16T11:30:20.000+0100</time><hdop>1.25</hdop><course>256.0</course><speed>1.23</speed></trkpt>
+10-16 11:31:00.181 17369 17369 D GPXLogger: Written <trkpt lat="53.560095" lon="-1.427872"><ele>100.000000</ele><time>2016-10-16T11:30:22.000+0100</time><hdop>1.50</hdop><course>237.0</course><speed>0.91</speed></trkpt>
+10-16 11:31:00.185 17369 17369 D GPXLogger: Written <trkpt lat="53.560077" lon="-1.427910"><ele>100.000000</ele><time>2016-10-16T11:30:24.000+0100</time><hdop>1.75</hdop><course>227.0</course><speed>1.25</speed></trkpt>
+10-16 11:31:00.188 17369 17369 D GPXLogger: Written <trkpt lat="53.560094" lon="-1.427960"><ele>97.000000</ele><time>2016-10-16T11:30:26.000+0100</time><hdop>2.00</hdop><course>246.0</course><speed>1.45</speed></trkpt>
+10-16 11:31:00.193 17369 17369 D GPXLogger: Written <trkpt lat="53.560134" lon="-1.428063"><ele>97.000000</ele><time>2016-10-16T11:30:30.000+0100</time><hdop>2.50</hdop><course>276.0</course><speed>1.58</speed></trkpt>
+10-16 11:31:00.205 17369 17369 D GPXLogger: Written <trkpt lat="53.560112" lon="-1.428151"><ele>95.000000</ele><time>2016-10-16T11:30:34.000+0100</time><hdop>2.75</hdop><course>249.0</course><speed>1.65</speed></trkpt>
+10-16 11:31:00.207 17369 17369 D GPXLogger: Written <trkpt lat="53.560112" lon="-1.428151"><ele>95.000000</ele><time>2016-10-16T11:30:34.000+0100</time><hdop>2.75</hdop><course>249.0</course><speed>1.65</speed></trkpt>
+10-16 11:31:00.208 17369 17369 D GPXLogger: Written <trkpt lat="53.560060" lon="-1.428334"><ele>98.000000</ele><time>2016-10-16T11:30:39.000+0100</time><hdop>1.00</hdop><course>258.0</course><speed>2.29</speed></trkpt>
+10-16 11:31:00.217 17369 17369 D GPXLogger: Written <trkpt lat="53.560039" lon="-1.428488"><ele>98.000000</ele><time>2016-10-16T11:30:43.000+0100</time><hdop>1.25</hdop><course>267.0</course><speed>1.75</speed></trkpt>
+10-16 11:31:00.219 17369 17369 D GPXLogger: Written <trkpt lat="53.560039" lon="-1.428488"><ele>98.000000</ele><time>2016-10-16T11:30:43.000+0100</time><hdop>1.25</hdop><course>267.0</course><speed>1.75</speed></trkpt>
+10-16 11:31:00.221 17369 17369 D GPXLogger: Written <trkpt lat="53.559992" lon="-1.428615"><ele>100.000000</ele><time>2016-10-16T11:30:47.000+0100</time><hdop>1.75</hdop><course>240.0</course><speed>1.63</speed></trkpt>
+10-16 11:31:00.222 17369 17369 D MainWearActivity: onUpdateAmbient Called
+10-16 11:31:00.250 17369 17379 I art     : Background partial concurrent mark sweep GC freed 33506(1847KB) AllocSpace objects, 33(592KB) LOS objects, 10% free, 17MB/19MB, paused 1.983ms total 120.025ms
+10-16 11:31:02.021 17369 17369 D LocationHandler: Good location received Location[fused 53.559978,-1.428682 acc=7 et=+10d5h44m54s123ms alt=100.0 vel=1.74 bear=252.0]
+10-16 11:31:02.043 17369 17369 D BearingSectorizer: clamped to :255.0 from:252.0
+10-16 11:31:02.043 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:31:02.044 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(178, 184)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:02.214 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:02.228 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:02.228 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:05.006 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:05.010 17369 17369 D SlowLocationPollerBase: Wokeup 4990early/late
+10-16 11:31:05.011 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:05.028 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:05.360 17369 17369 D LocationHandler: Good location received Location[fused 53.559968,-1.428837 acc=5 et=+10d5h44m57s461ms alt=98.0 vel=1.87 bear=278.0]
+10-16 11:31:05.380 17369 17369 D BearingSectorizer: clamped to :285.0 from:278.0
+10-16 11:31:05.381 17369 17369 D BearingSectorizer: returning changed: 285.0
+10-16 11:31:05.382 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(183, 182)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:05.558 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:05.567 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:05.587 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:05.590 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14413 ms in the future aka Sun Oct 16 11:31:20 GMT+01:00 2016
+10-16 11:31:05.593 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:05.593 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:05.597 17369 17369 D LocationHandler: Good location received Location[fused 53.559968,-1.428837 acc=5 et=+10d5h44m57s461ms alt=98.0 vel=1.87 bear=278.0]
+10-16 11:31:05.626 17369 17369 D BearingSectorizer: clamped to :285.0 from:278.0
+10-16 11:31:05.627 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(183, 182)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:05.827 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:05.840 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:05.840 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:09.501 17369 17369 D LocationHandler: Good location received Location[fused 53.559943,-1.428924 acc=4 et=+10d5h45m1s603ms alt=95.0 vel=1.85 bear=258.0]
+10-16 11:31:09.502 17369 17369 D BearingSectorizer: clamped to :255.0 from:258.0
+10-16 11:31:09.502 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:31:09.503 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(186, 180)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:09.649 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:13.245 17369 17369 D LocationHandler: Good location received Location[fused 53.559932,-1.429035 acc=5 et=+10d5h45m5s347ms alt=94.0 vel=1.89 bear=273.0]
+10-16 11:31:13.267 17369 17369 D BearingSectorizer: clamped to :270.0 from:273.0
+10-16 11:31:13.267 17369 17369 D BearingSectorizer: returning changed: 270.0
+10-16 11:31:13.272 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(189, 178)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:13.454 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:13.468 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:13.468 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:15.006 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:15.013 17369 17369 D SlowLocationPollerBase: Wokeup 4987early/late
+10-16 11:31:15.015 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:15.047 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:15.635 17369 17369 D LocationHandler: Good location received Location[fused 53.559940,-1.429083 acc=5 et=+10d5h45m7s736ms alt=94.0 vel=1.36 bear=290.0]
+10-16 11:31:15.657 17369 17369 D BearingSectorizer: clamped to :285.0 from:290.0
+10-16 11:31:15.657 17369 17369 D BearingSectorizer: returning changed: 285.0
+10-16 11:31:15.659 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(191, 178)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:15.830 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:15.837 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:15.865 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:15.866 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14135 ms in the future aka Sun Oct 16 11:31:30 GMT+01:00 2016
+10-16 11:31:15.870 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:15.870 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:15.873 17369 17369 D LocationHandler: Good location received Location[fused 53.559940,-1.429083 acc=5 et=+10d5h45m7s736ms alt=94.0 vel=1.36 bear=290.0]
+10-16 11:31:15.896 17369 17369 D BearingSectorizer: clamped to :285.0 from:290.0
+10-16 11:31:15.898 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(191, 178)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:16.106 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:16.114 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:16.114 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:19.978 17369 17369 D LocationHandler: Good location received Location[fused 53.559913,-1.429152 acc=4 et=+10d5h45m12s80ms alt=87.0 vel=1.13 bear=248.0]
+10-16 11:31:19.999 17369 17369 D BearingSectorizer: clamped to :255.0 from:248.0
+10-16 11:31:19.999 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:31:20.000 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(193, 176)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:20.201 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:20.208 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:20.208 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:25.004 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:25.010 17369 17369 D SlowLocationPollerBase: Wokeup 4990early/late
+10-16 11:31:25.012 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:25.041 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:25.610 17369 17369 D LocationHandler: Good location received Location[fused 53.559887,-1.429305 acc=4 et=+10d5h45m17s712ms alt=90.0 vel=1.97 bear=255.0]
+10-16 11:31:25.633 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(197, 174)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:25.831 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:25.847 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:25.877 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:25.887 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14123 ms in the future aka Sun Oct 16 11:31:40 GMT+01:00 2016
+10-16 11:31:25.891 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:25.891 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:25.894 17369 17369 D LocationHandler: Good location received Location[fused 53.559887,-1.429305 acc=4 et=+10d5h45m17s712ms alt=90.0 vel=1.97 bear=255.0]
+10-16 11:31:25.947 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(197, 174)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:26.024 17369 17379 I art     : Background partial concurrent mark sweep GC freed 28669(1496KB) AllocSpace objects, 28(492KB) LOS objects, 10% free, 17MB/19MB, paused 3.265ms total 233.398ms
+10-16 11:31:26.166 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:26.179 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:26.180 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:29.956 17369 17369 D LocationHandler: Good location received Location[fused 53.559875,-1.429402 acc=8 et=+10d5h45m22s58ms alt=93.0 vel=1.69 bear=256.0]
+10-16 11:31:29.976 17369 17369 D BearingSectorizer: clamped to :255.0 from:256.0
+10-16 11:31:29.978 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(200, 172)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:30.151 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:30.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:30.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:35.016 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:35.020 17369 17369 D SlowLocationPollerBase: Wokeup 4981early/late
+10-16 11:31:35.021 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:35.053 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:35.635 17369 17369 D LocationHandler: Good location received Location[fused 53.559851,-1.429525 acc=6 et=+10d5h45m27s736ms alt=95.0 vel=0.99 bear=257.0]
+10-16 11:31:35.655 17369 17369 D BearingSectorizer: clamped to :255.0 from:257.0
+10-16 11:31:35.657 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(204, 170)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:35.829 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:35.837 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:35.858 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:35.859 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14142 ms in the future aka Sun Oct 16 11:31:50 GMT+01:00 2016
+10-16 11:31:35.863 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:35.863 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:35.867 17369 17369 D LocationHandler: Good location received Location[fused 53.559851,-1.429525 acc=6 et=+10d5h45m27s736ms alt=95.0 vel=0.99 bear=257.0]
+10-16 11:31:35.899 17369 17369 D BearingSectorizer: clamped to :255.0 from:257.0
+10-16 11:31:35.900 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(204, 170)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:36.101 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:36.119 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:36.120 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:39.923 17369 17369 D LocationHandler: Good location received Location[fused 53.559847,-1.429606 acc=4 et=+10d5h45m32s26ms alt=92.0 vel=1.63 bear=245.0]
+10-16 11:31:39.944 17369 17369 D BearingSectorizer: clamped to :240.0 from:245.0
+10-16 11:31:39.944 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:31:39.945 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(206, 169)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:40.149 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:40.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 1ms
+10-16 11:31:40.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:43.914 17369 17369 D LocationHandler: Good location received Location[fused 53.559814,-1.429709 acc=5 et=+10d5h45m36s16ms alt=94.0 vel=1.72 bear=248.0]
+10-16 11:31:43.944 17369 17369 D BearingSectorizer: clamped to :255.0 from:248.0
+10-16 11:31:43.944 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:31:43.945 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(209, 167)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:44.148 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:44.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:44.159 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:45.005 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:45.011 17369 17369 D SlowLocationPollerBase: Wokeup 4989early/late
+10-16 11:31:45.013 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:45.041 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:45.697 17369 17369 D LocationHandler: Good location received Location[fused 53.559790,-1.429771 acc=6 et=+10d5h45m37s798ms alt=94.0 vel=3.0 bear=243.0]
+10-16 11:31:45.719 17369 17369 D BearingSectorizer: clamped to :240.0 from:243.0
+10-16 11:31:45.719 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:31:45.720 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(210, 166)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:45.891 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:45.907 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:45.924 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:45.926 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14076 ms in the future aka Sun Oct 16 11:32:00 GMT+01:00 2016
+10-16 11:31:45.929 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:45.929 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:46.213 17369 17369 D LocationHandler: Good location received Location[fused 53.559765,-1.429803 acc=6 et=+10d5h45m38s309ms alt=90.0 vel=2.06 bear=183.0]
+10-16 11:31:46.235 17369 17369 D BearingSectorizer: clamped to :180.0 from:183.0
+10-16 11:31:46.235 17369 17369 D BearingSectorizer: returning changed: 180.0
+10-16 11:31:46.242 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(210, 164)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:46.462 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:46.478 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:46.478 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:46.627 17369 17379 I art     : Background partial concurrent mark sweep GC freed 30178(1660KB) AllocSpace objects, 26(456KB) LOS objects, 10% free, 17MB/19MB, paused 4.638ms total 150.939ms
+10-16 11:31:49.909 17369 17369 D LocationHandler: Good location received Location[fused 53.559695,-1.429846 acc=6 et=+10d5h45m42s12ms alt=101.0 vel=2.24 bear=207.0]
+10-16 11:31:49.928 17369 17369 D BearingSectorizer: clamped to :210.0 from:207.0
+10-16 11:31:49.928 17369 17369 D BearingSectorizer: returning changed: 210.0
+10-16 11:31:49.930 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(209, 162)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:50.125 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:50.138 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:50.138 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:53.548 17369 17369 D LocationHandler: Good location received Location[fused 53.559622,-1.429970 acc=6 et=+10d5h45m45s650ms alt=92.0 vel=2.64 bear=228.0]
+10-16 11:31:53.571 17369 17369 D BearingSectorizer: clamped to :225.0 from:228.0
+10-16 11:31:53.572 17369 17369 D BearingSectorizer: returning changed: 225.0
+10-16 11:31:53.573 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(210, 158)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:53.749 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:53.758 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:53.758 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:55.005 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:31:55.011 17369 17369 D SlowLocationPollerBase: Wokeup 4989early/late
+10-16 11:31:55.013 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:55.063 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:55.687 17369 17369 D LocationHandler: Good location received Location[fused 53.559597,-1.430037 acc=8 et=+10d5h45m47s788ms alt=90.0 vel=1.89 bear=238.0]
+10-16 11:31:55.708 17369 17369 D BearingSectorizer: clamped to :240.0 from:238.0
+10-16 11:31:55.708 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:31:55.714 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(211, 157)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:55.875 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:55.887 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:31:55.911 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:31:55.913 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14089 ms in the future aka Sun Oct 16 11:32:10 GMT+01:00 2016
+10-16 11:31:55.926 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:31:55.926 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:31:55.932 17369 17369 D LocationHandler: Good location received Location[fused 53.559597,-1.430037 acc=8 et=+10d5h45m47s788ms alt=90.0 vel=1.89 bear=238.0]
+10-16 11:31:55.933 17369 17369 D BearingSectorizer: clamped to :240.0 from:238.0
+10-16 11:31:55.934 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(211, 157)middle: Rect(53, 64 - 267, 267)
+10-16 11:31:56.117 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:31:59.881 17369 17369 D LocationHandler: Good location received Location[fused 53.559551,-1.430152 acc=8 et=+10d5h45m51s983ms alt=91.0 vel=3.06 bear=232.0]
+10-16 11:31:59.902 17369 17369 D BearingSectorizer: clamped to :225.0 from:232.0
+10-16 11:31:59.902 17369 17369 D BearingSectorizer: returning changed: 225.0
+10-16 11:31:59.903 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(213, 155)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:00.129 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:00.148 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:00.148 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:00.253 17369 17369 D GPXLogger: Written <trkpt lat="53.559978" lon="-1.428682"><ele>100.000000</ele><time>2016-10-16T11:30:49.000+0100</time><hdop>1.75</hdop><course>252.0</course><speed>1.74</speed></trkpt>
+10-16 11:32:00.254 17369 17369 D GPXLogger: Written <trkpt lat="53.559968" lon="-1.428837"><ele>98.000000</ele><time>2016-10-16T11:30:53.000+0100</time><hdop>1.25</hdop><course>278.0</course><speed>1.87</speed></trkpt>
+10-16 11:32:00.256 17369 17369 D GPXLogger: Written <trkpt lat="53.559968" lon="-1.428837"><ele>98.000000</ele><time>2016-10-16T11:30:53.000+0100</time><hdop>1.25</hdop><course>278.0</course><speed>1.87</speed></trkpt>
+10-16 11:32:00.258 17369 17369 D GPXLogger: Written <trkpt lat="53.559943" lon="-1.428924"><ele>95.000000</ele><time>2016-10-16T11:30:57.000+0100</time><hdop>1.00</hdop><course>258.0</course><speed>1.85</speed></trkpt>
+10-16 11:32:00.259 17369 17369 D GPXLogger: Written <trkpt lat="53.559932" lon="-1.429035"><ele>94.000000</ele><time>2016-10-16T11:31:01.000+0100</time><hdop>1.25</hdop><course>273.0</course><speed>1.89</speed></trkpt>
+10-16 11:32:00.261 17369 17369 D GPXLogger: Written <trkpt lat="53.559940" lon="-1.429083"><ele>94.000000</ele><time>2016-10-16T11:31:03.000+0100</time><hdop>1.25</hdop><course>290.0</course><speed>1.36</speed></trkpt>
+10-16 11:32:00.262 17369 17369 D GPXLogger: Written <trkpt lat="53.559940" lon="-1.429083"><ele>94.000000</ele><time>2016-10-16T11:31:03.000+0100</time><hdop>1.25</hdop><course>290.0</course><speed>1.36</speed></trkpt>
+10-16 11:32:00.264 17369 17369 D GPXLogger: Written <trkpt lat="53.559913" lon="-1.429152"><ele>87.000000</ele><time>2016-10-16T11:31:07.000+0100</time><hdop>1.00</hdop><course>248.0</course><speed>1.13</speed></trkpt>
+10-16 11:32:00.265 17369 17369 D GPXLogger: Written <trkpt lat="53.559887" lon="-1.429305"><ele>90.000000</ele><time>2016-10-16T11:31:13.000+0100</time><hdop>1.00</hdop><course>255.0</course><speed>1.97</speed></trkpt>
+10-16 11:32:00.266 17369 17369 D GPXLogger: Written <trkpt lat="53.559887" lon="-1.429305"><ele>90.000000</ele><time>2016-10-16T11:31:13.000+0100</time><hdop>1.00</hdop><course>255.0</course><speed>1.97</speed></trkpt>
+10-16 11:32:00.268 17369 17369 D GPXLogger: Written <trkpt lat="53.559875" lon="-1.429402"><ele>93.000000</ele><time>2016-10-16T11:31:17.000+0100</time><hdop>2.00</hdop><course>256.0</course><speed>1.69</speed></trkpt>
+10-16 11:32:00.269 17369 17369 D GPXLogger: Written <trkpt lat="53.559851" lon="-1.429525"><ele>95.000000</ele><time>2016-10-16T11:31:23.000+0100</time><hdop>1.50</hdop><course>257.0</course><speed>0.99</speed></trkpt>
+10-16 11:32:00.271 17369 17369 D GPXLogger: Written <trkpt lat="53.559851" lon="-1.429525"><ele>95.000000</ele><time>2016-10-16T11:31:23.000+0100</time><hdop>1.50</hdop><course>257.0</course><speed>0.99</speed></trkpt>
+10-16 11:32:00.273 17369 17369 D GPXLogger: Written <trkpt lat="53.559847" lon="-1.429606"><ele>92.000000</ele><time>2016-10-16T11:31:27.000+0100</time><hdop>1.00</hdop><course>245.0</course><speed>1.63</speed></trkpt>
+10-16 11:32:00.274 17369 17369 D GPXLogger: Written <trkpt lat="53.559814" lon="-1.429709"><ele>94.000000</ele><time>2016-10-16T11:31:31.000+0100</time><hdop>1.25</hdop><course>248.0</course><speed>1.72</speed></trkpt>
+10-16 11:32:00.275 17369 17369 D GPXLogger: Written <trkpt lat="53.559790" lon="-1.429771"><ele>94.000000</ele><time>2016-10-16T11:31:33.000+0100</time><hdop>1.50</hdop><course>243.0</course><speed>3.00</speed></trkpt>
+10-16 11:32:00.277 17369 17369 D GPXLogger: Written <trkpt lat="53.559765" lon="-1.429803"><ele>90.000000</ele><time>2016-10-16T11:31:34.000+0100</time><hdop>1.50</hdop><course>183.0</course><speed>2.06</speed></trkpt>
+10-16 11:32:00.278 17369 17369 D GPXLogger: Written <trkpt lat="53.559695" lon="-1.429846"><ele>101.000000</ele><time>2016-10-16T11:31:37.000+0100</time><hdop>1.50</hdop><course>207.0</course><speed>2.24</speed></trkpt>
+10-16 11:32:00.280 17369 17369 D GPXLogger: Written <trkpt lat="53.559622" lon="-1.429970"><ele>92.000000</ele><time>2016-10-16T11:31:41.000+0100</time><hdop>1.50</hdop><course>228.0</course><speed>2.64</speed></trkpt>
+10-16 11:32:00.281 17369 17369 D GPXLogger: Written <trkpt lat="53.559597" lon="-1.430037"><ele>90.000000</ele><time>2016-10-16T11:31:43.000+0100</time><hdop>2.00</hdop><course>238.0</course><speed>1.89</speed></trkpt>
+10-16 11:32:00.283 17369 17369 D GPXLogger: Written <trkpt lat="53.559597" lon="-1.430037"><ele>90.000000</ele><time>2016-10-16T11:31:43.000+0100</time><hdop>2.00</hdop><course>238.0</course><speed>1.89</speed></trkpt>
+10-16 11:32:00.284 17369 17369 D GPXLogger: Written <trkpt lat="53.559551" lon="-1.430152"><ele>91.000000</ele><time>2016-10-16T11:31:47.000+0100</time><hdop>2.00</hdop><course>232.0</course><speed>3.06</speed></trkpt>
+10-16 11:32:00.286 17369 17369 D MainWearActivity: onUpdateAmbient Called
+10-16 11:32:05.005 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:32:05.011 17369 17369 D SlowLocationPollerBase: Wokeup 4989early/late
+10-16 11:32:05.013 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:05.044 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:05.631 17369 17369 D LocationHandler: Good location received Location[fused 53.559510,-1.430472 acc=6 et=+10d5h45m57s732ms alt=96.0 vel=2.28 bear=234.0]
+10-16 11:32:05.655 17369 17369 D BearingSectorizer: clamped to :240.0 from:234.0
+10-16 11:32:05.655 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:32:05.659 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(222, 150)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:05.842 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:05.847 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:05.869 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:05.871 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14131 ms in the future aka Sun Oct 16 11:32:20 GMT+01:00 2016
+10-16 11:32:05.874 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:05.874 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:05.879 17369 17369 D LocationHandler: Good location received Location[fused 53.559510,-1.430472 acc=6 et=+10d5h45m57s732ms alt=96.0 vel=2.28 bear=234.0]
+10-16 11:32:05.916 17369 17369 D BearingSectorizer: clamped to :240.0 from:234.0
+10-16 11:32:05.917 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(222, 150)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:06.132 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:06.160 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:06.161 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:09.850 17369 17369 D LocationHandler: Good location received Location[fused 53.559484,-1.430742 acc=5 et=+10d5h46m1s952ms alt=97.0 vel=3.39 bear=256.0]
+10-16 11:32:09.870 17369 17369 D BearingSectorizer: clamped to :255.0 from:256.0
+10-16 11:32:09.870 17369 17369 D BearingSectorizer: returning changed: 255.0
+10-16 11:32:09.872 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(230, 147)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:10.045 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:10.062 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:10.062 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:13.840 17369 17369 D LocationHandler: Good location received Location[fused 53.559440,-1.430982 acc=5 et=+10d5h46m5s942ms alt=94.0 vel=2.64 bear=256.0]
+10-16 11:32:13.861 17369 17369 D BearingSectorizer: clamped to :255.0 from:256.0
+10-16 11:32:13.862 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(236, 143)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:14.051 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:14.058 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:14.058 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:14.225 17369 17379 I art     : Background partial concurrent mark sweep GC freed 24287(1370KB) AllocSpace objects, 26(456KB) LOS objects, 10% free, 17MB/19MB, paused 2.716ms total 193.511ms
+10-16 11:32:15.009 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:32:15.013 17369 17369 D SlowLocationPollerBase: Wokeup 4987early/late
+10-16 11:32:15.015 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:15.045 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:15.647 17369 17369 D LocationHandler: Good location received Location[fused 53.559426,-1.431085 acc=5 et=+10d5h46m7s746ms alt=92.0 vel=2.6 bear=255.0]
+10-16 11:32:15.654 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(239, 142)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:15.841 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:15.851 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:15.888 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:15.890 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14112 ms in the future aka Sun Oct 16 11:32:30 GMT+01:00 2016
+10-16 11:32:15.892 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:15.892 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:16.244 17369 17369 D LocationHandler: Good location received Location[fused 53.559417,-1.431130 acc=5 et=+10d5h46m8s346ms alt=89.0 vel=2.47 bear=249.0]
+10-16 11:32:16.266 17369 17369 D BearingSectorizer: clamped to :255.0 from:249.0
+10-16 11:32:16.267 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(240, 141)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:16.447 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:16.456 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 1ms
+10-16 11:32:16.456 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:17.539 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:32:17.540 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:32:17.540 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:32:17.560 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:17.561 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:32:17.561 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:17.562 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:32:17.563 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:32:17.563 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:32:18.779 17369 17369 D MainWearActivity: before onEnterAmbient current isAmbient state is true
+10-16 11:32:18.780 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:18.781 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 11220 ms in the future aka Sun Oct 16 11:32:30 GMT+01:00 2016
+10-16 11:32:18.782 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:32:18.785 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onEnterAmbient
+10-16 11:32:18.786 17369 17369 D MainWearActivity: after onEnterAmbient current isAmbient state is true
+10-16 11:32:19.585 17369 17369 D LocationHandler: Good location received Location[fused 53.559376,-1.431315 acc=5 et=+10d5h46m11s687ms alt=91.0 vel=4.48 bear=251.0]
+10-16 11:32:19.606 17369 17369 D BearingSectorizer: clamped to :255.0 from:251.0
+10-16 11:32:19.607 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(244, 139)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:19.780 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:19.789 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:19.789 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:23.585 17369 17369 D LocationHandler: Good location received Location[fused 53.559343,-1.431592 acc=6 et=+10d5h46m15s687ms alt=89.0 vel=1.98 bear=252.0]
+10-16 11:32:23.605 17369 17369 D BearingSectorizer: clamped to :255.0 from:252.0
+10-16 11:32:23.606 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(251, 135)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:23.782 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:23.788 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:23.788 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:25.004 17369 17369 D SlowLocationPollerAlarmWakeup: Received Alarm1
+10-16 11:32:25.007 17369 17369 D SlowLocationPollerBase: Wokeup 4993early/late
+10-16 11:32:25.009 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:25.040 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because the alarm has triggered:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:25.712 17369 17369 D LocationHandler: Good location received Location[fused 53.559332,-1.431656 acc=6 et=+10d5h46m17s803ms alt=88.0 vel=2.23 bear=242.0]
+10-16 11:32:25.735 17369 17369 D BearingSectorizer: clamped to :240.0 from:242.0
+10-16 11:32:25.735 17369 17369 D BearingSectorizer: returning changed: 240.0
+10-16 11:32:25.739 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(253, 135)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:25.956 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:25.968 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:25.981 17369 17369 D SlowLocationPollerAlarmWakeup: Registering the alarm receiver:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:25.982 17369 17369 D SlowLocationPollerAlarmWakeup: Scheduling an alarm for 14019 ms in the future aka Sun Oct 16 11:32:40 GMT+01:00 2016
+10-16 11:32:25.986 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:25.986 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:25.991 17369 17369 D LocationHandler: Good location received Location[fused 53.559332,-1.431656 acc=6 et=+10d5h46m17s803ms alt=88.0 vel=2.23 bear=242.0]
+10-16 11:32:26.049 17369 17369 D BearingSectorizer: clamped to :240.0 from:242.0
+10-16 11:32:26.050 17369 17369 D MapSwipeToZoomFrag: Location changed: Dot is INSIDE of middle pixels:pos:Point(253, 135)middle: Rect(53, 64 - 267, 267)
+10-16 11:32:26.279 17369 17369 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@2318170
+10-16 11:32:26.287 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131951748 took 0ms
+10-16 11:32:26.287 17369 17369 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131951748 took 0ms
+10-16 11:32:29.496 17369 17369 D MainWearActivity: before onExitAmbient current isAmbient state is false
+10-16 11:32:29.498 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:32:29.498 17369 17369 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@8fddd2c
+10-16 11:32:29.514 17369 17369 D SlowLocationPollerAlarmWakeup: UNRegistering the receiver because we're cancelling the alarm (probably stop):uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup$AlarmRecieverInner@ac29a7e
+10-16 11:32:29.517 17369 17369 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+10-16 11:32:29.517 17369 17369 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@6cc3321
+10-16 11:32:29.518 17369 17369 D MapSwipeToZoomFrag: Fragment:Map #00 onExitAmbient
+10-16 11:32:29.528 17369 17369 D MainWearActivity: after onExitAmbient current isAmbient state is false
+10-16 11:32:29.528 17369 17369 D MainWearActivity: Posting a invalidate event to force full color mode to workaround gridViewPager half colour mode issue:
+10-16 11:32:29.822 17369 17369 D MyGridViewPager: oninterceptTouchEvent is returning true
+10-16 11:32:29.823 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=72.77259, y[0]=50.84112, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=233040091, downTime=233040091, deviceId=3, source=0x1002 }
+10-16 11:32:29.824 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=72.77259, y[0]=50.84112, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=233040091, downTime=233040091, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:32:29.825 17369 17369 D MyGridViewPager: onTouchEvent is returning true
+10-16 11:32:29.932 17369 17369 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=72.77259, y[0]=50.84112, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=233040202, downTime=233040091, deviceId=3, source=0x1002 }
+10-16 11:32:29.933 17369 17369 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=72.77259, y[0]=50.84112, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x2, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=233040202, downTime=233040091, deviceId=3, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@6a86a2a
+10-16 11:32:29.954 17369 17369 E InputEventReceiver: Exception dispatching input event.
+10-16 11:32:29.955 17369 17369 E MessageQueue-JNI: Exception in MessageQueue callback: handleReceiveCallback
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: java.lang.IllegalArgumentException: pointerIndex out of range
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.MotionEvent.nativeGetAxisValue(Native Method)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.MotionEvent.getX(MotionEvent.java:2089)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.support.wearable.view.GridViewPager.handlePointerUp(GridViewPager.java:2172)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.support.wearable.view.GridViewPager.onTouchEvent(GridViewPager.java:1699)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at uk.me.ponies.wearroutes.MyGridViewPager.onTouchEvent(MyGridViewPager.java:78)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.View.dispatchTouchEvent(View.java:9300)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2547)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2240)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at com.android.internal.policy.PhoneWindow$DecorView.superDispatchTouchEvent(PhoneWindow.java:2403)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at com.android.internal.policy.PhoneWindow.superDispatchTouchEvent(PhoneWindow.java:1737)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.app.Activity.dispatchTouchEvent(Activity.java:2771)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at com.android.internal.policy.PhoneWindow$DecorView.dispatchTouchEvent(PhoneWindow.java:2364)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.View.dispatchPointerEvent(View.java:9520)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$ViewPostImeInputStage.processPointerEvent(ViewRootImpl.java:4239)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$ViewPostImeInputStage.onProcess(ViewRootImpl.java:4105)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$AsyncInputStage.forward(ViewRootImpl.java:3796)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$AsyncInputStage.apply(ViewRootImpl.java:3853)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl.deliverInputEvent(ViewRootImpl.java:5933)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl.doProcessInputEvents(ViewRootImpl.java:5907)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl.enqueueInputEvent(ViewRootImpl.java:5868)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.ViewRootImpl$WindowInputEventReceiver.onInputEvent(ViewRootImpl.java:6036)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.view.InputEventReceiver.dispatchInputEvent(InputEventReceiver.java:185)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.os.MessageQueue.nativePollOnce(Native Method)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.os.MessageQueue.next(MessageQueue.java:323)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.os.Looper.loop(Looper.java:135)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at java.lang.reflect.Method.invoke(Native Method)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+10-16 11:32:30.004 17369 17369 E MessageQueue-JNI: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+10-16 11:32:30.007 17369 17369 D AndroidRuntime: Shutting down VM
+10-16 11:32:30.013 17369 17369 E UnexpectedExceptionHandler: Exception thrown:java.lang.IllegalArgumentException: pointerIndex out of range
+10-16 11:32:30.050 17369 17369 W before  : Logcat save
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: FATAL EXCEPTION: main
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 17369
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: java.lang.IllegalArgumentException: pointerIndex out of range
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.MotionEvent.nativeGetAxisValue(Native Method)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.MotionEvent.getX(MotionEvent.java:2089)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.handlePointerUp(GridViewPager.java:2172)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.onTouchEvent(GridViewPager.java:1699)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MyGridViewPager.onTouchEvent(MyGridViewPager.java:78)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.View.dispatchTouchEvent(View.java:9300)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2547)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2240)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTransformedTouchEvent(ViewGroup.java:2553)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewGroup.dispatchTouchEvent(ViewGroup.java:2254)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow$DecorView.superDispatchTouchEvent(PhoneWindow.java:2403)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow.superDispatchTouchEvent(PhoneWindow.java:1737)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.app.Activity.dispatchTouchEvent(Activity.java:2771)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow$DecorView.dispatchTouchEvent(PhoneWindow.java:2364)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.View.dispatchPointerEvent(View.java:9520)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$ViewPostImeInputStage.processPointerEvent(ViewRootImpl.java:4239)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$ViewPostImeInputStage.onProcess(ViewRootImpl.java:4105)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$AsyncInputStage.forward(ViewRootImpl.java:3796)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$AsyncInputStage.apply(ViewRootImpl.java:3853)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.onDeliverToNext(ViewRootImpl.java:3703)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.forward(ViewRootImpl.java:3669)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.apply(ViewRootImpl.java:3677)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$InputStage.deliver(ViewRootImpl.java:3650)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl.deliverInputEvent(ViewRootImpl.java:5933)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl.doProcessInputEvents(ViewRootImpl.java:5907)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl.enqueueInputEvent(ViewRootImpl.java:5868)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.ViewRootImpl$WindowInputEventReceiver.onInputEvent(ViewRootImpl.java:6036)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.view.InputEventReceiver.dispatchInputEvent(InputEventReceiver.java:185)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.os.MessageQueue.nativePollOnce(Native Method)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.os.MessageQueue.next(MessageQueue.java:323)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:135)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+10-16 11:32:30.141 17369 17369 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)

@@ -1,0 +1,1 @@
+2017-05-24 11:30:12.144: ACT: MainWearActivity onCreate Complete

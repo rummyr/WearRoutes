@@ -1,0 +1,8 @@
+2017-05-17 16:56:35.658: ACT: MainWearActivity onCreate Complete
+2017-05-17 16:56:36.872: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-17 16:58:18.664: ACT: Starting to record
+2017-05-17 16:58:39.736: ACT: Stopping recording
+2017-05-17 16:58:39.737: PWR: Released keep on on when recording lock
+2017-05-17 16:58:39.786: ACT: Stopping recording
+2017-05-17 16:58:39.787: PWR: Released keep on on when recording lock
+2017-05-17 16:58:42.642: ACT: MainWearActivity onStop Full Stopping

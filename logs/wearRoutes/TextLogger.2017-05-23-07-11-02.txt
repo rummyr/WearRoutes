@@ -1,0 +1,11 @@
+2017-05-23 07:11:02.957: ACT: MainWearActivity onCreate Complete
+2017-05-23 07:11:10.943: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 07:11:15.559: GPS: Location received:Location[fused 53.512842,-1.679979 acc=19 et=+8d15h14m6s954ms]state is normallPoller
+2017-05-23 07:11:15.561: GPS: Good Location received:Location[fused 53.512842,-1.679979 acc=19 et=+8d15h14m6s954ms] fromLocationHandler
+2017-05-23 07:11:27.487: GPS: Location received:Location[fused 53.513014,-1.680059 acc=23 et=+8d15h14m18s929ms alt=225.0 vel=0.0]state is normallPoller
+2017-05-23 07:11:27.487: GPS: Good Location received:Location[fused 53.513014,-1.680059 acc=23 et=+8d15h14m18s929ms alt=225.0 vel=0.0] fromLocationHandler
+2017-05-23 07:11:31.137: GPS: Location received:Location[fused 53.512898,-1.680087 acc=17 et=+8d15h14m22s583ms alt=256.0 vel=0.0]state is normallPoller
+2017-05-23 07:11:31.138: GPS: Good Location received:Location[fused 53.512898,-1.680087 acc=17 et=+8d15h14m22s583ms alt=256.0 vel=0.0] fromLocationHandler
+2017-05-23 07:11:36.447: GPS: Location received:Location[fused 53.512823,-1.680014 acc=12 et=+8d15h14m27s892ms alt=319.0 vel=0.0]state is normallPoller
+2017-05-23 07:11:36.447: GPS: Good Location received:Location[fused 53.512823,-1.680014 acc=12 et=+8d15h14m27s892ms alt=319.0 vel=0.0] fromLocationHandler
+2017-05-23 07:12:04.715: ACT: MainWearActivity onStop Full Stopping

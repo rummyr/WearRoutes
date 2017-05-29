@@ -1,0 +1,12 @@
+2017-05-20 14:56:05.151: ACT: MainWearActivity onCreate Complete
+2017-05-20 14:56:12.716: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-20 14:56:12.836: GPS: Location received:Location[fused 54.162985,-2.289619 acc=46 et=+12m19s548ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-20 14:56:12.836: GPS: Good Location received:Location[fused 54.162985,-2.289619 acc=46 et=+12m19s548ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-20 14:56:16.351: GPS: Location received:Location[fused 54.162487,-2.289619 acc=39 et=+12m23s79ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-20 14:56:16.351: GPS: Good Location received:Location[fused 54.162487,-2.289619 acc=39 et=+12m23s79ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-20 14:56:20.328: GPS: Location received:Location[fused 54.161992,-2.289531 acc=39 et=+12m27s64ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-20 14:56:20.328: GPS: Good Location received:Location[fused 54.161992,-2.289531 acc=39 et=+12m27s64ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-20 14:56:24.332: GPS: Location received:Location[fused 54.161497,-2.289442 acc=45 et=+12m31s68ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-20 14:56:24.337: GPS: Good Location received:Location[fused 54.161497,-2.289442 acc=45 et=+12m31s68ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-20 14:56:26.336: GPS: Location received:Location[fused 54.161250,-2.289398 acc=35 et=+12m33s69ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-20 14:56:26.336: GPS: Good Location received:Location[fused 54.161250,-2.289398 acc=35 et=+12m33s69ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.me.ponies.wearroutes.mainactionpages.unused.MapsActivity">
+
+    <!-- adding padding here makes the map smaller, touching in the black padding can swipe left though
+     with layout_margin map is full size and can't swipe-->
+    <FrameLayout
+        android:id="@+id/map_touch_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<!--            android:layout_margin="100px" seems to do nothing -->
+<!--        android:padding="10px" shrinks map, can swipe -->
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="2dp"
+            >
+<!-- might work
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                />
+-->
+
+
+
+<!--            android:layout_margin="10px" shrinks map, can swipe -->
+            <fragment
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.google.android.gms.maps.MapFragment"
+                tools:ignore="MissingPrefix"
+                map:uiCompass="false"
+                />
+
+            <!--
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="MissingPrefix"
+                map:uiZoomControls="true"
+                map:uiCompass="true"
+                map:uiZoomGestures="false"
+                map:uiScrollGestures="true"
+                map:uiRotateGestures="true"
+                map:uiTiltGestures="false"
+                map:liteMode="false"/>
+    -->
+        </FrameLayout>
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView"
+            android:layout_gravity="left|top"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="visible"
+            android:clickable="true" />
+         -->
+
+    </FrameLayout>
+
+    <android.support.wearable.view.DismissOverlayView
+        android:id="@+id/dismiss_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

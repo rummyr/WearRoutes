@@ -1,0 +1,7 @@
+2017-05-24 15:44:42.161: ACT: MainWearActivity onCreate Complete
+2017-05-24 15:44:42.200: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 15:44:42.744: PWR: Ambient Entered
+2017-05-24 15:44:59.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-24 15:45:01.631: PWR: Ambient Exited
+2017-05-24 15:45:01.637: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 15:45:02.767: ACT: MainWearActivity onStop Full Stopping

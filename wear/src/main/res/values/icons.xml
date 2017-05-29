@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="when_on_icons_track_and_map_display">
+        <item>@drawable/ic_map_route</item>
+        <item>@drawable/ic_map_route_track</item>
+        <item>@drawable/ic_grid_route</item>
+        <item>@drawable/ic_grid_route_track</item>
+    </array>
+    <array name="when_off_icons_track_and_map_display">
+        <item>@drawable/ic_ambient_map_route</item>
+        <item>@drawable/ic_ambient_map_route_track</item>
+        <item>@drawable/ic_ambient_grid_route</item>
+        <item>@drawable/ic_ambient_grid_route_track</item>
+    </array>
+</resources>

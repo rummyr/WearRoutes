@@ -1,0 +1,7 @@
+2017-05-24 10:20:31.129: ACT: MainWearActivity onCreate Complete
+2017-05-24 10:20:31.790: PWR: Ambient Entered
+2017-05-24 10:20:38.676: PWR: Ambient Exited
+2017-05-24 10:20:38.678: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:20:38.767: GPS: Location received:Location[fused 54.146926,-2.279302 acc=46 et=+11m37s171ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:20:38.768: GPS: Good Location received:Location[fused 54.146926,-2.279302 acc=46 et=+11m37s171ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:20:39.692: PWR: Ambient Entered

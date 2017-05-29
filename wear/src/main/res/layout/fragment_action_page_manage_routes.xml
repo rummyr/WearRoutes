@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.ActionPage
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Manage Routes"
+    android:saveEnabled="false"
+    android:clickable="true"
+    android:src="@drawable/materialdesignicons_routes"
+    style="@style/Widget.ActionPage"
+    >
+    <!--
+    android:src="@android:drawable/ic_menu_preferences"
+    -->
+<!--
+    android:onClick="asdndsad" << kills on load!
+    android:color="@color/colorPrimary"
+    app:buttonRippleColor="@color/colorAccent" -->
+<!--
+    <android.support.wearable.view.CircularButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prefsButton"
+        android:layout_marginLeft="0dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:clickable="true"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@android:drawable/ic_menu_preferences" />
+-->
+</android.support.wearable.view.ActionPage>

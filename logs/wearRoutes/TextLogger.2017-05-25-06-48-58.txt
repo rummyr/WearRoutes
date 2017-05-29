@@ -1,0 +1,8 @@
+2017-05-25 06:48:58.797: ACT: MainWearActivity onCreate Complete
+2017-05-25 06:48:58.877: GPS: Location received:Location[fused 54.148990,-2.270687 acc=47 et=+16m58s506ms alt=0.0 vel=2.777778 bear=77.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-25 06:48:58.877: GPS: TTF NormalPoller:0.2
+2017-05-25 06:48:58.877: GPS: Good Location received:Location[fused 54.148990,-2.270687 acc=47 et=+16m58s506ms alt=0.0 vel=2.777778 bear=77.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-25 06:49:02.242: GPS: Location received:Location[fused 54.149011,-2.270522 acc=33 et=+17m1s964ms alt=0.0 vel=2.777778 bear=77.0 mock {Bundle[mParcelledData.dataSize=44]}]state is NormalPoller
+2017-05-25 06:49:02.242: GPS: TTF NormalPoller:3.5
+2017-05-25 06:49:02.242: GPS: Good Location received:Location[fused 54.149011,-2.270522 acc=33 et=+17m1s964ms alt=0.0 vel=2.777778 bear=77.0 mock {Bundle[mParcelledData.dataSize=44]}] fromNormalLocationPoller
+2017-05-25 06:49:03.566: ACT: MainWearActivity onStop Full Stopping

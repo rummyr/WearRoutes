@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2015-05 modified to display, apparently mainly needed removing foreground=grey! -->
+
+<android.support.wearable.view.ActionPage
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    style="@style/Widget.ActionPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:saveEnabled="false"
+    android:src="@drawable/materialdesignicons_routes"
+    android:text="Manage Recordings"
+
+
+    >
+    <!-- android:color="#c0cccc" is colour of the circle, android:foreground appears to
+    obliterate the button and image, though they're still clickable! -->
+    <!-- android:background="#FFCC44" is the bacjground to the page (not button) ,
+    , if omitted background is transparent-->
+
+    <!--
+    android:src="@android:drawable/ic_menu_preferences"
+    -->
+
+    <!--
+    <android.support.wearable.view.ActionPage
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.ActionPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:foreground="#c0c0c0"
+    android:orientation="vertical"
+    android:saveEnabled="false"
+    android:src="@drawable/materialdesignicons_routes"
+    android:text="Manage History">
+-->
+</android.support.wearable.view.ActionPage>

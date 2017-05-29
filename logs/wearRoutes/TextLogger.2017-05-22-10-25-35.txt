@@ -1,0 +1,9 @@
+2017-05-22 10:25:35.249: ACT: MainWearActivity onCreate Complete
+2017-05-22 10:25:36.391: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-22 10:25:36.691: GPS: Location received:Location[fused 54.144163,-2.291551 acc=35 et=+4h0m28s231ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-22 10:25:36.691: GPS: Good Location received:Location[fused 54.144163,-2.291551 acc=35 et=+4h0m28s231ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-22 10:26:39.989: ACT: Starting to record
+2017-05-22 10:28:09.518: ACT: Stopping recording
+2017-05-22 10:28:09.519: PWR: Released keep on on when recording lock
+2017-05-22 10:28:09.572: ACT: Stopping recording
+2017-05-22 10:28:09.572: PWR: Released keep on on when recording lock

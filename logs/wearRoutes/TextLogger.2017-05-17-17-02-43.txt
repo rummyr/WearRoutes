@@ -1,0 +1,5 @@
+2017-05-17 17:02:43.112: ACT: MainWearActivity onCreate Complete
+2017-05-17 17:02:44.267: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-17 17:02:44.446: GPS: Location received:Location[fused 37.421998,-122.084000 acc=20 et=+53s68ms alt=0.0]state is normallPoller
+2017-05-17 17:02:44.446: GPS: Good Location received:Location[fused 37.421998,-122.084000 acc=20 et=+53s68ms alt=0.0] fromLocationHandler
+2017-05-17 17:03:40.183: ACT: MainWearActivity onStop Full Stopping

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2017-05 see if a BoxInsetLayout improves the layout of the text fields
+   on the map .. though really it probably would be better done in code -->
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainWearActivity">
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="fill"
+    android:paddingTop="1px"
+    android:background="@color/black"
+    android:id="@+id/emptyFragmentFrame">
+    <!-- naming this emptyFragment puts the map in this frame
+    as at may 2017 this means the text is rarely drawn -->
+
+    <!--2017-05 new style of fragment layout .. map is now a defined frame within the frame,
+    and not actually being set on the frame this allows the text and other decorations to draw-->
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:paddingTop="1px"
+        android:background="@color/black"
+        android:id="@+id/emptyFragment"/>
+
+    <!-- setting padding to 1 fixes an issue where only the middle 1/3rd is shown during swiping from maps -->
+    <!-- there seems to be a defect where if the card is full height only the middle 1/3rd of the card is shown when swiping -->
+    <!-- trying fill_parent instead of match_parent .. to make paging shutdown showing "columns"
+     RESULT: didn't work -->
+
+    <!-- trying adding in a spacer to fill things up
+    seems to obscure and/or push the map out of sight with gravity:fill and/or top and height = fill parent
+    however height = 1dp seems to fix the width problem, but leaves an ugly bar at the top -->
+    <!-- margin 1px ALSO works -->
+    <!-- padding 1px also works -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZoomEmpty"
+            android:textColor="@color/red"
+            android:id="@+id/MapSwipeToZoomFragmentTextViewZoomDisplay"
+            android:elevation="1dp"
+            android:layout_gravity="left|top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tilt"
+            android:textColor="@color/red"
+            android:id="@+id/MapSwipeToZoomFragmentTextViewTiltDisplay"
+            android:layout_gravity="right|top"
+            android:elevation="1dp"/> <!-- there is an issue where the text is *probably* drawn *before* the map -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MapNum"
+        android:textColor="@color/red"
+        android:id="@+id/MapSwipeToZoomFragmentTextViewMapNumber"
+        android:layout_gravity="center|top"
+        android:elevation="1dp"/>
+
+    <uk.me.ponies.wearroutes.utils.MapScaleBarOverlay
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/red"
+        android:id="@+id/MapSwipeToZoomFragmentCustomScaleBar"
+        android:layout_gravity="bottom|center_horizontal"
+        android:elevation="1dp"/>
+</FrameLayout>
+</android.support.wearable.view.BoxInsetLayout>

@@ -1,0 +1,109 @@
+2017-05-24 10:52:09.331: ACT: MainWearActivity onCreate Complete
+2017-05-24 10:52:10.588: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:52:10.724: GPS: Location received:Location[fused 54.163964,-2.289619 acc=37 et=+43m9s99ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:10.725: GPS: Good Location received:Location[fused 54.163964,-2.289619 acc=37 et=+43m9s99ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:14.616: GPS: Location received:Location[fused 54.163468,-2.289619 acc=35 et=+43m13s21ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:14.616: GPS: Good Location received:Location[fused 54.163468,-2.289619 acc=35 et=+43m13s21ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:16.621: GPS: Location received:Location[fused 54.163219,-2.289619 acc=41 et=+43m15s26ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:16.622: GPS: Good Location received:Location[fused 54.163219,-2.289619 acc=41 et=+43m15s26ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:18.626: GPS: Location received:Location[fused 54.162970,-2.289619 acc=35 et=+43m17s30ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:18.627: GPS: Good Location received:Location[fused 54.162970,-2.289619 acc=35 et=+43m17s30ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:19.113: PWR: Ambient Entered
+2017-05-24 10:52:20.190: PWR: Ambient Exited
+2017-05-24 10:52:20.193: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:52:20.273: GPS: Location received:Location[fused 54.162846,-2.289619 acc=34 et=+43m18s678ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:20.273: GPS: Good Location received:Location[fused 54.162846,-2.289619 acc=34 et=+43m18s678ms alt=0.0 vel=13.89 bear=180.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:23.647: GPS: Location received:Location[fused 54.162350,-2.289595 acc=41 et=+43m22s47ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:23.647: GPS: Good Location received:Location[fused 54.162350,-2.289595 acc=41 et=+43m22s47ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:25.654: GPS: Location received:Location[fused 54.162102,-2.289551 acc=32 et=+43m24s55ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:25.654: GPS: Good Location received:Location[fused 54.162102,-2.289551 acc=32 et=+43m24s55ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:26.579: PWR: Ambient Entered
+2017-05-24 10:52:27.652: GPS: Location received:Location[fused 54.161856,-2.289506 acc=33 et=+43m26s56ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:27.652: GPS: Good Location received:Location[fused 54.161856,-2.289506 acc=33 et=+43m26s56ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:28.899: PWR: Ambient Exited
+2017-05-24 10:52:28.900: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:52:28.994: GPS: Location received:Location[fused 54.161732,-2.289484 acc=41 et=+43m27s390ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:28.995: GPS: Good Location received:Location[fused 54.161732,-2.289484 acc=41 et=+43m27s390ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:32.670: GPS: Location received:Location[fused 54.161238,-2.289395 acc=34 et=+43m31s75ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:32.670: GPS: Good Location received:Location[fused 54.161238,-2.289395 acc=34 et=+43m31s75ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:36.669: PWR: Ambient Entered
+2017-05-24 10:52:36.742: GPS: Location received:Location[fused 54.160744,-2.289306 acc=50 et=+43m35s147ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:36.743: GPS: Good Location received:Location[fused 54.160744,-2.289306 acc=50 et=+43m35s147ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:36.847: PWR: Ambient Exited
+2017-05-24 10:52:36.848: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:52:36.869: GPS: Location received:Location[fused 54.160744,-2.289306 acc=50 et=+43m35s147ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:36.870: GPS: Good Location received:Location[fused 54.160744,-2.289306 acc=50 et=+43m35s147ms alt=0.0 vel=13.89 bear=173.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:40.673: GPS: Location received:Location[fused 54.160248,-2.289311 acc=47 et=+43m39s78ms alt=0.0 vel=13.89 bear=183.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:40.682: GPS: Good Location received:Location[fused 54.160248,-2.289311 acc=47 et=+43m39s78ms alt=0.0 vel=13.89 bear=183.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:44.651: GPS: Location received:Location[fused 54.159752,-2.289357 acc=35 et=+43m43s54ms alt=0.0 vel=13.89 bear=181.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:44.651: GPS: Good Location received:Location[fused 54.159752,-2.289357 acc=35 et=+43m43s54ms alt=0.0 vel=13.89 bear=181.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:46.651: GPS: Location received:Location[fused 54.159507,-2.289287 acc=31 et=+43m45s55ms alt=0.0 vel=13.89 bear=170.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:46.652: GPS: Good Location received:Location[fused 54.159507,-2.289287 acc=31 et=+43m45s55ms alt=0.0 vel=13.89 bear=170.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:48.679: GPS: Location received:Location[fused 54.159261,-2.289217 acc=45 et=+43m47s84ms alt=0.0 vel=13.89 bear=170.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:48.679: GPS: Good Location received:Location[fused 54.159261,-2.289217 acc=45 et=+43m47s84ms alt=0.0 vel=13.89 bear=170.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:52.660: GPS: Location received:Location[fused 54.158772,-2.289225 acc=42 et=+43m51s63ms alt=0.0 vel=13.89 bear=190.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:52.660: GPS: Good Location received:Location[fused 54.158772,-2.289225 acc=42 et=+43m51s63ms alt=0.0 vel=13.89 bear=190.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:54.663: GPS: Location received:Location[fused 54.158527,-2.289302 acc=47 et=+43m53s66ms alt=0.0 vel=13.89 bear=190.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:54.672: GPS: Good Location received:Location[fused 54.158527,-2.289302 acc=47 et=+43m53s66ms alt=0.0 vel=13.89 bear=190.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:52:58.668: GPS: Location received:Location[fused 54.158035,-2.289350 acc=36 et=+43m57s69ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:52:58.669: GPS: Good Location received:Location[fused 54.158035,-2.289350 acc=36 et=+43m57s69ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:02.670: GPS: Location received:Location[fused 54.157538,-2.289330 acc=35 et=+44m1s73ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:02.670: GPS: Good Location received:Location[fused 54.157538,-2.289330 acc=35 et=+44m1s73ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:04.683: GPS: Location received:Location[fused 54.157290,-2.289320 acc=50 et=+44m3s87ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:04.683: GPS: Good Location received:Location[fused 54.157290,-2.289320 acc=50 et=+44m3s87ms alt=0.0 vel=13.89 bear=178.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:08.737: GPS: Location received:Location[fused 54.156803,-2.289487 acc=43 et=+44m7s142ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:08.738: GPS: Good Location received:Location[fused 54.156803,-2.289487 acc=43 et=+44m7s142ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:12.684: GPS: Location received:Location[fused 54.156317,-2.289666 acc=42 et=+44m11s77ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:12.684: GPS: Good Location received:Location[fused 54.156317,-2.289666 acc=42 et=+44m11s77ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:16.661: GPS: Location received:Location[fused 54.155832,-2.289845 acc=46 et=+44m15s66ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:16.661: GPS: Good Location received:Location[fused 54.155832,-2.289845 acc=46 et=+44m15s66ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:20.660: GPS: Location received:Location[fused 54.155347,-2.290024 acc=38 et=+44m19s65ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:20.660: GPS: Good Location received:Location[fused 54.155347,-2.290024 acc=38 et=+44m19s65ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:22.675: GPS: Location received:Location[fused 54.155103,-2.290114 acc=41 et=+44m21s79ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:22.676: GPS: Good Location received:Location[fused 54.155103,-2.290114 acc=41 et=+44m21s79ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:24.692: GPS: Location received:Location[fused 54.154860,-2.290204 acc=35 et=+44m23s97ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:24.693: GPS: Good Location received:Location[fused 54.154860,-2.290204 acc=35 et=+44m23s97ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:28.680: GPS: Location received:Location[fused 54.154375,-2.290383 acc=34 et=+44m27s83ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:28.680: GPS: Good Location received:Location[fused 54.154375,-2.290383 acc=34 et=+44m27s83ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:30.680: GPS: Location received:Location[fused 54.154133,-2.290473 acc=48 et=+44m29s85ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:30.681: GPS: Good Location received:Location[fused 54.154133,-2.290473 acc=48 et=+44m29s85ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:32.682: GPS: Location received:Location[fused 54.153889,-2.290563 acc=44 et=+44m31s85ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:32.682: GPS: Good Location received:Location[fused 54.153889,-2.290563 acc=44 et=+44m31s85ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:34.712: GPS: Location received:Location[fused 54.153646,-2.290652 acc=38 et=+44m33s115ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:34.713: GPS: Good Location received:Location[fused 54.153646,-2.290652 acc=38 et=+44m33s115ms alt=0.0 vel=13.89 bear=192.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:38.680: GPS: Location received:Location[fused 54.153251,-2.291133 acc=41 et=+44m37s84ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:38.680: GPS: Good Location received:Location[fused 54.153251,-2.291133 acc=41 et=+44m37s84ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:40.684: GPS: Location received:Location[fused 54.153066,-2.291417 acc=46 et=+44m39s86ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:40.687: GPS: Good Location received:Location[fused 54.153066,-2.291417 acc=46 et=+44m39s86ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:42.698: GPS: Location received:Location[fused 54.152882,-2.291700 acc=32 et=+44m41s102ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:42.698: GPS: Good Location received:Location[fused 54.152882,-2.291700 acc=32 et=+44m41s102ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:44.702: GPS: Location received:Location[fused 54.152697,-2.291984 acc=38 et=+44m43s107ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:44.703: GPS: Good Location received:Location[fused 54.152697,-2.291984 acc=38 et=+44m43s107ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:48.683: GPS: Location received:Location[fused 54.152328,-2.292550 acc=46 et=+44m47s88ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:48.684: GPS: Good Location received:Location[fused 54.152328,-2.292550 acc=46 et=+44m47s88ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:50.704: GPS: Location received:Location[fused 54.152143,-2.292833 acc=46 et=+44m49s106ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:50.713: GPS: Good Location received:Location[fused 54.152143,-2.292833 acc=46 et=+44m49s106ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:52.753: GPS: Location received:Location[fused 54.151959,-2.293117 acc=41 et=+44m51s153ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:52.754: GPS: Good Location received:Location[fused 54.151959,-2.293117 acc=41 et=+44m51s153ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:56.712: GPS: Location received:Location[fused 54.151590,-2.293683 acc=33 et=+44m55s117ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:56.712: GPS: Good Location received:Location[fused 54.151590,-2.293683 acc=33 et=+44m55s117ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:53:58.721: GPS: Location received:Location[fused 54.151405,-2.293967 acc=30 et=+44m57s125ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:53:58.721: GPS: Good Location received:Location[fused 54.151405,-2.293967 acc=30 et=+44m57s125ms alt=0.0 vel=13.89 bear=222.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:02.713: GPS: Location received:Location[fused 54.150964,-2.294328 acc=40 et=+45m1s115ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:02.713: GPS: Good Location received:Location[fused 54.150964,-2.294328 acc=40 et=+45m1s115ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:04.712: GPS: Location received:Location[fused 54.150729,-2.294468 acc=38 et=+45m3s117ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:04.712: GPS: Good Location received:Location[fused 54.150729,-2.294468 acc=38 et=+45m3s117ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:06.723: GPS: Location received:Location[fused 54.150495,-2.294609 acc=49 et=+45m5s127ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:06.723: GPS: Good Location received:Location[fused 54.150495,-2.294609 acc=49 et=+45m5s127ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:10.701: GPS: Location received:Location[fused 54.150027,-2.294889 acc=43 et=+45m9s106ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:10.701: GPS: Good Location received:Location[fused 54.150027,-2.294889 acc=43 et=+45m9s106ms alt=0.0 vel=13.89 bear=199.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:14.694: GPS: Location received:Location[fused 54.149654,-2.295411 acc=42 et=+45m13s88ms alt=0.0 vel=13.89 bear=229.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:14.698: GPS: Good Location received:Location[fused 54.149654,-2.295411 acc=42 et=+45m13s88ms alt=0.0 vel=13.89 bear=229.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:16.697: GPS: Location received:Location[fused 54.149493,-2.295732 acc=40 et=+45m15s88ms alt=0.0 vel=13.89 bear=229.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:16.697: GPS: Good Location received:Location[fused 54.149493,-2.295732 acc=40 et=+45m15s88ms alt=0.0 vel=13.89 bear=229.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:18.722: GPS: Location received:Location[fused 54.149299,-2.295787 acc=31 et=+45m17s125ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:18.722: GPS: Good Location received:Location[fused 54.149299,-2.295787 acc=31 et=+45m17s125ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:20.724: GPS: Location received:Location[fused 54.149076,-2.295602 acc=40 et=+45m19s128ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:20.724: GPS: Good Location received:Location[fused 54.149076,-2.295602 acc=40 et=+45m19s128ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-24 10:54:24.708: GPS: Location received:Location[fused 54.148630,-2.295229 acc=44 et=+45m23s110ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:54:24.708: GPS: Good Location received:Location[fused 54.148630,-2.295229 acc=44 et=+45m23s110ms alt=0.0 vel=13.89 bear=153.0 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler

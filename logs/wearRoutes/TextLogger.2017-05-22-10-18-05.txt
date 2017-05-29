@@ -1,0 +1,12 @@
+2017-05-22 10:18:05.044: ACT: MainWearActivity onCreate Complete
+2017-05-22 10:18:05.791: PWR: Ambient Entered
+2017-05-22 10:18:22.105: PWR: Ambient Exited
+2017-05-22 10:18:22.129: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-22 10:18:22.221: GPS: Location received:Location[fused 54.144163,-2.291551 acc=46 et=+3h53m13s757ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-22 10:18:22.221: GPS: Good Location received:Location[fused 54.144163,-2.291551 acc=46 et=+3h53m13s757ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler
+2017-05-22 10:18:23.037: PWR: Ambient Entered
+2017-05-22 10:18:25.011: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-22 10:18:25.068: GPS: Location received:Location[fused 54.144163,-2.291551 acc=50 et=+3h53m16s612ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is slowPoller
+2017-05-22 10:18:25.068: GPS: TTF SlowPoller:0.1
+2017-05-22 10:18:25.070: GPS: Good Location received:Location[fused 54.144163,-2.291551 acc=50 et=+3h53m16s612ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromSlowLocationPollerAlarmWakeup
+2017-05-22 10:18:25.077: GPS: Scheduling a further update in:34923ms

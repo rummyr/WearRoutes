@@ -1,0 +1,1230 @@
+--------- beginning of main
+05-20 14:59:34.207 10410 10410 I art     : Not late-enabling -Xcheck:jni (already on)
+05-20 14:59:34.245 10410 10417 E art     : Failed writing handshake bytes (-1 of 14): Broken pipe
+05-20 14:59:34.245 10410 10417 I art     : Debugger is no longer active
+05-20 14:59:34.252 10424 10424 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.252 10424 10424 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.252 10424 10424 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_dependencies_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex
+05-20 14:59:34.252 10424 10424 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.253 10424 10424 I dex2oat : dex2oat took 439.163us (threads: 1) 
+05-20 14:59:34.253 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_dependencies_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.371 10426 10426 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.371 10426 10426 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.371 10426 10426 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_0_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex
+05-20 14:59:34.371 10426 10426 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.371 10426 10426 I dex2oat : dex2oat took 576.610us (threads: 1) 
+05-20 14:59:34.372 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_0_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.391 10428 10428 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.391 10428 10428 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.391 10428 10428 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_1_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex
+05-20 14:59:34.392 10428 10428 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.392 10428 10428 I dex2oat : dex2oat took 964.641us (threads: 1) 
+05-20 14:59:34.392 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_1_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.404 10430 10430 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.404 10430 10430 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.404 10430 10430 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_2_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex
+05-20 14:59:34.404 10430 10430 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.404 10430 10430 I dex2oat : dex2oat took 465.980us (threads: 1) 
+05-20 14:59:34.404 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_2_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.419 10432 10432 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.419 10432 10432 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.419 10432 10432 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_3_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex
+05-20 14:59:34.419 10432 10432 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.419 10432 10432 I dex2oat : dex2oat took 450.059us (threads: 1) 
+05-20 14:59:34.420 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_3_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.432 10434 10434 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.433 10434 10434 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.433 10434 10434 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_4_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex
+05-20 14:59:34.433 10434 10434 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.433 10434 10434 I dex2oat : dex2oat took 1.336ms (threads: 1) 
+05-20 14:59:34.434 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_4_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.465 10436 10436 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.465 10436 10436 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.465 10436 10436 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_5_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex
+05-20 14:59:34.465 10436 10436 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.465 10436 10436 I dex2oat : dex2oat took 440.840us (threads: 1) 
+05-20 14:59:34.466 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_5_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.475 10438 10438 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.475 10438 10438 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.475 10438 10438 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_6_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex
+05-20 14:59:34.475 10438 10438 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.476 10438 10438 I dex2oat : dex2oat took 453.407us (threads: 1) 
+05-20 14:59:34.476 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_6_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.495 10440 10440 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.495 10440 10440 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.495 10440 10440 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_7_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex
+05-20 14:59:34.495 10440 10440 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.495 10440 10440 I dex2oat : dex2oat took 572.421us (threads: 1) 
+05-20 14:59:34.496 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_7_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.516 10442 10442 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.516 10442 10442 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.516 10442 10442 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_8_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex
+05-20 14:59:34.516 10442 10442 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.516 10442 10442 I dex2oat : dex2oat took 0 (threads: 1) 
+05-20 14:59:34.518 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_8_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.531 10444 10444 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:59:34.531 10444 10444 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:59:34.531 10444 10444 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_9_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex
+05-20 14:59:34.532 10444 10444 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex: Permission denied
+05-20 14:59:34.532 10444 10444 I dex2oat : dex2oat took 815.468us (threads: 1) 
+05-20 14:59:34.533 10410 10410 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_9_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex) because non-0 exit status
+05-20 14:59:34.535 10410 10410 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-2/lib/x86
+05-20 14:59:34.548 10410 10410 I InstantRun: starting instant run server: is main process
+05-20 14:59:34.613 10410 10410 I UnexpectedExceptionHandler: registering unexpectedException Hander on threadmain
+05-20 14:59:34.616 10410 10410 E MainWearActivity: onCreate called savedinstanceState is null:true
+05-20 14:59:34.735 10410 10410 W art     : Verification of uk.me.ponies.wearroutes.MainWearActivity$ConnectionFailedListener uk.me.ponies.wearroutes.MainWearActivity$GCStoppers.access$102(uk.me.ponies.wearroutes.MainWearActivity$GCStoppers, uk.me.ponies.wearroutes.MainWearActivity$ConnectionFailedListener) took 119.270ms
+05-20 14:59:34.739 10410 10410 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@60d7527 onActivityCreated called
+05-20 14:59:34.854 10410 10410 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.LocationPollingStateEvent
+05-20 14:59:34.854 10410 10410 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+05-20 14:59:34.861 10410 10410 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.LocationPollingStateEvent
+05-20 14:59:34.861 10410 10410 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+05-20 14:59:34.865 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:35.004 10410 10410 D MainWearActivity: android.permission.ACCESS_FINE_LOCATION Granted
+05-20 14:59:35.004 10410 10410 D MainWearActivity: android.permission.WAKE_LOCK Granted
+05-20 14:59:35.004 10410 10410 D MainWearActivity: android.permission.WRITE_EXTERNAL_STORAGE Granted
+05-20 14:59:35.005 10410 10410 D MainWearActivity: android.permission.ACCESS_NETWORK_STATE Granted
+05-20 14:59:35.005 10410 10410 D MainWearActivity: android.permission.INTERNET Granted
+05-20 14:59:35.005 10410 10410 D MainWearActivity: android.permission.READ_EXTERNAL_STORAGE Granted
+05-20 14:59:35.007 10410 10410 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@60d7527 onActivityStarted called
+05-20 14:59:35.014 10410 10410 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@60d7527 onActivityResumed called
+05-20 14:59:35.027 10410 10452 D OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true
+05-20 14:59:35.028 10410 10410 D         : HostConnection::get() New Host Connection established 0xac2587c0, tid 10410
+05-20 14:59:35.079 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.080 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:59:35.080 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:1
+05-20 14:59:35.080 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:2
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:3
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:4
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:5
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:3 column:0
+05-20 14:59:35.081 10410 10410 D MainGridPagerAdapter: getFragment called for row:4 column:0
+05-20 14:59:35.132 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onAttach called
+05-20 14:59:35.132 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onCreate called
+05-20 14:59:35.138 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onViewCreated called
+05-20 14:59:35.138 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onActivityCreated called
+05-20 14:59:35.138 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onViewStateRestored called
+05-20 14:59:35.138 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+05-20 14:59:35.138 10410 10410 D SpeedPanel1: onResume called
+05-20 14:59:35.139 10410 10410 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+05-20 14:59:35.139 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onAttach called
+05-20 14:59:35.139 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onCreate called
+05-20 14:59:35.139 10410 10410 D MapSwipeToZoomFrag: MapContainingFragment Map #00 onCreateView called
+05-20 14:59:35.149 10410 10410 D MapSwipeToZoomFrag: creating a new InnerMapFragment
+05-20 14:59:35.164 10410 10410 D MapSwipeToZoomFrag: MapContainingFragment (not the view) is MapFragment{281f120 id=0x7f11008b}
+05-20 14:59:35.164 10410 10410 D MapSwipeToZoomFrag: CreateView Map #00 getting MapAsync 
+05-20 14:59:35.165 10410 10410 D MapSwipeToZoomFrag: CreateView completed
+05-20 14:59:35.166 10410 10410 D MapSwipeToZoomFrag: Map #00 onViewCreatedCalled
+05-20 14:59:35.166 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewCreated called
+05-20 14:59:35.175 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onActivityCreated called
+05-20 14:59:35.175 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onViewStateRestored called
+05-20 14:59:35.182 10410 10410 I zzai    : Making Creator dynamically
+05-20 14:59:35.274 10410 10410 I Google Maps Android API: Google Play services client version: 9452000
+05-20 14:59:35.277 10410 10410 I Google Maps Android API: Google Play services package version: 11047570
+05-20 14:59:35.456 10410 10476 W agl     : copyMemory is missing from platform - proto runtime falling back to safer methods.
+05-20 14:59:35.508 10410 10421 W art     : Suspending all threads took: 8.652ms
+05-20 14:59:35.560 10410 10410 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onStart called with zoom:15
+05-20 14:59:35.560 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onStart called
+05-20 14:59:35.560 10410 10410 D MapSwipeToZoomFrag: MapContainingFragment:Map #00 onResume called, visible is true
+05-20 14:59:35.560 10410 10410 D FragmentLifecycleLogger: MapSwipeToZoomFragment onResume called
+05-20 14:59:35.560 10410 10410 D MapSwipeToZoomFrag: matchMapUIToConfig -- no map
+05-20 14:59:35.565 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 484ms
+05-20 14:59:35.572 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 1ms
+05-20 14:59:35.572 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.590 10410 10452 D         : HostConnection::get() New Host Connection established 0xa63a3890, tid 10452
+05-20 14:59:35.592 10410 10452 I OpenGLRenderer: Initialized EGL, version 1.4
+05-20 14:59:35.592 10410 10452 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+05-20 14:59:35.610 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.610 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.611 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:35.618 10410 10487 D         : HostConnection::get() New Host Connection established 0xa63a3190, tid 10487
+05-20 14:59:35.629 10410 10491 D Loader  : Loading asset 0x7f020070
+05-20 14:59:35.652 10410 10410 I Choreographer: Skipped 34 frames!  The application may be doing too much work on its main thread.
+05-20 14:59:35.803 10410 10417 W art     : Suspending all threads took: 14.771ms
+05-20 14:59:35.847 10410 10410 D MapSwipeToZoomFrag: showZoom is false
+05-20 14:59:35.871 10410 10410 D MapSwipeToZoomFrag: SetupMap Called Map #00
+05-20 14:59:35.874 10410 10410 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@3caa4fc
+05-20 14:59:35.895 10410 10410 D MapSwipeToZoomFrag: SetupMap Map #00 moving camera to zoom15
+05-20 14:59:35.895 10410 10410 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+05-20 14:59:35.896 10410 10410 D MapSwipeToZoomFrag: Re-adding polylines during onResume
+05-20 14:59:35.896 10410 10410 D MapSwipeToZoomFrag: polylines re-added in onResume
+--------- beginning of system
+05-20 14:59:35.906 10410 10410 D StrictMode: Wrote violation #0 of 1: 11460 bytes
+05-20 14:59:35.934 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.934 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.940 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.941 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:35.971 10410 10410 D MapSwipeToZoomFrag: Camera Changed for Map Map #00
+05-20 14:59:35.973 10410 10410 D StrictMode: Wrote violation #0 of 1: 13336 bytes
+05-20 14:59:35.974 10410 10410 D MapSwipeToZoomFrag: Camera Changed for Map Map #00
+05-20 14:59:35.974 10410 10410 D StrictMode: Wrote violation #0 of 1: 16044 bytes
+05-20 14:59:36.056 10410 10410 D LocationHandler: onConnected(): Successfully connected to Google API client
+05-20 14:59:36.057 10410 10410 D SlowLocationPollerBase: SlowLocationPollerBase stopped
+05-20 14:59:36.057 10410 10410 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@267d23d
+05-20 14:59:36.057 10410 10410 D LocationHandler: removingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@3625bf6
+05-20 14:59:36.057 10410 10410 D LocationHandler: requestingLocationUpdates for listener uk.me.ponies.wearroutes.locationHandling.LocationHandler@3625bf6
+05-20 14:59:36.092 10410 10410 D MainWearActivity: onConnected(): Successfully connected to Google API client
+05-20 14:59:36.132 10410 10410 D LocationHandler: Good location received Location[fused 54.144163,-2.291551 acc=32 et=+15m42s862ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] from LocationHandler
+05-20 14:59:36.134 10410 10410 D StrictMode: Wrote violation #0 of 1: 18752 bytes
+05-20 14:59:36.138 10410 10410 D MapSwipeToZoomFrag: Location changed, updating because First Location
+05-20 14:59:36.138 10410 10410 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+05-20 14:59:36.139 10410 10410 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@3caa4fc
+05-20 14:59:36.144 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.145 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.162 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.162 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.230 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:36.230 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:36.230 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:36.230 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:36.231 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:36.231 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:36.231 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:36.231 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:36.231 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:36.231 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:36.231 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:36.231 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:36.231 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:36.231 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:36.231 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:36.231 10410 10410 D Error   : 	at and
+05-20 14:59:36.231 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 22140
+05-20 14:59:36.231 10410 10410 D StrictMode: Wrote violation #0 of 1: 22184 bytes
+05-20 14:59:36.231 10410 10410 D MapSwipeToZoomFrag: MapContainingFragmentMap #00 onCameraChange Map now Loaded zoom is 15.0 wanted 15.0 on map:com.google.android.gms.maps.GoogleMap@683ed8a
+05-20 14:59:36.233 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.234 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.235 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:36.235 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:37.011 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.024 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.040 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.061 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.079 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.090 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.110 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.130 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.139 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.160 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.180 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.190 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.210 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.230 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.241 10410 10452 W OpenGLRenderer: Dirty 130.00 306.00 190.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:37.571 10410 10489 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+05-20 14:59:37.571 10410 10489 W DynamiteModule: Failed to load module via V2: java.lang.ClassNotFoundException: Didn't find class "com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader" on path: DexPathList[[zip file "/system/framework/com.google.android.wearable.jar", zip file "/data/app/uk.me.ponies.wearroutes-2/base.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_dependencies_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_0_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_1_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_2_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_3_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_4_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_5_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_6_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_7_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_8_apk.apk", zip file "/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_9_apk.apk"],nativeLibraryDirectories=[/data/app/uk.me.ponies.wearroutes-2/lib/x86, /vendor/lib, /system/lib]]
+05-20 14:59:37.572 10410 10489 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:3
+05-20 14:59:37.572 10410 10489 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 3
+05-20 14:59:37.573 10410 10489 W System  : ClassLoader referenced unknown path: /data/data/com.google.android.gms/app_chimera/m/00000009/n/x86
+05-20 14:59:42.040 10410 10410 D MyGridViewPager: oninterceptTouchEvent is returning false
+05-20 14:59:42.108 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:1
+05-20 14:59:42.108 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 1 DRAGGING
+05-20 14:59:42.109 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.109 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:59:42.109 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:1
+05-20 14:59:42.109 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.120 10410 10548 D Loader  : Loading asset 0x7f020071
+05-20 14:59:42.168 10410 10410 D MyGridViewPager: oninterceptTouchEvent is returning true
+05-20 14:59:42.169 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=251.0, y[0]=116.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=6, eventTime=948881, downTime=948768, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:42.169 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.169 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:59:42.169 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:1
+05-20 14:59:42.169 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.170 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:42.172 10410 10410 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=251.0, y[0]=116.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=948881, downTime=948768, deviceId=0, source=0x1002 }
+05-20 14:59:42.172 10410 10410 D MapSwipeToZoomFrag: GestureDetector onFling seen!
+05-20 14:59:42.172 10410 10410 D MapSwipeToZoomFrag: GestureDetector e1 or e2 is null, ignoring, returning false
+05-20 14:59:42.172 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=251.0, y[0]=116.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=948881, downTime=948768, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:42.172 10410 10410 D ColumnHistorian: Selected Page is 1,0
+05-20 14:59:42.172 10410 10410 D GridViewPagerNotifier: onPageSelected row:1 column:0
+05-20 14:59:42.172 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.172 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.172 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:59:42.172 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:42.173 10410 10410 D MapSwipeToZoomFrag: EventBusLocationSourceForMap deActivated for com.google.android.gms.maps.GoogleMap$12$1@3caa4fc
+05-20 14:59:42.173 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:42.173 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:42.173 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:42.173 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:42.173 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:42.174 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:42.174 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:42.174 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:42.174 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:42.174 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:42.174 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:42.174 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:42.174 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:42.174 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:42.174 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:42.174 10410 10410 D Error   : 	at and
+05-20 14:59:42.174 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 24812
+05-20 14:59:42.174 10410 10410 D StrictMode: Wrote violation #0 of 1: 24856 bytes
+05-20 14:59:42.174 10410 10410 D MainWearActivity: onPageSelected: 1,0
+05-20 14:59:42.174 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:2
+05-20 14:59:42.174 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 2 SETTLING
+05-20 14:59:42.174 10410 10410 D InnerMapFragment: Dump of Google maps fragments created
+05-20 14:59:42.175 10410 10410 D InnerMapFragment: Google maps fragments created contains: 0
+05-20 14:59:42.175 10410 10410 D InnerMapFragment: Google maps innerMap Pool is pooling: 0
+05-20 14:59:42.175 10410 10410 D InnerMapFragment: Google maps innerMap Pool has had 0 garbage collected
+05-20 14:59:42.175 10410 10410 D MainWearActivity: onPageScrollStateChaged, SETTLING, current position is Point(0, 1)
+05-20 14:59:42.179 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:42.185 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.186 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.186 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.186 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.201 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.201 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.201 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.201 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.214 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.214 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.214 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.214 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.233 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.233 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.234 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.234 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.248 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.248 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.248 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.248 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.264 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.264 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.264 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.264 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.284 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.284 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.285 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.285 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.294 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.294 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.294 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.294 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.314 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.314 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.314 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.314 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.335 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.335 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.335 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.335 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.343 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.343 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.343 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.343 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.365 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.365 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.365 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.365 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.384 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.385 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.385 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.385 10410 10410 D MainWearActivity: onPageScrolled: 0,0
+05-20 14:59:42.395 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:42.395 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:42.511 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:0
+05-20 14:59:42.511 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:42.511 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.511 10410 10410 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:59:42.511 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:42.514 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 0 IDLE
+05-20 14:59:42.514 10410 10410 D MainWearActivity: onPageScrollStateChaged, IDLE, current position is Point(0, 1)
+05-20 14:59:42.514 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:42.514 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:42.516 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 1ms
+05-20 14:59:42.516 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:42.516 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:42.519 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 1ms
+05-20 14:59:42.519 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:42.562 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:42.580 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:42.591 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:42.610 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:42.631 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:42.641 10410 10452 W OpenGLRenderer: Dirty 150.00 306.00 170.00 320.00 doesn't intersect with 0 0 320 290 ?
+05-20 14:59:43.028 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.028 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.032 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.032 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.139 10410 10410 D MyGridViewPager: oninterceptTouchEvent is returning false
+05-20 14:59:43.139 10410 10410 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=228.0, y[0]=252.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=949874, downTime=949874, deviceId=0, source=0x1002 }
+05-20 14:59:43.140 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=228.0, y[0]=252.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=949874, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.140 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.177 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=228.29224, y[0]=236.07758, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=949894, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.177 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:1
+05-20 14:59:43.177 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 1 DRAGGING
+05-20 14:59:43.177 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.177 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.177 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:43.178 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.178 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.178 10410 10491 D Loader  : Loading asset 0x7f020072
+05-20 14:59:43.202 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=230.0, y[0]=215.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=949907, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.202 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.203 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.203 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:43.203 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.203 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.229 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=236.42488, y[0]=136.50247, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=4, eventTime=949944, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.230 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.230 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.230 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:43.230 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.231 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.240 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=239.0, y[0]=89.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=949970, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.240 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.241 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.241 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:1
+05-20 14:59:43.242 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.242 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.243 10410 10410 D MapSwipeToZoomFrag: onTouch seen for event:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=239.0, y[0]=89.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=949970, downTime=949874, deviceId=0, source=0x1002 }
+05-20 14:59:43.244 10410 10410 D MapSwipeToZoomFrag: GestureDetector onFling seen!
+05-20 14:59:43.244 10410 10410 D MapSwipeToZoomFrag: GestureDetector onFling diffX:11.0vs13 velocityX:180.33675vs666
+05-20 14:59:43.244 10410 10410 D MapSwipeToZoomFrag: GestureDetector onFling diffY:-163.0vs13 velocityY:-2756.3623vs666
+05-20 14:59:43.244 10410 10410 D MapSwipeToZoomFrag: GestureDetector onFling straight enoughY: 11.0/-163.0
+05-20 14:59:43.244 10410 10410 D MapSwipeToZoomFrag: GestureDetector  Swipe Top seen
+05-20 14:59:43.244 10410 10410 D MyGridViewPager: onTouch ambient is falseevent was:MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=239.0, y[0]=89.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=949970, downTime=949874, deviceId=0, source=0x1002 }context is uk.me.ponies.wearroutes.MainWearActivity@60d7527
+05-20 14:59:43.244 10410 10410 D ColumnHistorian: Selected Page is 2,0
+05-20 14:59:43.244 10410 10410 D GridViewPagerNotifier: onPageSelected row:2 column:0
+05-20 14:59:43.245 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.245 10410 10410 D MapSwipeToZoomFrag: EventBusLocationSourceForMap activated for com.google.android.gms.maps.GoogleMap$12$1@a12f278
+05-20 14:59:43.245 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:43.245 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:43.245 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:43.245 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:43.245 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:43.245 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:43.245 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:43.245 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:43.245 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:43.245 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:43.245 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:43.245 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:43.245 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:43.245 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:43.245 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:43.245 10410 10410 D Error   : 	at and
+05-20 14:59:43.245 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 35484
+05-20 14:59:43.245 10410 10410 D StrictMode: Wrote violation #0 of 1: 35528 bytes
+05-20 14:59:43.248 10410 10410 D MapSwipeToZoomFrag: Map is now visible restoring last camera position
+05-20 14:59:43.248 10410 10410 D MapSwipeToZoomFrag: Not moving camera as the map isn't visible
+05-20 14:59:43.249 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.250 10410 10410 D MainGridPagerAdapter: getFragment called for row:3 column:0
+05-20 14:59:43.250 10410 10410 D MainWearActivity: onPageSelected: 2,0
+05-20 14:59:43.250 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:2
+05-20 14:59:43.250 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 2 SETTLING
+05-20 14:59:43.250 10410 10410 D InnerMapFragment: Dump of Google maps fragments created
+05-20 14:59:43.250 10410 10410 D InnerMapFragment: Google maps fragments created contains: 0
+05-20 14:59:43.250 10410 10410 D InnerMapFragment: Google maps innerMap Pool is pooling: 0
+05-20 14:59:43.250 10410 10410 D InnerMapFragment: Google maps innerMap Pool has had 0 garbage collected
+05-20 14:59:43.250 10410 10410 D MainWearActivity: onPageScrollStateChaged, SETTLING, current position is Point(0, 2)
+05-20 14:59:43.250 10410 10410 D MyGridViewPager: onTouchEvent is returning true
+05-20 14:59:43.254 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.254 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.254 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.260 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:43.260 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:43.260 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:43.260 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:43.260 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:43.260 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:43.260 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:43.260 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:43.260 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:43.260 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:43.260 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:43.260 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:43.260 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:43.260 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:43.260 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:43.260 10410 10410 D Error   : 	at and
+05-20 14:59:43.260 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 44720
+05-20 14:59:43.260 10410 10410 D StrictMode: Wrote violation #0 of 1: 44764 bytes
+05-20 14:59:43.269 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.269 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.269 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.283 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.283 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.283 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.292 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.292 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.292 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.314 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.314 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.315 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.334 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.334 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.334 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.342 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.342 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.342 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.364 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.364 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.364 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.384 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.384 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.384 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.393 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.394 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.394 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.413 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.413 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.413 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.434 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.434 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.434 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.444 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.444 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.445 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.464 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.465 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.465 10410 10410 D MainWearActivity: onPageScrolled: 1,0
+05-20 14:59:43.483 10410 10410 D MapSwipeToZoomFrag: onScrollChange seen
+05-20 14:59:43.484 10410 10410 D MainWearActivity: onPageScrolled: 2,0
+05-20 14:59:43.590 10410 10410 D GridViewPagerNotifier: onPageScrollStateChanged state:0
+05-20 14:59:43.590 10410 10410 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:59:43.590 10410 10410 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:59:43.591 10410 10410 D MainGridPagerAdapter: getFragment called for row:3 column:0
+05-20 14:59:43.592 10410 10410 D MainWearActivity: onPageScrollStateChanged state: 0 IDLE
+05-20 14:59:43.592 10410 10410 D MainWearActivity: onPageScrollStateChaged, IDLE, current position is Point(0, 2)
+05-20 14:59:43.592 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.592 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.593 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.593 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.596 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:43.596 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:48.154 10410 10410 D LocationHandler: Good location received Location[fused 54.145370,-2.290220 acc=48 et=+15m54s889ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] from LocationHandler
+05-20 14:59:48.155 10410 10410 D LocationAugmentor: Need to simulate a bearing
+05-20 14:59:48.155 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:48.155 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.155 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:48.155 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:48.155 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:48.156 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:48.156 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:48.156 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.156 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.156 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.156 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.156 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.156 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.156 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.156 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.156 10410 10410 D Error   : 	at and
+05-20 14:59:48.156 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 51864
+05-20 14:59:48.156 10410 10410 D StrictMode: Wrote violation #0 of 1: 51908 bytes
+05-20 14:59:48.178 10410 10410 D BearingSectorizer: clamped to :30.0 from:32.913727
+05-20 14:59:48.178 10410 10410 D BearingSectorizer: returning changed: 30.0
+05-20 14:59:48.180 10410 10410 D MapSwipeToZoomFrag: Location changed: Dot is outside of middle bounds:pos:Point(-70884, -2005574)middle: Rect(53, 58 - 267, 242)
+05-20 14:59:48.180 10410 10410 D MapSwipeToZoomFrag: Location changed, updating because dot outside middle pixels
+05-20 14:59:48.181 10410 10410 D MapSwipeToZoomFrag: moving camera as the map exists and is visible
+05-20 14:59:48.208 10410 10410 D MapSwipeToZoomFrag: EventBusLocationSourceForMap sending location to listener com.google.android.gms.maps.GoogleMap$12$1@a12f278
+05-20 14:59:48.225 10410 10410 D MapSwipeToZoomFrag: Camera Changed for Map Map #00
+05-20 14:59:48.232 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:48.232 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.232 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:48.232 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:48.232 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:48.232 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:48.232 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:48.232 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.232 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.232 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.232 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.232 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.232 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.232 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.232 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.232 10410 10410 D Error   : 	at and
+05-20 14:59:48.232 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 55296
+05-20 14:59:48.233 10410 10410 D StrictMode: Wrote violation #0 of 1: 55340 bytes
+05-20 14:59:48.859 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:48.859 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.859 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:48.859 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:48.859 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:48.860 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:48.860 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:48.860 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.860 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.860 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.860 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.860 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.860 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.860 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.860 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.860 10410 10410 D Error   : 	at and
+05-20 14:59:48.860 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 58004
+05-20 14:59:48.860 10410 10410 D StrictMode: Wrote violation #0 of 1: 58048 bytes
+05-20 14:59:48.860 10410 10410 D MapSwipeToZoomFrag: MapContainingFragmentMap #00 onCameraChange Map now Loaded zoom is 15.0 wanted 15.0 on map:com.google.android.gms.maps.GoogleMap@683ed8a
+05-20 14:59:48.878 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:48.878 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:48.882 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:59:48.882 10410 10410 D MainGridPagerAdapter: GridPagerAdapter: finishUpdate Called id:2131820668 took 0ms
+05-20 14:59:48.884 10410 10410 D Error   : ERR: exClass=android.os.StrictMode$StrictModeCustomViolation
+05-20 14:59:48.884 10410 10410 D Error   : ERR: exMsg=policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.884 10410 10410 D Error   : ERR: file=StrictMode.java
+05-20 14:59:48.884 10410 10410 D Error   : ERR: class=android.os.StrictMode$AndroidBlockGuardPolicy
+05-20 14:59:48.884 10410 10410 D Error   : ERR: method=onCustomSlowCall line=1236
+05-20 14:59:48.884 10410 10410 D Error   : ERR: stack=android.os.StrictMode$StrictModeCustomViolation: policy=4325404 violation=8 msg=gcore.dynamite
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:1236)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.StrictMode.noteSlowCall(StrictMode.java:2136)
+05-20 14:59:48.884 10410 10410 D Error   : 	at ffk.a(:com.google.android.gms:0)
+05-20 14:59:48.884 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.884 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.884 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.884 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.884 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.884 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.884 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.884 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.884 10410 10410 D Error   : 	at and
+05-20 14:59:48.884 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 60676
+05-20 14:59:48.884 10410 10410 D StrictMode: Wrote violation #0 of 1: 60720 bytes
+05-20 14:59:48.899 10410 10410 E StrictMode: Stack is too large: numViolations=1 policy=#42001c front=com.google.android.gms:0)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.899 10410 10410 E StrictMode: # via Binder call with stack:
+05-20 14:59:48.899 10410 10410 E StrictMode: android.os.StrictMode$LogStackTrace
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.StrictMode.readAndHandleBinderCallViolations(StrictMode.java:1911)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Parcel.readExceptionCode(Parcel.java:1601)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at android.os.Parcel.readException(Parcel.java:1570)
+05-20 14:59:48.899 10410 10410 E StrictMode: 	at com.google.and
+05-20 14:59:48.901 10410 10410 D Error   : ERR: exClass=android.util.Log$TerribleFailure
+05-20 14:59:48.902 10410 10410 D Error   : ERR: exMsg=Stack is too large: numViolations=1 policy=#42001c front=com.google.android.gms:0)
+05-20 14:59:48.902 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.902 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.902 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.902 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.902 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.902 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.StrictMode.readAndHandleBinderCallViolations(StrictMode.java:1911)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Parcel.readExceptionCode(Parcel.java:1601)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Parcel.readException(Parcel.java:1570)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.goog
+05-20 14:59:48.902 10410 10410 D Error   : ERR: file=Log.java
+05-20 14:59:48.902 10410 10410 D Error   : ERR: class=android.util.Log
+05-20 14:59:48.902 10410 10410 D Error   : ERR: method=wtf line=291
+05-20 14:59:48.902 10410 10410 D Error   : ERR: stack=android.util.Log$TerribleFailure: Stack is too large: numViolations=1 policy=#42001c front=com.google.android.gms:0)
+05-20 14:59:48.902 10410 10410 D Error   : 	at dgs.a(:com.google.android.gms:2)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.a(:com.google.android.gms:4)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.CreatorImpl.newMapFragmentDelegate(:com.google.android.gms:0)
+05-20 14:59:48.902 10410 10410 D Error   : 	at igj.onTransact(:com.google.android.gms:13)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Binder.transact(Binder.java:387)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.internal.zzc$zza$zza.zzag(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zzbow(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment$zzb.zza(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.zza(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.dynamic.zza.onCreate(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.google.android.gms.maps.MapFragment.onCreate(Unknown Source)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.Fragment.performCreate(Fragment.java:2198)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:942)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.Fragment.performStart(Fragment.java:2241)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1002)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:59:48.902 10410 10410 D Error   : 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.View.measure(View.java:18794)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.902 10410 10410 D Error   : 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.902 10410 10410 D Error   : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:59:48.902 10410 10410 D Error   : # via Binder call with stack:
+05-20 14:59:48.902 10410 10410 D Error   : android.os.StrictMode$LogStackTrace
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.StrictMode.readAndHandleBinderCallViolations(StrictMode.java:1911)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Parcel.readExceptionCode(Parcel.java:1601)
+05-20 14:59:48.902 10410 10410 D Error   : 	at android.os.Parcel.readExcept
+05-20 14:59:48.902 10410 10410 D Error   : ERR: TOTAL BYTES WRITTEN: 127216
+05-20 14:59:48.927 10410 10410 D AndroidRuntime: Shutting down VM
+05-20 14:59:48.927 10410 10410 E UnexpectedExceptionHandler: Exception thrown:java.lang.NullPointerException: Attempt to invoke interface method 'com.google.android.gms.maps.model.LatLng com.google.android.gms.maps.internal.IProjectionDelegate.fromScreenLocation(com.google.android.gms.dynamic.zzd)' on a null object reference
+05-20 14:59:48.930 10410 10410 W before  : Logcat save
+--------- beginning of crash
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: FATAL EXCEPTION: main
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 10410
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke interface method 'com.google.android.gms.maps.model.LatLng com.google.android.gms.maps.internal.IProjectionDelegate.fromScreenLocation(com.google.android.gms.dynamic.zzd)' on a null object reference
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at com.google.android.gms.maps.Projection.fromScreenLocation(Unknown Source)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at uk.me.ponies.wearroutes.utils.MapScaleBarOverlay.draw(MapScaleBarOverlay.java:176)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at uk.me.ponies.wearroutes.utils.MapScaleBarOverlay.onDraw(MapScaleBarOverlay.java:163)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:16184)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15180)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:16187)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15180)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15175)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:16187)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15180)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15175)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15175)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:15954)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.drawChild(ViewGroup.java:3609)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3399)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.draw(View.java:16187)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow$DecorView.draw(PhoneWindow.java:2690)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.View.updateDisplayListIfDirty(View.java:15180)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ThreadedRenderer.updateViewTreeDisplayList(ThreadedRenderer.java:281)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ThreadedRenderer.updateRootDisplayList(ThreadedRenderer.java:287)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ThreadedRenderer.draw(ThreadedRenderer.java:322)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewRootImpl.draw(ViewRootImpl.java:2623)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewRootImpl.performDraw(ViewRootImpl.java:2442)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2075)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:59:48.978 10410 10410 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 15:00:22.854 10410 10410 I Process : Sending signal. PID: 10410 SIG: 9

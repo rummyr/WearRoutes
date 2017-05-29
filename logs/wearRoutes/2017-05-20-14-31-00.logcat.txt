@@ -1,0 +1,176 @@
+--------- beginning of main
+05-20 14:30:59.129 25049 25049 I art     : Not late-enabling -Xcheck:jni (already on)
+05-20 14:30:59.267 25063 25063 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.267 25063 25063 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.267 25063 25063 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_dependencies_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex
+05-20 14:30:59.267 25063 25063 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.267 25063 25063 I dex2oat : dex2oat took 938.669us (threads: 1) 
+05-20 14:30:59.268 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_dependencies_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_dependencies_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.407 25075 25075 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.407 25075 25075 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.407 25075 25075 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_0_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex
+05-20 14:30:59.407 25075 25075 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.407 25075 25075 I dex2oat : dex2oat took 460.113us (threads: 1) 
+05-20 14:30:59.407 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_0_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_0_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.435 25079 25079 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.435 25079 25079 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.435 25079 25079 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_1_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex
+05-20 14:30:59.435 25079 25079 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.435 25079 25079 I dex2oat : dex2oat took 454.249us (threads: 1) 
+05-20 14:30:59.436 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_1_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_1_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.498 25081 25081 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.498 25081 25081 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.498 25081 25081 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_2_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex
+05-20 14:30:59.499 25081 25081 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.499 25081 25081 I dex2oat : dex2oat took 980.565us (threads: 1) 
+05-20 14:30:59.501 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_2_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_2_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.551 25092 25092 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.551 25092 25092 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.551 25092 25092 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_3_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex
+05-20 14:30:59.551 25092 25092 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.551 25092 25092 I dex2oat : dex2oat took 460.112us (threads: 1) 
+05-20 14:30:59.552 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_3_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_3_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.559 25096 25096 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.580 25096 25096 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.580 25096 25096 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_4_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex
+05-20 14:30:59.580 25096 25096 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.581 25096 25096 I dex2oat : dex2oat took 21.509ms (threads: 1) 
+05-20 14:30:59.581 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_4_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_4_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.637 25098 25098 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.637 25098 25098 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.637 25098 25098 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_5_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex
+05-20 14:30:59.637 25098 25098 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.638 25098 25098 I dex2oat : dex2oat took 437.488us (threads: 1) 
+05-20 14:30:59.638 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_5_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_5_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.648 25100 25100 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.648 25100 25100 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.648 25100 25100 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_6_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex
+05-20 14:30:59.648 25100 25100 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.649 25100 25100 I dex2oat : dex2oat took 460.950us (threads: 1) 
+05-20 14:30:59.650 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_6_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_6_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.659 25102 25102 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.659 25102 25102 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.659 25102 25102 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_7_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex
+05-20 14:30:59.659 25102 25102 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.659 25102 25102 I dex2oat : dex2oat took 448.381us (threads: 1) 
+05-20 14:30:59.659 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_7_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_7_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.687 25104 25104 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.687 25104 25104 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.687 25104 25104 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_8_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex
+05-20 14:30:59.688 25104 25104 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.688 25104 25104 I dex2oat : dex2oat took 425.753us (threads: 1) 
+05-20 14:30:59.688 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_8_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_8_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.707 25106 25106 W dex2oat : Unexpected CPU variant for X86 using defaults: x86
+05-20 14:30:59.707 25106 25106 W dex2oat : Mismatch between dex2oat instruction set features (ISA: X86 Feature string: smp,-ssse3,-sse4.1,-sse4.2,-avx,-avx2) and those of dex2oat executable (ISA: X86 Feature string: smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2) for the command line:
+05-20 14:30:59.707 25106 25106 W dex2oat : /system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_9_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex
+05-20 14:30:59.708 25106 25106 E dex2oat : Failed to create oat file: /data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex: Permission denied
+05-20 14:30:59.708 25106 25106 I dex2oat : dex2oat took 941.184us (threads: 1) 
+05-20 14:30:59.708 25049 25049 W art     : Failed execv(/system/bin/dex2oat --runtime-arg -classpath --runtime-arg  --instruction-set=x86 --instruction-set-features=smp,ssse3,-sse4.1,-sse4.2,-avx,-avx2 --runtime-arg -Xrelocate --boot-image=/system/framework/boot.art --runtime-arg -Xms64m --runtime-arg -Xmx512m -j1 --instruction-set-variant=x86 --instruction-set-features=default --dex-file=/data/app/uk.me.ponies.wearroutes-2/split_lib_slice_9_apk.apk --oat-file=/data/dalvik-cache/x86/data@app@uk.me.ponies.wearroutes-2@split_lib_slice_9_apk.apk@classes.dex) because non-0 exit status
+05-20 14:30:59.721 25049 25049 W System  : ClassLoader referenced unknown path: /data/app/uk.me.ponies.wearroutes-2/lib/x86
+05-20 14:30:59.725 25049 25049 I InstantRun: starting instant run server: is main process
+05-20 14:30:59.782 25049 25049 I UnexpectedExceptionHandler: registering unexpectedException Hander on threadmain
+05-20 14:30:59.785 25049 25049 E MainWearActivity: onCreate called savedinstanceState is null:true
+05-20 14:30:59.789 25049 25049 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@2bf054b onActivityCreated called
+05-20 14:30:59.926 25049 25049 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.LocationPollingStateEvent
+05-20 14:30:59.926 25049 25049 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+05-20 14:30:59.933 25049 25049 D EventBus: No subscribers registered for event class uk.me.ponies.wearroutes.eventBusEvents.LocationPollingStateEvent
+05-20 14:30:59.933 25049 25049 D EventBus: No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+05-20 14:30:59.936 25049 25049 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:31:00.065 25049 25049 D MainWearActivity: android.permission.ACCESS_FINE_LOCATION Granted
+05-20 14:31:00.065 25049 25049 D MainWearActivity: android.permission.WAKE_LOCK Granted
+05-20 14:31:00.065 25049 25049 D MainWearActivity: android.permission.WRITE_EXTERNAL_STORAGE Granted
+05-20 14:31:00.065 25049 25049 D MainWearActivity: android.permission.ACCESS_NETWORK_STATE Granted
+05-20 14:31:00.065 25049 25049 D MainWearActivity: android.permission.INTERNET Granted
+05-20 14:31:00.066 25049 25049 D MainWearActivity: android.permission.READ_EXTERNAL_STORAGE Granted
+05-20 14:31:00.067 25049 25049 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@2bf054b onActivityStarted called
+05-20 14:31:00.084 25049 25049 D ActivityLifeCycleLogger: uk.me.ponies.wearroutes.MainWearActivity@2bf054b onActivityResumed called
+05-20 14:31:00.085 25049 25116 D OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true
+05-20 14:31:00.086 25049 25049 D         : HostConnection::get() New Host Connection established 0xad0fd570, tid 25049
+05-20 14:31:00.190 25049 25059 I art     : Background partial concurrent mark sweep GC freed 2603(348KB) AllocSpace objects, 0(0B) LOS objects, 29% free, 1249KB/1761KB, paused 667us total 102.644ms
+05-20 14:31:00.226 25049 25049 D MainGridPagerAdapter: GridPagerAdapter: startUpdate Called id:2131820668 took 0ms
+05-20 14:31:00.226 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:0
+05-20 14:31:00.226 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:1
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:2
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:3
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:4
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:0 column:5
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:1 column:0
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:2 column:0
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:3 column:0
+05-20 14:31:00.227 25049 25049 D MainGridPagerAdapter: getFragment called for row:4 column:0
+05-20 14:31:00.310 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onAttach called
+05-20 14:31:00.310 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onCreate called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onViewCreated called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onActivityCreated called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onViewStateRestored called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onStart called
+05-20 14:31:00.317 25049 25049 D SpeedPanel1: onResume called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: SpeedPanel1 onResume called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: MapSwipeToZoomFragment onAttach called
+05-20 14:31:00.317 25049 25049 D FragmentLifecycleLogger: MapSwipeToZoomFragment onCreate called
+05-20 14:31:00.317 25049 25049 D MapSwipeToZoomFrag: MapContainingFragment Map #00 onCreateView called
+05-20 14:31:00.318 25049 25049 D AndroidRuntime: Shutting down VM
+05-20 14:31:00.318 25049 25049 E UnexpectedExceptionHandler: Exception thrown:android.view.InflateException: Binary XML file line #12: Binary XML file line #12: Error inflating class fragment
+05-20 14:31:00.323 25049 25049 W before  : Logcat save
+--------- beginning of crash
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: FATAL EXCEPTION: main
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: Process: uk.me.ponies.wearroutes, PID: 25049
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: android.view.InflateException: Binary XML file line #12: Binary XML file line #12: Error inflating class fragment
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:539)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:423)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MapSwipeToZoomFragment.onCreateViewEmptyFragmentAddMapProgramatticaly(MapSwipeToZoomFragment.java:248)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MapSwipeToZoomFragment.onCreateView(MapSwipeToZoomFragment.java:216)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.Fragment.performCreateView(Fragment.java:2220)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:973)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.BackStackRecord.run(BackStackRecord.java:793)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:1535)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:562)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.support.wearable.view.FragmentGridPagerAdapter.finishUpdate(FragmentGridPagerAdapter.java:220)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at uk.me.ponies.wearroutes.MainGridPagerAdapter.finishUpdate(MainGridPagerAdapter.java:329)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1182)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.populate(GridViewPager.java:1038)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.support.wearable.view.GridViewPager.onMeasure(GridViewPager.java:1343)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.View.measure(View.java:18794)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.View.measure(View.java:18794)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.View.measure(View.java:18794)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5951)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at com.android.internal.policy.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2643)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.View.measure(View.java:18794)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:2108)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1224)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1460)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1115)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6024)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.Choreographer.doCallbacks(Choreographer.java:670)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.Choreographer.doFrame(Choreographer.java:606)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:739)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:95)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5422)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: Caused by: android.view.InflateException: Binary XML file line #12: Error inflating class fragment
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:782)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:704)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:835)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:798)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:515)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	... 41 more
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: Caused by: java.lang.NullPointerException
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at java.lang.VMClassLoader.findLoadedClass(Native Method)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at java.lang.ClassLoader.findLoadedClass(ClassLoader.java:362)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:499)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:469)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.Fragment.instantiate(Fragment.java:606)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.Fragment.instantiate(Fragment.java:584)
+05-20 14:31:00.329 25049 25049 E AndroidRuntime: 	at android.app.FragmentMan
+05-20 14:31:03.249 25049 25049 I Process : Sending signal. PID: 25049 SIG: 9

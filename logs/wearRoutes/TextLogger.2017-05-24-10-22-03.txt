@@ -1,0 +1,4 @@
+2017-05-24 10:22:03.853: ACT: MainWearActivity onCreate Complete
+2017-05-24 10:22:04.784: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-24 10:22:04.873: GPS: Location received:Location[fused 54.146926,-2.279302 acc=30 et=+13m3s265ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}]state is normallPoller
+2017-05-24 10:22:04.873: GPS: Good Location received:Location[fused 54.146926,-2.279302 acc=30 et=+13m3s265ms alt=0.0 vel=13.89 mock {Bundle[mParcelledData.dataSize=44]}] fromLocationHandler

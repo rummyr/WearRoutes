@@ -1,0 +1,26 @@
+Fixing heading view issues
+1. releative layout so .. adding an attribute of
+android:layout_below="@+id/heading" almost works except it has a gap
+to android.support.wearable.view.WearableListView in preferencelist.xml
+
+2a. releative layout so .. adding an attribute of
+android:layout_alignParentStart="true"
+to android.support.wearable.view.WearableListView in preferencelist.xml
+works except heading scrolls off the page!
+
+2b. commenting out    @Override public void onAbsoluteScrollChange(final int i) {
+                          heading.setY(Math.min(-i, 0));
+                      }
+seems to fix the scrolling behaviour
+BUT the heading shows BEHIND the scrolling list
+
+2c  on android:id="@+id/heading"
+    change alpha to android:alpha="1"
+    add android:elevation="1dp".
+
+extra notes:
+probably would be better to insert a transparent spacer with the same size as heading?
+  But frankly this seems to be enough for me!
+ALSO .. the gap at the top seems to be "FIXED" , changing the sizes of text size or padding leaves gaps or overlaps
+  this suggests a hardcoded value somewhere .. though I can't find it!
+  Most likely in HeadingListView has adjusted padding

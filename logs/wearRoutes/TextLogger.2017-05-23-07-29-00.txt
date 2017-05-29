@@ -1,0 +1,1111 @@
+2017-05-23 07:29:00.374: ACT: MainWearActivity onCreate Complete
+2017-05-23 07:29:01.272: GPS: Location received:Location[fused 53.510855,-1.671132 acc=9 et=+8d15h31m52s387ms alt=365.0 vel=0.28 bear=349.0]state is normallPoller
+2017-05-23 07:29:01.272: GPS: Good Location received:Location[fused 53.510855,-1.671132 acc=9 et=+8d15h31m52s387ms alt=365.0 vel=0.28 bear=349.0] fromLocationHandler
+2017-05-23 07:29:01.968: ACT: Starting to record
+2017-05-23 07:29:04.599: GPS: Location received:Location[fused 53.510838,-1.671163 acc=8 et=+8d15h31m56s42ms alt=364.0 vel=0.37 bear=349.0]state is normallPoller
+2017-05-23 07:29:04.600: GPS: Good Location received:Location[fused 53.510838,-1.671163 acc=8 et=+8d15h31m56s42ms alt=364.0 vel=0.37 bear=349.0] fromLocationHandler
+2017-05-23 07:29:06.945: PWR: Ambient Entered
+2017-05-23 07:29:26.058: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:29:29.774: GPS: Location received:Location[fused 53.510824,-1.671103 acc=8 et=+8d15h32m21s219ms alt=367.0 vel=0.0]state is slowPoller
+2017-05-23 07:29:29.775: GPS: TTF SlowPoller:3.7
+2017-05-23 07:29:29.776: GPS: Good Location received:Location[fused 53.510824,-1.671103 acc=8 et=+8d15h32m21s219ms alt=367.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:29:29.846: GPS: Scheduling a further update in:30154ms
+2017-05-23 07:29:55.039: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:29:57.487: GPS: Location received:Location[fused 53.510820,-1.671102 acc=17 et=+8d15h32m48s930ms alt=367.0 vel=0.0]state is slowPoller
+2017-05-23 07:29:57.487: GPS: TTF SlowPoller:2.5
+2017-05-23 07:29:57.488: GPS: Good Location received:Location[fused 53.510820,-1.671102 acc=17 et=+8d15h32m48s930ms alt=367.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:29:57.584: GPS: Scheduling a further update in:32416ms
+2017-05-23 07:30:25.036: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:30:28.626: GPS: Location received:Location[fused 53.511430,-1.674972 acc=9 et=+8d15h33m20s70ms alt=359.0 vel=18.61 bear=272.0]state is slowPoller
+2017-05-23 07:30:28.627: GPS: TTF SlowPoller:3.6
+2017-05-23 07:30:28.628: GPS: Good Location received:Location[fused 53.511430,-1.674972 acc=9 et=+8d15h33m20s70ms alt=359.0 vel=18.61 bear=272.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:30:28.727: GPS: Scheduling a further update in:31274ms
+2017-05-23 07:30:55.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:30:55.708: GPS: Location received:Location[fused 53.511430,-1.674972 acc=9 et=+8d15h33m47s152ms alt=359.0 vel=18.61 bear=272.0]state is slowPoller
+2017-05-23 07:30:55.708: GPS: TTF SlowPoller:0.7
+2017-05-23 07:30:55.709: GPS: Good Location received:Location[fused 53.511430,-1.674972 acc=9 et=+8d15h33m47s152ms alt=359.0 vel=18.61 bear=272.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:30:55.796: GPS: Scheduling a further update in:34204ms
+2017-05-23 07:31:25.045: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:31:27.002: GPS: Location received:Location[fused 53.507483,-1.684903 acc=11 et=+8d15h34m18s447ms alt=340.0 vel=22.21 bear=187.0]state is slowPoller
+2017-05-23 07:31:27.003: GPS: TTF SlowPoller:2.0
+2017-05-23 07:31:27.004: GPS: Good Location received:Location[fused 53.507483,-1.684903 acc=11 et=+8d15h34m18s447ms alt=340.0 vel=22.21 bear=187.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:31:27.154: GPS: Scheduling a further update in:32846ms
+2017-05-23 07:31:56.051: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:31:58.511: GPS: Location received:Location[fused 53.502746,-1.684988 acc=21 et=+8d15h34m49s956ms alt=355.0 vel=7.01 bear=95.0]state is slowPoller
+2017-05-23 07:31:58.512: GPS: TTF SlowPoller:2.5
+2017-05-23 07:31:58.513: GPS: Good Location received:Location[fused 53.502746,-1.684988 acc=21 et=+8d15h34m49s956ms alt=355.0 vel=7.01 bear=95.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:31:58.569: GPS: Scheduling a further update in:31431ms
+2017-05-23 07:32:25.037: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:32:28.828: GPS: Location received:Location[fused 53.500757,-1.682930 acc=8 et=+8d15h35m20s259ms alt=293.0 vel=4.39 bear=147.0]state is slowPoller
+2017-05-23 07:32:28.828: GPS: TTF SlowPoller:3.8
+2017-05-23 07:32:28.829: GPS: Good Location received:Location[fused 53.500757,-1.682930 acc=8 et=+8d15h35m20s259ms alt=293.0 vel=4.39 bear=147.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:32:28.897: GPS: Scheduling a further update in:31103ms
+2017-05-23 07:32:55.040: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:32:57.540: GPS: Location received:Location[fused 53.500671,-1.677015 acc=15 et=+8d15h35m48s979ms alt=266.0 vel=13.87 bear=88.0]state is slowPoller
+2017-05-23 07:32:57.541: GPS: TTF SlowPoller:2.5
+2017-05-23 07:32:57.543: GPS: Good Location received:Location[fused 53.500671,-1.677015 acc=15 et=+8d15h35m48s979ms alt=266.0 vel=13.87 bear=88.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:32:57.574: GPS: Scheduling a further update in:32427ms
+2017-05-23 07:33:25.070: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:33:28.692: GPS: Location received:Location[fused 53.500574,-1.667894 acc=23 et=+8d15h36m20s137ms alt=231.0 vel=21.76 bear=104.0]state is slowPoller
+2017-05-23 07:33:28.693: GPS: TTF SlowPoller:3.7
+2017-05-23 07:33:28.694: GPS: Good Location received:Location[fused 53.500574,-1.667894 acc=23 et=+8d15h36m20s137ms alt=231.0 vel=21.76 bear=104.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:33:28.795: GPS: Scheduling a further update in:31206ms
+2017-05-23 07:33:55.047: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:33:58.594: GPS: Location received:Location[fused 53.498517,-1.659152 acc=12 et=+8d15h36m50s37ms alt=245.0 vel=20.36 bear=112.0]state is slowPoller
+2017-05-23 07:33:58.594: GPS: TTF SlowPoller:3.6
+2017-05-23 07:33:58.595: GPS: Good Location received:Location[fused 53.498517,-1.659152 acc=12 et=+8d15h36m50s37ms alt=245.0 vel=20.36 bear=112.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:33:58.681: GPS: Scheduling a further update in:31320ms
+2017-05-23 07:34:25.042: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:34:29.507: GPS: Location received:Location[fused 53.498673,-1.659387 acc=142 et=+8d15h37m20s952ms]state is slowPoller
+2017-05-23 07:34:31.489: GPS: Location received:Location[fused 53.495642,-1.650525 acc=8 et=+8d15h37m22s933ms alt=227.0 vel=19.62 bear=115.0]state is slowPoller
+2017-05-23 07:34:31.489: GPS: TTF SlowPoller:6.5
+2017-05-23 07:34:31.490: GPS: Good Location received:Location[fused 53.495642,-1.650525 acc=8 et=+8d15h37m22s933ms alt=227.0 vel=19.62 bear=115.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:34:31.653: GPS: Scheduling a further update in:28348ms
+2017-05-23 07:34:55.036: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:34:58.934: GPS: Location received:Location[fused 53.494445,-1.644464 acc=21 et=+8d15h37m50s379ms alt=294.0 vel=5.17 bear=108.0]state is slowPoller
+2017-05-23 07:34:58.935: GPS: TTF SlowPoller:3.9
+2017-05-23 07:34:58.936: GPS: Good Location received:Location[fused 53.494445,-1.644464 acc=21 et=+8d15h37m50s379ms alt=294.0 vel=5.17 bear=108.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:34:58.994: GPS: Scheduling a further update in:31006ms
+2017-05-23 07:35:25.039: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:35:25.844: GPS: Location received:Location[fused 53.494445,-1.644464 acc=30 et=+8d15h38m17s289ms]state is slowPoller
+2017-05-23 07:35:25.845: GPS: TTF SlowPoller:0.8
+2017-05-23 07:35:25.858: GPS: Good Location received:Location[fused 53.494445,-1.644464 acc=30 et=+8d15h38m17s289ms] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:35:25.969: GPS: Scheduling a further update in:34031ms
+2017-05-23 07:35:55.051: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:35:59.819: GPS: Location received:Location[fused 53.485667,-1.608279 acc=1300 et=+8d15h38m51s263ms]state is slowPoller
+2017-05-23 07:36:03.279: GPS: Location received:Location[fused 53.492273,-1.624455 acc=5 et=+8d15h38m54s724ms alt=241.0 vel=25.78 bear=98.0]state is slowPoller
+2017-05-23 07:36:03.280: GPS: TTF SlowPoller:8.3
+2017-05-23 07:36:03.281: GPS: Good Location received:Location[fused 53.492273,-1.624455 acc=5 et=+8d15h38m54s724ms alt=241.0 vel=25.78 bear=98.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:36:03.346: GPS: Scheduling a further update in:26654ms
+2017-05-23 07:36:34.055: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:36:37.729: GPS: Location received:Location[fused 53.489910,-1.611472 acc=18 et=+8d15h39m29s173ms alt=269.0 vel=25.6 bear=108.0]state is slowPoller
+2017-05-23 07:36:37.729: GPS: TTF SlowPoller:3.7
+2017-05-23 07:36:37.730: GPS: Good Location received:Location[fused 53.489910,-1.611472 acc=18 et=+8d15h39m29s173ms alt=269.0 vel=25.6 bear=108.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:36:37.829: GPS: Scheduling a further update in:22171ms
+2017-05-23 07:36:55.059: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:36:56.111: GPS: Location received:Location[fused 53.489910,-1.611472 acc=18 et=+8d15h39m47s556ms alt=269.0 vel=25.6 bear=108.0]state is slowPoller
+2017-05-23 07:36:56.112: GPS: TTF SlowPoller:1.1
+2017-05-23 07:36:56.113: GPS: Good Location received:Location[fused 53.489910,-1.611472 acc=18 et=+8d15h39m47s556ms alt=269.0 vel=25.6 bear=108.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:36:56.169: GPS: Scheduling a further update in:33831ms
+2017-05-23 07:37:26.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:37:29.587: GPS: Location received:Location[fused 53.486314,-1.591592 acc=15 et=+8d15h40m21s25ms alt=269.0 vel=27.16 bear=106.0]state is slowPoller
+2017-05-23 07:37:29.588: GPS: TTF SlowPoller:3.6
+2017-05-23 07:37:29.589: GPS: Good Location received:Location[fused 53.486314,-1.591592 acc=15 et=+8d15h40m21s25ms alt=269.0 vel=27.16 bear=106.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:37:29.737: GPS: Scheduling a further update in:30263ms
+2017-05-23 07:37:55.046: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:37:55.672: GPS: Location received:Location[fused 53.486314,-1.591592 acc=51 et=+8d15h40m47s116ms]state is slowPoller
+2017-05-23 07:37:57.513: GPS: Location received:Location[fused 53.484340,-1.581063 acc=8 et=+8d15h40m48s957ms alt=266.0 vel=21.8 bear=113.0]state is slowPoller
+2017-05-23 07:37:57.513: GPS: TTF SlowPoller:2.5
+2017-05-23 07:37:57.514: GPS: Good Location received:Location[fused 53.484340,-1.581063 acc=8 et=+8d15h40m48s957ms alt=266.0 vel=21.8 bear=113.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:37:57.710: GPS: Scheduling a further update in:32290ms
+2017-05-23 07:38:26.048: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:38:28.528: GPS: Location received:Location[fused 53.482537,-1.573392 acc=5 et=+8d15h41m19s973ms alt=233.0 vel=20.89 bear=111.0]state is slowPoller
+2017-05-23 07:38:28.529: GPS: TTF SlowPoller:2.5
+2017-05-23 07:38:28.530: GPS: Good Location received:Location[fused 53.482537,-1.573392 acc=5 et=+8d15h41m19s973ms alt=233.0 vel=20.89 bear=111.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:38:28.627: GPS: Scheduling a further update in:31373ms
+2017-05-23 07:38:55.042: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:38:57.489: GPS: Location received:Location[fused 53.481781,-1.564451 acc=14 et=+8d15h41m48s934ms alt=199.0 vel=21.08 bear=79.0]state is slowPoller
+2017-05-23 07:38:57.489: GPS: TTF SlowPoller:2.5
+2017-05-23 07:38:57.490: GPS: Good Location received:Location[fused 53.481781,-1.564451 acc=14 et=+8d15h41m48s934ms alt=199.0 vel=21.08 bear=79.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:38:57.565: GPS: Scheduling a further update in:32435ms
+2017-05-23 07:39:25.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:39:28.765: GPS: Location received:Location[fused 53.481876,-1.561397 acc=14 et=+8d15h42m20s207ms alt=189.0 vel=14.29 bear=167.0]state is slowPoller
+2017-05-23 07:39:28.765: GPS: TTF SlowPoller:3.7
+2017-05-23 07:39:28.766: GPS: Good Location received:Location[fused 53.481876,-1.561397 acc=14 et=+8d15h42m20s207ms alt=189.0 vel=14.29 bear=167.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:39:28.823: GPS: Scheduling a further update in:31177ms
+2017-05-23 07:39:55.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:39:57.507: GPS: Location received:Location[fused 53.478962,-1.565601 acc=9 et=+8d15h42m48s951ms alt=186.0 vel=6.43 bear=209.0]state is slowPoller
+2017-05-23 07:39:57.507: GPS: TTF SlowPoller:2.5
+2017-05-23 07:39:57.508: GPS: Good Location received:Location[fused 53.478962,-1.565601 acc=9 et=+8d15h42m48s951ms alt=186.0 vel=6.43 bear=209.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:39:57.651: GPS: Scheduling a further update in:32349ms
+2017-05-23 07:40:25.044: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:40:28.603: GPS: Location received:Location[fused 53.477803,-1.566395 acc=8 et=+8d15h43m20s48ms alt=196.0 vel=0.0]state is slowPoller
+2017-05-23 07:40:28.604: GPS: TTF SlowPoller:3.6
+2017-05-23 07:40:28.605: GPS: Good Location received:Location[fused 53.477803,-1.566395 acc=8 et=+8d15h43m20s48ms alt=196.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:40:28.675: GPS: Scheduling a further update in:31325ms
+2017-05-23 07:40:55.046: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:40:56.789: GPS: Location received:Location[fused 53.476583,-1.565136 acc=6 et=+8d15h43m48s233ms alt=192.0 vel=15.52 bear=152.0]state is slowPoller
+2017-05-23 07:40:56.789: GPS: TTF SlowPoller:1.8
+2017-05-23 07:40:56.790: GPS: Good Location received:Location[fused 53.476583,-1.565136 acc=6 et=+8d15h43m48s233ms alt=192.0 vel=15.52 bear=152.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:40:56.857: GPS: Scheduling a further update in:33143ms
+2017-05-23 07:41:34.110: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:41:35.811: GPS: Location received:Location[fused 53.476708,-1.570439 acc=700 et=+8d15h44m27s251ms]state is slowPoller
+2017-05-23 07:41:37.462: GPS: Location received:Location[fused 53.469758,-1.562414 acc=12 et=+8d15h44m28s906ms alt=215.0 vel=19.22 bear=162.0]state is slowPoller
+2017-05-23 07:41:37.463: GPS: TTF SlowPoller:3.4
+2017-05-23 07:41:37.463: GPS: Good Location received:Location[fused 53.469758,-1.562414 acc=12 et=+8d15h44m28s906ms alt=215.0 vel=19.22 bear=162.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:41:37.568: GPS: Scheduling a further update in:22432ms
+2017-05-23 07:41:55.034: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:41:58.895: GPS: Location received:Location[fused 53.466697,-1.558777 acc=14 et=+8d15h44m50s339ms alt=208.0 vel=20.62 bear=150.0]state is slowPoller
+2017-05-23 07:41:58.895: GPS: TTF SlowPoller:3.9
+2017-05-23 07:41:58.896: GPS: Good Location received:Location[fused 53.466697,-1.558777 acc=14 et=+8d15h44m50s339ms alt=208.0 vel=20.62 bear=150.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:41:58.958: GPS: Scheduling a further update in:31042ms
+2017-05-23 07:42:26.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:42:30.312: GPS: Location received:Location[fused 53.466697,-1.558777 acc=389 et=+8d15h45m21s757ms]state is slowPoller
+2017-05-23 07:42:31.476: GPS: Location received:Location[fused 53.462821,-1.556222 acc=24 et=+8d15h45m22s921ms alt=196.0 vel=9.61 bear=156.0]state is slowPoller
+2017-05-23 07:42:31.477: GPS: TTF SlowPoller:5.5
+2017-05-23 07:42:31.478: GPS: Good Location received:Location[fused 53.462821,-1.556222 acc=24 et=+8d15h45m22s921ms alt=196.0 vel=9.61 bear=156.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:42:31.550: GPS: Scheduling a further update in:28450ms
+2017-05-23 07:42:52.324: PWR: Ambient Exited
+2017-05-23 07:42:52.336: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 07:42:53.322: GPS: Location received:Location[fused 53.462821,-1.556222 acc=313 et=+8d15h45m44s768ms]state is normallPoller
+2017-05-23 07:42:56.265: GPS: Location received:Location[fused 53.461200,-1.555117 acc=27 et=+8d15h45m47s708ms alt=186.0 vel=0.2 bear=162.0]state is normallPoller
+2017-05-23 07:42:56.266: GPS: Good Location received:Location[fused 53.461200,-1.555117 acc=27 et=+8d15h45m47s708ms alt=186.0 vel=0.2 bear=162.0] fromLocationHandler
+2017-05-23 07:43:00.425: PWR: Ambient Entered
+2017-05-23 07:43:02.287: GPS: Location received:Location[fused 53.461046,-1.555084 acc=12 et=+8d15h45m53s731ms alt=182.0 vel=0.0]state is normallPoller
+2017-05-23 07:43:02.288: GPS: Good Location received:Location[fused 53.461046,-1.555084 acc=12 et=+8d15h45m53s731ms alt=182.0 vel=0.0] fromLocationHandler
+2017-05-23 07:43:11.098: GPS: Location received:Location[fused 53.461051,-1.555033 acc=8 et=+8d15h46m2s543ms alt=182.0 vel=0.0]state is normallPoller
+2017-05-23 07:43:11.099: GPS: Good Location received:Location[fused 53.461051,-1.555033 acc=8 et=+8d15h46m2s543ms alt=182.0 vel=0.0] fromLocationHandler
+2017-05-23 07:43:22.266: PWR: Ambient Exited
+2017-05-23 07:43:22.272: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 07:43:23.932: GPS: Location received:Location[fused 53.461044,-1.555044 acc=17 et=+8d15h46m15s366ms alt=182.0 vel=1.05 bear=255.0]state is normallPoller
+2017-05-23 07:43:23.932: GPS: Good Location received:Location[fused 53.461044,-1.555044 acc=17 et=+8d15h46m15s366ms alt=182.0 vel=1.05 bear=255.0] fromLocationHandler
+2017-05-23 07:43:26.401: GPS: Location received:Location[fused 53.461048,-1.555188 acc=15 et=+8d15h46m17s847ms alt=179.0 vel=0.87 bear=313.0]state is normallPoller
+2017-05-23 07:43:26.402: GPS: Good Location received:Location[fused 53.461048,-1.555188 acc=15 et=+8d15h46m17s847ms alt=179.0 vel=0.87 bear=313.0] fromLocationHandler
+2017-05-23 07:43:31.331: PWR: Ambient Entered
+2017-05-23 07:43:31.920: GPS: Location received:Location[fused 53.461068,-1.555160 acc=11 et=+8d15h46m23s362ms alt=178.0 vel=0.0]state is normallPoller
+2017-05-23 07:43:31.921: GPS: Good Location received:Location[fused 53.461068,-1.555160 acc=11 et=+8d15h46m23s362ms alt=178.0 vel=0.0] fromLocationHandler
+2017-05-23 07:43:34.889: GPS: Location received:Location[fused 53.461070,-1.555125 acc=11 et=+8d15h46m26s333ms alt=178.0 vel=0.0]state is normallPoller
+2017-05-23 07:43:34.889: GPS: Good Location received:Location[fused 53.461070,-1.555125 acc=11 et=+8d15h46m26s333ms alt=178.0 vel=0.0] fromLocationHandler
+2017-05-23 07:43:42.083: GPS: Location received:Location[fused 53.461076,-1.555095 acc=8 et=+8d15h46m33s527ms alt=178.0 vel=0.0]state is normallPoller
+2017-05-23 07:43:42.084: GPS: Good Location received:Location[fused 53.461076,-1.555095 acc=8 et=+8d15h46m33s527ms alt=178.0 vel=0.0] fromLocationHandler
+2017-05-23 07:43:55.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:43:55.882: GPS: Location received:Location[fused 53.461078,-1.555092 acc=6 et=+8d15h46m47s327ms alt=178.0 vel=0.0]state is slowPoller
+2017-05-23 07:43:55.883: GPS: TTF SlowPoller:0.9
+2017-05-23 07:43:55.884: GPS: Good Location received:Location[fused 53.461078,-1.555092 acc=6 et=+8d15h46m47s327ms alt=178.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:43:55.946: GPS: Scheduling a further update in:34054ms
+2017-05-23 07:44:25.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:44:26.535: GPS: Location received:Location[fused 53.461078,-1.555092 acc=14 et=+8d15h47m17s980ms alt=178.0 vel=0.0]state is slowPoller
+2017-05-23 07:44:26.535: GPS: TTF SlowPoller:1.5
+2017-05-23 07:44:26.536: GPS: Good Location received:Location[fused 53.461078,-1.555092 acc=14 et=+8d15h47m17s980ms alt=178.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:44:26.623: GPS: Scheduling a further update in:33377ms
+2017-05-23 07:44:40.105: GPS: Location received:Location[fused 53.461053,-1.555066 acc=8 et=+8d15h47m31s547ms alt=177.0 vel=1.17 bear=162.0]state is normallPoller
+2017-05-23 07:44:40.106: GPS: Good Location received:Location[fused 53.461053,-1.555066 acc=8 et=+8d15h47m31s547ms alt=177.0 vel=1.17 bear=162.0] fromLocationHandler
+2017-05-23 07:44:43.857: GPS: Location received:Location[fused 53.460938,-1.555027 acc=17 et=+8d15h47m35s302ms alt=178.0 vel=3.89 bear=167.0]state is normallPoller
+2017-05-23 07:44:43.858: GPS: Good Location received:Location[fused 53.460938,-1.555027 acc=17 et=+8d15h47m35s302ms alt=178.0 vel=3.89 bear=167.0] fromLocationHandler
+2017-05-23 07:44:47.960: GPS: Location received:Location[fused 53.460536,-1.554838 acc=17 et=+8d15h47m39s404ms alt=175.0 vel=9.23 bear=165.0]state is normallPoller
+2017-05-23 07:44:47.961: GPS: Good Location received:Location[fused 53.460536,-1.554838 acc=17 et=+8d15h47m39s404ms alt=175.0 vel=9.23 bear=165.0] fromLocationHandler
+2017-05-23 07:44:51.954: GPS: Location received:Location[fused 53.460132,-1.554488 acc=11 et=+8d15h47m43s398ms alt=177.0 vel=11.34 bear=155.0]state is normallPoller
+2017-05-23 07:44:51.955: GPS: Good Location received:Location[fused 53.460132,-1.554488 acc=11 et=+8d15h47m43s398ms alt=177.0 vel=11.34 bear=155.0] fromLocationHandler
+2017-05-23 07:44:55.047: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:44:55.498: GPS: Location received:Location[fused 53.459792,-1.554290 acc=9 et=+8d15h47m46s943ms alt=177.0 vel=9.46 bear=165.0]state is slowPoller
+2017-05-23 07:44:55.499: GPS: TTF SlowPoller:0.5
+2017-05-23 07:44:55.500: GPS: Good Location received:Location[fused 53.459792,-1.554290 acc=9 et=+8d15h47m46s943ms alt=177.0 vel=9.46 bear=165.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:44:55.575: GPS: Scheduling a further update in:34425ms
+2017-05-23 07:44:55.608: GPS: Location received:Location[fused 53.459792,-1.554290 acc=9 et=+8d15h47m46s943ms alt=177.0 vel=9.46 bear=165.0]state is normallPoller
+2017-05-23 07:44:55.609: GPS: Good Location received:Location[fused 53.459792,-1.554290 acc=9 et=+8d15h47m46s943ms alt=177.0 vel=9.46 bear=165.0] fromLocationHandler
+2017-05-23 07:44:59.934: GPS: Location received:Location[fused 53.459470,-1.554155 acc=9 et=+8d15h47m51s378ms alt=175.0 vel=9.15 bear=167.0]state is normallPoller
+2017-05-23 07:44:59.935: GPS: Good Location received:Location[fused 53.459470,-1.554155 acc=9 et=+8d15h47m51s378ms alt=175.0 vel=9.15 bear=167.0] fromLocationHandler
+2017-05-23 07:45:04.922: GPS: Location received:Location[fused 53.458935,-1.553917 acc=14 et=+8d15h47m56s367ms alt=323.0 vel=12.67 bear=165.0]state is normallPoller
+2017-05-23 07:45:04.923: GPS: Good Location received:Location[fused 53.458935,-1.553917 acc=14 et=+8d15h47m56s367ms alt=323.0 vel=12.67 bear=165.0] fromLocationHandler
+2017-05-23 07:45:08.913: GPS: Location received:Location[fused 53.458392,-1.553911 acc=8 et=+8d15h48m0s357ms alt=224.0 vel=16.77 bear=179.0]state is normallPoller
+2017-05-23 07:45:08.914: GPS: Good Location received:Location[fused 53.458392,-1.553911 acc=8 et=+8d15h48m0s357ms alt=224.0 vel=16.77 bear=179.0] fromLocationHandler
+2017-05-23 07:45:14.895: GPS: Location received:Location[fused 53.457427,-1.554045 acc=5 et=+8d15h48m6s340ms alt=180.0 vel=18.4 bear=185.0]state is normallPoller
+2017-05-23 07:45:14.896: GPS: Good Location received:Location[fused 53.457427,-1.554045 acc=5 et=+8d15h48m6s340ms alt=180.0 vel=18.4 bear=185.0] fromLocationHandler
+2017-05-23 07:45:18.888: GPS: Location received:Location[fused 53.456791,-1.554190 acc=6 et=+8d15h48m10s332ms alt=174.0 vel=18.26 bear=188.0]state is normallPoller
+2017-05-23 07:45:18.890: GPS: Good Location received:Location[fused 53.456791,-1.554190 acc=6 et=+8d15h48m10s332ms alt=174.0 vel=18.26 bear=188.0] fromLocationHandler
+2017-05-23 07:45:22.832: GPS: Location received:Location[fused 53.456107,-1.554295 acc=5 et=+8d15h48m14s277ms alt=172.0 vel=19.34 bear=186.0]state is normallPoller
+2017-05-23 07:45:22.833: GPS: Good Location received:Location[fused 53.456107,-1.554295 acc=5 et=+8d15h48m14s277ms alt=172.0 vel=19.34 bear=186.0] fromLocationHandler
+2017-05-23 07:45:25.050: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:45:26.485: GPS: Location received:Location[fused 53.455431,-1.554617 acc=5 et=+8d15h48m17s930ms alt=171.0 vel=19.95 bear=198.0]state is normallPoller
+2017-05-23 07:45:26.486: GPS: Good Location received:Location[fused 53.455431,-1.554617 acc=5 et=+8d15h48m17s930ms alt=171.0 vel=19.95 bear=198.0] fromLocationHandler
+2017-05-23 07:45:26.538: GPS: Location received:Location[fused 53.455431,-1.554617 acc=5 et=+8d15h48m17s930ms alt=171.0 vel=19.95 bear=198.0]state is slowPoller
+2017-05-23 07:45:26.538: GPS: TTF SlowPoller:1.5
+2017-05-23 07:45:26.539: GPS: Good Location received:Location[fused 53.455431,-1.554617 acc=5 et=+8d15h48m17s930ms alt=171.0 vel=19.95 bear=198.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:45:26.593: GPS: Scheduling a further update in:33407ms
+2017-05-23 07:45:28.871: GPS: Location received:Location[fused 53.455087,-1.554748 acc=5 et=+8d15h48m20s316ms alt=170.0 vel=19.36 bear=191.0]state is normallPoller
+2017-05-23 07:45:28.873: GPS: Good Location received:Location[fused 53.455087,-1.554748 acc=5 et=+8d15h48m20s316ms alt=170.0 vel=19.36 bear=191.0] fromLocationHandler
+2017-05-23 07:45:31.859: GPS: Location received:Location[fused 53.454591,-1.554680 acc=5 et=+8d15h48m23s304ms alt=168.0 vel=18.95 bear=171.0]state is normallPoller
+2017-05-23 07:45:31.860: GPS: Good Location received:Location[fused 53.454591,-1.554680 acc=5 et=+8d15h48m23s304ms alt=168.0 vel=18.95 bear=171.0] fromLocationHandler
+2017-05-23 07:45:38.370: GPS: Location received:Location[fused 53.453635,-1.553963 acc=6 et=+8d15h48m29s814ms alt=169.0 vel=20.38 bear=154.0]state is normallPoller
+2017-05-23 07:45:38.371: GPS: Good Location received:Location[fused 53.453635,-1.553963 acc=6 et=+8d15h48m29s814ms alt=169.0 vel=20.38 bear=154.0] fromLocationHandler
+2017-05-23 07:45:42.101: GPS: Location received:Location[fused 53.453014,-1.553396 acc=8 et=+8d15h48m33s545ms alt=172.0 vel=19.42 bear=151.0]state is normallPoller
+2017-05-23 07:45:42.102: GPS: Good Location received:Location[fused 53.453014,-1.553396 acc=8 et=+8d15h48m33s545ms alt=172.0 vel=19.42 bear=151.0] fromLocationHandler
+2017-05-23 07:45:47.819: GPS: Location received:Location[fused 53.452432,-1.552825 acc=23 et=+8d15h48m39s264ms alt=178.0 vel=11.25 bear=147.0]state is normallPoller
+2017-05-23 07:45:47.820: GPS: Good Location received:Location[fused 53.452432,-1.552825 acc=23 et=+8d15h48m39s264ms alt=178.0 vel=11.25 bear=147.0] fromLocationHandler
+2017-05-23 07:45:51.797: GPS: Location received:Location[fused 53.452076,-1.552457 acc=11 et=+8d15h48m43s241ms alt=176.0 vel=13.24 bear=152.0]state is normallPoller
+2017-05-23 07:45:51.798: GPS: Good Location received:Location[fused 53.452076,-1.552457 acc=11 et=+8d15h48m43s241ms alt=176.0 vel=13.24 bear=152.0] fromLocationHandler
+2017-05-23 07:45:53.828: GPS: Location received:Location[fused 53.451846,-1.552328 acc=6 et=+8d15h48m45s272ms alt=176.0 vel=12.3 bear=164.0]state is normallPoller
+2017-05-23 07:45:53.829: GPS: Good Location received:Location[fused 53.451846,-1.552328 acc=6 et=+8d15h48m45s272ms alt=176.0 vel=12.3 bear=164.0] fromLocationHandler
+2017-05-23 07:45:55.055: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:45:55.501: GPS: Location received:Location[fused 53.451616,-1.552253 acc=5 et=+8d15h48m46s945ms alt=176.0 vel=12.68 bear=173.0]state is slowPoller
+2017-05-23 07:45:55.501: GPS: TTF SlowPoller:0.5
+2017-05-23 07:45:55.502: GPS: Good Location received:Location[fused 53.451616,-1.552253 acc=5 et=+8d15h48m46s945ms alt=176.0 vel=12.68 bear=173.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:45:55.573: GPS: Scheduling a further update in:34427ms
+2017-05-23 07:45:58.285: GPS: Location received:Location[fused 53.451373,-1.552234 acc=5 et=+8d15h48m49s730ms alt=177.0 vel=13.3 bear=178.0]state is normallPoller
+2017-05-23 07:45:58.286: GPS: Good Location received:Location[fused 53.451373,-1.552234 acc=5 et=+8d15h48m49s730ms alt=177.0 vel=13.3 bear=178.0] fromLocationHandler
+2017-05-23 07:46:02.275: GPS: Location received:Location[fused 53.450869,-1.552291 acc=5 et=+8d15h48m53s719ms alt=178.0 vel=13.9 bear=181.0]state is normallPoller
+2017-05-23 07:46:02.276: GPS: Good Location received:Location[fused 53.450869,-1.552291 acc=5 et=+8d15h48m53s719ms alt=178.0 vel=13.9 bear=181.0] fromLocationHandler
+2017-05-23 07:46:06.281: GPS: Location received:Location[fused 53.450365,-1.552337 acc=5 et=+8d15h48m57s725ms alt=177.0 vel=13.77 bear=183.0]state is normallPoller
+2017-05-23 07:46:06.282: GPS: Good Location received:Location[fused 53.450365,-1.552337 acc=5 et=+8d15h48m57s725ms alt=177.0 vel=13.77 bear=183.0] fromLocationHandler
+2017-05-23 07:46:10.255: GPS: Location received:Location[fused 53.449894,-1.552398 acc=5 et=+8d15h49m1s699ms alt=174.0 vel=12.38 bear=185.0]state is normallPoller
+2017-05-23 07:46:10.256: GPS: Good Location received:Location[fused 53.449894,-1.552398 acc=5 et=+8d15h49m1s699ms alt=174.0 vel=12.38 bear=185.0] fromLocationHandler
+2017-05-23 07:46:14.247: GPS: Location received:Location[fused 53.449433,-1.552492 acc=5 et=+8d15h49m5s692ms alt=171.0 vel=13.66 bear=183.0]state is normallPoller
+2017-05-23 07:46:14.248: GPS: Good Location received:Location[fused 53.449433,-1.552492 acc=5 et=+8d15h49m5s692ms alt=171.0 vel=13.66 bear=183.0] fromLocationHandler
+2017-05-23 07:46:18.735: GPS: Location received:Location[fused 53.448844,-1.552485 acc=6 et=+8d15h49m10s179ms alt=166.0 vel=14.81 bear=180.0]state is normallPoller
+2017-05-23 07:46:18.736: GPS: Good Location received:Location[fused 53.448844,-1.552485 acc=6 et=+8d15h49m10s179ms alt=166.0 vel=14.81 bear=180.0] fromLocationHandler
+2017-05-23 07:46:21.232: GPS: Location received:Location[fused 53.448568,-1.552526 acc=6 et=+8d15h49m12s677ms alt=165.0 vel=15.05 bear=184.0]state is normallPoller
+2017-05-23 07:46:21.233: GPS: Good Location received:Location[fused 53.448568,-1.552526 acc=6 et=+8d15h49m12s677ms alt=165.0 vel=15.05 bear=184.0] fromLocationHandler
+2017-05-23 07:46:25.054: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:46:25.218: GPS: Location received:Location[fused 53.448050,-1.552585 acc=6 et=+8d15h49m16s662ms alt=231.0 vel=14.11 bear=185.0]state is slowPoller
+2017-05-23 07:46:25.219: GPS: TTF SlowPoller:0.2
+2017-05-23 07:46:25.220: GPS: Good Location received:Location[fused 53.448050,-1.552585 acc=6 et=+8d15h49m16s662ms alt=231.0 vel=14.11 bear=185.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:46:25.287: GPS: Scheduling a further update in:34713ms
+2017-05-23 07:46:25.308: GPS: Location received:Location[fused 53.448050,-1.552585 acc=6 et=+8d15h49m16s662ms alt=231.0 vel=14.11 bear=185.0]state is normallPoller
+2017-05-23 07:46:25.309: GPS: Good Location received:Location[fused 53.448050,-1.552585 acc=6 et=+8d15h49m16s662ms alt=231.0 vel=14.11 bear=185.0] fromLocationHandler
+2017-05-23 07:46:29.212: GPS: Location received:Location[fused 53.447536,-1.552602 acc=11 et=+8d15h49m20s656ms alt=206.0 vel=14.59 bear=179.0]state is normallPoller
+2017-05-23 07:46:29.213: GPS: Good Location received:Location[fused 53.447536,-1.552602 acc=11 et=+8d15h49m20s656ms alt=206.0 vel=14.59 bear=179.0] fromLocationHandler
+2017-05-23 07:46:33.201: GPS: Location received:Location[fused 53.447007,-1.552604 acc=6 et=+8d15h49m24s646ms alt=182.0 vel=13.68 bear=172.0]state is normallPoller
+2017-05-23 07:46:33.203: GPS: Good Location received:Location[fused 53.447007,-1.552604 acc=6 et=+8d15h49m24s646ms alt=182.0 vel=13.68 bear=172.0] fromLocationHandler
+2017-05-23 07:46:37.187: GPS: Location received:Location[fused 53.446515,-1.552343 acc=5 et=+8d15h49m28s632ms alt=172.0 vel=14.36 bear=161.0]state is normallPoller
+2017-05-23 07:46:37.188: GPS: Good Location received:Location[fused 53.446515,-1.552343 acc=5 et=+8d15h49m28s632ms alt=172.0 vel=14.36 bear=161.0] fromLocationHandler
+2017-05-23 07:46:43.170: GPS: Location received:Location[fused 53.445839,-1.551771 acc=5 et=+8d15h49m34s615ms alt=168.0 vel=14.09 bear=143.0]state is normallPoller
+2017-05-23 07:46:43.171: GPS: Good Location received:Location[fused 53.445839,-1.551771 acc=5 et=+8d15h49m34s615ms alt=168.0 vel=14.09 bear=143.0] fromLocationHandler
+2017-05-23 07:46:47.165: GPS: Location received:Location[fused 53.445467,-1.551273 acc=5 et=+8d15h49m38s610ms alt=167.0 vel=12.1 bear=140.0]state is normallPoller
+2017-05-23 07:46:47.166: GPS: Good Location received:Location[fused 53.445467,-1.551273 acc=5 et=+8d15h49m38s610ms alt=167.0 vel=12.1 bear=140.0] fromLocationHandler
+2017-05-23 07:46:50.654: GPS: Location received:Location[fused 53.445106,-1.550793 acc=5 et=+8d15h49m42s98ms alt=168.0 vel=13.55 bear=141.0]state is normallPoller
+2017-05-23 07:46:50.655: GPS: Good Location received:Location[fused 53.445106,-1.550793 acc=5 et=+8d15h49m42s98ms alt=168.0 vel=13.55 bear=141.0] fromLocationHandler
+2017-05-23 07:46:53.151: GPS: Location received:Location[fused 53.444916,-1.550526 acc=5 et=+8d15h49m44s595ms alt=167.0 vel=14.19 bear=139.0]state is normallPoller
+2017-05-23 07:46:53.152: GPS: Good Location received:Location[fused 53.444916,-1.550526 acc=5 et=+8d15h49m44s595ms alt=167.0 vel=14.19 bear=139.0] fromLocationHandler
+2017-05-23 07:46:55.037: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:46:55.041: GPS: Location received:Location[fused 53.444729,-1.550220 acc=6 et=+8d15h49m46s330ms alt=165.0 vel=14.53 bear=137.0]state is slowPoller
+2017-05-23 07:46:55.042: GPS: TTF SlowPoller:0.0
+2017-05-23 07:46:55.043: GPS: Good Location received:Location[fused 53.444729,-1.550220 acc=6 et=+8d15h49m46s330ms alt=165.0 vel=14.53 bear=137.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:46:55.124: GPS: Scheduling a further update in:34876ms
+2017-05-23 07:46:55.354: GPS: Location received:Location[fused 53.444729,-1.550220 acc=6 et=+8d15h49m46s796ms alt=165.0 vel=14.53 bear=137.0]state is normallPoller
+2017-05-23 07:46:55.355: GPS: Good Location received:Location[fused 53.444729,-1.550220 acc=6 et=+8d15h49m46s796ms alt=165.0 vel=14.53 bear=137.0] fromLocationHandler
+2017-05-23 07:46:59.140: GPS: Location received:Location[fused 53.444319,-1.549724 acc=14 et=+8d15h49m50s584ms alt=164.0 vel=14.25 bear=145.0]state is normallPoller
+2017-05-23 07:46:59.141: GPS: Good Location received:Location[fused 53.444319,-1.549724 acc=14 et=+8d15h49m50s584ms alt=164.0 vel=14.25 bear=145.0] fromLocationHandler
+2017-05-23 07:47:05.136: GPS: Location received:Location[fused 53.443714,-1.548912 acc=11 et=+8d15h49m56s580ms alt=162.0 vel=14.19 bear=141.0]state is normallPoller
+2017-05-23 07:47:05.137: GPS: Good Location received:Location[fused 53.443714,-1.548912 acc=11 et=+8d15h49m56s580ms alt=162.0 vel=14.19 bear=141.0] fromLocationHandler
+2017-05-23 07:47:11.104: GPS: Location received:Location[fused 53.443040,-1.548113 acc=8 et=+8d15h50m2s549ms alt=162.0 vel=14.76 bear=144.0]state is normallPoller
+2017-05-23 07:47:11.106: GPS: Good Location received:Location[fused 53.443040,-1.548113 acc=8 et=+8d15h50m2s549ms alt=162.0 vel=14.76 bear=144.0] fromLocationHandler
+2017-05-23 07:47:17.086: GPS: Location received:Location[fused 53.442361,-1.547509 acc=5 et=+8d15h50m8s531ms alt=157.0 vel=16.11 bear=149.0]state is normallPoller
+2017-05-23 07:47:17.087: GPS: Good Location received:Location[fused 53.442361,-1.547509 acc=5 et=+8d15h50m8s531ms alt=157.0 vel=16.11 bear=149.0] fromLocationHandler
+2017-05-23 07:47:20.532: GPS: Location received:Location[fused 53.441896,-1.546860 acc=8 et=+8d15h50m11s976ms alt=157.0 vel=16.51 bear=138.0]state is normallPoller
+2017-05-23 07:47:20.533: GPS: Good Location received:Location[fused 53.441896,-1.546860 acc=8 et=+8d15h50m11s976ms alt=157.0 vel=16.51 bear=138.0] fromLocationHandler
+2017-05-23 07:47:23.071: GPS: Location received:Location[fused 53.441694,-1.546517 acc=12 et=+8d15h50m14s516ms alt=157.0 vel=16.56 bear=137.0]state is normallPoller
+2017-05-23 07:47:23.074: GPS: Good Location received:Location[fused 53.441694,-1.546517 acc=12 et=+8d15h50m14s516ms alt=157.0 vel=16.56 bear=137.0] fromLocationHandler
+2017-05-23 07:47:25.050: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:47:25.053: GPS: Location received:Location[fused 53.441520,-1.546102 acc=18 et=+8d15h50m16s285ms alt=158.0 vel=17.0 bear=127.0]state is slowPoller
+2017-05-23 07:47:25.054: GPS: TTF SlowPoller:0.0
+2017-05-23 07:47:25.055: GPS: Good Location received:Location[fused 53.441520,-1.546102 acc=18 et=+8d15h50m16s285ms alt=158.0 vel=17.0 bear=127.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:47:25.152: GPS: Scheduling a further update in:34848ms
+2017-05-23 07:47:25.340: GPS: Location received:Location[fused 53.441520,-1.546102 acc=18 et=+8d15h50m16s765ms alt=158.0 vel=17.0 bear=127.0]state is normallPoller
+2017-05-23 07:47:25.341: GPS: Good Location received:Location[fused 53.441520,-1.546102 acc=18 et=+8d15h50m16s765ms alt=158.0 vel=17.0 bear=127.0] fromLocationHandler
+2017-05-23 07:47:31.059: GPS: Location received:Location[fused 53.441377,-1.544687 acc=14 et=+8d15h50m22s504ms alt=158.0 vel=16.69 bear=102.0]state is normallPoller
+2017-05-23 07:47:31.060: GPS: Good Location received:Location[fused 53.441377,-1.544687 acc=14 et=+8d15h50m22s504ms alt=158.0 vel=16.69 bear=102.0] fromLocationHandler
+2017-05-23 07:47:37.042: GPS: Location received:Location[fused 53.441050,-1.543194 acc=21 et=+8d15h50m28s486ms alt=158.0 vel=17.84 bear=109.0]state is normallPoller
+2017-05-23 07:47:37.043: GPS: Good Location received:Location[fused 53.441050,-1.543194 acc=21 et=+8d15h50m28s486ms alt=158.0 vel=17.84 bear=109.0] fromLocationHandler
+2017-05-23 07:47:39.533: GPS: Location received:Location[fused 53.440940,-1.542346 acc=20 et=+8d15h50m30s978ms alt=160.0 vel=17.87 bear=105.0]state is normallPoller
+2017-05-23 07:47:39.534: GPS: Good Location received:Location[fused 53.440940,-1.542346 acc=20 et=+8d15h50m30s978ms alt=160.0 vel=17.87 bear=105.0] fromLocationHandler
+2017-05-23 07:47:42.025: GPS: Location received:Location[fused 53.440828,-1.541814 acc=24 et=+8d15h50m33s470ms alt=160.0 vel=17.85 bear=106.0]state is normallPoller
+2017-05-23 07:47:42.026: GPS: Good Location received:Location[fused 53.440828,-1.541814 acc=24 et=+8d15h50m33s470ms alt=160.0 vel=17.85 bear=106.0] fromLocationHandler
+2017-05-23 07:47:47.508: GPS: Location received:Location[fused 53.440802,-1.540444 acc=14 et=+8d15h50m38s953ms alt=157.0 vel=15.14 bear=97.0]state is normallPoller
+2017-05-23 07:47:47.509: GPS: Good Location received:Location[fused 53.440802,-1.540444 acc=14 et=+8d15h50m38s953ms alt=157.0 vel=15.14 bear=97.0] fromLocationHandler
+2017-05-23 07:47:49.563: GPS: Location received:Location[fused 53.440757,-1.540001 acc=11 et=+8d15h50m41s8ms alt=157.0 vel=14.91 bear=101.0]state is normallPoller
+2017-05-23 07:47:49.564: GPS: Good Location received:Location[fused 53.440757,-1.540001 acc=11 et=+8d15h50m41s8ms alt=157.0 vel=14.91 bear=101.0] fromLocationHandler
+2017-05-23 07:47:52.001: GPS: Location received:Location[fused 53.440690,-1.539577 acc=11 et=+8d15h50m43s446ms alt=157.0 vel=14.9 bear=105.0]state is normallPoller
+2017-05-23 07:47:52.003: GPS: Good Location received:Location[fused 53.440690,-1.539577 acc=11 et=+8d15h50m43s446ms alt=157.0 vel=14.9 bear=105.0] fromLocationHandler
+2017-05-23 07:47:55.059: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:47:55.606: GPS: Location received:Location[fused 53.440439,-1.538875 acc=11 et=+8d15h50m47s50ms alt=156.0 vel=12.56 bear=120.0]state is slowPoller
+2017-05-23 07:47:55.606: GPS: TTF SlowPoller:0.6
+2017-05-23 07:47:55.607: GPS: Good Location received:Location[fused 53.440439,-1.538875 acc=11 et=+8d15h50m47s50ms alt=156.0 vel=12.56 bear=120.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:47:55.677: GPS: Scheduling a further update in:34323ms
+2017-05-23 07:47:55.685: GPS: Location received:Location[fused 53.440439,-1.538875 acc=11 et=+8d15h50m47s50ms alt=156.0 vel=12.56 bear=120.0]state is normallPoller
+2017-05-23 07:47:55.686: GPS: Good Location received:Location[fused 53.440439,-1.538875 acc=11 et=+8d15h50m47s50ms alt=156.0 vel=12.56 bear=120.0] fromLocationHandler
+2017-05-23 07:47:57.829: GPS: Location received:Location[fused 53.440282,-1.538581 acc=12 et=+8d15h50m49s274ms alt=154.0 vel=12.89 bear=131.0]state is normallPoller
+2017-05-23 07:47:57.830: GPS: Good Location received:Location[fused 53.440282,-1.538581 acc=12 et=+8d15h50m49s274ms alt=154.0 vel=12.89 bear=131.0] fromLocationHandler
+2017-05-23 07:48:01.974: GPS: Location received:Location[fused 53.439785,-1.538265 acc=6 et=+8d15h50m53s419ms alt=152.0 vel=14.6 bear=168.0]state is normallPoller
+2017-05-23 07:48:01.975: GPS: Good Location received:Location[fused 53.439785,-1.538265 acc=6 et=+8d15h50m53s419ms alt=152.0 vel=14.6 bear=168.0] fromLocationHandler
+2017-05-23 07:48:05.663: GPS: Location received:Location[fused 53.439230,-1.538312 acc=5 et=+8d15h50m57s106ms alt=150.0 vel=15.66 bear=189.0]state is normallPoller
+2017-05-23 07:48:05.664: GPS: Good Location received:Location[fused 53.439230,-1.538312 acc=5 et=+8d15h50m57s106ms alt=150.0 vel=15.66 bear=189.0] fromLocationHandler
+2017-05-23 07:48:07.965: GPS: Location received:Location[fused 53.438955,-1.538446 acc=5 et=+8d15h50m59s409ms alt=150.0 vel=15.73 bear=196.0]state is normallPoller
+2017-05-23 07:48:07.966: GPS: Good Location received:Location[fused 53.438955,-1.538446 acc=5 et=+8d15h50m59s409ms alt=150.0 vel=15.73 bear=196.0] fromLocationHandler
+2017-05-23 07:48:09.530: PWR: Ambient Exited
+2017-05-23 07:48:09.537: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 07:48:09.894: GPS: Location received:Location[fused 53.438690,-1.538624 acc=6 et=+8d15h51m1s334ms alt=149.0 vel=15.5 bear=201.0]state is normallPoller
+2017-05-23 07:48:09.895: GPS: Good Location received:Location[fused 53.438690,-1.538624 acc=6 et=+8d15h51m1s334ms alt=149.0 vel=15.5 bear=201.0] fromLocationHandler
+2017-05-23 07:48:13.987: GPS: Location received:Location[fused 53.438275,-1.538977 acc=6 et=+8d15h51m5s408ms alt=149.0 vel=13.11 bear=202.0]state is normallPoller
+2017-05-23 07:48:13.988: GPS: Good Location received:Location[fused 53.438275,-1.538977 acc=6 et=+8d15h51m5s408ms alt=149.0 vel=13.11 bear=202.0] fromLocationHandler
+2017-05-23 07:48:16.545: GPS: Location received:Location[fused 53.437939,-1.539154 acc=6 et=+8d15h51m7s991ms alt=150.0 vel=11.71 bear=202.0]state is normallPoller
+2017-05-23 07:48:16.546: GPS: Good Location received:Location[fused 53.437939,-1.539154 acc=6 et=+8d15h51m7s991ms alt=150.0 vel=11.71 bear=202.0] fromLocationHandler
+2017-05-23 07:48:20.923: GPS: Location received:Location[fused 53.437551,-1.539460 acc=6 et=+8d15h51m12s364ms alt=149.0 vel=12.01 bear=203.0]state is normallPoller
+2017-05-23 07:48:20.924: GPS: Good Location received:Location[fused 53.437551,-1.539460 acc=6 et=+8d15h51m12s364ms alt=149.0 vel=12.01 bear=203.0] fromLocationHandler
+2017-05-23 07:48:24.909: GPS: Location received:Location[fused 53.437206,-1.539594 acc=6 et=+8d15h51m16s354ms alt=145.0 vel=8.62 bear=188.0]state is normallPoller
+2017-05-23 07:48:24.910: GPS: Good Location received:Location[fused 53.437206,-1.539594 acc=6 et=+8d15h51m16s354ms alt=145.0 vel=8.62 bear=188.0] fromLocationHandler
+2017-05-23 07:48:28.899: GPS: Location received:Location[fused 53.436889,-1.539247 acc=8 et=+8d15h51m20s344ms alt=145.0 vel=10.81 bear=133.0]state is normallPoller
+2017-05-23 07:48:28.900: GPS: Good Location received:Location[fused 53.436889,-1.539247 acc=8 et=+8d15h51m20s344ms alt=145.0 vel=10.81 bear=133.0] fromLocationHandler
+2017-05-23 07:48:32.885: GPS: Location received:Location[fused 53.436592,-1.538846 acc=6 et=+8d15h51m24s329ms alt=137.0 vel=11.15 bear=146.0]state is normallPoller
+2017-05-23 07:48:32.885: GPS: Good Location received:Location[fused 53.436592,-1.538846 acc=6 et=+8d15h51m24s329ms alt=137.0 vel=11.15 bear=146.0] fromLocationHandler
+2017-05-23 07:48:34.964: GPS: Location received:Location[fused 53.436415,-1.538683 acc=5 et=+8d15h51m26s407ms alt=138.0 vel=10.45 bear=154.0]state is normallPoller
+2017-05-23 07:48:34.965: GPS: Good Location received:Location[fused 53.436415,-1.538683 acc=5 et=+8d15h51m26s407ms alt=138.0 vel=10.45 bear=154.0] fromLocationHandler
+2017-05-23 07:48:40.872: GPS: Location received:Location[fused 53.435841,-1.538417 acc=5 et=+8d15h51m32s318ms alt=135.0 vel=11.64 bear=160.0]state is normallPoller
+2017-05-23 07:48:40.873: GPS: Good Location received:Location[fused 53.435841,-1.538417 acc=5 et=+8d15h51m32s318ms alt=135.0 vel=11.64 bear=160.0] fromLocationHandler
+2017-05-23 07:48:43.311: PWR: Ambient Entered
+2017-05-23 07:48:46.863: GPS: Location received:Location[fused 53.435299,-1.537943 acc=6 et=+8d15h51m38s308ms alt=133.0 vel=11.71 bear=150.0]state is normallPoller
+2017-05-23 07:48:46.864: GPS: Good Location received:Location[fused 53.435299,-1.537943 acc=6 et=+8d15h51m38s308ms alt=133.0 vel=11.71 bear=150.0] fromLocationHandler
+2017-05-23 07:48:50.854: GPS: Location received:Location[fused 53.434902,-1.537519 acc=6 et=+8d15h51m42s298ms alt=141.0 vel=11.55 bear=147.0]state is normallPoller
+2017-05-23 07:48:50.855: GPS: Good Location received:Location[fused 53.434902,-1.537519 acc=6 et=+8d15h51m42s298ms alt=141.0 vel=11.55 bear=147.0] fromLocationHandler
+2017-05-23 07:48:53.345: GPS: Location received:Location[fused 53.434711,-1.537391 acc=6 et=+8d15h51m44s789ms alt=142.0 vel=11.18 bear=157.0]state is normallPoller
+2017-05-23 07:48:53.346: GPS: Good Location received:Location[fused 53.434711,-1.537391 acc=6 et=+8d15h51m44s789ms alt=142.0 vel=11.18 bear=157.0] fromLocationHandler
+2017-05-23 07:48:55.041: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:48:55.045: GPS: Location received:Location[fused 53.434513,-1.537228 acc=6 et=+8d15h51m46s275ms alt=141.0 vel=13.2 bear=158.0]state is slowPoller
+2017-05-23 07:48:55.045: GPS: TTF SlowPoller:0.0
+2017-05-23 07:48:55.046: GPS: Good Location received:Location[fused 53.434513,-1.537228 acc=6 et=+8d15h51m46s275ms alt=141.0 vel=13.2 bear=158.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:48:55.159: GPS: Scheduling a further update in:34841ms
+2017-05-23 07:48:57.834: GPS: Location received:Location[fused 53.434202,-1.536960 acc=6 et=+8d15h51m49s278ms alt=139.0 vel=13.97 bear=151.0]state is normallPoller
+2017-05-23 07:48:57.835: GPS: Good Location received:Location[fused 53.434202,-1.536960 acc=6 et=+8d15h51m49s278ms alt=139.0 vel=13.97 bear=151.0] fromLocationHandler
+2017-05-23 07:49:02.371: GPS: Location received:Location[fused 53.433812,-1.536420 acc=8 et=+8d15h51m53s815ms alt=147.0 vel=14.31 bear=134.0]state is normallPoller
+2017-05-23 07:49:02.372: GPS: Good Location received:Location[fused 53.433812,-1.536420 acc=8 et=+8d15h51m53s815ms alt=147.0 vel=14.31 bear=134.0] fromLocationHandler
+2017-05-23 07:49:06.314: GPS: Location received:Location[fused 53.433541,-1.535940 acc=11 et=+8d15h51m57s759ms alt=149.0 vel=11.8 bear=133.0]state is normallPoller
+2017-05-23 07:49:06.315: GPS: Good Location received:Location[fused 53.433541,-1.535940 acc=11 et=+8d15h51m57s759ms alt=149.0 vel=11.8 bear=133.0] fromLocationHandler
+2017-05-23 07:49:12.297: GPS: Location received:Location[fused 53.433254,-1.535171 acc=8 et=+8d15h52m3s742ms alt=150.0 vel=10.14 bear=125.0]state is normallPoller
+2017-05-23 07:49:12.298: GPS: Good Location received:Location[fused 53.433254,-1.535171 acc=8 et=+8d15h52m3s742ms alt=150.0 vel=10.14 bear=125.0] fromLocationHandler
+2017-05-23 07:49:15.843: GPS: Location received:Location[fused 53.432953,-1.534695 acc=8 et=+8d15h52m7s287ms alt=148.0 vel=11.4 bear=134.0]state is normallPoller
+2017-05-23 07:49:15.844: GPS: Good Location received:Location[fused 53.432953,-1.534695 acc=8 et=+8d15h52m7s287ms alt=148.0 vel=11.4 bear=134.0] fromLocationHandler
+2017-05-23 07:49:19.706: GPS: Location received:Location[fused 53.432632,-1.534193 acc=11 et=+8d15h52m11s151ms alt=149.0 vel=12.71 bear=136.0]state is normallPoller
+2017-05-23 07:49:19.707: GPS: Good Location received:Location[fused 53.432632,-1.534193 acc=11 et=+8d15h52m11s151ms alt=149.0 vel=12.71 bear=136.0] fromLocationHandler
+2017-05-23 07:49:22.273: GPS: Location received:Location[fused 53.432482,-1.533928 acc=6 et=+8d15h52m13s718ms alt=148.0 vel=12.68 bear=134.0]state is normallPoller
+2017-05-23 07:49:22.274: GPS: Good Location received:Location[fused 53.432482,-1.533928 acc=6 et=+8d15h52m13s718ms alt=148.0 vel=12.68 bear=134.0] fromLocationHandler
+2017-05-23 07:49:25.047: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:49:25.616: GPS: Location received:Location[fused 53.432201,-1.533418 acc=6 et=+8d15h52m17s62ms alt=150.0 vel=12.18 bear=136.0]state is slowPoller
+2017-05-23 07:49:25.616: GPS: TTF SlowPoller:0.6
+2017-05-23 07:49:25.617: GPS: Good Location received:Location[fused 53.432201,-1.533418 acc=6 et=+8d15h52m17s62ms alt=150.0 vel=12.18 bear=136.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:49:25.690: GPS: Scheduling a further update in:34310ms
+2017-05-23 07:49:25.698: GPS: Location received:Location[fused 53.432201,-1.533418 acc=6 et=+8d15h52m17s62ms alt=150.0 vel=12.18 bear=136.0]state is normallPoller
+2017-05-23 07:49:25.699: GPS: Good Location received:Location[fused 53.432201,-1.533418 acc=6 et=+8d15h52m17s62ms alt=150.0 vel=12.18 bear=136.0] fromLocationHandler
+2017-05-23 07:49:27.855: GPS: Location received:Location[fused 53.432013,-1.533120 acc=5 et=+8d15h52m19s300ms alt=148.0 vel=13.17 bear=134.0]state is normallPoller
+2017-05-23 07:49:27.856: GPS: Good Location received:Location[fused 53.432013,-1.533120 acc=5 et=+8d15h52m19s300ms alt=148.0 vel=13.17 bear=134.0] fromLocationHandler
+2017-05-23 07:49:32.253: GPS: Location received:Location[fused 53.431664,-1.532655 acc=6 et=+8d15h52m23s697ms alt=146.0 vel=13.5 bear=135.0]state is normallPoller
+2017-05-23 07:49:32.254: GPS: Good Location received:Location[fused 53.431664,-1.532655 acc=6 et=+8d15h52m23s697ms alt=146.0 vel=13.5 bear=135.0] fromLocationHandler
+2017-05-23 07:49:38.229: GPS: Location received:Location[fused 53.431093,-1.531788 acc=12 et=+8d15h52m29s674ms alt=149.0 vel=13.68 bear=138.0]state is normallPoller
+2017-05-23 07:49:38.230: GPS: Good Location received:Location[fused 53.431093,-1.531788 acc=12 et=+8d15h52m29s674ms alt=149.0 vel=13.68 bear=138.0] fromLocationHandler
+2017-05-23 07:49:44.222: GPS: Location received:Location[fused 53.430575,-1.531045 acc=5 et=+8d15h52m35s667ms alt=146.0 vel=12.37 bear=140.0]state is normallPoller
+2017-05-23 07:49:44.223: GPS: Good Location received:Location[fused 53.430575,-1.531045 acc=5 et=+8d15h52m35s667ms alt=146.0 vel=12.37 bear=140.0] fromLocationHandler
+2017-05-23 07:49:47.711: GPS: Location received:Location[fused 53.430266,-1.530524 acc=6 et=+8d15h52m39s155ms alt=143.0 vel=12.54 bear=135.0]state is normallPoller
+2017-05-23 07:49:47.712: GPS: Good Location received:Location[fused 53.430266,-1.530524 acc=6 et=+8d15h52m39s155ms alt=143.0 vel=12.54 bear=135.0] fromLocationHandler
+2017-05-23 07:49:52.201: GPS: Location received:Location[fused 53.429864,-1.530030 acc=9 et=+8d15h52m43s646ms alt=146.0 vel=13.1 bear=140.0]state is normallPoller
+2017-05-23 07:49:52.202: GPS: Good Location received:Location[fused 53.429864,-1.530030 acc=9 et=+8d15h52m43s646ms alt=146.0 vel=13.1 bear=140.0] fromLocationHandler
+2017-05-23 07:49:55.035: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:49:55.504: GPS: Location received:Location[fused 53.429476,-1.529488 acc=8 et=+8d15h52m46s948ms alt=143.0 vel=15.14 bear=139.0]state is slowPoller
+2017-05-23 07:49:55.504: GPS: TTF SlowPoller:0.5
+2017-05-23 07:49:55.505: GPS: Good Location received:Location[fused 53.429476,-1.529488 acc=8 et=+8d15h52m46s948ms alt=143.0 vel=15.14 bear=139.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:49:55.582: GPS: Scheduling a further update in:34418ms
+2017-05-23 07:49:55.605: GPS: Location received:Location[fused 53.429476,-1.529488 acc=8 et=+8d15h52m46s948ms alt=143.0 vel=15.14 bear=139.0]state is normallPoller
+2017-05-23 07:49:55.606: GPS: Good Location received:Location[fused 53.429476,-1.529488 acc=8 et=+8d15h52m46s948ms alt=143.0 vel=15.14 bear=139.0] fromLocationHandler
+2017-05-23 07:49:58.184: GPS: Location received:Location[fused 53.429287,-1.529184 acc=6 et=+8d15h52m49s629ms alt=141.0 vel=15.6 bear=135.0]state is normallPoller
+2017-05-23 07:49:58.185: GPS: Good Location received:Location[fused 53.429287,-1.529184 acc=6 et=+8d15h52m49s629ms alt=141.0 vel=15.6 bear=135.0] fromLocationHandler
+2017-05-23 07:50:00.680: GPS: Location received:Location[fused 53.428983,-1.528663 acc=9 et=+8d15h52m52s125ms alt=137.0 vel=17.64 bear=136.0]state is normallPoller
+2017-05-23 07:50:00.681: GPS: Good Location received:Location[fused 53.428983,-1.528663 acc=9 et=+8d15h52m52s125ms alt=137.0 vel=17.64 bear=136.0] fromLocationHandler
+2017-05-23 07:50:03.167: GPS: Location received:Location[fused 53.428756,-1.528250 acc=12 et=+8d15h52m54s612ms alt=135.0 vel=17.43 bear=134.0]state is normallPoller
+2017-05-23 07:50:03.168: GPS: Good Location received:Location[fused 53.428756,-1.528250 acc=12 et=+8d15h52m54s612ms alt=135.0 vel=17.43 bear=134.0] fromLocationHandler
+2017-05-23 07:50:07.161: GPS: Location received:Location[fused 53.428240,-1.527604 acc=12 et=+8d15h52m58s606ms alt=130.0 vel=18.64 bear=145.0]state is normallPoller
+2017-05-23 07:50:07.162: GPS: Good Location received:Location[fused 53.428240,-1.527604 acc=12 et=+8d15h52m58s606ms alt=130.0 vel=18.64 bear=145.0] fromLocationHandler
+2017-05-23 07:50:13.146: GPS: Location received:Location[fused 53.427352,-1.527139 acc=6 et=+8d15h53m4s588ms alt=131.0 vel=17.17 bear=162.0]state is normallPoller
+2017-05-23 07:50:13.147: GPS: Good Location received:Location[fused 53.427352,-1.527139 acc=6 et=+8d15h53m4s588ms alt=131.0 vel=17.17 bear=162.0] fromLocationHandler
+2017-05-23 07:50:16.648: GPS: Location received:Location[fused 53.426799,-1.526887 acc=6 et=+8d15h53m8s92ms alt=131.0 vel=15.19 bear=164.0]state is normallPoller
+2017-05-23 07:50:16.649: GPS: Good Location received:Location[fused 53.426799,-1.526887 acc=6 et=+8d15h53m8s92ms alt=131.0 vel=15.19 bear=164.0] fromLocationHandler
+2017-05-23 07:50:21.124: GPS: Location received:Location[fused 53.426257,-1.526653 acc=5 et=+8d15h53m12s569ms alt=130.0 vel=15.09 bear=166.0]state is normallPoller
+2017-05-23 07:50:21.125: GPS: Good Location received:Location[fused 53.426257,-1.526653 acc=5 et=+8d15h53m12s569ms alt=130.0 vel=15.09 bear=166.0] fromLocationHandler
+2017-05-23 07:50:24.859: GPS: Location received:Location[fused 53.425715,-1.526454 acc=18 et=+8d15h53m16s304ms alt=132.0 vel=15.48 bear=168.0]state is normallPoller
+2017-05-23 07:50:24.861: GPS: Good Location received:Location[fused 53.425715,-1.526454 acc=18 et=+8d15h53m16s304ms alt=132.0 vel=15.48 bear=168.0] fromLocationHandler
+2017-05-23 07:50:25.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:50:25.055: GPS: Location received:Location[fused 53.425715,-1.526454 acc=18 et=+8d15h53m16s304ms alt=132.0 vel=15.48 bear=168.0]state is slowPoller
+2017-05-23 07:50:25.056: GPS: TTF SlowPoller:0.0
+2017-05-23 07:50:25.056: GPS: Good Location received:Location[fused 53.425715,-1.526454 acc=18 et=+8d15h53m16s304ms alt=132.0 vel=15.48 bear=168.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:50:25.127: GPS: Scheduling a further update in:34873ms
+2017-05-23 07:50:30.104: GPS: Location received:Location[fused 53.425072,-1.525917 acc=17 et=+8d15h53m21s548ms alt=134.0 vel=15.21 bear=147.0]state is normallPoller
+2017-05-23 07:50:30.105: GPS: Good Location received:Location[fused 53.425072,-1.525917 acc=17 et=+8d15h53m21s548ms alt=134.0 vel=15.21 bear=147.0] fromLocationHandler
+2017-05-23 07:50:32.593: GPS: Location received:Location[fused 53.424786,-1.525410 acc=20 et=+8d15h53m24s38ms alt=134.0 vel=14.68 bear=135.0]state is normallPoller
+2017-05-23 07:50:32.594: GPS: Good Location received:Location[fused 53.424786,-1.525410 acc=20 et=+8d15h53m24s38ms alt=134.0 vel=14.68 bear=135.0] fromLocationHandler
+2017-05-23 07:50:35.140: GPS: Location received:Location[fused 53.424619,-1.525012 acc=14 et=+8d15h53m26s585ms alt=134.0 vel=15.37 bear=123.0]state is normallPoller
+2017-05-23 07:50:35.141: GPS: Good Location received:Location[fused 53.424619,-1.525012 acc=14 et=+8d15h53m26s585ms alt=134.0 vel=15.37 bear=123.0] fromLocationHandler
+2017-05-23 07:50:39.082: GPS: Location received:Location[fused 53.424414,-1.524293 acc=6 et=+8d15h53m30s526ms alt=134.0 vel=12.67 bear=119.0]state is normallPoller
+2017-05-23 07:50:39.083: GPS: Good Location received:Location[fused 53.424414,-1.524293 acc=6 et=+8d15h53m30s526ms alt=134.0 vel=12.67 bear=119.0] fromLocationHandler
+2017-05-23 07:50:42.567: GPS: Location received:Location[fused 53.424124,-1.523700 acc=5 et=+8d15h53m34s11ms alt=136.0 vel=13.34 bear=133.0]state is normallPoller
+2017-05-23 07:50:42.568: GPS: Good Location received:Location[fused 53.424124,-1.523700 acc=5 et=+8d15h53m34s11ms alt=136.0 vel=13.34 bear=133.0] fromLocationHandler
+2017-05-23 07:50:45.098: GPS: Location received:Location[fused 53.423914,-1.523374 acc=5 et=+8d15h53m36s543ms alt=133.0 vel=14.7 bear=134.0]state is normallPoller
+2017-05-23 07:50:45.099: GPS: Good Location received:Location[fused 53.423914,-1.523374 acc=5 et=+8d15h53m36s543ms alt=133.0 vel=14.7 bear=134.0] fromLocationHandler
+2017-05-23 07:50:48.560: GPS: Location received:Location[fused 53.423576,-1.522804 acc=6 et=+8d15h53m40s5ms alt=133.0 vel=13.6 bear=133.0]state is normallPoller
+2017-05-23 07:50:48.561: GPS: Good Location received:Location[fused 53.423576,-1.522804 acc=6 et=+8d15h53m40s5ms alt=133.0 vel=13.6 bear=133.0] fromLocationHandler
+2017-05-23 07:50:51.047: GPS: Location received:Location[fused 53.423377,-1.522470 acc=6 et=+8d15h53m42s492ms alt=134.0 vel=15.06 bear=136.0]state is normallPoller
+2017-05-23 07:50:51.048: GPS: Good Location received:Location[fused 53.423377,-1.522470 acc=6 et=+8d15h53m42s492ms alt=134.0 vel=15.06 bear=136.0] fromLocationHandler
+2017-05-23 07:50:55.041: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:50:56.527: GPS: Location received:Location[fused 53.422653,-1.521252 acc=6 et=+8d15h53m47s952ms alt=135.0 vel=18.79 bear=132.0]state is slowPoller
+2017-05-23 07:50:56.527: GPS: TTF SlowPoller:1.5
+2017-05-23 07:50:56.532: GPS: Good Location received:Location[fused 53.422653,-1.521252 acc=6 et=+8d15h53m47s952ms alt=135.0 vel=18.79 bear=132.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:50:56.664: GPS: Scheduling a further update in:33336ms
+2017-05-23 07:50:56.666: GPS: Location received:Location[fused 53.422653,-1.521252 acc=6 et=+8d15h53m47s952ms alt=135.0 vel=18.79 bear=132.0]state is normallPoller
+2017-05-23 07:50:56.695: GPS: Good Location received:Location[fused 53.422653,-1.521252 acc=6 et=+8d15h53m47s952ms alt=135.0 vel=18.79 bear=132.0] fromLocationHandler
+2017-05-23 07:50:58.833: GPS: Location received:Location[fused 53.422446,-1.520846 acc=5 et=+8d15h53m50s277ms alt=138.0 vel=18.48 bear=133.0]state is normallPoller
+2017-05-23 07:50:58.834: GPS: Good Location received:Location[fused 53.422446,-1.520846 acc=5 et=+8d15h53m50s277ms alt=138.0 vel=18.48 bear=133.0] fromLocationHandler
+2017-05-23 07:51:00.858: GPS: Location received:Location[fused 53.422226,-1.520451 acc=5 et=+8d15h53m52s303ms alt=135.0 vel=18.48 bear=132.0]state is normallPoller
+2017-05-23 07:51:00.859: GPS: Good Location received:Location[fused 53.422226,-1.520451 acc=5 et=+8d15h53m52s303ms alt=135.0 vel=18.48 bear=132.0] fromLocationHandler
+2017-05-23 07:51:04.021: GPS: Location received:Location[fused 53.421879,-1.519826 acc=5 et=+8d15h53m55s466ms alt=134.0 vel=18.65 bear=131.0]state is normallPoller
+2017-05-23 07:51:04.022: GPS: Good Location received:Location[fused 53.421879,-1.519826 acc=5 et=+8d15h53m55s466ms alt=134.0 vel=18.65 bear=131.0] fromLocationHandler
+2017-05-23 07:51:08.012: GPS: Location received:Location[fused 53.421516,-1.519050 acc=5 et=+8d15h53m59s456ms alt=130.0 vel=16.97 bear=124.0]state is normallPoller
+2017-05-23 07:51:08.013: GPS: Good Location received:Location[fused 53.421516,-1.519050 acc=5 et=+8d15h53m59s456ms alt=130.0 vel=16.97 bear=124.0] fromLocationHandler
+2017-05-23 07:51:14.015: GPS: Location received:Location[fused 53.421098,-1.517700 acc=6 et=+8d15h54m5s460ms alt=135.0 vel=16.37 bear=120.0]state is normallPoller
+2017-05-23 07:51:14.016: GPS: Good Location received:Location[fused 53.421098,-1.517700 acc=6 et=+8d15h54m5s460ms alt=135.0 vel=16.37 bear=120.0] fromLocationHandler
+2017-05-23 07:51:17.977: GPS: Location received:Location[fused 53.420643,-1.516937 acc=14 et=+8d15h54m9s422ms alt=133.0 vel=16.16 bear=138.0]state is normallPoller
+2017-05-23 07:51:17.978: GPS: Good Location received:Location[fused 53.420643,-1.516937 acc=14 et=+8d15h54m9s422ms alt=133.0 vel=16.16 bear=138.0] fromLocationHandler
+2017-05-23 07:51:21.840: GPS: Location received:Location[fused 53.420138,-1.516264 acc=11 et=+8d15h54m13s284ms alt=133.0 vel=15.71 bear=142.0]state is normallPoller
+2017-05-23 07:51:21.841: GPS: Good Location received:Location[fused 53.420138,-1.516264 acc=11 et=+8d15h54m13s284ms alt=133.0 vel=15.71 bear=142.0] fromLocationHandler
+2017-05-23 07:51:25.058: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:51:25.615: GPS: Location received:Location[fused 53.419768,-1.515750 acc=8 et=+8d15h54m17s59ms alt=131.0 vel=13.19 bear=138.0]state is slowPoller
+2017-05-23 07:51:25.615: GPS: TTF SlowPoller:0.6
+2017-05-23 07:51:25.616: GPS: Good Location received:Location[fused 53.419768,-1.515750 acc=8 et=+8d15h54m17s59ms alt=131.0 vel=13.19 bear=138.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:51:25.696: GPS: Scheduling a further update in:34304ms
+2017-05-23 07:51:25.712: GPS: Location received:Location[fused 53.419768,-1.515750 acc=8 et=+8d15h54m17s59ms alt=131.0 vel=13.19 bear=138.0]state is normallPoller
+2017-05-23 07:51:25.713: GPS: Good Location received:Location[fused 53.419768,-1.515750 acc=8 et=+8d15h54m17s59ms alt=131.0 vel=13.19 bear=138.0] fromLocationHandler
+2017-05-23 07:51:27.875: GPS: Location received:Location[fused 53.419584,-1.515495 acc=6 et=+8d15h54m19s318ms alt=132.0 vel=13.65 bear=137.0]state is normallPoller
+2017-05-23 07:51:27.876: GPS: Good Location received:Location[fused 53.419584,-1.515495 acc=6 et=+8d15h54m19s318ms alt=132.0 vel=13.65 bear=137.0] fromLocationHandler
+2017-05-23 07:51:33.952: GPS: Location received:Location[fused 53.419053,-1.514604 acc=8 et=+8d15h54m25s396ms alt=129.0 vel=14.15 bear=133.0]state is normallPoller
+2017-05-23 07:51:33.953: GPS: Good Location received:Location[fused 53.419053,-1.514604 acc=8 et=+8d15h54m25s396ms alt=129.0 vel=14.15 bear=133.0] fromLocationHandler
+2017-05-23 07:51:37.927: GPS: Location received:Location[fused 53.418764,-1.513989 acc=9 et=+8d15h54m29s372ms alt=130.0 vel=12.99 bear=126.0]state is normallPoller
+2017-05-23 07:51:37.928: GPS: Good Location received:Location[fused 53.418764,-1.513989 acc=9 et=+8d15h54m29s372ms alt=130.0 vel=12.99 bear=126.0] fromLocationHandler
+2017-05-23 07:51:41.923: GPS: Location received:Location[fused 53.418503,-1.513373 acc=8 et=+8d15h54m33s368ms alt=132.0 vel=14.27 bear=129.0]state is normallPoller
+2017-05-23 07:51:41.924: GPS: Good Location received:Location[fused 53.418503,-1.513373 acc=8 et=+8d15h54m33s368ms alt=132.0 vel=14.27 bear=129.0] fromLocationHandler
+2017-05-23 07:51:45.913: GPS: Location received:Location[fused 53.418084,-1.512762 acc=8 et=+8d15h54m37s357ms alt=129.0 vel=13.06 bear=145.0]state is normallPoller
+2017-05-23 07:51:45.914: GPS: Good Location received:Location[fused 53.418084,-1.512762 acc=8 et=+8d15h54m37s357ms alt=129.0 vel=13.06 bear=145.0] fromLocationHandler
+2017-05-23 07:51:49.505: GPS: Location received:Location[fused 53.417759,-1.512406 acc=8 et=+8d15h54m40s950ms alt=132.0 vel=9.94 bear=145.0]state is normallPoller
+2017-05-23 07:51:49.507: GPS: Good Location received:Location[fused 53.417759,-1.512406 acc=8 et=+8d15h54m40s950ms alt=132.0 vel=9.94 bear=145.0] fromLocationHandler
+2017-05-23 07:51:53.888: GPS: Location received:Location[fused 53.417542,-1.512206 acc=12 et=+8d15h54m45s332ms alt=129.0 vel=6.21 bear=133.0]state is normallPoller
+2017-05-23 07:51:53.889: GPS: Good Location received:Location[fused 53.417542,-1.512206 acc=12 et=+8d15h54m45s332ms alt=129.0 vel=6.21 bear=133.0] fromLocationHandler
+2017-05-23 07:51:55.046: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:51:55.600: GPS: Location received:Location[fused 53.417447,-1.512082 acc=11 et=+8d15h54m47s45ms alt=127.0 vel=3.5 bear=145.0]state is slowPoller
+2017-05-23 07:51:55.601: GPS: TTF SlowPoller:0.6
+2017-05-23 07:51:55.601: GPS: Good Location received:Location[fused 53.417447,-1.512082 acc=11 et=+8d15h54m47s45ms alt=127.0 vel=3.5 bear=145.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:51:55.681: GPS: Scheduling a further update in:34320ms
+2017-05-23 07:51:59.875: GPS: Location received:Location[fused 53.417412,-1.512070 acc=14 et=+8d15h54m51s320ms alt=123.0 vel=0.65 bear=146.0]state is normallPoller
+2017-05-23 07:51:59.876: GPS: Good Location received:Location[fused 53.417412,-1.512070 acc=14 et=+8d15h54m51s320ms alt=123.0 vel=0.65 bear=146.0] fromLocationHandler
+2017-05-23 07:52:05.078: GPS: Location received:Location[fused 53.417356,-1.512031 acc=14 et=+8d15h54m56s523ms alt=121.0 vel=4.7 bear=141.0]state is normallPoller
+2017-05-23 07:52:05.079: GPS: Good Location received:Location[fused 53.417356,-1.512031 acc=14 et=+8d15h54m56s523ms alt=121.0 vel=4.7 bear=141.0] fromLocationHandler
+2017-05-23 07:52:08.977: GPS: Location received:Location[fused 53.417221,-1.511875 acc=14 et=+8d15h55m0s421ms alt=126.0 vel=2.83 bear=163.0]state is normallPoller
+2017-05-23 07:52:08.978: GPS: Good Location received:Location[fused 53.417221,-1.511875 acc=14 et=+8d15h55m0s421ms alt=126.0 vel=2.83 bear=163.0] fromLocationHandler
+2017-05-23 07:52:13.466: GPS: Location received:Location[fused 53.417026,-1.511674 acc=14 et=+8d15h55m4s911ms alt=126.0 vel=6.4 bear=144.0]state is normallPoller
+2017-05-23 07:52:13.467: GPS: Good Location received:Location[fused 53.417026,-1.511674 acc=14 et=+8d15h55m4s911ms alt=126.0 vel=6.4 bear=144.0] fromLocationHandler
+2017-05-23 07:52:16.957: GPS: Location received:Location[fused 53.416816,-1.511458 acc=8 et=+8d15h55m8s401ms alt=128.0 vel=5.53 bear=148.0]state is normallPoller
+2017-05-23 07:52:16.958: GPS: Good Location received:Location[fused 53.416816,-1.511458 acc=8 et=+8d15h55m8s401ms alt=128.0 vel=5.53 bear=148.0] fromLocationHandler
+2017-05-23 07:52:20.972: GPS: Location received:Location[fused 53.416591,-1.511190 acc=8 et=+8d15h55m12s417ms alt=128.0 vel=7.65 bear=157.0]state is normallPoller
+2017-05-23 07:52:20.973: GPS: Good Location received:Location[fused 53.416591,-1.511190 acc=8 et=+8d15h55m12s417ms alt=128.0 vel=7.65 bear=157.0] fromLocationHandler
+2017-05-23 07:52:25.048: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:52:25.955: GPS: Location received:Location[fused 53.416361,-1.510942 acc=8 et=+8d15h55m17s400ms alt=131.0 vel=7.24 bear=141.0]state is slowPoller
+2017-05-23 07:52:25.955: GPS: TTF SlowPoller:0.9
+2017-05-23 07:52:25.956: GPS: Good Location received:Location[fused 53.416361,-1.510942 acc=8 et=+8d15h55m17s400ms alt=131.0 vel=7.24 bear=141.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:52:26.052: GPS: Scheduling a further update in:33948ms
+2017-05-23 07:52:26.072: GPS: Location received:Location[fused 53.416361,-1.510942 acc=8 et=+8d15h55m17s400ms alt=131.0 vel=7.24 bear=141.0]state is normallPoller
+2017-05-23 07:52:26.073: GPS: Good Location received:Location[fused 53.416361,-1.510942 acc=8 et=+8d15h55m17s400ms alt=131.0 vel=7.24 bear=141.0] fromLocationHandler
+2017-05-23 07:52:27.989: GPS: Location received:Location[fused 53.416227,-1.510753 acc=6 et=+8d15h55m19s432ms alt=130.0 vel=6.87 bear=144.0]state is normallPoller
+2017-05-23 07:52:27.990: GPS: Good Location received:Location[fused 53.416227,-1.510753 acc=6 et=+8d15h55m19s432ms alt=130.0 vel=6.87 bear=144.0] fromLocationHandler
+2017-05-23 07:52:32.411: GPS: Location received:Location[fused 53.416045,-1.510532 acc=8 et=+8d15h55m23s856ms alt=128.0 vel=4.35 bear=139.0]state is normallPoller
+2017-05-23 07:52:32.412: GPS: Good Location received:Location[fused 53.416045,-1.510532 acc=8 et=+8d15h55m23s856ms alt=128.0 vel=4.35 bear=139.0] fromLocationHandler
+2017-05-23 07:52:36.906: GPS: Location received:Location[fused 53.415799,-1.510259 acc=11 et=+8d15h55m28s351ms alt=125.0 vel=7.19 bear=148.0]state is normallPoller
+2017-05-23 07:52:36.907: GPS: Good Location received:Location[fused 53.415799,-1.510259 acc=11 et=+8d15h55m28s351ms alt=125.0 vel=7.19 bear=148.0] fromLocationHandler
+2017-05-23 07:52:39.403: GPS: Location received:Location[fused 53.415667,-1.510095 acc=9 et=+8d15h55m30s848ms alt=127.0 vel=7.84 bear=145.0]state is normallPoller
+2017-05-23 07:52:39.404: GPS: Good Location received:Location[fused 53.415667,-1.510095 acc=9 et=+8d15h55m30s848ms alt=127.0 vel=7.84 bear=145.0] fromLocationHandler
+2017-05-23 07:52:43.388: GPS: Location received:Location[fused 53.415514,-1.509906 acc=14 et=+8d15h55m34s833ms alt=124.0 vel=6.2 bear=145.0]state is normallPoller
+2017-05-23 07:52:43.389: GPS: Good Location received:Location[fused 53.415514,-1.509906 acc=14 et=+8d15h55m34s833ms alt=124.0 vel=6.2 bear=145.0] fromLocationHandler
+2017-05-23 07:52:46.879: GPS: Location received:Location[fused 53.415208,-1.509617 acc=11 et=+8d15h55m38s323ms alt=125.0 vel=9.85 bear=150.0]state is normallPoller
+2017-05-23 07:52:46.880: GPS: Good Location received:Location[fused 53.415208,-1.509617 acc=11 et=+8d15h55m38s323ms alt=125.0 vel=9.85 bear=150.0] fromLocationHandler
+2017-05-23 07:52:50.878: GPS: Location received:Location[fused 53.414868,-1.509310 acc=8 et=+8d15h55m42s323ms alt=119.0 vel=10.56 bear=146.0]state is normallPoller
+2017-05-23 07:52:50.879: GPS: Good Location received:Location[fused 53.414868,-1.509310 acc=8 et=+8d15h55m42s323ms alt=119.0 vel=10.56 bear=146.0] fromLocationHandler
+2017-05-23 07:52:53.361: GPS: Location received:Location[fused 53.414705,-1.509155 acc=9 et=+8d15h55m44s806ms alt=120.0 vel=10.66 bear=147.0]state is normallPoller
+2017-05-23 07:52:53.362: GPS: Good Location received:Location[fused 53.414705,-1.509155 acc=9 et=+8d15h55m44s806ms alt=120.0 vel=10.66 bear=147.0] fromLocationHandler
+2017-05-23 07:52:55.052: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:52:55.055: GPS: Location received:Location[fused 53.414550,-1.508973 acc=9 et=+8d15h55m46s390ms alt=125.0 vel=10.33 bear=146.0]state is slowPoller
+2017-05-23 07:52:55.056: GPS: TTF SlowPoller:0.0
+2017-05-23 07:52:55.057: GPS: Good Location received:Location[fused 53.414550,-1.508973 acc=9 et=+8d15h55m46s390ms alt=125.0 vel=10.33 bear=146.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:52:55.150: GPS: Scheduling a further update in:34850ms
+2017-05-23 07:52:56.968: GPS: Location received:Location[fused 53.414403,-1.508750 acc=8 et=+8d15h55m48s412ms alt=123.0 vel=10.51 bear=143.0]state is normallPoller
+2017-05-23 07:52:56.969: GPS: Good Location received:Location[fused 53.414403,-1.508750 acc=8 et=+8d15h55m48s412ms alt=123.0 vel=10.51 bear=143.0] fromLocationHandler
+2017-05-23 07:52:59.850: GPS: Location received:Location[fused 53.414202,-1.508522 acc=9 et=+8d15h55m51s295ms alt=122.0 vel=8.57 bear=142.0]state is normallPoller
+2017-05-23 07:52:59.851: GPS: Good Location received:Location[fused 53.414202,-1.508522 acc=9 et=+8d15h55m51s295ms alt=122.0 vel=8.57 bear=142.0] fromLocationHandler
+2017-05-23 07:53:02.338: GPS: Location received:Location[fused 53.414093,-1.508400 acc=8 et=+8d15h55m53s783ms alt=118.0 vel=7.29 bear=143.0]state is normallPoller
+2017-05-23 07:53:02.339: GPS: Good Location received:Location[fused 53.414093,-1.508400 acc=8 et=+8d15h55m53s783ms alt=118.0 vel=7.29 bear=143.0] fromLocationHandler
+2017-05-23 07:53:05.968: GPS: Location received:Location[fused 53.413867,-1.508062 acc=9 et=+8d15h55m57s412ms alt=120.0 vel=7.66 bear=139.0]state is normallPoller
+2017-05-23 07:53:05.969: GPS: Good Location received:Location[fused 53.413867,-1.508062 acc=9 et=+8d15h55m57s412ms alt=120.0 vel=7.66 bear=139.0] fromLocationHandler
+2017-05-23 07:53:10.319: GPS: Location received:Location[fused 53.413743,-1.507894 acc=9 et=+8d15h56m1s763ms alt=121.0 vel=3.96 bear=141.0]state is normallPoller
+2017-05-23 07:53:10.320: GPS: Good Location received:Location[fused 53.413743,-1.507894 acc=9 et=+8d15h56m1s763ms alt=121.0 vel=3.96 bear=141.0] fromLocationHandler
+2017-05-23 07:53:14.315: GPS: Location received:Location[fused 53.413696,-1.507780 acc=8 et=+8d15h56m5s760ms alt=123.0 vel=1.81 bear=131.0]state is normallPoller
+2017-05-23 07:53:14.317: GPS: Good Location received:Location[fused 53.413696,-1.507780 acc=8 et=+8d15h56m5s760ms alt=123.0 vel=1.81 bear=131.0] fromLocationHandler
+2017-05-23 07:53:17.804: GPS: Location received:Location[fused 53.413602,-1.507713 acc=9 et=+8d15h56m9s249ms alt=123.0 vel=2.64 bear=143.0]state is normallPoller
+2017-05-23 07:53:17.806: GPS: Good Location received:Location[fused 53.413602,-1.507713 acc=9 et=+8d15h56m9s249ms alt=123.0 vel=2.64 bear=143.0] fromLocationHandler
+2017-05-23 07:53:20.369: GPS: Location received:Location[fused 53.413546,-1.507643 acc=9 et=+8d15h56m11s814ms alt=121.0 vel=3.07 bear=142.0]state is normallPoller
+2017-05-23 07:53:20.370: GPS: Good Location received:Location[fused 53.413546,-1.507643 acc=9 et=+8d15h56m11s814ms alt=121.0 vel=3.07 bear=142.0] fromLocationHandler
+2017-05-23 07:53:23.957: GPS: Location received:Location[fused 53.413449,-1.507506 acc=9 et=+8d15h56m15s401ms alt=121.0 vel=3.11 bear=139.0]state is normallPoller
+2017-05-23 07:53:23.958: GPS: Good Location received:Location[fused 53.413449,-1.507506 acc=9 et=+8d15h56m15s401ms alt=121.0 vel=3.11 bear=139.0] fromLocationHandler
+2017-05-23 07:53:25.051: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:53:25.641: GPS: Location received:Location[fused 53.413443,-1.507483 acc=9 et=+8d15h56m17s87ms alt=120.0 vel=0.67 bear=136.0]state is slowPoller
+2017-05-23 07:53:25.642: GPS: TTF SlowPoller:0.6
+2017-05-23 07:53:25.643: GPS: Good Location received:Location[fused 53.413443,-1.507483 acc=9 et=+8d15h56m17s87ms alt=120.0 vel=0.67 bear=136.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:53:25.728: GPS: Scheduling a further update in:34272ms
+2017-05-23 07:53:28.276: GPS: Location received:Location[fused 53.413434,-1.507457 acc=8 et=+8d15h56m19s721ms alt=120.0 vel=0.66 bear=136.0]state is normallPoller
+2017-05-23 07:53:28.278: GPS: Good Location received:Location[fused 53.413434,-1.507457 acc=8 et=+8d15h56m19s721ms alt=120.0 vel=0.66 bear=136.0] fromLocationHandler
+2017-05-23 07:53:32.267: GPS: Location received:Location[fused 53.413312,-1.507267 acc=9 et=+8d15h56m23s711ms alt=119.0 vel=5.82 bear=148.0]state is normallPoller
+2017-05-23 07:53:32.268: GPS: Good Location received:Location[fused 53.413312,-1.507267 acc=9 et=+8d15h56m23s711ms alt=119.0 vel=5.82 bear=148.0] fromLocationHandler
+2017-05-23 07:53:38.251: GPS: Location received:Location[fused 53.412994,-1.506807 acc=12 et=+8d15h56m29s696ms alt=121.0 vel=4.71 bear=139.0]state is normallPoller
+2017-05-23 07:53:38.252: GPS: Good Location received:Location[fused 53.412994,-1.506807 acc=12 et=+8d15h56m29s696ms alt=121.0 vel=4.71 bear=139.0] fromLocationHandler
+2017-05-23 07:53:42.239: GPS: Location received:Location[fused 53.412911,-1.506552 acc=8 et=+8d15h56m33s684ms alt=120.0 vel=4.81 bear=136.0]state is normallPoller
+2017-05-23 07:53:42.240: GPS: Good Location received:Location[fused 53.412911,-1.506552 acc=8 et=+8d15h56m33s684ms alt=120.0 vel=4.81 bear=136.0] fromLocationHandler
+2017-05-23 07:53:47.727: GPS: Location received:Location[fused 53.412692,-1.506233 acc=8 et=+8d15h56m39s172ms alt=124.0 vel=5.6 bear=138.0]state is normallPoller
+2017-05-23 07:53:47.728: GPS: Good Location received:Location[fused 53.412692,-1.506233 acc=8 et=+8d15h56m39s172ms alt=124.0 vel=5.6 bear=138.0] fromLocationHandler
+2017-05-23 07:53:52.212: GPS: Location received:Location[fused 53.412545,-1.506012 acc=6 et=+8d15h56m43s656ms alt=124.0 vel=4.19 bear=136.0]state is normallPoller
+2017-05-23 07:53:52.213: GPS: Good Location received:Location[fused 53.412545,-1.506012 acc=6 et=+8d15h56m43s656ms alt=124.0 vel=4.19 bear=136.0] fromLocationHandler
+2017-05-23 07:53:55.045: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:53:55.614: GPS: Location received:Location[fused 53.412491,-1.505918 acc=6 et=+8d15h56m47s58ms alt=122.0 vel=1.0 bear=136.0]state is slowPoller
+2017-05-23 07:53:55.614: GPS: TTF SlowPoller:0.6
+2017-05-23 07:53:55.615: GPS: Good Location received:Location[fused 53.412491,-1.505918 acc=6 et=+8d15h56m47s58ms alt=122.0 vel=1.0 bear=136.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:53:55.699: GPS: Scheduling a further update in:34301ms
+2017-05-23 07:53:55.701: GPS: Location received:Location[fused 53.412491,-1.505918 acc=6 et=+8d15h56m47s58ms alt=122.0 vel=1.0 bear=136.0]state is normallPoller
+2017-05-23 07:53:55.702: GPS: Good Location received:Location[fused 53.412491,-1.505918 acc=6 et=+8d15h56m47s58ms alt=122.0 vel=1.0 bear=136.0] fromLocationHandler
+2017-05-23 07:54:00.265: GPS: Location received:Location[fused 53.412495,-1.505883 acc=6 et=+8d15h56m51s690ms alt=126.0 vel=0.63 bear=135.0]state is normallPoller
+2017-05-23 07:54:00.265: GPS: Good Location received:Location[fused 53.412495,-1.505883 acc=6 et=+8d15h56m51s690ms alt=126.0 vel=0.63 bear=135.0] fromLocationHandler
+2017-05-23 07:54:04.186: GPS: Location received:Location[fused 53.412500,-1.505928 acc=8 et=+8d15h56m55s631ms alt=129.0 vel=0.0]state is normallPoller
+2017-05-23 07:54:04.187: GPS: Good Location received:Location[fused 53.412500,-1.505928 acc=8 et=+8d15h56m55s631ms alt=129.0 vel=0.0] fromLocationHandler
+2017-05-23 07:54:08.172: GPS: Location received:Location[fused 53.412475,-1.505908 acc=9 et=+8d15h56m59s617ms alt=128.0 vel=3.2 bear=140.0]state is normallPoller
+2017-05-23 07:54:08.173: GPS: Good Location received:Location[fused 53.412475,-1.505908 acc=9 et=+8d15h56m59s617ms alt=128.0 vel=3.2 bear=140.0] fromLocationHandler
+2017-05-23 07:54:14.159: GPS: Location received:Location[fused 53.412316,-1.505651 acc=8 et=+8d15h57m5s603ms alt=125.0 vel=3.81 bear=131.0]state is normallPoller
+2017-05-23 07:54:14.160: GPS: Good Location received:Location[fused 53.412316,-1.505651 acc=8 et=+8d15h57m5s603ms alt=125.0 vel=3.81 bear=131.0] fromLocationHandler
+2017-05-23 07:54:19.644: GPS: Location received:Location[fused 53.412047,-1.505206 acc=8 et=+8d15h57m11s89ms alt=128.0 vel=7.41 bear=128.0]state is normallPoller
+2017-05-23 07:54:19.645: GPS: Good Location received:Location[fused 53.412047,-1.505206 acc=8 et=+8d15h57m11s89ms alt=128.0 vel=7.41 bear=128.0] fromLocationHandler
+2017-05-23 07:54:23.695: GPS: Location received:Location[fused 53.411888,-1.504882 acc=6 et=+8d15h57m15s138ms alt=126.0 vel=6.27 bear=131.0]state is normallPoller
+2017-05-23 07:54:23.696: GPS: Good Location received:Location[fused 53.411888,-1.504882 acc=6 et=+8d15h57m15s138ms alt=126.0 vel=6.27 bear=131.0] fromLocationHandler
+2017-05-23 07:54:25.048: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:54:25.274: GPS: Location received:Location[fused 53.411851,-1.504812 acc=8 et=+8d15h57m16s720ms alt=126.0 vel=6.27 bear=131.0]state is slowPoller
+2017-05-23 07:54:25.275: GPS: TTF SlowPoller:0.3
+2017-05-23 07:54:25.275: GPS: Good Location received:Location[fused 53.411851,-1.504812 acc=8 et=+8d15h57m16s720ms alt=126.0 vel=6.27 bear=131.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:54:25.358: GPS: Scheduling a further update in:34642ms
+2017-05-23 07:54:26.897: GPS: Location received:Location[fused 53.411874,-1.504800 acc=6 et=+8d15h57m18s341ms alt=125.0 vel=0.53 bear=131.0]state is normallPoller
+2017-05-23 07:54:26.898: GPS: Good Location received:Location[fused 53.411874,-1.504800 acc=6 et=+8d15h57m18s341ms alt=125.0 vel=0.53 bear=131.0] fromLocationHandler
+2017-05-23 07:54:29.125: GPS: Location received:Location[fused 53.411901,-1.504850 acc=8 et=+8d15h57m20s569ms alt=128.0 vel=0.6 bear=131.0]state is normallPoller
+2017-05-23 07:54:29.126: GPS: Good Location received:Location[fused 53.411901,-1.504850 acc=8 et=+8d15h57m20s569ms alt=128.0 vel=0.6 bear=131.0] fromLocationHandler
+2017-05-23 07:54:33.116: GPS: Location received:Location[fused 53.411850,-1.504776 acc=8 et=+8d15h57m24s560ms alt=131.0 vel=2.75 bear=151.0]state is normallPoller
+2017-05-23 07:54:33.117: GPS: Good Location received:Location[fused 53.411850,-1.504776 acc=8 et=+8d15h57m24s560ms alt=131.0 vel=2.75 bear=151.0] fromLocationHandler
+2017-05-23 07:54:38.098: GPS: Location received:Location[fused 53.411788,-1.504696 acc=8 et=+8d15h57m29s543ms alt=126.0 vel=0.52 bear=139.0]state is normallPoller
+2017-05-23 07:54:38.099: GPS: Good Location received:Location[fused 53.411788,-1.504696 acc=8 et=+8d15h57m29s543ms alt=126.0 vel=0.52 bear=139.0] fromLocationHandler
+2017-05-23 07:54:44.128: GPS: Location received:Location[fused 53.411748,-1.504591 acc=9 et=+8d15h57m35s573ms alt=127.0 vel=0.0]state is normallPoller
+2017-05-23 07:54:44.129: GPS: Good Location received:Location[fused 53.411748,-1.504591 acc=9 et=+8d15h57m35s573ms alt=127.0 vel=0.0] fromLocationHandler
+2017-05-23 07:54:51.082: GPS: Location received:Location[fused 53.411749,-1.504551 acc=8 et=+8d15h57m42s526ms alt=127.0 vel=0.68 bear=90.0]state is normallPoller
+2017-05-23 07:54:51.082: GPS: Good Location received:Location[fused 53.411749,-1.504551 acc=8 et=+8d15h57m42s526ms alt=127.0 vel=0.68 bear=90.0] fromLocationHandler
+2017-05-23 07:54:55.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:54:55.598: GPS: Location received:Location[fused 53.411747,-1.504539 acc=11 et=+8d15h57m47s43ms alt=131.0 vel=0.18 bear=131.0]state is slowPoller
+2017-05-23 07:54:55.599: GPS: TTF SlowPoller:0.6
+2017-05-23 07:54:55.600: GPS: Good Location received:Location[fused 53.411747,-1.504539 acc=11 et=+8d15h57m47s43ms alt=131.0 vel=0.18 bear=131.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:54:55.689: GPS: Scheduling a further update in:34312ms
+2017-05-23 07:54:59.969: GPS: Location received:Location[fused 53.411694,-1.504435 acc=8 et=+8d15h57m51s414ms alt=129.0 vel=3.77 bear=131.0]state is normallPoller
+2017-05-23 07:54:59.971: GPS: Good Location received:Location[fused 53.411694,-1.504435 acc=8 et=+8d15h57m51s414ms alt=129.0 vel=3.77 bear=131.0] fromLocationHandler
+2017-05-23 07:55:05.958: GPS: Location received:Location[fused 53.411375,-1.503789 acc=8 et=+8d15h57m57s402ms alt=124.0 vel=10.59 bear=130.0]state is normallPoller
+2017-05-23 07:55:05.959: GPS: Good Location received:Location[fused 53.411375,-1.503789 acc=8 et=+8d15h57m57s402ms alt=124.0 vel=10.59 bear=130.0] fromLocationHandler
+2017-05-23 07:55:09.942: GPS: Location received:Location[fused 53.411135,-1.503306 acc=9 et=+8d15h58m1s387ms alt=122.0 vel=10.17 bear=129.0]state is normallPoller
+2017-05-23 07:55:09.943: GPS: Good Location received:Location[fused 53.411135,-1.503306 acc=9 et=+8d15h58m1s387ms alt=122.0 vel=10.17 bear=129.0] fromLocationHandler
+2017-05-23 07:55:13.929: GPS: Location received:Location[fused 53.410883,-1.502696 acc=12 et=+8d15h58m5s373ms alt=123.0 vel=9.9 bear=127.0]state is normallPoller
+2017-05-23 07:55:13.930: GPS: Good Location received:Location[fused 53.410883,-1.502696 acc=12 et=+8d15h58m5s373ms alt=123.0 vel=9.9 bear=127.0] fromLocationHandler
+2017-05-23 07:55:17.917: GPS: Location received:Location[fused 53.410664,-1.502380 acc=9 et=+8d15h58m9s362ms alt=122.0 vel=10.12 bear=125.0]state is normallPoller
+2017-05-23 07:55:17.918: GPS: Good Location received:Location[fused 53.410664,-1.502380 acc=9 et=+8d15h58m9s362ms alt=122.0 vel=10.12 bear=125.0] fromLocationHandler
+2017-05-23 07:55:21.943: GPS: Location received:Location[fused 53.410446,-1.501945 acc=12 et=+8d15h58m13s388ms alt=119.0 vel=9.49 bear=129.0]state is normallPoller
+2017-05-23 07:55:21.944: GPS: Good Location received:Location[fused 53.410446,-1.501945 acc=12 et=+8d15h58m13s388ms alt=119.0 vel=9.49 bear=129.0] fromLocationHandler
+2017-05-23 07:55:24.912: GPS: Location received:Location[fused 53.410314,-1.501698 acc=12 et=+8d15h58m16s352ms alt=116.0 vel=5.82 bear=132.0]state is normallPoller
+2017-05-23 07:55:24.913: GPS: Good Location received:Location[fused 53.410314,-1.501698 acc=12 et=+8d15h58m16s352ms alt=116.0 vel=5.82 bear=132.0] fromLocationHandler
+2017-05-23 07:55:25.080: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:55:25.084: GPS: Location received:Location[fused 53.410314,-1.501698 acc=12 et=+8d15h58m16s352ms alt=116.0 vel=5.82 bear=132.0]state is slowPoller
+2017-05-23 07:55:25.084: GPS: TTF SlowPoller:0.1
+2017-05-23 07:55:25.085: GPS: Good Location received:Location[fused 53.410314,-1.501698 acc=12 et=+8d15h58m16s352ms alt=116.0 vel=5.82 bear=132.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:55:25.183: GPS: Scheduling a further update in:34817ms
+2017-05-23 07:55:28.397: GPS: Location received:Location[fused 53.410297,-1.501599 acc=11 et=+8d15h58m19s838ms alt=118.0 vel=2.24 bear=120.0]state is normallPoller
+2017-05-23 07:55:28.398: GPS: Good Location received:Location[fused 53.410297,-1.501599 acc=11 et=+8d15h58m19s838ms alt=118.0 vel=2.24 bear=120.0] fromLocationHandler
+2017-05-23 07:55:31.890: GPS: Location received:Location[fused 53.410268,-1.501553 acc=11 et=+8d15h58m23s334ms alt=112.0 vel=0.0]state is normallPoller
+2017-05-23 07:55:31.891: GPS: Good Location received:Location[fused 53.410268,-1.501553 acc=11 et=+8d15h58m23s334ms alt=112.0 vel=0.0] fromLocationHandler
+2017-05-23 07:55:36.397: GPS: Location received:Location[fused 53.410268,-1.501470 acc=9 et=+8d15h58m27s839ms alt=112.0 vel=2.34 bear=107.0]state is normallPoller
+2017-05-23 07:55:36.398: GPS: Good Location received:Location[fused 53.410268,-1.501470 acc=9 et=+8d15h58m27s839ms alt=112.0 vel=2.34 bear=107.0] fromLocationHandler
+2017-05-23 07:55:40.395: GPS: Location received:Location[fused 53.410144,-1.501144 acc=6 et=+8d15h58m31s838ms alt=113.0 vel=6.2 bear=122.0]state is normallPoller
+2017-05-23 07:55:40.396: GPS: Good Location received:Location[fused 53.410144,-1.501144 acc=6 et=+8d15h58m31s838ms alt=113.0 vel=6.2 bear=122.0] fromLocationHandler
+2017-05-23 07:55:45.858: GPS: Location received:Location[fused 53.410067,-1.500845 acc=6 et=+8d15h58m37s303ms alt=115.0 vel=1.39 bear=113.0]state is normallPoller
+2017-05-23 07:55:45.859: GPS: Good Location received:Location[fused 53.410067,-1.500845 acc=6 et=+8d15h58m37s303ms alt=115.0 vel=1.39 bear=113.0] fromLocationHandler
+2017-05-23 07:55:50.341: GPS: Location received:Location[fused 53.409988,-1.500590 acc=6 et=+8d15h58m41s786ms alt=115.0 vel=6.18 bear=113.0]state is normallPoller
+2017-05-23 07:55:50.342: GPS: Good Location received:Location[fused 53.409988,-1.500590 acc=6 et=+8d15h58m41s786ms alt=115.0 vel=6.18 bear=113.0] fromLocationHandler
+2017-05-23 07:55:55.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:55:55.719: GPS: Location received:Location[fused 53.409819,-1.499940 acc=6 et=+8d15h58m47s163ms alt=114.0 vel=8.36 bear=117.0]state is slowPoller
+2017-05-23 07:55:55.719: GPS: TTF SlowPoller:0.7
+2017-05-23 07:55:55.720: GPS: Good Location received:Location[fused 53.409819,-1.499940 acc=6 et=+8d15h58m47s163ms alt=114.0 vel=8.36 bear=117.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:55:55.820: GPS: Scheduling a further update in:34180ms
+2017-05-23 07:55:55.841: GPS: Location received:Location[fused 53.409819,-1.499940 acc=6 et=+8d15h58m47s163ms alt=114.0 vel=8.36 bear=117.0]state is normallPoller
+2017-05-23 07:55:55.842: GPS: Good Location received:Location[fused 53.409819,-1.499940 acc=6 et=+8d15h58m47s163ms alt=114.0 vel=8.36 bear=117.0] fromLocationHandler
+2017-05-23 07:56:00.341: GPS: Location received:Location[fused 53.409685,-1.499492 acc=5 et=+8d15h58m51s785ms alt=114.0 vel=7.97 bear=116.0]state is normallPoller
+2017-05-23 07:56:00.342: GPS: Good Location received:Location[fused 53.409685,-1.499492 acc=5 et=+8d15h58m51s785ms alt=114.0 vel=7.97 bear=116.0] fromLocationHandler
+2017-05-23 07:56:03.888: GPS: Location received:Location[fused 53.409558,-1.499055 acc=6 et=+8d15h58m55s333ms alt=114.0 vel=8.4 bear=114.0]state is normallPoller
+2017-05-23 07:56:03.889: GPS: Good Location received:Location[fused 53.409558,-1.499055 acc=6 et=+8d15h58m55s333ms alt=114.0 vel=8.4 bear=114.0] fromLocationHandler
+2017-05-23 07:56:08.073: GPS: Location received:Location[fused 53.409364,-1.498413 acc=5 et=+8d15h58m59s517ms alt=113.0 vel=12.84 bear=112.0]state is normallPoller
+2017-05-23 07:56:08.074: GPS: Good Location received:Location[fused 53.409364,-1.498413 acc=5 et=+8d15h58m59s517ms alt=113.0 vel=12.84 bear=112.0] fromLocationHandler
+2017-05-23 07:56:13.477: GPS: Location received:Location[fused 53.409167,-1.497554 acc=5 et=+8d15h59m4s921ms alt=113.0 vel=8.57 bear=114.0]state is normallPoller
+2017-05-23 07:56:13.478: GPS: Good Location received:Location[fused 53.409167,-1.497554 acc=5 et=+8d15h59m4s921ms alt=113.0 vel=8.57 bear=114.0] fromLocationHandler
+2017-05-23 07:56:18.001: GPS: Location received:Location[fused 53.408966,-1.497323 acc=5 et=+8d15h59m9s446ms alt=110.0 vel=6.77 bear=161.0]state is normallPoller
+2017-05-23 07:56:18.002: GPS: Good Location received:Location[fused 53.408966,-1.497323 acc=5 et=+8d15h59m9s446ms alt=110.0 vel=6.77 bear=161.0] fromLocationHandler
+2017-05-23 07:56:21.960: GPS: Location received:Location[fused 53.408615,-1.497192 acc=8 et=+8d15h59m13s405ms alt=106.0 vel=11.78 bear=168.0]state is normallPoller
+2017-05-23 07:56:21.961: GPS: Good Location received:Location[fused 53.408615,-1.497192 acc=8 et=+8d15h59m13s405ms alt=106.0 vel=11.78 bear=168.0] fromLocationHandler
+2017-05-23 07:56:25.038: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:56:25.631: GPS: Location received:Location[fused 53.408214,-1.497073 acc=9 et=+8d15h59m17s76ms alt=110.0 vel=10.64 bear=166.0]state is slowPoller
+2017-05-23 07:56:25.631: GPS: TTF SlowPoller:0.6
+2017-05-23 07:56:25.632: GPS: Good Location received:Location[fused 53.408214,-1.497073 acc=9 et=+8d15h59m17s76ms alt=110.0 vel=10.64 bear=166.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:56:25.828: GPS: Scheduling a further update in:34172ms
+2017-05-23 07:56:25.836: GPS: Location received:Location[fused 53.408214,-1.497073 acc=9 et=+8d15h59m17s76ms alt=110.0 vel=10.64 bear=166.0]state is normallPoller
+2017-05-23 07:56:25.847: GPS: Good Location received:Location[fused 53.408214,-1.497073 acc=9 et=+8d15h59m17s76ms alt=110.0 vel=10.64 bear=166.0] fromLocationHandler
+2017-05-23 07:56:29.589: GPS: Location received:Location[fused 53.407975,-1.496993 acc=9 et=+8d15h59m21s33ms alt=107.0 vel=6.59 bear=166.0]state is normallPoller
+2017-05-23 07:56:29.590: GPS: Good Location received:Location[fused 53.407975,-1.496993 acc=9 et=+8d15h59m21s33ms alt=107.0 vel=6.59 bear=166.0] fromLocationHandler
+2017-05-23 07:56:33.425: GPS: Location received:Location[fused 53.407848,-1.496912 acc=9 et=+8d15h59m24s870ms alt=107.0 vel=3.81 bear=168.0]state is normallPoller
+2017-05-23 07:56:33.426: GPS: Good Location received:Location[fused 53.407848,-1.496912 acc=9 et=+8d15h59m24s870ms alt=107.0 vel=3.81 bear=168.0] fromLocationHandler
+2017-05-23 07:56:35.916: GPS: Location received:Location[fused 53.407747,-1.496904 acc=9 et=+8d15h59m27s361ms alt=108.0 vel=6.78 bear=171.0]state is normallPoller
+2017-05-23 07:56:35.918: GPS: Good Location received:Location[fused 53.407747,-1.496904 acc=9 et=+8d15h59m27s361ms alt=108.0 vel=6.78 bear=171.0] fromLocationHandler
+2017-05-23 07:56:39.576: GPS: Location received:Location[fused 53.407387,-1.496772 acc=8 et=+8d15h59m31s21ms alt=108.0 vel=11.68 bear=168.0]state is normallPoller
+2017-05-23 07:56:39.577: GPS: Good Location received:Location[fused 53.407387,-1.496772 acc=8 et=+8d15h59m31s21ms alt=108.0 vel=11.68 bear=168.0] fromLocationHandler
+2017-05-23 07:56:43.399: GPS: Location received:Location[fused 53.406905,-1.496658 acc=12 et=+8d15h59m34s841ms alt=107.0 vel=13.2 bear=171.0]state is normallPoller
+2017-05-23 07:56:43.400: GPS: Good Location received:Location[fused 53.406905,-1.496658 acc=12 et=+8d15h59m34s841ms alt=107.0 vel=13.2 bear=171.0] fromLocationHandler
+2017-05-23 07:56:45.885: GPS: Location received:Location[fused 53.406645,-1.496584 acc=12 et=+8d15h59m37s329ms alt=108.0 vel=14.69 bear=170.0]state is normallPoller
+2017-05-23 07:56:45.886: GPS: Good Location received:Location[fused 53.406645,-1.496584 acc=12 et=+8d15h59m37s329ms alt=108.0 vel=14.69 bear=170.0] fromLocationHandler
+2017-05-23 07:56:49.424: GPS: Location received:Location[fused 53.406092,-1.496335 acc=11 et=+8d15h59m40s869ms alt=110.0 vel=14.63 bear=166.0]state is normallPoller
+2017-05-23 07:56:49.425: GPS: Good Location received:Location[fused 53.406092,-1.496335 acc=11 et=+8d15h59m40s869ms alt=110.0 vel=14.63 bear=166.0] fromLocationHandler
+2017-05-23 07:56:53.375: GPS: Location received:Location[fused 53.405558,-1.496178 acc=9 et=+8d15h59m44s819ms alt=107.0 vel=14.19 bear=167.0]state is normallPoller
+2017-05-23 07:56:53.376: GPS: Good Location received:Location[fused 53.405558,-1.496178 acc=9 et=+8d15h59m44s819ms alt=107.0 vel=14.19 bear=167.0] fromLocationHandler
+2017-05-23 07:56:55.048: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:56:55.529: GPS: Location received:Location[fused 53.405325,-1.496085 acc=9 et=+8d15h59m46s974ms alt=111.0 vel=14.31 bear=167.0]state is slowPoller
+2017-05-23 07:56:55.530: GPS: TTF SlowPoller:0.5
+2017-05-23 07:56:55.531: GPS: Good Location received:Location[fused 53.405325,-1.496085 acc=9 et=+8d15h59m46s974ms alt=111.0 vel=14.31 bear=167.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:56:55.646: GPS: Scheduling a further update in:34354ms
+2017-05-23 07:56:55.653: GPS: Location received:Location[fused 53.405325,-1.496085 acc=9 et=+8d15h59m46s974ms alt=111.0 vel=14.31 bear=167.0]state is normallPoller
+2017-05-23 07:56:55.687: GPS: Good Location received:Location[fused 53.405325,-1.496085 acc=9 et=+8d15h59m46s974ms alt=111.0 vel=14.31 bear=167.0] fromLocationHandler
+2017-05-23 07:56:57.568: GPS: Location received:Location[fused 53.405096,-1.496001 acc=8 et=+8d15h59m49s12ms alt=111.0 vel=13.23 bear=164.0]state is normallPoller
+2017-05-23 07:56:57.569: GPS: Good Location received:Location[fused 53.405096,-1.496001 acc=8 et=+8d15h59m49s12ms alt=111.0 vel=13.23 bear=164.0] fromLocationHandler
+2017-05-23 07:57:00.351: GPS: Location received:Location[fused 53.404796,-1.495763 acc=9 et=+8d15h59m51s795ms alt=109.0 vel=11.77 bear=153.0]state is normallPoller
+2017-05-23 07:57:00.352: GPS: Good Location received:Location[fused 53.404796,-1.495763 acc=9 et=+8d15h59m51s795ms alt=109.0 vel=11.77 bear=153.0] fromLocationHandler
+2017-05-23 07:57:04.841: GPS: Location received:Location[fused 53.404453,-1.495409 acc=8 et=+8d15h59m56s286ms alt=114.0 vel=11.46 bear=146.0]state is normallPoller
+2017-05-23 07:57:04.842: GPS: Good Location received:Location[fused 53.404453,-1.495409 acc=8 et=+8d15h59m56s286ms alt=114.0 vel=11.46 bear=146.0] fromLocationHandler
+2017-05-23 07:57:10.324: GPS: Location received:Location[fused 53.403990,-1.494789 acc=9 et=+8d16h0m1s769ms alt=115.0 vel=9.0 bear=136.0]state is normallPoller
+2017-05-23 07:57:10.325: GPS: Good Location received:Location[fused 53.403990,-1.494789 acc=9 et=+8d16h0m1s769ms alt=115.0 vel=9.0 bear=136.0] fromLocationHandler
+2017-05-23 07:57:14.313: GPS: Location received:Location[fused 53.403781,-1.494484 acc=9 et=+8d16h0m5s758ms alt=113.0 vel=7.65 bear=137.0]state is normallPoller
+2017-05-23 07:57:14.314: GPS: Good Location received:Location[fused 53.403781,-1.494484 acc=9 et=+8d16h0m5s758ms alt=113.0 vel=7.65 bear=137.0] fromLocationHandler
+2017-05-23 07:57:16.804: GPS: Location received:Location[fused 53.403674,-1.494310 acc=9 et=+8d16h0m8s249ms alt=113.0 vel=8.14 bear=137.0]state is normallPoller
+2017-05-23 07:57:16.805: GPS: Good Location received:Location[fused 53.403674,-1.494310 acc=9 et=+8d16h0m8s249ms alt=113.0 vel=8.14 bear=137.0] fromLocationHandler
+2017-05-23 07:57:20.300: GPS: Location received:Location[fused 53.403467,-1.493952 acc=8 et=+8d16h0m11s744ms alt=108.0 vel=8.98 bear=140.0]state is normallPoller
+2017-05-23 07:57:20.301: GPS: Good Location received:Location[fused 53.403467,-1.493952 acc=8 et=+8d16h0m11s744ms alt=108.0 vel=8.98 bear=140.0] fromLocationHandler
+2017-05-23 07:57:24.234: GPS: Location received:Location[fused 53.403154,-1.493516 acc=9 et=+8d16h0m15s679ms alt=106.0 vel=12.59 bear=136.0]state is normallPoller
+2017-05-23 07:57:24.235: GPS: Good Location received:Location[fused 53.403154,-1.493516 acc=9 et=+8d16h0m15s679ms alt=106.0 vel=12.59 bear=136.0] fromLocationHandler
+2017-05-23 07:57:25.044: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:57:26.524: GPS: Location received:Location[fused 53.403001,-1.493254 acc=9 et=+8d16h0m17s969ms alt=109.0 vel=11.24 bear=133.0]state is slowPoller
+2017-05-23 07:57:26.525: GPS: TTF SlowPoller:1.5
+2017-05-23 07:57:26.526: GPS: Good Location received:Location[fused 53.403001,-1.493254 acc=9 et=+8d16h0m17s969ms alt=109.0 vel=11.24 bear=133.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:57:26.613: GPS: Scheduling a further update in:33387ms
+2017-05-23 07:57:26.637: GPS: Location received:Location[fused 53.403001,-1.493254 acc=9 et=+8d16h0m17s969ms alt=109.0 vel=11.24 bear=133.0]state is normallPoller
+2017-05-23 07:57:26.638: GPS: Good Location received:Location[fused 53.403001,-1.493254 acc=9 et=+8d16h0m17s969ms alt=109.0 vel=11.24 bear=133.0] fromLocationHandler
+2017-05-23 07:57:30.274: GPS: Location received:Location[fused 53.402729,-1.492832 acc=8 et=+8d16h0m21s719ms alt=108.0 vel=7.25 bear=140.0]state is normallPoller
+2017-05-23 07:57:30.275: GPS: Good Location received:Location[fused 53.402729,-1.492832 acc=8 et=+8d16h0m21s719ms alt=108.0 vel=7.25 bear=140.0] fromLocationHandler
+2017-05-23 07:57:36.266: GPS: Location received:Location[fused 53.402521,-1.492578 acc=8 et=+8d16h0m27s710ms alt=111.0 vel=2.45 bear=139.0]state is normallPoller
+2017-05-23 07:57:36.267: GPS: Good Location received:Location[fused 53.402521,-1.492578 acc=8 et=+8d16h0m27s710ms alt=111.0 vel=2.45 bear=139.0] fromLocationHandler
+2017-05-23 07:57:40.274: GPS: Location received:Location[fused 53.402483,-1.492448 acc=9 et=+8d16h0m31s719ms alt=109.0 vel=5.71 bear=133.0]state is normallPoller
+2017-05-23 07:57:40.275: GPS: Good Location received:Location[fused 53.402483,-1.492448 acc=9 et=+8d16h0m31s719ms alt=109.0 vel=5.71 bear=133.0] fromLocationHandler
+2017-05-23 07:57:42.748: GPS: Location received:Location[fused 53.402431,-1.492305 acc=9 et=+8d16h0m34s192ms alt=112.0 vel=5.06 bear=129.0]state is normallPoller
+2017-05-23 07:57:42.749: GPS: Good Location received:Location[fused 53.402431,-1.492305 acc=9 et=+8d16h0m34s192ms alt=112.0 vel=5.06 bear=129.0] fromLocationHandler
+2017-05-23 07:57:48.730: GPS: Location received:Location[fused 53.402040,-1.491684 acc=9 et=+8d16h0m40s174ms alt=112.0 vel=7.97 bear=133.0]state is normallPoller
+2017-05-23 07:57:48.731: GPS: Good Location received:Location[fused 53.402040,-1.491684 acc=9 et=+8d16h0m40s174ms alt=112.0 vel=7.97 bear=133.0] fromLocationHandler
+2017-05-23 07:57:54.722: GPS: Location received:Location[fused 53.401662,-1.491033 acc=11 et=+8d16h0m46s167ms alt=113.0 vel=8.89 bear=136.0]state is normallPoller
+2017-05-23 07:57:54.722: GPS: Good Location received:Location[fused 53.401662,-1.491033 acc=11 et=+8d16h0m46s167ms alt=113.0 vel=8.89 bear=136.0] fromLocationHandler
+2017-05-23 07:57:55.027: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:57:55.031: GPS: Location received:Location[fused 53.401662,-1.491033 acc=11 et=+8d16h0m46s167ms alt=113.0 vel=8.89 bear=136.0]state is slowPoller
+2017-05-23 07:57:55.031: GPS: TTF SlowPoller:0.0
+2017-05-23 07:57:55.042: GPS: Good Location received:Location[fused 53.401662,-1.491033 acc=11 et=+8d16h0m46s167ms alt=113.0 vel=8.89 bear=136.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:57:55.116: GPS: Scheduling a further update in:34884ms
+2017-05-23 07:57:57.703: GPS: Location received:Location[fused 53.401415,-1.490836 acc=11 et=+8d16h0m49s148ms alt=117.0 vel=9.22 bear=145.0]state is normallPoller
+2017-05-23 07:57:57.704: GPS: Good Location received:Location[fused 53.401415,-1.490836 acc=11 et=+8d16h0m49s148ms alt=117.0 vel=9.22 bear=145.0] fromLocationHandler
+2017-05-23 07:58:01.699: GPS: Location received:Location[fused 53.401123,-1.490606 acc=8 et=+8d16h0m53s143ms alt=112.0 vel=8.25 bear=162.0]state is normallPoller
+2017-05-23 07:58:01.701: GPS: Good Location received:Location[fused 53.401123,-1.490606 acc=8 et=+8d16h0m53s143ms alt=112.0 vel=8.25 bear=162.0] fromLocationHandler
+2017-05-23 07:58:05.690: GPS: Location received:Location[fused 53.400972,-1.490440 acc=9 et=+8d16h0m57s134ms alt=109.0 vel=5.04 bear=153.0]state is normallPoller
+2017-05-23 07:58:05.691: GPS: Good Location received:Location[fused 53.400972,-1.490440 acc=9 et=+8d16h0m57s134ms alt=109.0 vel=5.04 bear=153.0] fromLocationHandler
+2017-05-23 07:58:11.704: GPS: Location received:Location[fused 53.400708,-1.490172 acc=8 et=+8d16h1m3s144ms alt=106.0 vel=7.17 bear=151.0]state is normallPoller
+2017-05-23 07:58:11.705: GPS: Good Location received:Location[fused 53.400708,-1.490172 acc=8 et=+8d16h1m3s144ms alt=106.0 vel=7.17 bear=151.0] fromLocationHandler
+2017-05-23 07:58:15.661: GPS: Location received:Location[fused 53.400409,-1.489951 acc=11 et=+8d16h1m7s106ms alt=100.0 vel=8.97 bear=160.0]state is normallPoller
+2017-05-23 07:58:15.662: GPS: Good Location received:Location[fused 53.400409,-1.489951 acc=11 et=+8d16h1m7s106ms alt=100.0 vel=8.97 bear=160.0] fromLocationHandler
+2017-05-23 07:58:19.576: GPS: Location received:Location[fused 53.400100,-1.489815 acc=9 et=+8d16h1m11s21ms alt=105.0 vel=9.98 bear=160.0]state is normallPoller
+2017-05-23 07:58:19.577: GPS: Good Location received:Location[fused 53.400100,-1.489815 acc=9 et=+8d16h1m11s21ms alt=105.0 vel=9.98 bear=160.0] fromLocationHandler
+2017-05-23 07:58:23.678: GPS: Location received:Location[fused 53.399703,-1.489630 acc=12 et=+8d16h1m15s122ms alt=106.0 vel=10.91 bear=166.0]state is normallPoller
+2017-05-23 07:58:23.679: GPS: Good Location received:Location[fused 53.399703,-1.489630 acc=12 et=+8d16h1m15s122ms alt=106.0 vel=10.91 bear=166.0] fromLocationHandler
+2017-05-23 07:58:25.038: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:58:25.532: GPS: Location received:Location[fused 53.399526,-1.489554 acc=12 et=+8d16h1m16s977ms alt=108.0 vel=10.11 bear=168.0]state is slowPoller
+2017-05-23 07:58:25.533: GPS: TTF SlowPoller:0.5
+2017-05-23 07:58:25.533: GPS: Good Location received:Location[fused 53.399526,-1.489554 acc=12 et=+8d16h1m16s977ms alt=108.0 vel=10.11 bear=168.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:58:25.647: GPS: Scheduling a further update in:34353ms
+2017-05-23 07:58:25.834: GPS: Location received:Location[fused 53.399526,-1.489554 acc=12 et=+8d16h1m17s279ms alt=108.0 vel=10.11 bear=168.0]state is normallPoller
+2017-05-23 07:58:25.835: GPS: Good Location received:Location[fused 53.399526,-1.489554 acc=12 et=+8d16h1m17s279ms alt=108.0 vel=10.11 bear=168.0] fromLocationHandler
+2017-05-23 07:58:30.628: GPS: Location received:Location[fused 53.399014,-1.489330 acc=14 et=+8d16h1m22s72ms alt=108.0 vel=11.85 bear=171.0]state is normallPoller
+2017-05-23 07:58:30.629: GPS: Good Location received:Location[fused 53.399014,-1.489330 acc=14 et=+8d16h1m22s72ms alt=108.0 vel=11.85 bear=171.0] fromLocationHandler
+2017-05-23 07:58:36.609: GPS: Location received:Location[fused 53.398446,-1.489253 acc=8 et=+8d16h1m28s54ms alt=105.0 vel=10.23 bear=171.0]state is normallPoller
+2017-05-23 07:58:36.610: GPS: Good Location received:Location[fused 53.398446,-1.489253 acc=8 et=+8d16h1m28s54ms alt=105.0 vel=10.23 bear=171.0] fromLocationHandler
+2017-05-23 07:58:40.594: GPS: Location received:Location[fused 53.398081,-1.489142 acc=6 et=+8d16h1m32s39ms alt=104.0 vel=10.11 bear=168.0]state is normallPoller
+2017-05-23 07:58:40.595: GPS: Good Location received:Location[fused 53.398081,-1.489142 acc=6 et=+8d16h1m32s39ms alt=104.0 vel=10.11 bear=168.0] fromLocationHandler
+2017-05-23 07:58:44.595: GPS: Location received:Location[fused 53.397751,-1.488999 acc=8 et=+8d16h1m36s40ms alt=106.0 vel=8.31 bear=160.0]state is normallPoller
+2017-05-23 07:58:44.596: GPS: Good Location received:Location[fused 53.397751,-1.488999 acc=8 et=+8d16h1m36s40ms alt=106.0 vel=8.31 bear=160.0] fromLocationHandler
+2017-05-23 07:58:49.079: GPS: Location received:Location[fused 53.397503,-1.488901 acc=8 et=+8d16h1m40s524ms alt=107.0 vel=6.27 bear=168.0]state is normallPoller
+2017-05-23 07:58:49.080: GPS: Good Location received:Location[fused 53.397503,-1.488901 acc=8 et=+8d16h1m40s524ms alt=107.0 vel=6.27 bear=168.0] fromLocationHandler
+2017-05-23 07:58:54.567: GPS: Location received:Location[fused 53.397106,-1.488731 acc=8 et=+8d16h1m46s12ms alt=104.0 vel=10.09 bear=155.0]state is normallPoller
+2017-05-23 07:58:54.568: GPS: Good Location received:Location[fused 53.397106,-1.488731 acc=8 et=+8d16h1m46s12ms alt=104.0 vel=10.09 bear=155.0] fromLocationHandler
+2017-05-23 07:58:55.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:58:56.574: GPS: Location received:Location[fused 53.396934,-1.488576 acc=8 et=+8d16h1m48s19ms alt=104.0 vel=10.78 bear=153.0]state is slowPoller
+2017-05-23 07:58:56.574: GPS: TTF SlowPoller:1.6
+2017-05-23 07:58:56.575: GPS: Good Location received:Location[fused 53.396934,-1.488576 acc=8 et=+8d16h1m48s19ms alt=104.0 vel=10.78 bear=153.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:58:56.674: GPS: Scheduling a further update in:33326ms
+2017-05-23 07:58:56.676: GPS: Location received:Location[fused 53.396934,-1.488576 acc=8 et=+8d16h1m48s19ms alt=104.0 vel=10.78 bear=153.0]state is normallPoller
+2017-05-23 07:58:56.677: GPS: Good Location received:Location[fused 53.396934,-1.488576 acc=8 et=+8d16h1m48s19ms alt=104.0 vel=10.78 bear=153.0] fromLocationHandler
+2017-05-23 07:58:58.601: GPS: Location received:Location[fused 53.396736,-1.488381 acc=6 et=+8d16h1m50s46ms alt=106.0 vel=10.94 bear=155.0]state is normallPoller
+2017-05-23 07:58:58.602: GPS: Good Location received:Location[fused 53.396736,-1.488381 acc=6 et=+8d16h1m50s46ms alt=106.0 vel=10.94 bear=155.0] fromLocationHandler
+2017-05-23 07:59:03.069: GPS: Location received:Location[fused 53.396337,-1.487957 acc=6 et=+8d16h1m54s514ms alt=104.0 vel=13.2 bear=148.0]state is normallPoller
+2017-05-23 07:59:03.070: GPS: Good Location received:Location[fused 53.396337,-1.487957 acc=6 et=+8d16h1m54s514ms alt=104.0 vel=13.2 bear=148.0] fromLocationHandler
+2017-05-23 07:59:06.538: GPS: Location received:Location[fused 53.395987,-1.487563 acc=6 et=+8d16h1m57s983ms alt=105.0 vel=11.31 bear=145.0]state is normallPoller
+2017-05-23 07:59:06.539: GPS: Good Location received:Location[fused 53.395987,-1.487563 acc=6 et=+8d16h1m57s983ms alt=105.0 vel=11.31 bear=145.0] fromLocationHandler
+2017-05-23 07:59:09.029: GPS: Location received:Location[fused 53.395795,-1.487399 acc=6 et=+8d16h2m0s474ms alt=107.0 vel=10.43 bear=149.0]state is normallPoller
+2017-05-23 07:59:09.030: GPS: Good Location received:Location[fused 53.395795,-1.487399 acc=6 et=+8d16h2m0s474ms alt=107.0 vel=10.43 bear=149.0] fromLocationHandler
+2017-05-23 07:59:12.246: GPS: Location received:Location[fused 53.395638,-1.487194 acc=8 et=+8d16h2m3s691ms alt=107.0 vel=4.1 bear=145.0]state is normallPoller
+2017-05-23 07:59:12.248: GPS: Good Location received:Location[fused 53.395638,-1.487194 acc=8 et=+8d16h2m3s691ms alt=107.0 vel=4.1 bear=145.0] fromLocationHandler
+2017-05-23 07:59:16.506: GPS: Location received:Location[fused 53.395662,-1.487191 acc=8 et=+8d16h2m7s951ms alt=107.0 vel=0.0]state is normallPoller
+2017-05-23 07:59:16.508: GPS: Good Location received:Location[fused 53.395662,-1.487191 acc=8 et=+8d16h2m7s951ms alt=107.0 vel=0.0] fromLocationHandler
+2017-05-23 07:59:26.072: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:59:26.912: GPS: Location received:Location[fused 53.395645,-1.487202 acc=11 et=+8d16h2m18s357ms alt=103.0 vel=0.57 bear=145.0]state is slowPoller
+2017-05-23 07:59:26.913: GPS: TTF SlowPoller:0.9
+2017-05-23 07:59:26.913: GPS: Good Location received:Location[fused 53.395645,-1.487202 acc=11 et=+8d16h2m18s357ms alt=103.0 vel=0.57 bear=145.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:59:27.028: GPS: Scheduling a further update in:32972ms
+2017-05-23 07:59:43.976: GPS: Location received:Location[fused 53.395359,-1.486830 acc=12 et=+8d16h2m35s421ms alt=107.0 vel=13.47 bear=144.0]state is normallPoller
+2017-05-23 07:59:43.977: GPS: Good Location received:Location[fused 53.395359,-1.486830 acc=12 et=+8d16h2m35s421ms alt=107.0 vel=13.47 bear=144.0] fromLocationHandler
+2017-05-23 07:59:48.467: GPS: Location received:Location[fused 53.394924,-1.486329 acc=11 et=+8d16h2m39s912ms alt=107.0 vel=14.45 bear=142.0]state is normallPoller
+2017-05-23 07:59:48.468: GPS: Good Location received:Location[fused 53.394924,-1.486329 acc=11 et=+8d16h2m39s912ms alt=107.0 vel=14.45 bear=142.0] fromLocationHandler
+2017-05-23 07:59:51.968: GPS: Location received:Location[fused 53.394526,-1.485765 acc=8 et=+8d16h2m43s403ms alt=106.0 vel=14.74 bear=140.0]state is normallPoller
+2017-05-23 07:59:51.969: GPS: Good Location received:Location[fused 53.394526,-1.485765 acc=8 et=+8d16h2m43s403ms alt=106.0 vel=14.74 bear=140.0] fromLocationHandler
+2017-05-23 07:59:55.038: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 07:59:55.765: GPS: Location received:Location[fused 53.394152,-1.485164 acc=6 et=+8d16h2m47s210ms alt=106.0 vel=14.89 bear=133.0]state is normallPoller
+2017-05-23 07:59:55.766: GPS: Good Location received:Location[fused 53.394152,-1.485164 acc=6 et=+8d16h2m47s210ms alt=106.0 vel=14.89 bear=133.0] fromLocationHandler
+2017-05-23 07:59:55.859: GPS: Location received:Location[fused 53.394152,-1.485164 acc=6 et=+8d16h2m47s210ms alt=106.0 vel=14.89 bear=133.0]state is slowPoller
+2017-05-23 07:59:55.859: GPS: TTF SlowPoller:0.8
+2017-05-23 07:59:55.860: GPS: Good Location received:Location[fused 53.394152,-1.485164 acc=6 et=+8d16h2m47s210ms alt=106.0 vel=14.89 bear=133.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 07:59:55.950: GPS: Scheduling a further update in:34050ms
+2017-05-23 07:59:57.804: GPS: Location received:Location[fused 53.393968,-1.484838 acc=6 et=+8d16h2m49s243ms alt=107.0 vel=14.02 bear=132.0]state is normallPoller
+2017-05-23 07:59:57.805: GPS: Good Location received:Location[fused 53.393968,-1.484838 acc=6 et=+8d16h2m49s243ms alt=107.0 vel=14.02 bear=132.0] fromLocationHandler
+2017-05-23 08:00:00.937: GPS: Location received:Location[fused 53.393702,-1.484341 acc=8 et=+8d16h2m52s381ms alt=108.0 vel=14.9 bear=131.0]state is normallPoller
+2017-05-23 08:00:00.939: GPS: Good Location received:Location[fused 53.393702,-1.484341 acc=8 et=+8d16h2m52s381ms alt=108.0 vel=14.9 bear=131.0] fromLocationHandler
+2017-05-23 08:00:05.422: GPS: Location received:Location[fused 53.393350,-1.483671 acc=9 et=+8d16h2m56s866ms alt=108.0 vel=14.61 bear=132.0]state is normallPoller
+2017-05-23 08:00:05.423: GPS: Good Location received:Location[fused 53.393350,-1.483671 acc=9 et=+8d16h2m56s866ms alt=108.0 vel=14.61 bear=132.0] fromLocationHandler
+2017-05-23 08:00:11.440: GPS: Location received:Location[fused 53.392810,-1.482757 acc=9 et=+8d16h3m2s885ms alt=113.0 vel=13.55 bear=133.0]state is normallPoller
+2017-05-23 08:00:11.441: GPS: Good Location received:Location[fused 53.392810,-1.482757 acc=9 et=+8d16h3m2s885ms alt=113.0 vel=13.55 bear=133.0] fromLocationHandler
+2017-05-23 08:00:17.420: GPS: Location received:Location[fused 53.392345,-1.481998 acc=11 et=+8d16h3m8s864ms alt=109.0 vel=9.58 bear=137.0]state is normallPoller
+2017-05-23 08:00:17.421: GPS: Good Location received:Location[fused 53.392345,-1.481998 acc=11 et=+8d16h3m8s864ms alt=109.0 vel=9.58 bear=137.0] fromLocationHandler
+2017-05-23 08:00:21.127: GPS: Location received:Location[fused 53.392187,-1.481691 acc=11 et=+8d16h3m12s572ms alt=108.0 vel=5.66 bear=131.0]state is normallPoller
+2017-05-23 08:00:21.129: GPS: Good Location received:Location[fused 53.392187,-1.481691 acc=11 et=+8d16h3m12s572ms alt=108.0 vel=5.66 bear=131.0] fromLocationHandler
+2017-05-23 08:00:25.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:00:25.378: GPS: Location received:Location[fused 53.392052,-1.481507 acc=11 et=+8d16h3m16s822ms alt=106.0 vel=5.27 bear=139.0]state is slowPoller
+2017-05-23 08:00:25.378: GPS: TTF SlowPoller:0.4
+2017-05-23 08:00:25.379: GPS: Good Location received:Location[fused 53.392052,-1.481507 acc=11 et=+8d16h3m16s822ms alt=106.0 vel=5.27 bear=139.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:00:25.501: GPS: Scheduling a further update in:34499ms
+2017-05-23 08:00:25.503: GPS: Location received:Location[fused 53.392052,-1.481507 acc=11 et=+8d16h3m16s822ms alt=106.0 vel=5.27 bear=139.0]state is normallPoller
+2017-05-23 08:00:25.504: GPS: Good Location received:Location[fused 53.392052,-1.481507 acc=11 et=+8d16h3m16s822ms alt=106.0 vel=5.27 bear=139.0] fromLocationHandler
+2017-05-23 08:00:29.367: GPS: Location received:Location[fused 53.391760,-1.481230 acc=11 et=+8d16h3m20s811ms alt=104.0 vel=8.04 bear=146.0]state is normallPoller
+2017-05-23 08:00:29.368: GPS: Good Location received:Location[fused 53.391760,-1.481230 acc=11 et=+8d16h3m20s811ms alt=104.0 vel=8.04 bear=146.0] fromLocationHandler
+2017-05-23 08:00:32.863: GPS: Location received:Location[fused 53.391568,-1.481008 acc=9 et=+8d16h3m24s307ms alt=105.0 vel=5.3 bear=140.0]state is normallPoller
+2017-05-23 08:00:32.864: GPS: Good Location received:Location[fused 53.391568,-1.481008 acc=9 et=+8d16h3m24s307ms alt=105.0 vel=5.3 bear=140.0] fromLocationHandler
+2017-05-23 08:00:35.353: GPS: Location received:Location[fused 53.391502,-1.480917 acc=8 et=+8d16h3m26s798ms alt=102.0 vel=4.08 bear=146.0]state is normallPoller
+2017-05-23 08:00:35.354: GPS: Good Location received:Location[fused 53.391502,-1.480917 acc=8 et=+8d16h3m26s798ms alt=102.0 vel=4.08 bear=146.0] fromLocationHandler
+2017-05-23 08:00:39.841: GPS: Location received:Location[fused 53.391303,-1.480616 acc=6 et=+8d16h3m31s286ms alt=104.0 vel=8.85 bear=139.0]state is normallPoller
+2017-05-23 08:00:39.842: GPS: Good Location received:Location[fused 53.391303,-1.480616 acc=6 et=+8d16h3m31s286ms alt=104.0 vel=8.85 bear=139.0] fromLocationHandler
+2017-05-23 08:00:43.785: GPS: Location received:Location[fused 53.390932,-1.480093 acc=6 et=+8d16h3m35s229ms alt=105.0 vel=14.18 bear=141.0]state is normallPoller
+2017-05-23 08:00:43.786: GPS: Good Location received:Location[fused 53.390932,-1.480093 acc=6 et=+8d16h3m35s229ms alt=105.0 vel=14.18 bear=141.0] fromLocationHandler
+2017-05-23 08:00:46.824: GPS: Location received:Location[fused 53.390639,-1.479688 acc=5 et=+8d16h3m38s269ms alt=105.0 vel=13.52 bear=141.0]state is normallPoller
+2017-05-23 08:00:46.825: GPS: Good Location received:Location[fused 53.390639,-1.479688 acc=5 et=+8d16h3m38s269ms alt=105.0 vel=13.52 bear=141.0] fromLocationHandler
+2017-05-23 08:00:49.311: GPS: Location received:Location[fused 53.390446,-1.479444 acc=5 et=+8d16h3m40s756ms alt=104.0 vel=13.34 bear=142.0]state is normallPoller
+2017-05-23 08:00:49.312: GPS: Good Location received:Location[fused 53.390446,-1.479444 acc=5 et=+8d16h3m40s756ms alt=104.0 vel=13.34 bear=142.0] fromLocationHandler
+2017-05-23 08:00:53.307: GPS: Location received:Location[fused 53.390182,-1.479009 acc=6 et=+8d16h3m44s751ms alt=107.0 vel=7.98 bear=136.0]state is normallPoller
+2017-05-23 08:00:53.308: GPS: Good Location received:Location[fused 53.390182,-1.479009 acc=6 et=+8d16h3m44s751ms alt=107.0 vel=7.98 bear=136.0] fromLocationHandler
+2017-05-23 08:00:55.064: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:00:55.115: GPS: Location received:Location[fused 53.390074,-1.478875 acc=8 et=+8d16h3m46s560ms alt=109.0 vel=5.55 bear=139.0]state is slowPoller
+2017-05-23 08:00:55.116: GPS: TTF SlowPoller:0.1
+2017-05-23 08:00:55.118: GPS: Good Location received:Location[fused 53.390074,-1.478875 acc=8 et=+8d16h3m46s560ms alt=109.0 vel=5.55 bear=139.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:00:55.237: GPS: Scheduling a further update in:34763ms
+2017-05-23 08:00:55.360: GPS: Location received:Location[fused 53.390074,-1.478875 acc=8 et=+8d16h3m46s805ms alt=109.0 vel=5.55 bear=139.0]state is normallPoller
+2017-05-23 08:00:55.361: GPS: Good Location received:Location[fused 53.390074,-1.478875 acc=8 et=+8d16h3m46s805ms alt=109.0 vel=5.55 bear=139.0] fromLocationHandler
+2017-05-23 08:00:58.789: GPS: Location received:Location[fused 53.389941,-1.478705 acc=8 et=+8d16h3m50s234ms alt=105.0 vel=3.73 bear=139.0]state is normallPoller
+2017-05-23 08:00:58.790: GPS: Good Location received:Location[fused 53.389941,-1.478705 acc=8 et=+8d16h3m50s234ms alt=105.0 vel=3.73 bear=139.0] fromLocationHandler
+2017-05-23 08:01:03.278: GPS: Location received:Location[fused 53.389819,-1.478496 acc=6 et=+8d16h3m54s722ms alt=101.0 vel=7.75 bear=136.0]state is normallPoller
+2017-05-23 08:01:03.279: GPS: Good Location received:Location[fused 53.389819,-1.478496 acc=6 et=+8d16h3m54s722ms alt=101.0 vel=7.75 bear=136.0] fromLocationHandler
+2017-05-23 08:01:07.269: GPS: Location received:Location[fused 53.389635,-1.478184 acc=6 et=+8d16h3m58s713ms alt=98.0 vel=8.95 bear=136.0]state is normallPoller
+2017-05-23 08:01:07.270: GPS: Good Location received:Location[fused 53.389635,-1.478184 acc=6 et=+8d16h3m58s713ms alt=98.0 vel=8.95 bear=136.0] fromLocationHandler
+2017-05-23 08:01:11.258: GPS: Location received:Location[fused 53.389371,-1.477878 acc=6 et=+8d16h4m2s703ms alt=96.0 vel=10.62 bear=142.0]state is normallPoller
+2017-05-23 08:01:11.259: GPS: Good Location received:Location[fused 53.389371,-1.477878 acc=6 et=+8d16h4m2s703ms alt=96.0 vel=10.62 bear=142.0] fromLocationHandler
+2017-05-23 08:01:15.246: GPS: Location received:Location[fused 53.389063,-1.477465 acc=8 et=+8d16h4m6s690ms alt=98.0 vel=9.93 bear=134.0]state is normallPoller
+2017-05-23 08:01:15.247: GPS: Good Location received:Location[fused 53.389063,-1.477465 acc=8 et=+8d16h4m6s690ms alt=98.0 vel=9.93 bear=134.0] fromLocationHandler
+2017-05-23 08:01:19.239: GPS: Location received:Location[fused 53.388799,-1.477038 acc=15 et=+8d16h4m10s683ms alt=101.0 vel=9.21 bear=134.0]state is normallPoller
+2017-05-23 08:01:19.240: GPS: Good Location received:Location[fused 53.388799,-1.477038 acc=15 et=+8d16h4m10s683ms alt=101.0 vel=9.21 bear=134.0] fromLocationHandler
+2017-05-23 08:01:23.239: GPS: Location received:Location[fused 53.388539,-1.476981 acc=11 et=+8d16h4m14s684ms alt=104.0 vel=7.73 bear=191.0]state is normallPoller
+2017-05-23 08:01:23.241: GPS: Good Location received:Location[fused 53.388539,-1.476981 acc=11 et=+8d16h4m14s684ms alt=104.0 vel=7.73 bear=191.0] fromLocationHandler
+2017-05-23 08:01:25.039: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:01:25.235: GPS: Location received:Location[fused 53.388408,-1.477152 acc=11 et=+8d16h4m16s680ms alt=103.0 vel=9.94 bear=225.0]state is slowPoller
+2017-05-23 08:01:25.236: GPS: TTF SlowPoller:0.2
+2017-05-23 08:01:25.237: GPS: Good Location received:Location[fused 53.388408,-1.477152 acc=11 et=+8d16h4m16s680ms alt=103.0 vel=9.94 bear=225.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:01:25.342: GPS: Scheduling a further update in:34658ms
+2017-05-23 08:01:25.491: GPS: Location received:Location[fused 53.388408,-1.477152 acc=11 et=+8d16h4m16s934ms alt=103.0 vel=9.94 bear=225.0]state is normallPoller
+2017-05-23 08:01:25.492: GPS: Good Location received:Location[fused 53.388408,-1.477152 acc=11 et=+8d16h4m16s934ms alt=103.0 vel=9.94 bear=225.0] fromLocationHandler
+2017-05-23 08:01:37.127: GPS: Location received:Location[fused 53.387501,-1.478510 acc=14 et=+8d16h4m28s572ms alt=105.0 vel=13.22 bear=226.0]state is normallPoller
+2017-05-23 08:01:37.128: GPS: Good Location received:Location[fused 53.387501,-1.478510 acc=14 et=+8d16h4m28s572ms alt=105.0 vel=13.22 bear=226.0] fromLocationHandler
+2017-05-23 08:01:40.971: GPS: Location received:Location[fused 53.387199,-1.479013 acc=14 et=+8d16h4m32s415ms alt=106.0 vel=10.88 bear=223.0]state is normallPoller
+2017-05-23 08:01:40.972: GPS: Good Location received:Location[fused 53.387199,-1.479013 acc=14 et=+8d16h4m32s415ms alt=106.0 vel=10.88 bear=223.0] fromLocationHandler
+2017-05-23 08:01:44.960: GPS: Location received:Location[fused 53.386896,-1.479234 acc=15 et=+8d16h4m36s405ms alt=111.0 vel=8.19 bear=207.0]state is normallPoller
+2017-05-23 08:01:44.961: GPS: Good Location received:Location[fused 53.386896,-1.479234 acc=15 et=+8d16h4m36s405ms alt=111.0 vel=8.19 bear=207.0] fromLocationHandler
+2017-05-23 08:01:48.954: GPS: Location received:Location[fused 53.386608,-1.478612 acc=9 et=+8d16h4m40s399ms alt=112.0 vel=12.22 bear=137.0]state is normallPoller
+2017-05-23 08:01:48.956: GPS: Good Location received:Location[fused 53.386608,-1.478612 acc=9 et=+8d16h4m40s399ms alt=112.0 vel=12.22 bear=137.0] fromLocationHandler
+2017-05-23 08:01:52.601: GPS: Location received:Location[fused 53.386328,-1.478146 acc=8 et=+8d16h4m44s46ms alt=111.0 vel=9.42 bear=137.0]state is normallPoller
+2017-05-23 08:01:52.602: GPS: Good Location received:Location[fused 53.386328,-1.478146 acc=8 et=+8d16h4m44s46ms alt=111.0 vel=9.42 bear=137.0] fromLocationHandler
+2017-05-23 08:01:55.052: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:01:55.279: GPS: Location received:Location[fused 53.386204,-1.477953 acc=12 et=+8d16h4m46s722ms alt=111.0 vel=9.41 bear=137.0]state is slowPoller
+2017-05-23 08:01:55.280: GPS: TTF SlowPoller:0.3
+2017-05-23 08:01:55.281: GPS: Good Location received:Location[fused 53.386204,-1.477953 acc=12 et=+8d16h4m46s722ms alt=111.0 vel=9.41 bear=137.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:01:55.388: GPS: Scheduling a further update in:34612ms
+2017-05-23 08:01:55.390: GPS: Location received:Location[fused 53.386204,-1.477953 acc=12 et=+8d16h4m46s722ms alt=111.0 vel=9.41 bear=137.0]state is normallPoller
+2017-05-23 08:01:55.391: GPS: Good Location received:Location[fused 53.386204,-1.477953 acc=12 et=+8d16h4m46s722ms alt=111.0 vel=9.41 bear=137.0] fromLocationHandler
+2017-05-23 08:01:58.560: GPS: Location received:Location[fused 53.386113,-1.477753 acc=11 et=+8d16h4m49s978ms alt=120.0 vel=2.25 bear=138.0]state is normallPoller
+2017-05-23 08:01:58.561: GPS: Good Location received:Location[fused 53.386113,-1.477753 acc=11 et=+8d16h4m49s978ms alt=120.0 vel=2.25 bear=138.0] fromLocationHandler
+2017-05-23 08:02:02.581: GPS: Location received:Location[fused 53.386107,-1.477720 acc=11 et=+8d16h4m54s25ms alt=116.0 vel=0.0]state is normallPoller
+2017-05-23 08:02:02.582: GPS: Good Location received:Location[fused 53.386107,-1.477720 acc=11 et=+8d16h4m54s25ms alt=116.0 vel=0.0] fromLocationHandler
+2017-05-23 08:02:06.863: GPS: Location received:Location[fused 53.386120,-1.477693 acc=12 et=+8d16h4m58s306ms alt=120.0 vel=0.0]state is normallPoller
+2017-05-23 08:02:06.864: GPS: Good Location received:Location[fused 53.386120,-1.477693 acc=12 et=+8d16h4m58s306ms alt=120.0 vel=0.0] fromLocationHandler
+2017-05-23 08:02:10.903: GPS: Location received:Location[fused 53.386135,-1.477674 acc=9 et=+8d16h5m2s348ms alt=124.0 vel=0.0]state is normallPoller
+2017-05-23 08:02:10.904: GPS: Good Location received:Location[fused 53.386135,-1.477674 acc=9 et=+8d16h5m2s348ms alt=124.0 vel=0.0] fromLocationHandler
+2017-05-23 08:02:20.593: GPS: Location received:Location[fused 53.386128,-1.477635 acc=8 et=+8d16h5m12s32ms alt=128.0 vel=0.36 bear=138.0]state is normallPoller
+2017-05-23 08:02:20.594: GPS: Good Location received:Location[fused 53.386128,-1.477635 acc=8 et=+8d16h5m12s32ms alt=128.0 vel=0.36 bear=138.0] fromLocationHandler
+2017-05-23 08:02:24.944: GPS: Location received:Location[fused 53.386068,-1.477544 acc=12 et=+8d16h5m16s388ms alt=130.0 vel=1.68 bear=131.0]state is normallPoller
+2017-05-23 08:02:24.945: GPS: Good Location received:Location[fused 53.386068,-1.477544 acc=12 et=+8d16h5m16s388ms alt=130.0 vel=1.68 bear=131.0] fromLocationHandler
+2017-05-23 08:02:25.084: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:02:25.091: GPS: Location received:Location[fused 53.386068,-1.477544 acc=12 et=+8d16h5m16s388ms alt=130.0 vel=1.68 bear=131.0]state is slowPoller
+2017-05-23 08:02:25.091: GPS: TTF SlowPoller:0.0
+2017-05-23 08:02:25.092: GPS: Good Location received:Location[fused 53.386068,-1.477544 acc=12 et=+8d16h5m16s388ms alt=130.0 vel=1.68 bear=131.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:02:25.193: GPS: Scheduling a further update in:34807ms
+2017-05-23 08:02:29.353: GPS: Location received:Location[fused 53.385979,-1.477428 acc=11 et=+8d16h5m20s798ms alt=131.0 vel=2.59 bear=150.0]state is normallPoller
+2017-05-23 08:02:29.354: GPS: Good Location received:Location[fused 53.385979,-1.477428 acc=11 et=+8d16h5m20s798ms alt=131.0 vel=2.59 bear=150.0] fromLocationHandler
+2017-05-23 08:02:33.343: GPS: Location received:Location[fused 53.385909,-1.477313 acc=12 et=+8d16h5m24s787ms alt=131.0 vel=1.32 bear=129.0]state is normallPoller
+2017-05-23 08:02:33.344: GPS: Good Location received:Location[fused 53.385909,-1.477313 acc=12 et=+8d16h5m24s787ms alt=131.0 vel=1.32 bear=129.0] fromLocationHandler
+2017-05-23 08:02:37.333: GPS: Location received:Location[fused 53.385829,-1.476790 acc=9 et=+8d16h5m28s778ms alt=129.0 vel=10.34 bear=100.0]state is normallPoller
+2017-05-23 08:02:37.334: GPS: Good Location received:Location[fused 53.385829,-1.476790 acc=9 et=+8d16h5m28s778ms alt=129.0 vel=10.34 bear=100.0] fromLocationHandler
+2017-05-23 08:02:41.327: GPS: Location received:Location[fused 53.385759,-1.476099 acc=6 et=+8d16h5m32s771ms alt=128.0 vel=11.63 bear=99.0]state is normallPoller
+2017-05-23 08:02:41.328: GPS: Good Location received:Location[fused 53.385759,-1.476099 acc=6 et=+8d16h5m32s771ms alt=128.0 vel=11.63 bear=99.0] fromLocationHandler
+2017-05-23 08:02:44.902: GPS: Location received:Location[fused 53.385662,-1.475318 acc=6 et=+8d16h5m36s346ms alt=128.0 vel=13.08 bear=100.0]state is normallPoller
+2017-05-23 08:02:44.903: GPS: Good Location received:Location[fused 53.385662,-1.475318 acc=6 et=+8d16h5m36s346ms alt=128.0 vel=13.08 bear=100.0] fromLocationHandler
+2017-05-23 08:02:48.810: GPS: Location received:Location[fused 53.385585,-1.474553 acc=5 et=+8d16h5m40s255ms alt=130.0 vel=11.87 bear=100.0]state is normallPoller
+2017-05-23 08:02:48.811: GPS: Good Location received:Location[fused 53.385585,-1.474553 acc=5 et=+8d16h5m40s255ms alt=130.0 vel=11.87 bear=100.0] fromLocationHandler
+2017-05-23 08:02:51.295: GPS: Location received:Location[fused 53.385547,-1.474210 acc=5 et=+8d16h5m42s740ms alt=131.0 vel=11.32 bear=98.0]state is normallPoller
+2017-05-23 08:02:51.296: GPS: Good Location received:Location[fused 53.385547,-1.474210 acc=5 et=+8d16h5m42s740ms alt=131.0 vel=11.32 bear=98.0] fromLocationHandler
+2017-05-23 08:02:55.049: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:02:55.292: GPS: Location received:Location[fused 53.385364,-1.473536 acc=6 et=+8d16h5m46s737ms alt=129.0 vel=12.43 bear=114.0]state is slowPoller
+2017-05-23 08:02:55.292: GPS: TTF SlowPoller:0.3
+2017-05-23 08:02:55.293: GPS: Good Location received:Location[fused 53.385364,-1.473536 acc=6 et=+8d16h5m46s737ms alt=129.0 vel=12.43 bear=114.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:02:55.439: GPS: Scheduling a further update in:34561ms
+2017-05-23 08:02:55.446: GPS: Location received:Location[fused 53.385364,-1.473536 acc=6 et=+8d16h5m46s737ms alt=129.0 vel=12.43 bear=114.0]state is normallPoller
+2017-05-23 08:02:55.447: GPS: Good Location received:Location[fused 53.385364,-1.473536 acc=6 et=+8d16h5m46s737ms alt=129.0 vel=12.43 bear=114.0] fromLocationHandler
+2017-05-23 08:02:59.280: GPS: Location received:Location[fused 53.385232,-1.473040 acc=14 et=+8d16h5m50s725ms alt=128.0 vel=9.12 bear=114.0]state is normallPoller
+2017-05-23 08:02:59.281: GPS: Good Location received:Location[fused 53.385232,-1.473040 acc=14 et=+8d16h5m50s725ms alt=128.0 vel=9.12 bear=114.0] fromLocationHandler
+2017-05-23 08:03:04.764: GPS: Location received:Location[fused 53.385620,-1.472225 acc=6 et=+8d16h5m56s208ms alt=127.0 vel=12.93 bear=56.0]state is normallPoller
+2017-05-23 08:03:04.765: GPS: Good Location received:Location[fused 53.385620,-1.472225 acc=6 et=+8d16h5m56s208ms alt=127.0 vel=12.93 bear=56.0] fromLocationHandler
+2017-05-23 08:03:06.945: GPS: Location received:Location[fused 53.385729,-1.471888 acc=5 et=+8d16h5m58s389ms alt=122.0 vel=13.15 bear=61.0]state is normallPoller
+2017-05-23 08:03:06.946: GPS: Good Location received:Location[fused 53.385729,-1.471888 acc=5 et=+8d16h5m58s389ms alt=122.0 vel=13.15 bear=61.0] fromLocationHandler
+2017-05-23 08:03:12.744: GPS: Location received:Location[fused 53.385998,-1.471146 acc=5 et=+8d16h6m4s189ms alt=115.0 vel=6.56 bear=45.0]state is normallPoller
+2017-05-23 08:03:12.745: GPS: Good Location received:Location[fused 53.385998,-1.471146 acc=5 et=+8d16h6m4s189ms alt=115.0 vel=6.56 bear=45.0] fromLocationHandler
+2017-05-23 08:03:16.733: GPS: Location received:Location[fused 53.386095,-1.471060 acc=5 et=+8d16h6m8s178ms alt=113.0 vel=0.79 bear=37.0]state is normallPoller
+2017-05-23 08:03:16.735: GPS: Good Location received:Location[fused 53.386095,-1.471060 acc=5 et=+8d16h6m8s178ms alt=113.0 vel=0.79 bear=37.0] fromLocationHandler
+2017-05-23 08:03:22.715: GPS: Location received:Location[fused 53.386125,-1.470979 acc=8 et=+8d16h6m14s160ms alt=112.0 vel=1.62 bear=63.0]state is normallPoller
+2017-05-23 08:03:22.716: GPS: Good Location received:Location[fused 53.386125,-1.470979 acc=8 et=+8d16h6m14s160ms alt=112.0 vel=1.62 bear=63.0] fromLocationHandler
+2017-05-23 08:03:26.706: GPS: Location received:Location[fused 53.386018,-1.470815 acc=8 et=+8d16h6m18s151ms alt=110.0 vel=1.74 bear=156.0]state is normallPoller
+2017-05-23 08:03:26.707: GPS: Good Location received:Location[fused 53.386018,-1.470815 acc=8 et=+8d16h6m18s151ms alt=110.0 vel=1.74 bear=156.0] fromLocationHandler
+2017-05-23 08:03:29.197: GPS: Location received:Location[fused 53.385973,-1.470789 acc=6 et=+8d16h6m20s642ms alt=110.0 vel=3.2 bear=161.0]state is normallPoller
+2017-05-23 08:03:29.198: GPS: Good Location received:Location[fused 53.385973,-1.470789 acc=6 et=+8d16h6m20s642ms alt=110.0 vel=3.2 bear=161.0] fromLocationHandler
+2017-05-23 08:03:32.688: GPS: Location received:Location[fused 53.385722,-1.470596 acc=5 et=+8d16h6m24s132ms alt=111.0 vel=6.97 bear=153.0]state is normallPoller
+2017-05-23 08:03:32.689: GPS: Good Location received:Location[fused 53.385722,-1.470596 acc=5 et=+8d16h6m24s132ms alt=111.0 vel=6.97 bear=153.0] fromLocationHandler
+2017-05-23 08:03:33.832: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:03:34.566: GPS: Location received:Location[fused 53.385653,-1.470519 acc=5 et=+8d16h6m26s11ms alt=109.0 vel=4.07 bear=145.0]state is slowPoller
+2017-05-23 08:03:34.567: GPS: TTF SlowPoller:0.8
+2017-05-23 08:03:34.568: GPS: Good Location received:Location[fused 53.385653,-1.470519 acc=5 et=+8d16h6m26s11ms alt=109.0 vel=4.07 bear=145.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:03:34.668: GPS: Scheduling a further update in:25332ms
+2017-05-23 08:03:34.826: GPS: Location received:Location[fused 53.385653,-1.470519 acc=5 et=+8d16h6m26s271ms alt=109.0 vel=4.07 bear=145.0]state is normallPoller
+2017-05-23 08:03:34.828: GPS: Good Location received:Location[fused 53.385653,-1.470519 acc=5 et=+8d16h6m26s271ms alt=109.0 vel=4.07 bear=145.0] fromLocationHandler
+2017-05-23 08:03:37.183: GPS: Location received:Location[fused 53.385618,-1.470469 acc=5 et=+8d16h6m28s627ms alt=110.0 vel=1.12 bear=142.0]state is normallPoller
+2017-05-23 08:03:37.184: GPS: Good Location received:Location[fused 53.385618,-1.470469 acc=5 et=+8d16h6m28s627ms alt=110.0 vel=1.12 bear=142.0] fromLocationHandler
+2017-05-23 08:03:40.673: GPS: Location received:Location[fused 53.385640,-1.470440 acc=12 et=+8d16h6m32s118ms alt=109.0 vel=0.23 bear=141.0]state is normallPoller
+2017-05-23 08:03:40.674: GPS: Good Location received:Location[fused 53.385640,-1.470440 acc=12 et=+8d16h6m32s118ms alt=109.0 vel=0.23 bear=141.0] fromLocationHandler
+2017-05-23 08:03:47.072: GPS: Location received:Location[fused 53.385592,-1.470451 acc=12 et=+8d16h6m38s517ms alt=108.0 vel=0.48 bear=142.0]state is normallPoller
+2017-05-23 08:03:47.073: GPS: Good Location received:Location[fused 53.385592,-1.470451 acc=12 et=+8d16h6m38s517ms alt=108.0 vel=0.48 bear=142.0] fromLocationHandler
+2017-05-23 08:03:50.970: GPS: Location received:Location[fused 53.385574,-1.470458 acc=11 et=+8d16h6m42s415ms alt=109.0 vel=0.0]state is normallPoller
+2017-05-23 08:03:50.971: GPS: Good Location received:Location[fused 53.385574,-1.470458 acc=11 et=+8d16h6m42s415ms alt=109.0 vel=0.0] fromLocationHandler
+2017-05-23 08:03:55.043: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:03:56.394: GPS: Location received:Location[fused 53.385582,-1.470472 acc=12 et=+8d16h6m47s839ms alt=111.0 vel=0.2 bear=142.0]state is slowPoller
+2017-05-23 08:03:56.394: GPS: TTF SlowPoller:1.4
+2017-05-23 08:03:56.395: GPS: Good Location received:Location[fused 53.385582,-1.470472 acc=12 et=+8d16h6m47s839ms alt=111.0 vel=0.2 bear=142.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:03:56.499: GPS: Scheduling a further update in:33501ms
+2017-05-23 08:03:58.950: GPS: Location received:Location[fused 53.385584,-1.470526 acc=9 et=+8d16h6m50s395ms alt=112.0 vel=0.0]state is normallPoller
+2017-05-23 08:03:58.951: GPS: Good Location received:Location[fused 53.385584,-1.470526 acc=9 et=+8d16h6m50s395ms alt=112.0 vel=0.0] fromLocationHandler
+2017-05-23 08:04:04.097: GPS: Location received:Location[fused 53.385587,-1.470564 acc=12 et=+8d16h6m55s542ms alt=107.0 vel=0.41 bear=142.0]state is normallPoller
+2017-05-23 08:04:04.098: GPS: Good Location received:Location[fused 53.385587,-1.470564 acc=12 et=+8d16h6m55s542ms alt=107.0 vel=0.41 bear=142.0] fromLocationHandler
+2017-05-23 08:04:07.972: GPS: Location received:Location[fused 53.385615,-1.470576 acc=15 et=+8d16h6m59s416ms alt=106.0 vel=1.36 bear=15.0]state is normallPoller
+2017-05-23 08:04:07.973: GPS: Good Location received:Location[fused 53.385615,-1.470576 acc=15 et=+8d16h6m59s416ms alt=106.0 vel=1.36 bear=15.0] fromLocationHandler
+2017-05-23 08:04:11.468: GPS: Location received:Location[fused 53.385606,-1.470540 acc=9 et=+8d16h7m2s913ms alt=106.0 vel=0.0]state is normallPoller
+2017-05-23 08:04:11.469: GPS: Good Location received:Location[fused 53.385606,-1.470540 acc=9 et=+8d16h7m2s913ms alt=106.0 vel=0.0] fromLocationHandler
+2017-05-23 08:04:15.994: GPS: Location received:Location[fused 53.385565,-1.470452 acc=9 et=+8d16h7m7s435ms alt=107.0 vel=3.21 bear=139.0]state is normallPoller
+2017-05-23 08:04:15.995: GPS: Good Location received:Location[fused 53.385565,-1.470452 acc=9 et=+8d16h7m7s435ms alt=107.0 vel=3.21 bear=139.0] fromLocationHandler
+2017-05-23 08:04:21.941: GPS: Location received:Location[fused 53.385184,-1.470437 acc=24 et=+8d16h7m13s385ms alt=105.0 vel=7.33 bear=190.0]state is normallPoller
+2017-05-23 08:04:21.942: GPS: Good Location received:Location[fused 53.385184,-1.470437 acc=24 et=+8d16h7m13s385ms alt=105.0 vel=7.33 bear=190.0] fromLocationHandler
+2017-05-23 08:04:25.044: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:04:25.817: GPS: Location received:Location[fused 53.384968,-1.470590 acc=23 et=+8d16h7m17s261ms alt=104.0 vel=6.77 bear=178.0]state is slowPoller
+2017-05-23 08:04:25.817: GPS: TTF SlowPoller:0.8
+2017-05-23 08:04:25.818: GPS: Good Location received:Location[fused 53.384968,-1.470590 acc=23 et=+8d16h7m17s261ms alt=104.0 vel=6.77 bear=178.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:04:25.934: GPS: Scheduling a further update in:34066ms
+2017-05-23 08:04:25.941: GPS: Location received:Location[fused 53.384968,-1.470590 acc=23 et=+8d16h7m17s261ms alt=104.0 vel=6.77 bear=178.0]state is normallPoller
+2017-05-23 08:04:25.942: GPS: Good Location received:Location[fused 53.384968,-1.470590 acc=23 et=+8d16h7m17s261ms alt=104.0 vel=6.77 bear=178.0] fromLocationHandler
+2017-05-23 08:04:29.929: GPS: Location received:Location[fused 53.384831,-1.471066 acc=21 et=+8d16h7m21s374ms alt=107.0 vel=5.5 bear=228.0]state is normallPoller
+2017-05-23 08:04:29.930: GPS: Good Location received:Location[fused 53.384831,-1.471066 acc=21 et=+8d16h7m21s374ms alt=107.0 vel=5.5 bear=228.0] fromLocationHandler
+2017-05-23 08:04:35.908: GPS: Location received:Location[fused 53.384737,-1.471477 acc=18 et=+8d16h7m27s353ms alt=103.0 vel=1.13 bear=233.0]state is normallPoller
+2017-05-23 08:04:35.909: GPS: Good Location received:Location[fused 53.384737,-1.471477 acc=18 et=+8d16h7m27s353ms alt=103.0 vel=1.13 bear=233.0] fromLocationHandler
+2017-05-23 08:04:39.898: GPS: Location received:Location[fused 53.384720,-1.471518 acc=17 et=+8d16h7m31s343ms alt=106.0 vel=0.0]state is normallPoller
+2017-05-23 08:04:39.899: GPS: Good Location received:Location[fused 53.384720,-1.471518 acc=17 et=+8d16h7m31s343ms alt=106.0 vel=0.0] fromLocationHandler
+2017-05-23 08:04:43.883: GPS: Location received:Location[fused 53.384701,-1.471621 acc=15 et=+8d16h7m35s328ms alt=109.0 vel=1.24 bear=234.0]state is normallPoller
+2017-05-23 08:04:43.884: GPS: Good Location received:Location[fused 53.384701,-1.471621 acc=15 et=+8d16h7m35s328ms alt=109.0 vel=1.24 bear=234.0] fromLocationHandler
+2017-05-23 08:04:46.878: GPS: Location received:Location[fused 53.384548,-1.471824 acc=15 et=+8d16h7m38s323ms alt=113.0 vel=6.4 bear=219.0]state is normallPoller
+2017-05-23 08:04:46.880: GPS: Good Location received:Location[fused 53.384548,-1.471824 acc=15 et=+8d16h7m38s323ms alt=113.0 vel=6.4 bear=219.0] fromLocationHandler
+2017-05-23 08:04:50.768: GPS: Location received:Location[fused 53.384365,-1.472324 acc=18 et=+8d16h7m42s213ms alt=116.0 vel=9.05 bear=226.0]state is normallPoller
+2017-05-23 08:04:50.769: GPS: Good Location received:Location[fused 53.384365,-1.472324 acc=18 et=+8d16h7m42s213ms alt=116.0 vel=9.05 bear=226.0] fromLocationHandler
+2017-05-23 08:04:52.785: GPS: Location received:Location[fused 53.384245,-1.472569 acc=15 et=+8d16h7m44s229ms alt=117.0 vel=11.02 bear=230.0]state is normallPoller
+2017-05-23 08:04:52.786: GPS: Good Location received:Location[fused 53.384245,-1.472569 acc=15 et=+8d16h7m44s229ms alt=117.0 vel=11.02 bear=230.0] fromLocationHandler
+2017-05-23 08:04:55.045: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:04:56.436: GPS: Location received:Location[fused 53.383981,-1.473068 acc=11 et=+8d16h7m47s881ms alt=108.0 vel=10.71 bear=227.0]state is slowPoller
+2017-05-23 08:04:56.437: GPS: TTF SlowPoller:1.4
+2017-05-23 08:04:56.438: GPS: Good Location received:Location[fused 53.383981,-1.473068 acc=11 et=+8d16h7m47s881ms alt=108.0 vel=10.71 bear=227.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:04:56.544: GPS: Scheduling a further update in:33456ms
+2017-05-23 08:04:56.582: GPS: Location received:Location[fused 53.383981,-1.473068 acc=11 et=+8d16h7m47s881ms alt=108.0 vel=10.71 bear=227.0]state is normallPoller
+2017-05-23 08:04:56.583: GPS: Good Location received:Location[fused 53.383981,-1.473068 acc=11 et=+8d16h7m47s881ms alt=108.0 vel=10.71 bear=227.0] fromLocationHandler
+2017-05-23 08:04:58.850: GPS: Location received:Location[fused 53.383858,-1.473330 acc=11 et=+8d16h7m50s295ms alt=111.0 vel=10.86 bear=229.0]state is normallPoller
+2017-05-23 08:04:58.851: GPS: Good Location received:Location[fused 53.383858,-1.473330 acc=11 et=+8d16h7m50s295ms alt=111.0 vel=10.86 bear=229.0] fromLocationHandler
+2017-05-23 08:05:02.769: GPS: Location received:Location[fused 53.383618,-1.473748 acc=8 et=+8d16h7m54s214ms alt=117.0 vel=8.14 bear=221.0]state is normallPoller
+2017-05-23 08:05:02.770: GPS: Good Location received:Location[fused 53.383618,-1.473748 acc=8 et=+8d16h7m54s214ms alt=117.0 vel=8.14 bear=221.0] fromLocationHandler
+2017-05-23 08:05:06.903: GPS: Location received:Location[fused 53.383431,-1.473837 acc=6 et=+8d16h7m58s347ms alt=122.0 vel=5.5 bear=181.0]state is normallPoller
+2017-05-23 08:05:06.904: GPS: Good Location received:Location[fused 53.383431,-1.473837 acc=6 et=+8d16h7m58s347ms alt=122.0 vel=5.5 bear=181.0] fromLocationHandler
+2017-05-23 08:05:09.815: GPS: Location received:Location[fused 53.383350,-1.473492 acc=11 et=+8d16h8m1s260ms alt=120.0 vel=7.86 bear=116.0]state is normallPoller
+2017-05-23 08:05:09.816: GPS: Good Location received:Location[fused 53.383350,-1.473492 acc=11 et=+8d16h8m1s260ms alt=120.0 vel=7.86 bear=116.0] fromLocationHandler
+2017-05-23 08:05:13.810: GPS: Location received:Location[fused 53.383345,-1.472877 acc=14 et=+8d16h8m5s255ms alt=123.0 vel=11.16 bear=101.0]state is normallPoller
+2017-05-23 08:05:13.812: GPS: Good Location received:Location[fused 53.383345,-1.472877 acc=14 et=+8d16h8m5s255ms alt=123.0 vel=11.16 bear=101.0] fromLocationHandler
+2017-05-23 08:05:17.767: GPS: Location received:Location[fused 53.383250,-1.472187 acc=17 et=+8d16h8m9s211ms alt=125.0 vel=11.02 bear=104.0]state is normallPoller
+2017-05-23 08:05:17.768: GPS: Good Location received:Location[fused 53.383250,-1.472187 acc=17 et=+8d16h8m9s211ms alt=125.0 vel=11.02 bear=104.0] fromLocationHandler
+2017-05-23 08:05:21.815: GPS: Location received:Location[fused 53.383315,-1.471799 acc=24 et=+8d16h8m13s260ms alt=126.0 vel=6.96 bear=91.0]state is normallPoller
+2017-05-23 08:05:21.816: GPS: Good Location received:Location[fused 53.383315,-1.471799 acc=24 et=+8d16h8m13s260ms alt=126.0 vel=6.96 bear=91.0] fromLocationHandler
+2017-05-23 08:05:25.040: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:05:25.652: GPS: Location received:Location[fused 53.383319,-1.471354 acc=17 et=+8d16h8m17s96ms alt=130.0 vel=6.89 bear=87.0]state is normallPoller
+2017-05-23 08:05:25.653: GPS: Good Location received:Location[fused 53.383319,-1.471354 acc=17 et=+8d16h8m17s96ms alt=130.0 vel=6.89 bear=87.0] fromLocationHandler
+2017-05-23 08:05:25.772: GPS: Location received:Location[fused 53.383319,-1.471354 acc=17 et=+8d16h8m17s96ms alt=130.0 vel=6.89 bear=87.0]state is slowPoller
+2017-05-23 08:05:25.773: GPS: TTF SlowPoller:0.8
+2017-05-23 08:05:25.773: GPS: Good Location received:Location[fused 53.383319,-1.471354 acc=17 et=+8d16h8m17s96ms alt=130.0 vel=6.89 bear=87.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:05:25.885: GPS: Scheduling a further update in:34116ms
+2017-05-23 08:05:27.764: GPS: Location received:Location[fused 53.383330,-1.471224 acc=15 et=+8d16h8m19s208ms alt=129.0 vel=4.63 bear=86.0]state is normallPoller
+2017-05-23 08:05:27.765: GPS: Good Location received:Location[fused 53.383330,-1.471224 acc=15 et=+8d16h8m19s208ms alt=129.0 vel=4.63 bear=86.0] fromLocationHandler
+2017-05-23 08:05:30.768: GPS: Location received:Location[fused 53.383455,-1.471200 acc=14 et=+8d16h8m22s213ms alt=112.0 vel=3.9 bear=15.0]state is normallPoller
+2017-05-23 08:05:30.769: GPS: Good Location received:Location[fused 53.383455,-1.471200 acc=14 et=+8d16h8m22s213ms alt=112.0 vel=3.9 bear=15.0] fromLocationHandler
+2017-05-23 08:05:32.831: GPS: Location received:Location[fused 53.383624,-1.471306 acc=18 et=+8d16h8m24s275ms alt=117.0 vel=7.32 bear=346.0]state is normallPoller
+2017-05-23 08:05:32.832: GPS: Good Location received:Location[fused 53.383624,-1.471306 acc=18 et=+8d16h8m24s275ms alt=117.0 vel=7.32 bear=346.0] fromLocationHandler
+2017-05-23 08:05:36.751: GPS: Location received:Location[fused 53.383948,-1.471539 acc=9 et=+8d16h8m28s196ms alt=120.0 vel=7.02 bear=350.0]state is normallPoller
+2017-05-23 08:05:36.752: GPS: Good Location received:Location[fused 53.383948,-1.471539 acc=9 et=+8d16h8m28s196ms alt=120.0 vel=7.02 bear=350.0] fromLocationHandler
+2017-05-23 08:05:40.743: GPS: Location received:Location[fused 53.384024,-1.471604 acc=12 et=+8d16h8m32s187ms alt=120.0 vel=2.48 bear=358.0]state is normallPoller
+2017-05-23 08:05:40.744: GPS: Good Location received:Location[fused 53.384024,-1.471604 acc=12 et=+8d16h8m32s187ms alt=120.0 vel=2.48 bear=358.0] fromLocationHandler
+2017-05-23 08:05:41.954: PWR: Ambient Exited
+2017-05-23 08:05:41.973: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 08:05:42.477: GPS: Location received:Location[fused 53.384006,-1.471609 acc=12 et=+8d16h8m33s920ms alt=120.0 vel=0.0]state is normallPoller
+2017-05-23 08:05:42.477: GPS: Good Location received:Location[fused 53.384006,-1.471609 acc=12 et=+8d16h8m33s920ms alt=120.0 vel=0.0] fromLocationHandler
+2017-05-23 08:05:48.719: GPS: Location received:Location[fused 53.384019,-1.471664 acc=14 et=+8d16h8m40s165ms alt=119.0 vel=1.57 bear=293.0]state is normallPoller
+2017-05-23 08:05:48.720: GPS: Good Location received:Location[fused 53.384019,-1.471664 acc=14 et=+8d16h8m40s165ms alt=119.0 vel=1.57 bear=293.0] fromLocationHandler
+2017-05-23 08:05:50.758: GPS: Location received:Location[fused 53.383940,-1.471665 acc=12 et=+8d16h8m42s204ms alt=111.0 vel=0.7 bear=67.0]state is normallPoller
+2017-05-23 08:05:50.759: GPS: Good Location received:Location[fused 53.383940,-1.471665 acc=12 et=+8d16h8m42s204ms alt=111.0 vel=0.7 bear=67.0] fromLocationHandler
+2017-05-23 08:05:55.057: PWR: Ambient Entered
+2017-05-23 08:05:57.208: GPS: Location received:Location[fused 53.383892,-1.471725 acc=11 et=+8d16h8m48s653ms alt=111.0 vel=0.0]state is normallPoller
+2017-05-23 08:05:57.210: GPS: Good Location received:Location[fused 53.383892,-1.471725 acc=11 et=+8d16h8m48s653ms alt=111.0 vel=0.0] fromLocationHandler
+2017-05-23 08:06:07.063: GPS: Location received:Location[fused 53.383863,-1.471769 acc=15 et=+8d16h8m58s508ms alt=116.0 vel=0.0]state is normallPoller
+2017-05-23 08:06:07.065: GPS: Good Location received:Location[fused 53.383863,-1.471769 acc=15 et=+8d16h8m58s508ms alt=116.0 vel=0.0] fromLocationHandler
+2017-05-23 08:06:25.045: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:06:26.486: GPS: Location received:Location[fused 53.383859,-1.471775 acc=24 et=+8d16h9m17s930ms alt=119.0 vel=0.0]state is slowPoller
+2017-05-23 08:06:26.486: GPS: TTF SlowPoller:1.5
+2017-05-23 08:06:26.487: GPS: Good Location received:Location[fused 53.383859,-1.471775 acc=24 et=+8d16h9m17s930ms alt=119.0 vel=0.0] fromSlowLocationPollerAlarmWakeup
+2017-05-23 08:06:26.591: GPS: Scheduling a further update in:33409ms
+2017-05-23 08:06:30.721: GPS: Location received:Location[fused 53.383881,-1.471887 acc=23 et=+8d16h9m22s164ms alt=116.0 vel=4.89 bear=291.0]state is normallPoller
+2017-05-23 08:06:30.722: GPS: Good Location received:Location[fused 53.383881,-1.471887 acc=23 et=+8d16h9m22s164ms alt=116.0 vel=4.89 bear=291.0] fromLocationHandler
+2017-05-23 08:06:33.662: GPS: Location received:Location[fused 53.383898,-1.472411 acc=24 et=+8d16h9m25s106ms alt=122.0 vel=7.6 bear=279.0]state is normallPoller
+2017-05-23 08:06:33.663: GPS: Good Location received:Location[fused 53.383898,-1.472411 acc=24 et=+8d16h9m25s106ms alt=122.0 vel=7.6 bear=279.0] fromLocationHandler
+2017-05-23 08:06:36.659: GPS: Location received:Location[fused 53.383746,-1.472859 acc=26 et=+8d16h9m28s103ms alt=122.0 vel=6.57 bear=260.0]state is normallPoller
+2017-05-23 08:06:36.660: GPS: Good Location received:Location[fused 53.383746,-1.472859 acc=26 et=+8d16h9m28s103ms alt=122.0 vel=6.57 bear=260.0] fromLocationHandler
+2017-05-23 08:06:39.143: GPS: Location received:Location[fused 53.383540,-1.472752 acc=18 et=+8d16h9m30s588ms alt=121.0 vel=4.06 bear=219.0]state is normallPoller
+2017-05-23 08:06:39.144: GPS: Good Location received:Location[fused 53.383540,-1.472752 acc=18 et=+8d16h9m30s588ms alt=121.0 vel=4.06 bear=219.0] fromLocationHandler
+2017-05-23 08:06:45.139: GPS: Location received:Location[fused 53.383623,-1.472621 acc=30 et=+8d16h9m36s583ms alt=120.0 vel=1.17 bear=89.0]state is normallPoller
+2017-05-23 08:06:45.140: GPS: Good Location received:Location[fused 53.383623,-1.472621 acc=30 et=+8d16h9m36s583ms alt=120.0 vel=1.17 bear=89.0] fromLocationHandler
+2017-05-23 08:06:49.136: GPS: Location received:Location[fused 53.383600,-1.472519 acc=55 et=+8d16h9m40s580ms alt=121.0 vel=2.88 bear=132.0]state is normallPoller
+2017-05-23 08:06:49.137: GPS: Good Location received:Location[fused 53.383600,-1.472519 acc=55 et=+8d16h9m40s580ms alt=121.0 vel=2.88 bear=132.0] fromLocationHandler
+2017-05-23 08:06:52.613: GPS: Location received:Location[fused 53.383557,-1.472394 acc=102 et=+8d16h9m44s57ms alt=122.0 vel=2.43 bear=135.0]state is normallPoller
+2017-05-23 08:06:55.045: GPS: SlowLocation Poller now requestingLocationUpdates at 1000ms intervals
+2017-05-23 08:06:55.107: GPS: Location received:Location[fused 53.383536,-1.472346 acc=106 et=+8d16h9m46s552ms alt=123.0 vel=2.58 bear=133.0]state is slowPoller
+2017-05-23 08:06:55.109: GPS: Location received:Location[fused 53.383536,-1.472346 acc=106 et=+8d16h9m46s552ms alt=123.0 vel=2.58 bear=133.0]state is normallPoller
+2017-05-23 08:06:57.607: GPS: Location received:Location[fused 53.383504,-1.472302 acc=124 et=+8d16h9m49s52ms alt=123.0 vel=2.24 bear=152.0]state is slowPoller
+2017-05-23 08:06:57.619: GPS: Location received:Location[fused 53.383504,-1.472302 acc=124 et=+8d16h9m49s52ms alt=123.0 vel=2.24 bear=152.0]state is normallPoller
+2017-05-23 08:06:59.462: GPS: Location received:Location[fused 53.383471,-1.472323 acc=156 et=+8d16h9m50s907ms alt=123.0 vel=2.54 bear=177.0]state is slowPoller
+2017-05-23 08:07:00.439: GPS: Location received:Location[fused 53.383450,-1.472332 acc=144 et=+8d16h9m51s883ms alt=123.0 vel=2.88 bear=177.0]state is normallPoller
+2017-05-23 08:07:01.450: GPS: Location received:Location[fused 53.383427,-1.472340 acc=158 et=+8d16h9m52s894ms alt=123.0 vel=3.09 bear=179.0]state is slowPoller
+2017-05-23 08:07:04.472: GPS: Location received:Location[fused 53.383354,-1.472352 acc=162 et=+8d16h9m55s907ms alt=123.0 vel=3.18 bear=183.0]state is slowPoller
+2017-05-23 08:07:04.474: GPS: Location received:Location[fused 53.383354,-1.472352 acc=162 et=+8d16h9m55s907ms alt=123.0 vel=3.18 bear=183.0]state is normallPoller
+2017-05-23 08:07:07.465: GPS: Location received:Location[fused 53.383268,-1.472399 acc=206 et=+8d16h9m58s910ms alt=119.0 vel=3.48 bear=188.0]state is slowPoller
+2017-05-23 08:07:07.467: GPS: Location received:Location[fused 53.383268,-1.472399 acc=206 et=+8d16h9m58s910ms alt=119.0 vel=3.48 bear=188.0]state is normallPoller
+2017-05-23 08:07:09.436: GPS: Location received:Location[fused 53.383372,-1.472605 acc=240 et=+8d16h10m0s881ms alt=119.0 vel=1.47 bear=249.0]state is slowPoller
+2017-05-23 08:07:10.441: GPS: Location received:Location[fused 53.383355,-1.472654 acc=265 et=+8d16h10m1s885ms alt=120.0 vel=1.66 bear=272.0]state is slowPoller
+2017-05-23 08:07:10.443: GPS: Location received:Location[fused 53.383355,-1.472654 acc=265 et=+8d16h10m1s885ms alt=120.0 vel=1.66 bear=272.0]state is normallPoller
+2017-05-23 08:07:12.472: GPS: Location received:Location[fused 53.383347,-1.472751 acc=334 et=+8d16h10m3s917ms alt=120.0 vel=2.08 bear=275.0]state is slowPoller
+2017-05-23 08:07:12.474: GPS: Location received:Location[fused 53.383347,-1.472751 acc=334 et=+8d16h10m3s917ms alt=120.0 vel=2.08 bear=275.0]state is normallPoller
+2017-05-23 08:07:16.558: GPS: Location received:Location[fused 53.383359,-1.472925 acc=338 et=+8d16h10m8s2ms alt=120.0 vel=1.99 bear=281.0]state is slowPoller
+2017-05-23 08:07:16.560: GPS: Location received:Location[fused 53.383359,-1.472925 acc=338 et=+8d16h10m8s2ms alt=120.0 vel=1.99 bear=281.0]state is normallPoller
+2017-05-23 08:07:49.986: GPS: Location received:Location[fused 53.384230,-1.472089 acc=110 et=+8d16h10m41s431ms]state is slowPoller
+2017-05-23 08:07:49.988: GPS: Location received:Location[fused 53.384230,-1.472089 acc=110 et=+8d16h10m41s431ms]state is normallPoller
+2017-05-23 08:07:59.034: GPS: Timed out waiting for a good location
+2017-05-23 08:07:59.060: GPS: Scheduling a further update in:30940ms
+2017-05-23 08:08:23.303: PWR: Ambient Exited
+2017-05-23 08:08:23.316: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 08:08:24.037: GPS: Location received:Location[fused 53.384230,-1.472089 acc=223 et=+8d16h11m15s483ms]state is normallPoller
+2017-05-23 08:08:43.481: PWR: Ambient Entered
+2017-05-23 08:08:48.210: GPS: Location received:Location[fused 53.392111,-1.477959 acc=1200 et=+8d16h11m39s615ms]state is normallPoller
+2017-05-23 08:08:50.717: PWR: Ambient Exited
+2017-05-23 08:08:50.722: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
+2017-05-23 08:08:52.987: GPS: Location received:Location[fused 53.392111,-1.477959 acc=1200 et=+8d16h11m44s432ms]state is normallPoller
+2017-05-23 08:08:55.952: GPS: Location received:Location[fused 53.383760,-1.471941 acc=32 et=+8d16h11m47s397ms alt=125.0 vel=1.84 bear=162.0]state is normallPoller
+2017-05-23 08:08:55.953: GPS: Good Location received:Location[fused 53.383760,-1.471941 acc=32 et=+8d16h11m47s397ms alt=125.0 vel=1.84 bear=162.0] fromLocationHandler
+2017-05-23 08:09:01.157: GPS: Location received:Location[fused 53.383764,-1.471902 acc=15 et=+8d16h11m52s581ms alt=129.0 vel=0.74 bear=102.0]state is normallPoller
+2017-05-23 08:09:01.158: GPS: Good Location received:Location[fused 53.383764,-1.471902 acc=15 et=+8d16h11m52s581ms alt=129.0 vel=0.74 bear=102.0] fromLocationHandler
+2017-05-23 08:09:03.714: ACT: Stopping recording
+2017-05-23 08:09:03.715: PWR: Released keep on on when recording lock
+2017-05-23 08:09:03.749: ACT: Stopping recording
+2017-05-23 08:09:03.750: PWR: Released keep on on when recording lock
+2017-05-23 08:09:07.042: GPS: Location received:Location[fused 53.383955,-1.471892 acc=15 et=+8d16h11m58s465ms alt=127.0 vel=0.44 bear=28.0]state is normallPoller
+2017-05-23 08:09:07.043: GPS: Good Location received:Location[fused 53.383955,-1.471892 acc=15 et=+8d16h11m58s465ms alt=127.0 vel=0.44 bear=28.0] fromLocationHandler
+2017-05-23 08:09:17.994: GPS: Location received:Location[fused 53.384012,-1.471867 acc=17 et=+8d16h12m3s408ms alt=112.0 vel=1.71 bear=327.0]state is normallPoller
+2017-05-23 08:09:17.996: GPS: Good Location received:Location[fused 53.384012,-1.471867 acc=17 et=+8d16h12m3s408ms alt=112.0 vel=1.71 bear=327.0] fromLocationHandler
+2017-05-23 08:09:17.997: GPS: Location received:Location[fused 53.383972,-1.471860 acc=21 et=+8d16h12m6s409ms alt=113.0 vel=0.19 bear=301.0]state is normallPoller
+2017-05-23 08:09:17.998: GPS: Good Location received:Location[fused 53.383972,-1.471860 acc=21 et=+8d16h12m6s409ms alt=113.0 vel=0.19 bear=301.0] fromLocationHandler
+2017-05-23 08:09:19.682: GPS: Location received:Location[fused 53.383906,-1.471856 acc=24 et=+8d16h12m11s118ms alt=120.0 vel=0.4 bear=215.0]state is normallPoller
+2017-05-23 08:09:19.683: GPS: Good Location received:Location[fused 53.383906,-1.471856 acc=24 et=+8d16h12m11s118ms alt=120.0 vel=0.4 bear=215.0] fromLocationHandler
+2017-05-23 08:09:22.891: GPS: Location received:Location[fused 53.383925,-1.471880 acc=24 et=+8d16h12m14s337ms alt=123.0 vel=0.55 bear=319.0]state is normallPoller
+2017-05-23 08:09:22.892: GPS: Good Location received:Location[fused 53.383925,-1.471880 acc=24 et=+8d16h12m14s337ms alt=123.0 vel=0.55 bear=319.0] fromLocationHandler
+2017-05-23 08:09:25.625: GPS: Location received:Location[fused 53.383957,-1.471906 acc=20 et=+8d16h12m17s70ms alt=127.0 vel=0.42 bear=322.0]state is normallPoller
+2017-05-23 08:09:25.626: GPS: Good Location received:Location[fused 53.383957,-1.471906 acc=20 et=+8d16h12m17s70ms alt=127.0 vel=0.42 bear=322.0] fromLocationHandler
+2017-05-23 08:09:27.677: GPS: Location received:Location[fused 53.384000,-1.471912 acc=18 et=+8d16h12m19s122ms alt=109.0 vel=1.31 bear=353.0]state is normallPoller
+2017-05-23 08:09:27.678: GPS: Good Location received:Location[fused 53.384000,-1.471912 acc=18 et=+8d16h12m19s122ms alt=109.0 vel=1.31 bear=353.0] fromLocationHandler
+2017-05-23 08:09:31.628: GPS: Location received:Location[fused 53.384097,-1.471929 acc=15 et=+8d16h12m23s74ms alt=122.0 vel=0.77 bear=348.0]state is normallPoller
+2017-05-23 08:09:31.629: GPS: Good Location received:Location[fused 53.384097,-1.471929 acc=15 et=+8d16h12m23s74ms alt=122.0 vel=0.77 bear=348.0] fromLocationHandler
+2017-05-23 08:09:34.708: GPS: Location received:Location[fused 53.384137,-1.471956 acc=18 et=+8d16h12m26s130ms alt=125.0 vel=0.6 bear=358.0]state is normallPoller
+2017-05-23 08:09:34.709: GPS: Good Location received:Location[fused 53.384137,-1.471956 acc=18 et=+8d16h12m26s130ms alt=125.0 vel=0.6 bear=358.0] fromLocationHandler
+2017-05-23 08:09:37.715: GPS: Location received:Location[fused 53.384223,-1.471996 acc=20 et=+8d16h12m29s159ms alt=113.0 vel=0.0]state is normallPoller
+2017-05-23 08:09:37.719: GPS: Good Location received:Location[fused 53.384223,-1.471996 acc=20 et=+8d16h12m29s159ms alt=113.0 vel=0.0] fromLocationHandler
+2017-05-23 08:09:40.000: GPS: Location received:Location[fused 53.384253,-1.472011 acc=21 et=+8d16h12m31s443ms alt=118.0 vel=0.0]state is normallPoller
+2017-05-23 08:09:40.001: GPS: Good Location received:Location[fused 53.384253,-1.472011 acc=21 et=+8d16h12m31s443ms alt=118.0 vel=0.0] fromLocationHandler
+2017-05-23 08:09:42.740: GPS: Location received:Location[fused 53.384291,-1.472041 acc=18 et=+8d16h12m34s144ms alt=126.0 vel=0.0]state is normallPoller
+2017-05-23 08:09:42.740: GPS: Good Location received:Location[fused 53.384291,-1.472041 acc=18 et=+8d16h12m34s144ms alt=126.0 vel=0.0] fromLocationHandler
+2017-05-23 08:09:47.049: GPS: Location received:Location[fused 53.384321,-1.472063 acc=15 et=+8d16h12m37s660ms alt=132.0 vel=0.0]state is normallPoller
+2017-05-23 08:09:47.050: GPS: Good Location received:Location[fused 53.384321,-1.472063 acc=15 et=+8d16h12m37s660ms alt=132.0 vel=0.0] fromLocationHandler
+2017-05-23 08:09:54.181: GPS: Location received:Location[fused 53.384340,-1.472066 acc=12 et=+8d16h12m45s497ms alt=140.0 vel=0.0]state is normallPoller
+2017-05-23 08:09:54.181: GPS: Good Location received:Location[fused 53.384340,-1.472066 acc=12 et=+8d16h12m45s497ms alt=140.0 vel=0.0] fromLocationHandler
+2017-05-23 08:10:42.086: ACT: MainWearActivity onStop Full Stopping
