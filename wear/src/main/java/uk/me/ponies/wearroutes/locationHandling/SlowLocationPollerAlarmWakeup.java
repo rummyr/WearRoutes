@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.SystemClock;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Date;
 
@@ -17,7 +16,6 @@ import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 class SlowLocationPollerAlarmWakeup extends SlowLocationPollerBase {
     private final String TAG = getClass().getSimpleName();
     private AlarmRecieverInner alarmReceiverInner;
-    private final Intent intent;
     private final IntentFilter myFilter;
     private final PendingIntent pi;
     private final AlarmManager alarmManager;
@@ -27,7 +25,7 @@ class SlowLocationPollerAlarmWakeup extends SlowLocationPollerBase {
     public SlowLocationPollerAlarmWakeup(LocationHandler master, Context context) {
         super(master, context);
         alarmReceiverInner = new AlarmRecieverInner();
-        intent = new Intent("uk.me.ponies.wearroutes.LocationAlarm");
+        Intent intent = new Intent("uk.me.ponies.wearroutes.LocationAlarm");
         myFilter = new IntentFilter(intent.getAction());
         alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         pi = PendingIntent.getBroadcast(context, 0, intent, 0 /*PendingIntent.FLAG_ONE_SHOT*/); // PendingIntent.FLAG_ONE_SHOT seems to fire only once, could be code issue though
@@ -104,7 +102,7 @@ class SlowLocationPollerAlarmWakeup extends SlowLocationPollerBase {
         }
 
         // Put here YOUR code.
-        Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_SHORT).show(); // For example
+        ////Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_SHORT).show(); // For example
     }
 
     @Override

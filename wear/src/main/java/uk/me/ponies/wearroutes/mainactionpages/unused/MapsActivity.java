@@ -1,5 +1,22 @@
 package uk.me.ponies.wearroutes.mainactionpages.unused;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.wearable.activity.WearableActivity;
+import android.support.wearable.view.DismissOverlayView;
+import android.util.Log;
+import android.view.View;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -23,23 +40,6 @@ import com.google.android.gms.wearable.DataEventBuffer;
 import com.google.android.gms.wearable.DataMapItem;
 import com.google.android.gms.wearable.Wearable;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.wearable.activity.WearableActivity;
-import android.support.wearable.view.DismissOverlayView;
-import android.util.Log;
-import android.view.View;
-import android.view.WindowInsets;
-import android.widget.FrameLayout;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -47,6 +47,7 @@ import java.util.concurrent.TimeUnit;
 import uk.me.ponies.wearroutes.CustomUrlTileProvider;
 import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.R;
+import uk.me.ponies.wearroutes.common.Defeat;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
@@ -154,6 +155,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
          super.onEnterAmbient(ambientDetails);
          mapFragment.onEnterAmbient(ambientDetails);
          if (ambientDetails.getBoolean(EXTRA_LOWBIT_AMBIENT)) {
+             Defeat.noop();
              //TODO: should disable anti aliasing on text fields
              //mStateTextView.setTextColor(Color.WHITE);
              //mStateTextView.getPaint().setAntiAlias(false);
@@ -355,9 +357,9 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
                      List<LatLng> myList = new ArrayList<>();
                      parcel.readList(myList,this.getClassLoader());
                      parcel.recycle();
-                     if (tagEnabled(TAG)) Log.d(TAG,"Recieved " + myList.size() + " points");
+                     if (tagEnabled(TAG)) Log.d(TAG,"Received " + myList.size() + " points");
 
-                     PolylineOptions rectOptions = new PolylineOptions().addAll(myList);
+                     PolylineOptions rectOptions = new PolylineOptions().addAll(myList).geodesic(false);
                      rectOptions.color(Color.RED); // TODO: make configurable
                      rectOptions.width(5); // TODO: make configurable
                      //Polyline polyline =
@@ -389,7 +391,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
          try {
              info = getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
          } catch (PackageManager.NameNotFoundException nfe) {
-             Log.e(TAG, "Couldnt find our own permissions to check in doPermissionsCheck!");
+             Log.e(TAG, "Couldn't find our own permissions to check in doPermissionsCheck!");
              return; // !! Should never happen!
          }
          if (info == null) {
@@ -408,7 +410,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
                  if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                          permission)) {
 
-                     // Show an expanation to the user *asynchronously* -- don't block
+                     // Show an explanation to the user *asynchronously* -- don't block
                      // this thread waiting for the user's response! After the user
                      // sees the explanation, try again to request the permission.
 

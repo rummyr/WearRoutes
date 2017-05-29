@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.prefs.MyPreferenceActivity;
 
 public class ActionPagePreferencesFragment extends Fragment {
@@ -56,12 +57,13 @@ public class ActionPagePreferencesFragment extends Fragment {
 //                }
 //        );
         Object o = preferencesPage.getButton().getImageDrawable();
-        String.valueOf(o);
+        Defeat.noop(o);
 
 
         if (false ||!USE_DENLEY) {
             BitmapDrawable bitmapD = (BitmapDrawable) preferencesPage.getButton().getImageDrawable();
             Bitmap bitmap = bitmapD.getBitmap();
+            Defeat.noop(bitmap);
 
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setScale(1, 1, 1, 2);

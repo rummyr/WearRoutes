@@ -107,6 +107,7 @@
             android:defaultValue="40"
             android:entries="@array/location_accuracy_display"
             android:entryValues="@array/location_accuracy_values"
+            app:wear_entryIcons="@array/location_accuracy_icons"
             app:wear_entryAsSummary="true"
             />
 
@@ -116,6 +117,7 @@
         android:defaultValue="30"
         android:entries="@array/location_interval_display"
         android:entryValues="@array/location_interval_values"
+        app:wear_entryIcons="@array/location_interval_icons"
         app:wear_entryAsSummary="true"
         />
 

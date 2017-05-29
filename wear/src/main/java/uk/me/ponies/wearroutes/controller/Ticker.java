@@ -3,12 +3,9 @@ package uk.me.ponies.wearroutes.controller;
 import android.os.Handler;
 import android.os.SystemClock;
 
-import org.greenrobot.eventbus.EventBus;
-
-import uk.me.ponies.wearroutes.eventBusEvents.UpdateDisplayedData;
-
 /**
- * Created by rummy on 02/08/2016.
+ * calls the runnable passed in at construction time at periodic intervals
+ * using post at time (android way)
  */
 public class Ticker {
     private Handler mTickerHandler;
@@ -16,12 +13,12 @@ public class Ticker {
     private Runnable mOnTickRunnable;
     private long mUpdateIntervalMs = 1000; // by default run every second
 
-    public Ticker(Runnable onTickRunnable, long updateIntervalMs) {
+    Ticker(Runnable onTickRunnable, long updateIntervalMs) {
         this.mOnTickRunnable = onTickRunnable;
         this.mUpdateIntervalMs = updateIntervalMs;
     }
 
-    public void startTicker() {
+    void startTicker() {
         if (mTickerHandler == null) {
             mTickerHandler =new Handler();
         }
@@ -40,7 +37,7 @@ public class Ticker {
                 long sleepMillis =  (mUpdateIntervalMs - nowEpoch % mUpdateIntervalMs);
                 long nowUptime = SystemClock.uptimeMillis();
                 long nextInUptime = nowUptime + sleepMillis;
-                long next = nowUptime + (mUpdateIntervalMs - nowUptime % mUpdateIntervalMs);
+                // long next = nowUptime + (mUpdateIntervalMs - nowUptime % mUpdateIntervalMs);
                 mTickerHandler.postAtTime(mTicker, nextInUptime);
             }
         };
@@ -48,7 +45,7 @@ public class Ticker {
         // fires an event immediately , and then waits for the next appropriate interval
         mTicker.run();
     }
-    public void changeTickerFrequencyMs(long newFrequencyMs) {
+    void changeTickerFrequencyMs(long newFrequencyMs) {
         if (mTickerHandler != null) {
             mTickerHandler.removeCallbacks(mTicker);
         }
@@ -56,7 +53,7 @@ public class Ticker {
         startTicker();
     }
 
-    public void stopTicker() {
+    void stopTicker() {
         if (mTickerHandler != null) {
             mTickerHandler.removeCallbacks(mTicker);
         }

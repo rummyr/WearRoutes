@@ -41,7 +41,7 @@ public class GridViewPagerListenerNotifier implements GridViewPager.OnPageChange
         // current Page is clearly onScreen
         // but we may need to flag the page that is being dragged onto screen
         if (offX != 0) {
-            // TODO: technically over agressive swipe right doesn't need to update both sides!
+            // TODO: technically over aggressive swipe right doesn't need to update both sides!
             updateScreenVisibility(LEFT | RIGHT);
         }
         if (offY != 0) {

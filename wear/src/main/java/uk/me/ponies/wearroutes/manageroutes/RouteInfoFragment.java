@@ -5,22 +5,22 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.TextView;
 
 import java.io.File;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 import uk.me.ponies.wearroutes.R;
-import uk.me.ponies.wearroutes.keys.WearUIKeys;
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.keys.WearUIKeys;
 
 /**
- * Created by rummy on 04/07/2016.
+ * Displays simple info about a route
  */
 public class RouteInfoFragment  extends Fragment{
     StoredRoute info;
@@ -46,6 +46,20 @@ public class RouteInfoFragment  extends Fragment{
                 RouteInfoFragment.this.deleteRoute();
             }
         });
+
+        // Hide the routeName Label on square devices .. its mainly there for padding
+        final TextView routeNameLabel = (TextView) v.findViewById(R.id.routeNameLabel);
+        routeNameLabel.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+            @Override
+            public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                if (!insets.isRound()) {
+                    routeNameLabel.setVisibility(View.GONE);
+                }
+                return insets;
+            }});
+        // point count
+        ((TextView)v.findViewById(R.id.pointCount)).setText(String.valueOf(info.getPoints().size()));
+
         return v;
     }
 
@@ -64,8 +78,8 @@ public class RouteInfoFragment  extends Fragment{
         long len = f.length();
         boolean canWrite = f.canWrite();
         boolean canRead = f.canRead();
-        String.valueOf(""+canWrite+canRead+len);
-        boolean rv = f.delete();
+        Defeat.noop(""+canWrite+canRead+len);
+        f.delete();
         // and clear it from the shared prefs
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         editor.remove(WearUIKeys.HIDE_PREFIX + info.getName());

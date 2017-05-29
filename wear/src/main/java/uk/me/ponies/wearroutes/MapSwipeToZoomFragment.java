@@ -32,12 +32,14 @@ import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +60,6 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -66,20 +67,21 @@ import java.util.Map;
 
 import uk.me.ponies.wearroutes.common.BearingSectorizer;
 import uk.me.ponies.wearroutes.common.Defeat;
+import uk.me.ponies.wearroutes.common.StoredRoute;
 import uk.me.ponies.wearroutes.common.locationUtils.Utils;
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
 import uk.me.ponies.wearroutes.controller.Controller;
+import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
-import uk.me.ponies.wearroutes.eventBusEvents.LocationProcessedEvent;
 import uk.me.ponies.wearroutes.historylogger.LatLngLogger;
 import uk.me.ponies.wearroutes.prefs.Keys;
-import uk.me.ponies.wearroutes.utils.CPUMeasurer;
-import uk.me.ponies.wearroutes.common.StoredRoute;
 import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
 import uk.me.ponies.wearroutes.utils.MapScaleBarOverlay;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+import static uk.me.ponies.wearroutes.utils.IsNullAndLog.isNullAndLog;
+import static uk.me.ponies.wearroutes.utils.IsNullAndLog.logNull;
 
 public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements IGridViewPagerListener {
     @SuppressWarnings("unused")
@@ -215,11 +217,38 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         setHasOptionsMenu(true); // doesn't but allows us to track some more lifecycle events{
         View rv = onCreateViewEmptyFragmentAddMapProgramatticaly(inflater, container, savedInstanceState);
 
-        mScaleBarOverlay = (MapScaleBarOverlay) rv.findViewById(R.id.customScaleBar);
-        mTextViewZoomDisplay = (TextView) rv.findViewById(R.id.textViewZoomDisplay);
-        mTextViewTiltDisplay = (TextView) rv.findViewById(R.id.textViewTiltDisplay);
-        mTextViewMapNumber = ((TextView) rv.findViewById(R.id.textViewMapNumber));
 
+        mScaleBarOverlay = (MapScaleBarOverlay) rv.findViewById(R.id.MapSwipeToZoomFragmentCustomScaleBar);
+        mTextViewZoomDisplay = (TextView) rv.findViewById(R.id.MapSwipeToZoomFragmentTextViewZoomDisplay);
+        mTextViewTiltDisplay = (TextView) rv.findViewById(R.id.MapSwipeToZoomFragmentTextViewTiltDisplay);
+        mTextViewMapNumber = ((TextView) rv.findViewById(R.id.MapSwipeToZoomFragmentTextViewMapNumber));
+
+        if (getResources().getConfiguration().isScreenRound()) {
+            //TODO: calculate insets correctly!
+            // 50 is good for a 320x320 display
+            mTextViewZoomDisplay.setX(mTextViewZoomDisplay.getX() + 50);
+            mTextViewZoomDisplay.setY(mTextViewZoomDisplay.getY() + 50);
+            mTextViewTiltDisplay.setX(mTextViewTiltDisplay.getX() - 50);
+            mTextViewTiltDisplay.setY(mTextViewTiltDisplay.getY() + 50);
+            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams)mScaleBarOverlay.getLayoutParams();
+            lp = lp;
+            int gravity = lp.gravity;
+            gravity &= ~Gravity.RIGHT;
+            gravity |= Gravity.CENTER_HORIZONTAL;
+            lp.gravity = gravity;
+            mScaleBarOverlay.setLayoutParams(lp);
+            // int adjust = mScaleBarOverlay.getRootWindowInsets().getSystemWindowInsetBottom();
+            mScaleBarOverlay.setY(mScaleBarOverlay.getY() - 30);
+            //TODO: adjust for chin!
+
+            /* Doesn't work
+            gravity = mScaleBarOverlay.getGravity();
+            // strip left/right
+            gravity &= ~Gravity.RIGHT;
+            gravity |= Gravity.CENTER_HORIZONTAL;
+            mScaleBarOverlay.setGravity(gravity);
+            */
+        }
         mLocationSource = new EventBusLocationSourceForMap();
         return rv;
     }
@@ -261,58 +290,29 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
     }
 
-    public View onCreateViewFragmentInLayout(LayoutInflater inflater, ViewGroup container,
-                                             Bundle savedInstanceState) {
-        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment " + fragmentName + " onCreateView called");
-        myMapFragment = inflater.inflate(R.layout.mapfragment, container, false);
-        // inner map fragment is created in the layout
-        innerMapFragment = (MapFragment) this.getChildFragmentManager().findFragmentById(R.id.mapfragment);
-        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment (not the view) is " + innerMapFragment);
-        this.setRetainInstance(true); // seems to shutdown map loading delay?
-        innerMapFragment.setRetainInstance(true);
-
-
-        //noinspection StatementWithEmptyBody
-        if (savedInstanceState == null) {
-            // this is probably where we'd ACTUALLY do fragment stuff perhaps .. not sure!
-
-        } else {
-            mResumeCamPos = savedInstanceState.getParcelable(KEY_RESUME_CAM_POS);
-        }
-        return myMapFragment;
-    }
 
     // called in onResume .. frankly unsure if this is the right place .. onCreate seems more sensible to me
     private void createInnerGoogleMapFragment() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
 
-        if (GoogleMapFragmentPool.innerMapFragmentPool.isEmpty()) {
-            if (tagEnabled(TAG)) Log.d(TAG, "creating a new InnerMapFragment");
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
+        if (tagEnabled(TAG)) Log.d(TAG, "creating a new InnerMapFragment");
 
-            GoogleMapOptions options;
-            if (!directionOfTravelUp) {
-                options = new GoogleMapOptions().liteMode(true);
-            } else {
-                options = new GoogleMapOptions();
-            }
-
-            innerMapFragment = MapFragment.newInstance(options);
-
-            // setupMap will be called from the callback
-            WeakReference<MapFragment> refToMap = new WeakReference<>(innerMapFragment);
-            GoogleMapFragmentPool.googleMapFragmentRecording.put(String.valueOf(++GoogleMapFragmentPool.creationNumber), refToMap);
+        GoogleMapOptions options;
+        if (!directionOfTravelUp) {
+            options = new GoogleMapOptions().liteMode(true);
         } else {
-            // get one from the pool
-            synchronized (GoogleMapFragmentPool.innerMapFragmentPool) {
-                if (tagEnabled(TAG)) Log.d(TAG, "getting an old InnerMapFragment");
-                innerMapFragment = GoogleMapFragmentPool.getFragment();
-                map = GoogleMapFragmentPool.getMapForFragment(innerMapFragment);
-            }
+            options = new GoogleMapOptions();
         }
+
+        innerMapFragment = MapFragment.newInstance(options);
+
+        // setupMap will be called from the callback
 
         // Then we add it using a FragmentTransaction.
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        //2017-05 new style of fragment layout .. map is now a defined frame within the frame,
+        // and not actually being set on the frame
         fragmentTransaction.add(R.id.emptyFragment, innerMapFragment); // could name it I suppose
         fragmentTransaction.commit();
 
@@ -330,31 +330,16 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     }
 
 
-    private void BEGIN(String s) {
-        timingLabel = s;
-        if (tagEnabled(TAG)) Log.d(TAG, "Beginning step " + s);
-        startCPU = CPUMeasurer.currentCPUUsed();
-        startTime = System.currentTimeMillis();
-    }
-
-    private void END() {
-        long endTime = System.currentTimeMillis();
-        long endCPU = CPUMeasurer.currentCPUUsed();
-        if (tagEnabled(TAG)) Log.d(TAG, "Step " + timingLabel + " ENDED used " + (endCPU - startCPU) + " took " + (endTime - startTime));
-    }
 
 
     @Override
     public void onStart() {
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onStart called with zoom:" + zoom);
-        BEGIN("onStart");
         super.onStart();
-        END();
     }
 
     @Override
     public void onResume() {
-        BEGIN("onResume");
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onResume called, visible is " + isVisible());
         super.onResume();
         EventBus.getDefault().register(this);
@@ -369,8 +354,6 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
         mCachedScreenAnchor = new Point(screenWidth/2, 2*screenHeight/3); // try to keep the point near the middle and 1/3rd up
         mCachedScreenAnchorRadiusSquared = screenWidth*screenWidth/9;
-
-        END();
 
         // correct the dynamic parts of the UI (buttons, etc)
         matchMapUIToConfig();
@@ -416,7 +399,6 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     public void onPause() {
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onPause called");
         // removing fragment here causes:
-        removeInnerMapAndReturnToPool();
         EventBus.getDefault().unregister(this);
         EventBus.getDefault().unregister(mLocationSource);
         super.onPause();
@@ -427,7 +409,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment:" + fragmentName + " onStop called");
         // remove and pool works but dies if another app is opened!
         // fragmentManager reports: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
-        if (map != null) {
+        if (!isNullAndLog(TAG, "map", map)) {
             map.setLocationSource(null);
         }
         map = null;
@@ -464,96 +446,81 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         return "MapContainingFragment:" + fragmentName;
     }
 
-    private void removeInnerMapAndReturnToPool() {
-        boolean sharedGMapFragments = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(Keys.KEY_DEVOPT_PERF_REUSE_GMAP_FRAGMENTS, false);
-        if (sharedGMapFragments) {
-            if (tagEnabled(TAG)) Log.d(TAG, "Removing inner map");
-            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-            fragmentTransaction.remove(innerMapFragment);
-            fragmentTransaction.commit();
-            // return this to the pool
-
-            GoogleMapFragmentPool.returnFragment(innerMapFragment, map);
+    @Subscribe
+    public void onAmbientEvent(AmbientEvent ae) {
+        switch(ae.getType()) {
+            case AmbientEvent.ENTER_AMBIENT: {
+                onEnterAmbient(ae.getBundle());
+                break;
+            }
+            case AmbientEvent.LEAVE_AMBIENT: {
+                onExitAmbient();
+                break;
+            }
         }
     }
 
+    private void setTextColours(int colour) {
+        logNull(TAG, "mTextViewZoomDisplay", mTextViewZoomDisplay);
+        logNull(TAG, "mTextViewTiltDisplay",mTextViewTiltDisplay);
+        logNull(TAG, "mTextViewMapNumber", mTextViewMapNumber);
 
-    public void onEnterAmbient(Bundle ambientDetails) {
+        if (mTextViewZoomDisplay != null) {
+            mTextViewZoomDisplay.setTextColor(colour);
+        }
+        if (mTextViewTiltDisplay != null) {
+            mTextViewTiltDisplay.setTextColor(colour);
+        }
+        if (mTextViewMapNumber != null) {
+            mTextViewMapNumber.setTextColor(colour);
+        }
+
+    }
+    private void onEnterAmbient(Bundle ambientDetails) {
         if (tagEnabled(TAG)) Log.d(TAG, "Fragment:" + fragmentName + " onEnterAmbient");
+        logNull(TAG, "innerMapFragment", innerMapFragment);
+
+
         if (innerMapFragment != null) {
             innerMapFragment.onEnterAmbient(ambientDetails);
         }
-        if (mTextViewZoomDisplay != null) {
-            mTextViewZoomDisplay.setTextColor(AMBIENT_TEXT_COLOR);
-        }
-        if (mTextViewTiltDisplay != null) {
-            mTextViewTiltDisplay.setTextColor(AMBIENT_TEXT_COLOR);
-        }
-        if (mTextViewMapNumber != null) {
-            mTextViewMapNumber.setTextColor(AMBIENT_TEXT_COLOR);
-        }
+
+        setTextColours(AMBIENT_TEXT_COLOR);
 
     }
 
-    public void onExitAmbient() {
+    private void onExitAmbient() {
         if (tagEnabled(TAG)) Log.d(TAG, "Fragment:" + fragmentName + " onExitAmbient");
-
-        if (innerMapFragment != null) {
+        logNull(TAG, "innerMapFragment", innerMapFragment);
+        if (innerMapFragment!=null) {
             innerMapFragment.onExitAmbient();
         }
-        if (mTextViewZoomDisplay != null) {
-            mTextViewZoomDisplay.setTextColor(ACTIVE_TEXT_COLOR);
-        }
-        if (mTextViewTiltDisplay != null) {
-            mTextViewTiltDisplay.setTextColor(ACTIVE_TEXT_COLOR);
-        }
-        if (mTextViewMapNumber != null) {
-            mTextViewMapNumber.setTextColor(ACTIVE_TEXT_COLOR);
-        }
+        setTextColours(ACTIVE_TEXT_COLOR);
     }
 
 
     public
     @Nullable
     CameraPosition getCameraPosition() {
-        if (map != null) {
-            return map.getCameraPosition();
-        } else {
-            return null;
-        }
-    }
-
-    public void animateCamera(CameraUpdate newCam) {
+        logNull(TAG, "map", map);
         if (map == null) {
-            if (tagEnabled(TAG)) Log.d(TAG, "Not animating camera as the map doesn't exist");
-        }
-
-        boolean isVisibleToUser;
-        View v = getView();
-        if (v == null) {
-            isVisibleToUser = false; // no view, can't update
+            return null;
         } else {
-            isVisibleToUser = v.getLocalVisibleRect(tmpVisibilityRect);
+            return map.getCameraPosition();
         }
-
-        // only if visible!!!
-        if (!isVisibleToUser) {
-            if (tagEnabled(TAG)) Log.d(TAG, "Not animating camera as the map isn't visible");
-        }
-        if (map != null && isVisibleToUser) {
-            if (tagEnabled(TAG)) Log.d(TAG, "moving camera as the map exists and is visible");
-            map.animateCamera(newCam);
-        }
-        mLastCamUpdate = newCam;
     }
 
-    public void moveCamera(CameraUpdate newCam) {
+
+    private void moveCamera(CameraUpdate newCam, boolean animate) {
+        logNull(TAG, "map", map);
         if (map == null) {
             if (tagEnabled(TAG)) Log.d(TAG, "Not moving camera as the map doesn't exist");
         }
 
         boolean isVisibleToUser;
         View v = getView();
+        logNull(TAG, "movecamera", v);
+        //noinspection SimplifiableIfStatement
         if (v == null) {
             isVisibleToUser = false; // no view, can't update
         } else {
@@ -563,22 +530,46 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         if (!isVisibleToUser) {
             if (tagEnabled(TAG)) Log.d(TAG, "Not moving camera as the map isn't visible");
         }
-
         if (map != null && isVisibleToUser) {
             if (tagEnabled(TAG)) Log.d(TAG, "moving camera as the map exists and is visible");
-            map.stopAnimation();
-            map.moveCamera(newCam);
+            if (animate) {
+                map.animateCamera(newCam);
+            }
+            else {
+                map.stopAnimation();
+                map.moveCamera(newCam);
+            }
         }
         mLastCamUpdate = newCam;
     }
 
+    public void animateCamera(CameraUpdate newCam) {
+        moveCamera(newCam,true);
+    }
+
+    public void moveCamera(CameraUpdate newCam) {
+        moveCamera(newCam, false);
+    }
+
+    public void addRoute(StoredRoute route) {
+        if (!route.getTHidden()) {
+            PolylineOptions rectOptions = new PolylineOptions().geodesic(false);
+            rectOptions.addAll(route.getPoints())
+                    .color(Color.RED)   // TODO: make configurable
+                    .width(5)           // TODO: make configurable
+            ;
+
+            addPolyline(rectOptions, route.getName(), route.getBounds(), true);
+        }
+    }
     public void addPolyline(PolylineOptions rectOptions, String name, LatLngBounds bounds, boolean zoomTo) {
         if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name);
 
-        // save it in case we need to restore it!
+        // save it in case we need to restore it in an onResume or some such!
         mSrcPolylines.put(name, rectOptions);
         mPolyLineBounds.put(name, bounds);
-        if (map != null) {
+
+        if (!isNullAndLog(TAG, "map", map)) {
             Polyline oldPolyLine = mMapPolyLines.get(name);
             if (oldPolyLine != null) {
                 if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "adding a PolyLine called" + name + " removing old one");
@@ -598,24 +589,8 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
     }
 
-    /**
-     * deprecated FFS!
-     */
-    public GoogleMap getMap() {
-        return map;
-    }
 
-    public void addRoute(StoredRoute route) {
-        if (!route.getTHidden()) {
-            PolylineOptions rectOptions = new PolylineOptions();
-            rectOptions.addAll(route.getPoints())
-            .color(Color.RED)   // TODO: make configurable
-            .width(5)           // TODO: make configurable
-            .geodesic(false);
 
-            addPolyline(rectOptions, route.getName(), route.getBounds(), true);
-        }
-    }
 
     @Override
     public void onOnScreenPage() {
@@ -648,14 +623,13 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     // we may not have had to get the map, but we still need to set zoom etc
     private  void setupMap() {
         if (tagEnabled(TAG)) Log.d(TAG, "SetupMap Called " + fragmentName);
-        BEGIN("Setting up the Map, not moving camera");
 
 
         map.setLocationSource(mLocationSource);
         // left, top, right, bottom
         map.setPadding(0,0,0,0);
 
-        CameraPosition camPos;
+        final CameraPosition camPos;
 
         if (mResumeCamPos != null) {
             camPos = mResumeCamPos;
@@ -685,13 +659,28 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                 }
 
                 // register a callback for when the map has finished loading
-
                 map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
                     @Override
                     public void onMapLoaded() {
-                        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment" + fragmentName + " onCameraChange Map now Loaded zoom is " + map.getCameraPosition().zoom + " wanted " + zoom + " on map:" + map);
+                        //WOW there's a defect, getting zoom on the cameraPosition frag can
+                        // cause java.lang.OutOfMemoryError: java.lang.String[] of length 1126498304 would overflow
+                        // though apparently only on first call
+
+                        try {
+                            CameraPosition camPos = map.getCameraPosition();
+                            // weirdly getCamera position seems to not quite work on first call!
+                            camPos = map.getCameraPosition();
+                        } catch (Exception e) {
+                            // yup seriously it *can* fail!
+                            Log.e(TAG, "get Camera position failed in onMapLoaded",e);
+                            Log.w(TAG, "ignoring mapLoaded due to no camera position");
+                            return;
+                        }
+                        float zoom = camPos.zoom;
+
+                        if (tagEnabled(TAG)) Log.d(TAG, "MapContainingFragment" + fragmentName + " onCameraChange Map now Loaded zoom is " + zoom + " wanted " + zoom + " on map:" + map);
                         if (mTextViewZoomDisplay != null) {
-                            mTextViewZoomDisplay.setText(String.valueOf(map.getCameraPosition().zoom));
+                            mTextViewZoomDisplay.setText(String.valueOf(zoom));
                         }
                         if (mTextViewTiltDisplay != null) {
                             mTextViewTiltDisplay.setText(String.valueOf(map.getCameraPosition().tilt));
@@ -710,10 +699,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         // animateCamera(cam);
         if (tagEnabled(TAG)) Log.d(TAG, "SetupMap " + fragmentName + " moving camera to zoom" + zoom);
 
-        END();
-        BEGIN("Moving Camera..possibly");
         moveCamera(cam);
-        END();
     }
 
     private void matchMapUIToConfig() {
@@ -738,18 +724,16 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         map.getUiSettings().setAllGesturesEnabled(false);
         map.getUiSettings().setZoomControlsEnabled(showZoom);
         map.getUiSettings().setZoomGesturesEnabled(tapToZoom);
-        map.setBuildingsEnabled(false);
-        map.setTrafficEnabled(false);
-        map.setIndoorEnabled(false);
-        //TODO: looks like we can set a location source for the map.. probably ought to use "ours"
-        //map.setLocationSource();
-
-
-        // map.setPadding(0,75,0,0);
-
         //map.getUiSettings().setScrollGesturesEnabled(false);
         //map.getUiSettings().setRotateGesturesEnabled(false);
         //map.getUiSettings().setTiltGesturesEnabled(false);
+
+        map.setBuildingsEnabled(false);
+        map.setTrafficEnabled(false);
+        map.setIndoorEnabled(false);
+
+        //map.setLocationSource(); // done in setupMap which is called before this
+
 
         // and also do the "dot"
         // from http://stackoverflow.com/questions/14376361/disable-center-button-in-mylocation-at-google-map-api-v2
@@ -781,6 +765,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
     public void setZoom(int zoom) {
         this.zoom = zoom;
+        logNull(TAG, "map", map);
         if (map != null) {
             CameraPosition camPos = CameraPosition.builder(map.getCameraPosition())
                     .zoom(zoom)
@@ -794,48 +779,28 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         }
     }
 
-    @Subscribe
-    /** after a location event has been processed this will be called
-     * we update the "history" trail polyline
-     */
-    public void onLocationProcessedEvent(LocationProcessedEvent dummy) {
-        // TODO: cull offscreen (if it looks like the google maps api isn't efficient enough
-        if (map == null) {
-            return; // not doing anything on a null map!
-        }
-        LatLngLogger lll = Controller.getInstance().getLatLngLogger();
-        if (lll == null) {
-            return;
-        }
-        PolylineOptions plo = new PolylineOptions()
-                .geodesic(false)
-                .width(3)
-                .color(Color.BLACK)
-                .addAll(lll.getHistory());
-        if (mHistoryPolyline != null) {
-            mHistoryPolyline.remove();
-        }
-        mHistoryPolyline = map.addPolyline(plo);
-    }
 
     @Subscribe
-    public void newLocation(LocationEvent locationEvent) {
+    public void onLocationEvent(LocationEvent locationEvent) {
         boolean updateRequired = false;
         String updateReason = "";
+
+        logNull(TAG, "map", map);
 
         if (map == null) { // quick exit
             return;
         }
         Location l = locationEvent.getLocation();
+        logNull(TAG, "location", l);
         if (l == null) {
-            return; // shouldn't happen, but lets check anyway
+            return; // shouldn't happen
         }
         CameraPosition originalCameraPosition = getCameraPosition();
 
         if (originalCameraPosition != null) {
             CameraPosition.Builder targetPos = CameraPosition.builder(originalCameraPosition);
             float newBearing = mBearingSectorizer.convertToSectorDegrees(l.getBearing());
-            Projection projection = null;
+            Projection projection = (Projection)Defeat.NULL();
 
 
             if (Defeat.FALSE()) {
@@ -848,7 +813,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                 LatLng idealLocation = projection.fromScreenLocation(tmpIdealLocationPoint);
                 Point locationOnScreen = projection.toScreenLocation(new LatLng(l.getLatitude(), l.getLongitude()));
                 LatLng reverseLatLng = projection.fromScreenLocation(locationOnScreen);
-                String.valueOf(reverseLatLng);
+                Defeat.noop(reverseLatLng);
                 targetPos.target(idealLocation);
             }
             // update the targetPos and only use it if required
@@ -857,24 +822,26 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
             targetPos.tilt(tilt); // always force the tilt
 
 
-            // quick check .. is it the first location
+            // quick isNullAndLog .. is it the first location
             if (firstLocation) {
                 updateRequired = true;
                 firstLocation = false;
                 updateReason = "First Location";
-            } // end first time check
+            } // end first time isNullAndLog
 
-            // check to see if bearing has changed significantly
-            // TODO: check user preferences!
-            if (!updateRequired && !Options.NORTH_UP) {
-                // check the bearing to see if it has changed
+            // isNullAndLog to see if bearing has changed significantly
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            final boolean directionOfTravelUp = prefs.getBoolean(Keys.KEY_WEAR_DIRECTION_OF_TRAVEL_UP, true);
+
+            if (!updateRequired && !directionOfTravelUp) {
+                // isNullAndLog the bearing to see if it has changed
                 if (newBearing != originalCameraPosition.bearing) {
                     updateRequired = true;
                     updateReason = "Bearing Change";
                 }
-            } // end bearing changed check
+            } // end bearing changed isNullAndLog
 
-            // check to see if the camera has moved enough (with accuracy taken into account) to justify a move
+            // isNullAndLog to see if the camera has moved enough (with accuracy taken into account) to justify a move
             // only update target cameraPosition IFF it has moved by enough
             if (!updateRequired && Defeat.FALSE()) {
                 // only update camera position if it has changed appropriately
@@ -891,8 +858,8 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
             LatLng tmpLatLng = new LatLng(l.getLatitude(), l.getLongitude());
             LatLngBounds latLngBounds = null;
 
-            // check to see if dot is outside of the target area using screen pixels
-            if (!updateRequired  && Defeat.TRUE()) { // check to see if it is near the edge using pixels
+            // isNullAndLog to see if dot is outside of the target area using screen pixels
+            if (!updateRequired  && Defeat.TRUE()) { // isNullAndLog to see if it is near the edge using pixels
                 if (projection == null) {
                     projection = map.getProjection();
                 }
@@ -912,7 +879,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
             } // end if dot is outside middle region as specified by pixels
 
 
-            // check to see if the dot is outside of the target area using the LatLngBounds
+            // isNullAndLog to see if the dot is outside of the target area using the LatLngBounds
             if (!updateRequired) {
 
                 // use this to see if map need fixing up!
@@ -937,7 +904,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
 
 
 
-            if (!updateRequired && Defeat.FALSE()) { // check to see if it's near the edge using lat long
+            if (!updateRequired && Defeat.FALSE()) { // isNullAndLog to see if it's near the edge using lat long
                 //noinspection ConstantConditions
                 if (latLngBounds == null) {
                     if (projection == null) {
@@ -1006,16 +973,24 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
     }
 
     private void addLocationToTrail() {
-        // TODO: cull offscreen (if it looks like the google maps api isn't efficient enough
+        logNull(TAG, "map", map);
         if (map == null) {
             return; // not doing anything on a null map!
         }
-        LatLngLogger lll = Controller.getInstance().getLatLngLogger();
+        if (isNullAndLog(TAG, "Controller", Controller.getInstance())) {
+            return;
+        }
+
+        Controller controller = Controller.getInstance();
+        logNull(TAG, "controller", controller);
+        if (controller == null) {
+            return;
+        }
+        LatLngLogger lll = controller.getLatLngLogger();
         if (lll == null) {
             return;
         }
-        PolylineOptions plo = new PolylineOptions()
-                .geodesic(false)
+        PolylineOptions plo = new PolylineOptions().geodesic(false)
                 .width(3)
                 .color(Color.BLACK)
                 .addAll(lll.getHistory());
@@ -1061,7 +1036,7 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
                 return;
             }
             if (mLocationChangedListener == null) {
-                if (tagEnabled(TAG)) Log.d(TAG, "EventBusLocationSourceForMap has no listener");
+                Log.w(TAG, "EventBusLocationSourceForMap has no listener");
             } else {
                 if (tagEnabled(TAG))Log.d(TAG, "EventBusLocationSourceForMap sending location to listener " + mLocationChangedListener);
                 // notify the map's listener that the blue dot needs moving
@@ -1086,6 +1061,10 @@ public class MapSwipeToZoomFragment extends FragmentLifecycleLogger implements I
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             if (tagEnabled(TAG)) Log.d(TAG, "GestureDetector onFling seen!");
+            if (e1 == null || e2 == null) {
+                if(tagEnabled(TAG)) Log.d(TAG, "GestureDetector e1 or e2 is null, ignoring, returning false");
+                return false;
+            }
             // mainly left?
             // Code from stackOverflow http://stackoverflow.com/questions/32966069/how-implement-left-right-swipe-fling-on-layout-in-android
             boolean result = false;

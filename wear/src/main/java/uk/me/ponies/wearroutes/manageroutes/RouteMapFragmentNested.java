@@ -23,14 +23,12 @@ import com.google.android.gms.maps.model.PolylineOptions;
 
 import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.R;
-import uk.me.ponies.wearroutes.keys.WearUIKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.keys.WearUIKeys;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
-/**
- * Created by rummy on 05/07/2016.
- */
+
 public class RouteMapFragmentNested extends Fragment {
     private  String TAG = getClass().getSimpleName();
     StoredRoute info;
@@ -56,7 +54,7 @@ public class RouteMapFragmentNested extends Fragment {
         tb.setChecked(info.getTHidden());
 
 
-        // can't do that here! Can't retain fragements that are nested in other fragments
+        // can't do that here! Can't retain fragments that are nested in other fragments
         // // innerMapFragment.setRetainInstance(true);
 
         innerMapFragment.getMapAsync(new OnMapReadyCallback() {

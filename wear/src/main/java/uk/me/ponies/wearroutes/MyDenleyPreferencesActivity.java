@@ -5,9 +5,10 @@ import android.support.wearable.view.WearableListView;
 import android.widget.TextView;
 
 import preference.WearPreferenceActivity;
+import uk.me.ponies.wearroutes.common.Defeat;
 
 /**
- * Created by rummy on 25/06/2016.
+ * Hangover debug class.. though might be re-instated at some point
  */
 public class MyDenleyPreferencesActivity extends WearPreferenceActivity {
     @Override
@@ -15,7 +16,7 @@ public class MyDenleyPreferencesActivity extends WearPreferenceActivity {
         super.onCreate(savedInstanceState);
 
         WearableListView list = (WearableListView) findViewById(android.R.id.list);
-        String.valueOf(list);
+        Defeat.noop(list);
         addPreferencesFromResource(R.xml.denley_preferences);
         // TODO: should surely be pulled from the theme!
         //list.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
@@ -24,11 +25,11 @@ public class MyDenleyPreferencesActivity extends WearPreferenceActivity {
         if (true) return;
 
         Object o = findViewById(me.denley.wearpreferenceactivity.R.id.heading);
-        String.valueOf(o);
+        Defeat.noop(o);
         ((TextView)o).setTextColor(android.R.color.holo_blue_light);
 
         o = list.findViewById(me.denley.wearpreferenceactivity.R.id.title);
-        String.valueOf(o);
+        Defeat.noop(o);
         ((TextView)o).setTextColor(android.R.color.holo_green_light);
     }
 
@@ -37,11 +38,11 @@ public class MyDenleyPreferencesActivity extends WearPreferenceActivity {
         super.onPostCreate(savedInstanceState);
         if (true) return;
         WearableListView list = (WearableListView) findViewById(android.R.id.list);
-        String.valueOf(list);
+        Defeat.noop(list);
         Object o = list.findViewById(me.denley.wearpreferenceactivity.R.id.title);
-        String.valueOf(o);
+        Defeat.noop(o);
         o = findViewById(me.denley.wearpreferenceactivity.R.id.heading);
-        String.valueOf(o);
+        Defeat.noop(o);
     }
 
     @Override
@@ -49,11 +50,11 @@ public class MyDenleyPreferencesActivity extends WearPreferenceActivity {
         super.onStart();
         if (true) return;
         WearableListView list = (WearableListView) findViewById(android.R.id.list);
-        String.valueOf(list);
+        Defeat.noop(list);
         Object o = list.findViewById(me.denley.wearpreferenceactivity.R.id.title);
-        String.valueOf(o);
+        Defeat.noop(o);
         o = findViewById(me.denley.wearpreferenceactivity.R.id.heading);
-        String.valueOf(o);
+        Defeat.noop(o);
         //((TextView)o).setTextColor(android.R.color.holo_green_light);
 
     }

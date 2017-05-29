@@ -1,6 +1,5 @@
 package uk.me.ponies.wearroutes.customviews;
 
-import android.service.voice.VoiceInteractionSession;
 import android.support.wearable.activity.ConfirmationActivity;
 
 /**

@@ -12,10 +12,12 @@ import android.widget.FrameLayout;
 
 import uk.me.ponies.wearroutes.R;
 import uk.me.ponies.wearroutes.controller.Controller;
-import uk.me.ponies.wearroutes.controller.StateConstants;
+import uk.me.ponies.wearroutes.controller.ControllerState;
+
+import static uk.me.ponies.wearroutes.utils.IsNullAndLog.logNull;
 
 /**
- * Created by rummy on 06/07/2016.
+ * Displays the start/stop recording buttons
  */
 public class ActionPageControlButtonsFragment extends Fragment implements ActionPageFragment {
 
@@ -29,12 +31,18 @@ public class ActionPageControlButtonsFragment extends Fragment implements Action
          startButton = (ActionPage)page.findViewById(R.id.action_start);
          stopButton = (ActionPage)page.findViewById(R.id.action_stop);
 
-        updatePage(Controller.getInstance().getRecordingState());
+        final Controller controller = Controller.getInstance();
+        logNull(TAG, "controller", controller);
+        if (controller == null) {
+            Log.wtf(TAG, "Controller is null, cant do show control buttons fragment!");
+            return null;
+        }
+        updatePage(controller.getRecordingState());
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Controller.getInstance().startRecording();
+                controller.startRecording();
             }
         });
 
@@ -54,17 +62,17 @@ public class ActionPageControlButtonsFragment extends Fragment implements Action
     @Override
     public void updatePage(int state) {
         switch (state) {
-            case StateConstants.STATE_STOPPED: {
+            case ControllerState.StateConstants.STATE_STOPPED: {
                 startButton.setVisibility(View.VISIBLE);
                 stopButton.setVisibility(View.INVISIBLE);
                 break;
             }
-            case StateConstants.STATE_RECORDING: {
+            case ControllerState.StateConstants.STATE_RECORDING: {
                 startButton.setVisibility(View.INVISIBLE);
                 stopButton.setVisibility(View.VISIBLE);
                 break;
             }
-            case StateConstants.STATE_PAUSED: {
+            case ControllerState.StateConstants.STATE_PAUSED: {
 
             }
         } // end switch state

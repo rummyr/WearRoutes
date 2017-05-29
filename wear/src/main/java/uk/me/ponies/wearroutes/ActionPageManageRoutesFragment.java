@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.manageroutes.ManageRoutesActivity;
 
 public class ActionPageManageRoutesFragment extends Fragment {
@@ -38,7 +39,7 @@ public class ActionPageManageRoutesFragment extends Fragment {
         android.support.wearable.view.ActionPage preferencesPage =
                 (android.support.wearable.view.ActionPage)inflater.inflate(R.layout.fragment_action_page_manage_routes, container, false);
         Object o = preferencesPage.getButton().getImageDrawable();
-        String.valueOf(o);
+        Defeat.noop(o);
 
 
         if (false) {

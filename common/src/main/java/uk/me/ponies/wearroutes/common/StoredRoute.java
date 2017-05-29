@@ -109,7 +109,9 @@ public class StoredRoute implements Serializable{
         }
         return tPoints;
     }
-
+    public void setPoints(List<LatLng> points) {
+        tPoints = points;
+    }
     /** returns the LatLngBounds, generating on the fly if required */
     public LatLngBounds getBounds() {
         if (tBounds == null) {

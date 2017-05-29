@@ -22,13 +22,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import uk.me.ponies.wearroutes.common.DataKeys;
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.common.StoredRoute;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
- * Created by rummy on 02/07/2016.
+ * Communication between Phone and Watch
  */
 class DataApiListener implements DataApi.DataListener {
     private static final String TAG = "DataApiListener";
@@ -39,7 +40,7 @@ class DataApiListener implements DataApi.DataListener {
 
 
     public DataApiListener(MapSwipeToZoomFragment mapFragment, File storageDirectory) {
-        mFragmentRef = new WeakReference<MapSwipeToZoomFragment>(mapFragment);
+        mFragmentRef = new WeakReference<>(mapFragment);
         this.storageDirectory = storageDirectory;
     }
 
@@ -106,7 +107,7 @@ class DataApiListener implements DataApi.DataListener {
                         writer.write(data.toJSON().toString());
                         writer.close();
                         StoredRoute looped = StoredRoute.fromJSON(data.toJSON().toString());
-                        String.valueOf(looped);
+                        Defeat.noop(looped);
                         //ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(routeFilename));
                         //out.writeObject(data);
                         //out.close();
@@ -130,7 +131,7 @@ class DataApiListener implements DataApi.DataListener {
                         Log.e(TAG, "Writing json failed because:" + jse);
                     }
 
-                    PolylineOptions rectOptions = new PolylineOptions().addAll(data.getPoints());
+                    PolylineOptions rectOptions = new PolylineOptions().geodesic(false).addAll(data.getPoints());
                     rectOptions.color(Color.RED); // TODO: make configurable
                     rectOptions.width(5); // TODO: make configurable
 

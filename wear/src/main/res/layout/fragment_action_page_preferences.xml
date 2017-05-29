@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foreground="#FFFFFF"
+
     android:src="@drawable/materialdesignicons_settings_box"
     android:text="@string/action_preferences"
     android:saveEnabled="false"

@@ -5,9 +5,7 @@ import android.os.Process;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/**
- * Created by rummy on 28/06/2016.
- */
+
 public abstract class CPUMeasurer {
     public static long currentCPUUsed() {
         int myPid = Process.myPid();

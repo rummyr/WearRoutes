@@ -16,7 +16,9 @@ import java.util.concurrent.TimeUnit;
 
 import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
-import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
+import uk.me.ponies.wearroutes.controller.Controller;
+import uk.me.ponies.wearroutes.controller.Stats;
+import uk.me.ponies.wearroutes.historylogger.LogEvent;
 
 /**
  * A SlowLocationPollerBase requests a location at the "frequent" rate until a good one is received
@@ -33,10 +35,11 @@ public abstract class SlowLocationPollerBase implements LocationListener{
     private static final String TAG = "SlowLocationPollerBase";
     private final static String WAKELOCK_NAME = "LocationPollerWakelock";
 
-    private final long lowFrequencyUpdateIntervalMs = TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS);
+    private long lowFrequencyUpdateIntervalMs = TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS);
     private final long ACCEPTABLE_WAKEUP_INACCURACY = Options.ACCEPTABLE_WAKEUP_INACCURACY_MILLIS;
     private Runnable mWakelockTimeoutRunnable;
     private Handler mTimeoutHandler =new Handler();
+    private long wakelockAquiredAt = 0;
 
 
 
@@ -50,7 +53,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
         long mMovingAverageLagNanos = 0;
         final PowerManager powerManager;
 
-    /** for development purposes, to report early or late wakeups */
+    /** for development purposes, to report early or late wake-ups */
     long expectedWakeupTime;
 
     protected final LocationRequest perSecondLocationRequest = LocationRequest.create()
@@ -59,8 +62,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
             .setFastestInterval(TimeUnit.SECONDS.toMillis(1)) // Set the fastest update interval to 1 seconds
             .setSmallestDisplacement(2); // Set the minimum displacement to quite small indeed;
     LocationHandler masterHandler;
-
-
+    private long mStatsPollingStartAtRealTimeMillis;
 
 
     public SlowLocationPollerBase(LocationHandler master, Context context) {
@@ -70,7 +72,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
             @Override
             public void run() {
                 acquirePartialWakeLock();
-                masterHandler.requestLocationUpdates(perSecondLocationRequest,(LocationListener)SlowLocationPollerBase.this);
+                masterHandler.requestLocationUpdates(perSecondLocationRequest,SlowLocationPollerBase.this);
                 EventBus.getDefault().post(
                         new LogEvent(
                                 "SlowLocation Poller now requestingLocationUpdates at " + perSecondLocationRequest.getInterval() + "ms intervals"
@@ -82,6 +84,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
             public void run() {
                 EventBus.getDefault().post(new LogEvent("Timed out waiting for a good location", "GPS"));
                 Log.w(TAG, "Timed out waiting for a good location");
+                Stats.addBackgroundFixTimeout();
                 setupForNextSample();
             }
         };
@@ -100,7 +103,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
                 }
             }
 
-            if (lockStatic != null) { // redundant check, but what the hell!
+            if (lockStatic != null) { // redundant isNullAndLog, but what the hell!
                 //TODO: proper handling of giving up if we can't acquire a good location!
 
                 // set a timer to tell us if we have waited too long!
@@ -112,12 +115,16 @@ public abstract class SlowLocationPollerBase implements LocationListener{
 
                 // acquire the wakelock, for safety reasons we let it expire after we expect the timeout handler to trigger (-1 above and +1 here)
                 lockStatic.acquire(TimeUnit.SECONDS.toMillis(Options.SlowPollingKeepAwakeForAtMostSecs+ 1 + Options.ACCEPTABLE_WAKEUP_INACCURACY_SECS));
+                wakelockAquiredAt = SystemClock.uptimeMillis();
             }
         }
 
         private void releasePartialWakeLock() {
             if (lockStatic != null) {
                 lockStatic.release();
+                long wakelockHeldFor = SystemClock.uptimeMillis() - wakelockAquiredAt;
+                Stats.addWakeLockHeldTime(wakelockHeldFor);
+
             }
 
         }
@@ -146,9 +153,13 @@ public abstract class SlowLocationPollerBase implements LocationListener{
             }
         }
 
+    public void setLowFrequencyUpdateIntervalSecs(int recordingIntervalSecs) {
+        lowFrequencyUpdateIntervalMs = TimeUnit.SECONDS.toMillis(recordingIntervalSecs);
+        Stats.updateBackgroundPollingInterval(recordingIntervalSecs);
+    }
+
     /** calculates the desirable sleep time,
      * takes into account any permitted inaccuracies in case we wake up a little early.
-     * @return
      */
     public long sleepTimeMs() {
             long nowEpoch = System.currentTimeMillis();
@@ -166,11 +177,10 @@ public abstract class SlowLocationPollerBase implements LocationListener{
         @Override
         public void onLocationChanged(Location location) {
 
-            EventBus.getDefault().post(
-                    new LogEvent(
-                            "Location received:" + location
-                                    + "state is " + "slowPoller"
-                            , "GPS"));
+            String msg = "Location received:" + location
+                    + "state is " + "slowPoller";
+            Log.d(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
 
             if (location == null || !masterHandler.isAcceptableLocation(location, "slowPollingLocation")) {
                 return;
@@ -180,7 +190,15 @@ public abstract class SlowLocationPollerBase implements LocationListener{
             // send the data out
             // and schedule in a new request
 
-            masterHandler.goodLocationReceived(location);
+            if (mStatsPollingStartAtRealTimeMillis != 0) {
+                long TTF = SystemClock.elapsedRealtime() - mStatsPollingStartAtRealTimeMillis;
+                EventBus.getDefault().post(new LogEvent(String.format("TTF SlowPoller:%.1f",TTF/1000.0f),"GPS"));
+                if (Controller.getInstance() != null) {
+                    Controller.getInstance().statsBackgroundTTFTimeMs(TTF);
+                }
+
+            }
+            masterHandler.goodLocationReceived(location, getClass().getSimpleName());
 
             setupForNextSample();
         }
@@ -199,7 +217,9 @@ public abstract class SlowLocationPollerBase implements LocationListener{
     /* starts the Location Request, and acquires a wakelock */
     public void commencePollingAsync(String tag) {
         acquirePartialWakeLock();
-        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG,"Wokeup " + (expectedWakeupTime - System.currentTimeMillis()) + "early/late");
+        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG,"Woke-up " + (expectedWakeupTime - System.currentTimeMillis()) + "early/late");
+
+        mStatsPollingStartAtRealTimeMillis = SystemClock.elapsedRealtime();
         mStartLocationUpdatePerSecond.run();
 
     }
@@ -209,7 +229,7 @@ public abstract class SlowLocationPollerBase implements LocationListener{
     }
 
     public Context getContext() {
-        return masterHandler.mContext;
+        return masterHandler.mApplicationContext;
     }
 }
 

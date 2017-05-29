@@ -64,29 +64,31 @@
     </string-array>
 
     <string-array name="location_interval_display" tools:translatable="true">
-        <item>2 secs</item>
-        <item>5 secs</item>
-        <item>10 secs</item>
-        <item>20 secs</item>
-        <item>30 secs</item>
-        <item>1 minute</item>
+        <item>2 secs</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_2.svg-->
+        <item>5 secs</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_5.svg-->
+        <item>10 secs</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_10.svg-->
+        <item>15 secs</item>
+        <item>20 secs</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_20.svg-->
+        <item>30 secs</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_30.svg-->
+        <item>1 minute</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_60.svg-->
     </string-array>
 
     <string-array name="location_interval_values">
         <item>2</item>
         <item>5</item>
         <item>10</item>
+        <item>15</item>
         <item>20</item>
         <item>30</item>
         <item>60</item>
     </string-array>
 
     <string-array name="location_accuracy_display" tools:translatable="true">
-        <item>12 meters</item>
-        <item>16 meters</item>
-        <item>24 meters</item>
-        <item>40 meters</item>
-        <item>60 meters</item>
+        <item>12 meters</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_12.svg-->
+        <item>16 meters</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_16.svg-->
+        <item>24 meters</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_24.svg-->
+        <item>40 meters</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_40.svg-->
+        <item>60 meters</item> <!--https://commons.wikimedia.org/wiki/File:Circle_sign_60.svg-->
     </string-array>
 
     <string-array name="location_accuracy_values" tools:translatable="false">
@@ -98,6 +100,7 @@
     </string-array>
 
     <string name="title_activity_manage_routes">ManageRoutesActivity</string>
+    <string name="title_activity_manage_history">ManageHistoryActivity</string>
     <string name="hello_world">Hello World!</string>
     <string name="hidden">Hidden</string>
     <string name="hide">hide</string>

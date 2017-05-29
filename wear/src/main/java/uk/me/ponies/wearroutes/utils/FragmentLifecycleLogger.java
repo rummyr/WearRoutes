@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
- * Created by rummy on 08/08/2016.
+ * base class so fragments get their lifecycle logged automatically
  */
 public class FragmentLifecycleLogger extends Fragment {
     public static String TAG = "FragmentLifecycleLogger";

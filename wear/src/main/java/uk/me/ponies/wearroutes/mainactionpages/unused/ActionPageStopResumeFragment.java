@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import uk.me.ponies.wearroutes.R;
 
 
-/**
- * Created by rummy on 06/07/2016.
- */
+
 public class ActionPageStopResumeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,8 +21,7 @@ public class ActionPageStopResumeFragment extends Fragment {
     }
     public View onCreateView_normal(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-        View page =inflater.inflate(R.layout.action_pause_stop, container, false);
-        return page;
+        return inflater.inflate(R.layout.action_pause_stop, container, false);
     }
     public View onCreateView_acv(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

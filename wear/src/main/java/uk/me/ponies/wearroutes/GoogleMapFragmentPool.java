@@ -13,9 +13,7 @@ import java.util.WeakHashMap;
 
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
-/**
- * Created by rummy on 22/06/2016.
- */
+
 public class GoogleMapFragmentPool {
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
@@ -28,7 +26,7 @@ public class GoogleMapFragmentPool {
     static Set<MapFragment> gcStopper = Collections.synchronizedSet(new HashSet<MapFragment>());
 
     static final Set<MapFragment> innerMapFragmentPool = Collections.synchronizedSet(new HashSet<MapFragment>());
-    static Map<MapFragment, GoogleMap> innerMapMapPool = Collections.synchronizedMap(new WeakHashMap<MapFragment, GoogleMap>());
+    private static Map<MapFragment, GoogleMap> innerMapMapPool = Collections.synchronizedMap(new WeakHashMap<MapFragment, GoogleMap>());
     static int creationNumber;
 
 

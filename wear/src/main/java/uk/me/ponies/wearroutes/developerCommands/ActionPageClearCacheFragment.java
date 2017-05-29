@@ -63,9 +63,6 @@ public class ActionPageClearCacheFragment extends Fragment {
 
     public static void trimCache(Context context) {
         try {
-            File dirFiles = context.getFilesDir();
-            //TODO: redundant
-            String.valueOf(dirFiles);
             File dir = context.getCacheDir();
             if (dir != null && dir.isDirectory()) {
                 deleteDir(dir);
@@ -78,8 +75,8 @@ public class ActionPageClearCacheFragment extends Fragment {
     public static boolean deleteDir(File dir) {
         if (dir != null && dir.isDirectory()) {
             String[] children = dir.list();
-            for (int i = 0; i < children.length; i++) {
-                boolean success = deleteDir(new File(dir, children[i]));
+            for (String child: children) {
+                boolean success = deleteDir(new File(dir, child));
                 if (!success) {
                     return false;
                 }

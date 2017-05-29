@@ -13,9 +13,7 @@ import java.util.List;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
-/**
- * Created by rummy on 30/07/2016.
- */
+
 public class LatLngLogger  {
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
@@ -42,7 +40,7 @@ public class LatLngLogger  {
 
     private void startLogging() {
 
-        mHistory = new ArrayList<LatLng>();
+        mHistory = new ArrayList<>();
         mPrevLocation = null;
     }
 

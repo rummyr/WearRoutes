@@ -14,14 +14,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.me.ponies.wearroutes.keys.WearUIKeys;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.keys.WearUIKeys;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 
 /**
- * Created by rummy on 04/07/2016.
+ * Utilities for reading stored routes from a json file
  */
 public class StoredRoutesUtils {
     private static String TAG = StoredRoutesUtils.class.getSimpleName();
@@ -42,7 +42,7 @@ public class StoredRoutesUtils {
             try {
                 BufferedReader r = new BufferedReader(new FileReader(routeFile));
                 String line;
-                StringBuffer sb = new StringBuffer((int) routeFile.length());
+                StringBuilder sb = new StringBuilder ((int) routeFile.length());
                 while ((line = r.readLine()) != null) {
                     sb.append(line);
                 }

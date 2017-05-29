@@ -1,17 +1,12 @@
 package uk.me.ponies.wearroutes.locationHandling;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -26,16 +21,14 @@ import com.google.android.gms.wearable.Wearable;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-import java.util.concurrent.TimeUnit;
-
 import uk.me.ponies.wearroutes.Options;
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.common.LocationAugmentor;
-import uk.me.ponies.wearroutes.common.locationUtils.Utils;
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
-import uk.me.ponies.wearroutes.controller.Controller;
-import uk.me.ponies.wearroutes.eventBusEvents.AmbientEvent;
+import uk.me.ponies.wearroutes.controller.Stats;
 import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
-import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
+import uk.me.ponies.wearroutes.eventBusEvents.LocationPollingStateEvent;
+import uk.me.ponies.wearroutes.historylogger.LogEvent;
 import uk.me.ponies.wearroutes.prefs.Keys;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
@@ -49,88 +42,92 @@ import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
  * But when in less frequent mode (undefined, but 30s is definitely less frequent) it toggles between
  * continuous and &quot;off&quot; mode with possibly some heuristics to try to meet the desired frequency.
  */
-public class LocationHandler implements LocationListener,ILocationHandler, SharedPreferences.OnSharedPreferenceChangeListener {
+public class LocationHandler implements ILocationHandler, SharedPreferences.OnSharedPreferenceChangeListener {
 
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
 
     private final static String TAG = LocationHandler.class.getSimpleName();
-    private final String mAppName; // used only for displaying an error dialog!
+    // not used, but kept just in case private final CharSequence mAppName; // used only for displaying an error dialog!
     private final LocationAugmentor mLocationAugmentor = new LocationAugmentor();
-    Context mContext; //TODO: Coupling!
+    Context mApplicationContext; //TODO: Coupling!
     private GoogleApiClient mGoogleApiClient;
     boolean mConnected = false; //TODO: Coupling!
 
-    float minAllowedAccuracyRecording = 100;
+    private float minAllowedAccuracyRecording = 100;
 
 
     private SlowLocationPollerBase mSlowLocationPoller;
+    private NormalLocationPoller mNormalLocationPoller;
 
-    //BUG: accept lower accuracy when not recording
-    private final LocationRequest whenOnLocationRequest = LocationRequest.create()
-            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY) // Use high accuracy
-            .setInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_ON_SECS)) // Set the update interval to 2 seconds
-            .setFastestInterval(TimeUnit.SECONDS.toMillis(Options.LOCATION_UPDATE_INTERVAL_WHEN_ON_SECS)) // Set the fastest update interval to 2 seconds
-            .setSmallestDisplacement(2); // Set the minimum displacement to quite small indeed;
+
 
 
     // api and callbacks
     @SuppressWarnings("FieldCanBeLocal")
     private ConnectionCallBacksHandler mConnectionCallBacksHandler;
-    /**
-     * used to determine which poller to use when the API client is connected/disconnected/suspended.
-     */
-    private boolean isSlowPolling = false;
 
-    public static final int POLL_USING_POST_AT_TIME = 1;
+
+    private static final int POLL_USING_POST_AT_TIME = 1;
     public static final int POLL_USING_ALARMS = 2;
-    public static final int ACCURACY_SIMPLE = 100;
+    private static final int ACCURACY_SIMPLE = 100;
     public static final int ACCURACY_VELOCITY_ADJUST = 101;
     private IAcceptableLocationStrategy mAccuracyStratey;
 
+    private boolean mFastPolling;
+    private boolean mSlowPolling = false;
 
-    public LocationHandler(Activity activity, int pollingStrategy, int accuracyStrategy) {
-        this.mContext = activity.getApplicationContext();
+    private static final int NO_POLLING = 0;
+    private static final int VERY_SLOW_POLLING = 1;
+    private static final int SLOW_POLLING = 2;
+    private static final int FAST_POLLING = 3;
+    private String[] pollingModes = { "NO", "Very Slow", "Slow", "Fast"};
+
+    private int pollingMode;
+    private LocationListener currentlyRegisteredListener;
+
+    public LocationHandler(Context context, int pollingStrategy, int accuracyStrategy) {
+        this.mApplicationContext = context;
 
 
-        PreferenceManager.getDefaultSharedPreferences(mContext).registerOnSharedPreferenceChangeListener(this);
-        setMinAllowedAccuracyRecordingFromSharedPrefs(PreferenceManager.getDefaultSharedPreferences(mContext));
+        PreferenceManager.getDefaultSharedPreferences(mApplicationContext).registerOnSharedPreferenceChangeListener(this);
+        setMinAllowedAccuracyRecordingFromSharedPrefs(PreferenceManager.getDefaultSharedPreferences(mApplicationContext));
 
 
-        String appName;
-        try {
-            ActivityInfo activityInfo = activity.getPackageManager().getActivityInfo(
-                    activity.getComponentName(), PackageManager.GET_META_DATA);
-            appName = activityInfo.loadLabel(activity.getPackageManager())
-                    .toString();
-        } catch (PackageManager.NameNotFoundException nnfe) {
-            appName = "No App Name";
-        }
+
+    /* not required, but kept in case I need the code again
+        CharSequence appName;
+
+        ApplicationInfo applicationInfo = mApplicationContext.getApplicationInfo();
+        appName = applicationInfo.loadLabel(mApplicationContext.getPackageManager());
+
         mAppName = appName;
-
+    */
         switch (pollingStrategy) {
             case POLL_USING_ALARMS: {
-                mSlowLocationPoller = new SlowLocationPollerAlarmWakeup(this, mContext);
+                mSlowLocationPoller = new SlowLocationPollerAlarmWakeup(this, mApplicationContext);
                 break;
             }
             case POLL_USING_POST_AT_TIME: {
-                mSlowLocationPoller = new SlowLocationPollerPostAtTime(this, mContext);
+                mSlowLocationPoller = new SlowLocationPollerPostAtTime(this, mApplicationContext);
                 break;
             }
             default: {
                 Log.e(TAG, "Unknown scheduling pollingStrategy " + pollingStrategy);
-                mSlowLocationPoller = new SlowLocationPollerNoOp(this, mContext);
+                mSlowLocationPoller = new SlowLocationPollerNoOp(this, mApplicationContext);
                 break;
             }
-
         }
+        mNormalLocationPoller = new NormalLocationPoller(this);
+
+        setSlowPollerRecordingIntervalFromSharedPrefs(PreferenceManager.getDefaultSharedPreferences(mApplicationContext));
 
         assignAccuracyStrategy(accuracyStrategy);
 
         mConnectionCallBacksHandler = new ConnectionCallBacksHandler();
 
-        mGoogleApiClient = new GoogleApiClient.Builder(mContext)
+        mGoogleApiClient = new GoogleApiClient.Builder(mApplicationContext)
                 .addApi(Wearable.API)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(mConnectionCallBacksHandler)
@@ -159,78 +156,21 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
         }
     }
 
+    void goodLocationReceived(Location location, String pollerType) {
+        if (mSlowPolling && mFastPolling) {
+            Log.e(TAG, "Slow AND Fast polling are enabled!");
+            EventBus.getDefault().post(
+                    new LogEvent(
+                            "Slow AND Fast polling are enabled!","GPS"));
 
-    /**
-     * stops requesting location updates.
-     */
-    private void stopNormalLocationRequest() {
-        if (mConnected) {
-            removeLocationUpdates(this);
         }
-    }
-
-    /**
-     * after some permission checks cancels any previous requestforlocations and starts it again
-     *
-     * @param locRequest the locationRequest to use
-     */
-    private void startNormalLocationRequest(LocationRequest locRequest) {
-        if (!mConnected) {
-            return;
-        }
-        if (PackageManager.PERMISSION_GRANTED
-                == ContextCompat.checkSelfPermission(mContext, android.Manifest.permission.ACCESS_FINE_LOCATION)) {
-            try {
-                removeLocationUpdates(this);
-                EventBus.getDefault().post(
-                        new LogEvent(
-                                "Normal Poller now requestingLocationUpdates at " + locRequest.getInterval() + "ms intervals"
-                                , "GPS"));
-                requestLocationUpdates(locRequest, this);
-            } catch (SecurityException se) {
-                Log.e(TAG, "WTF! I was told we had this permission!, time to moan to the user!");
-
-                AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
-                alert.setTitle("Permission Problem")
-                        .setMessage(mAppName + " has been denied access to your location, please enable it in Settings>Permissions.")
-                        .setPositiveButton("I'll do that", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                //Your action here
-                            }
-                        })
-                        .show();
-            }
-        } else {
-            //TODO: handle FINE_LOCATION permission denied .. not that it should happen, but you never know
-            Log.e(TAG, "FINE_LOCATION permission is denied, this need handling!");
-        }
-    }
-
-
-    @Override
-    public void onLocationChanged(Location location) {
         EventBus.getDefault().post(
                 new LogEvent(
-                        "Location received:" + location
-                                + "state is " + "normallPoller"
+                        "Good Location received:" + location +" from" + pollerType
                         , "GPS"));
-
-        if (location == null || !isAcceptableLocation(location, "whenOnLocation")) {
-            return;
-        }
-
-
-        goodLocationReceived(location);
-    }
-
-    void goodLocationReceived(Location location) {
-        EventBus.getDefault().post(
-                new LogEvent(
-                        "Good Location received:" + location
-                        , "GPS"));
-        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "Good location received " + location);
+        if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "Good location received " + location + " from " + pollerType);
         mLocationAugmentor.addSpeedAndBearing(location);
-        EventBus.getDefault().post(new LocationEvent(location));
+        EventBus.getDefault().post(new LocationEvent(location, pollerType));
     }
 
     /**
@@ -238,57 +178,18 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
      * needs to be
      * accurate enough aka <MIN_ALLOWED_ACCURACY_METERS_RECORDING or MIN_ALLOWED_ACCURACY_METERS_NOT_RECORDING
      * has an elevation not 0.000000
-     * -- should we check speed? Probably not
+     * -- should we isNullAndLog speed? Probably not
      * and not the same time as the previous location
      *
      * @param location as received from google
      * @return true if the location seems good
      */
-    boolean isAcceptableLocation(Location location, final String src) {
-        if (location == null) {
-            return false;
-        }
-        return mAccuracyStratey.isAcceptableLocation(location);
+    boolean isAcceptableLocation(@NonNull Location location, final String src) {
+        return mAccuracyStratey.isAcceptableLocation(location, src);
     }
 
-    /**
-     * change the update frequency when in/out of ambient mode
-     */
-    @Subscribe
-    public void onAmbientEvent(AmbientEvent evt) {
-
-        switch (evt.getType()) {
-            case AmbientEvent.LEAVE_AMBIENT: {
-                // transition to "on" state
-                // simply request data at the "frequent" rate, no polling required
-                isSlowPolling = false;
-                // although it seems sensible to stop the slow and start the normal
-                // if we do it the other way around we make sure that there is never
-                // a gap which *MIGHT* stop any unknown shutdown GPS while it's not needed behaviour
-                mAccuracyStratey.newPollStarting();
-                startNormalLocationRequest(whenOnLocationRequest);
-                mSlowLocationPoller.stop();
 
 
-                break;
-            }
-            case AmbientEvent.ENTER_AMBIENT: {
-                boolean updateLessOftenInAmbient = PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean(Keys.KEY_GPS_UPDATES_LESS_IN_AMBIENT, true);
-                if (updateLessOftenInAmbient) {
-                    isSlowPolling = true;
-                    mAccuracyStratey.newPollStarting();
-                    mSlowLocationPoller.scheduleNext();
-                    stopNormalLocationRequest();
-                } else {
-                    isSlowPolling = false;
-                    mAccuracyStratey.newPollStarting();
-                    startNormalLocationRequest(whenOnLocationRequest);
-                    mSlowLocationPoller.stop();
-                }
-                break;
-            }
-        }
-    }
 
     /** to detect changes to the accuracy preference */
     @Override
@@ -296,15 +197,24 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
         if (Keys.KEY_PREF_WEAR_RECORDING_LOCATION_ACCURACY . equals(key)) {
             setMinAllowedAccuracyRecordingFromSharedPrefs(sharedPreferences);
         }
+        if (Keys.KEY_PREF_WEAR_RECORDING_LOCATION_INTERVAL.equals(key)) {
+            setSlowPollerRecordingIntervalFromSharedPrefs(sharedPreferences);
+        }
     }
 
-    public void setMinAllowedAccuracyRecordingFromSharedPrefs(SharedPreferences prefs) {
+    private void setMinAllowedAccuracyRecordingFromSharedPrefs(SharedPreferences prefs) {
         String minAllowedAccuracyRecordingStr = prefs.getString(Keys.KEY_PREF_WEAR_RECORDING_LOCATION_ACCURACY,
                 String.valueOf(Options.MIN_ALLOWED_ACCURACY_METERS_RECORDING));
         setMinAllowedAccuracyRecording(minAllowedAccuracyRecordingStr);
     }
 
-    public void setMinAllowedAccuracyRecording(String minAllowedAccuracyRecordingStr) {
+    private void setSlowPollerRecordingIntervalFromSharedPrefs(SharedPreferences prefs) {
+        String minRecordingLocationInterval = prefs.getString(Keys.KEY_PREF_WEAR_RECORDING_LOCATION_INTERVAL,
+                String.valueOf(Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS));
+        setSlowPollerRecordingInterval(minRecordingLocationInterval );
+    }
+
+    private void setMinAllowedAccuracyRecording(String minAllowedAccuracyRecordingStr) {
         try {
             minAllowedAccuracyRecording = Float.parseFloat(minAllowedAccuracyRecordingStr);
         } catch (NumberFormatException nfe) {
@@ -315,31 +225,42 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
         }
     }
 
+    private void setSlowPollerRecordingInterval(String recordingIntervalStr) {
+        int recordingInterval;
+        try {
+            recordingInterval = Integer.parseInt(recordingIntervalStr);
+            mSlowLocationPoller.setLowFrequencyUpdateIntervalSecs(recordingInterval);
+        } catch (NumberFormatException nfe) {
+            Log.e(TAG, "recordingInterval is NOT a sensible int '" + recordingIntervalStr + "'"
+                    + " defaulting to " + Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS);
+            recordingInterval = Options.LOCATION_UPDATE_INTERVAL_WHEN_AMBIENT_SECS; // so we have something if it fails to parse
+            mSlowLocationPoller.setLowFrequencyUpdateIntervalSecs(recordingInterval);
+        }
+    }
 
     private class ConnectionCallBacksHandler implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
         @Override
         public void onConnected(Bundle connectionHint) {
             if (tagEnabled(TAG))  Log.d(TAG, "onConnected(): Successfully connected to Google API client");
             mConnected = true;
-            if (isSlowPolling) {
-                stopNormalLocationRequest();
-                mAccuracyStratey.newPollStarting();
-                mSlowLocationPoller.scheduleNext();
-                //TODOLOW: should we consider an "immediate" request anyway?
-            } else {
-                mSlowLocationPoller.stop();
-                mAccuracyStratey.newPollStarting();
-                startNormalLocationRequest(whenOnLocationRequest);
+            if (pollingMode == NO_POLLING) {
+                switchToNoPolling();
+            } else if (pollingMode == VERY_SLOW_POLLING) {
+                switchToVerySlowPolling();
+            }  else if (pollingMode == SLOW_POLLING) {
+                switchToSlowPolling();
+            } else if (pollingMode == FAST_POLLING) {
+                switchToFastPolling();
             }
-        } // end onConnected
+       } // end onConnected
 
 
         @Override
         public void onConnectionSuspended(int cause) {
-            //TODO: check suspended = NOT Connected
-            mConnected = false;
-            stopNormalLocationRequest();
-            mSlowLocationPoller.stop();
+            int previousPollingMode = pollingMode;
+            switchToNoPolling();
+            // and restore
+            pollingMode = previousPollingMode;
             if (tagEnabled(TAG))
                 Log.d(TAG, "onConnectionSuspended(): Connection to Google API client was suspended");
         }
@@ -357,19 +278,21 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
      * Shutdown!
      */
     public void shutdown() {
-        stopNormalLocationRequest();
         mSlowLocationPoller.destroy();
         mSlowLocationPoller = null;
+        mNormalLocationPoller.destroy();
+        mNormalLocationPoller = null;
+        mGoogleApiClient.disconnect();
         mGoogleApiClient.unregisterConnectionCallbacks(mConnectionCallBacksHandler);
         mGoogleApiClient.unregisterConnectionFailedListener(mConnectionCallBacksHandler);
-        mGoogleApiClient.disconnect();
+        mConnected = false; // or it very soon will be
         mGoogleApiClient = null;
         mConnectionCallBacksHandler = null;
         EventBus.getDefault().unregister(this);
-        PreferenceManager.getDefaultSharedPreferences(mContext).unregisterOnSharedPreferenceChangeListener(this);
+        PreferenceManager.getDefaultSharedPreferences(mApplicationContext).unregisterOnSharedPreferenceChangeListener(this);
         mAccuracyStratey.destroy();
         mAccuracyStratey = null;
-        mContext = null;
+        mApplicationContext = null;
     }
 
     /**
@@ -378,15 +301,176 @@ public class LocationHandler implements LocationListener,ILocationHandler, Share
     @Override
     public PendingResult<Status> requestLocationUpdates(LocationRequest locRequest, LocationListener locationListener) {
         if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "requestingLocationUpdates for listener " + locationListener);
-        return LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient,
-                locRequest,
-                locationListener);
+        if (currentlyRegisteredListener != null) {
+            String msg = "Registered a locationListener when there was one already active old:" + currentlyRegisteredListener + " new:" + locationListener;
+            Log.e(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
+        }
+
+        if (!mConnected) {
+            String msg = "Can't request location updates @ (" + locRequest.getInterval() + ")ms because we aren't connected"
+            Log.w(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
+            return null;
+        }
+        try {
+            PendingResult<Status> rv = LocationServices.FusedLocationApi.requestLocationUpdates(
+                    mGoogleApiClient,
+                    locRequest,
+                    locationListener);
+            currentlyRegisteredListener = locationListener;
+            String msg = "Registering a locationListener:  " + locationListener + "updates @ (" + locRequest.getInterval() + ")ms";
+            Log.w(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
+            return rv;
+        }
+        catch (SecurityException se) {
+            //TODO: fix properly!
+            Log.e(TAG, "SecurityException thrown requestingLocationUpdates", se);
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 
-    public PendingResult<Status> removeLocationUpdates(LocationListener locationListener) {
+    public @Nullable  PendingResult<Status> removeLocationUpdates(LocationListener locationListener) {
         if (DebugEnabled.tagEnabled(TAG)) Log.d(TAG, "removingLocationUpdates for listener " + locationListener);
-        return LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, locationListener);
+        if (currentlyRegisteredListener != locationListener) {
+            String msg = "removing a locationListener that is NOT the last registered one! old:" + currentlyRegisteredListener + " new:" + locationListener;
+            Log.e(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
+        }
+        if (currentlyRegisteredListener != null) {
+            PendingResult<Status> rv = LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, locationListener);
+            currentlyRegisteredListener = null;
+            return  rv;
+        }
+        else {
+            String msg = "Removing a locationListener (" + locationListener + "(when we aren't listening for updates!";
+            Log.e(TAG, msg);
+            EventBus.getDefault().post(new LogEvent(msg, "GPS"));
+            return null;
+        }
+    }
+
+    private void switchToFastPolling() {
+        Stats.setCurrentPollingMode("Fast");
+        if (pollingMode == NO_POLLING) {
+            // nothing to stop!
+            Defeat.noop();
+        } else if (pollingMode == VERY_SLOW_POLLING) {
+            mSlowLocationPoller.stop();
+            mSlowPolling = false;
+        } else if (pollingMode == SLOW_POLLING) {
+            mSlowLocationPoller.stop();
+            mSlowPolling = false;
+        }
+
+        if (!mNormalLocationPoller.isActive()) {
+            mAccuracyStratey.newPollStarting();
+            mNormalLocationPoller.scheduleNext();
+            mFastPolling = true;
+        }
+        pollingMode = FAST_POLLING;
+    }
+
+    private void switchToSlowPolling() {
+        Stats.setCurrentPollingMode("Slow");
+        if (pollingMode == NO_POLLING) {
+            // nothing to stop!
+            Defeat.noop();
+        } else if (pollingMode == VERY_SLOW_POLLING) {
+            // nothing to do until we implement v slow polling
+            Defeat.noop();
+        } else if (pollingMode == SLOW_POLLING) {
+            // already in the right mode
+            // though we might want to consider restarting -- e.g. if is a re-connected event!!
+            Defeat.noop();
+        } if (pollingMode == FAST_POLLING) {
+            mNormalLocationPoller.stop();
+            mFastPolling = false;
+        }
+
+        //BUG: need to switch on slow poller if it isn't already active!
+        if (!mSlowPolling) {
+            mAccuracyStratey.newPollStarting();
+            mSlowLocationPoller.scheduleNext();
+            mSlowPolling = true;
+        }
+        pollingMode = SLOW_POLLING;
+    }
+
+    //TODO: implement very slow polling
+    private void switchToVerySlowPolling() {
+        Stats.setCurrentPollingMode("Very Slow");
+
+        if (pollingMode == NO_POLLING) {
+            // nothing to stop!
+            Defeat.noop();
+        } else if (pollingMode == VERY_SLOW_POLLING) {
+            // nothing to do until we implement v slow polling
+            Defeat.noop();
+        } else if (pollingMode == SLOW_POLLING) {
+            // already in the right mode
+            // though we might want to consider restarting -- e.g. if is a re-connected event!!
+            Defeat.noop();
+        } if (pollingMode == FAST_POLLING) {
+            mNormalLocationPoller.stop();
+            mFastPolling = false;
+        }
+
+        //BUG: need to switch on slow poller if it isn't already active!
+        if (!mSlowPolling) {
+            mAccuracyStratey.newPollStarting();
+            mSlowLocationPoller.scheduleNext();
+            mSlowPolling = true;
+        }
+        pollingMode = VERY_SLOW_POLLING;
+
+    }
+
+    private void switchToNoPolling() {
+        Stats.setCurrentPollingMode("Stopped/No");
+
+        if (pollingMode == VERY_SLOW_POLLING) {
+            mSlowLocationPoller.stop();
+            mSlowPolling = false;
+        }
+        if (pollingMode == SLOW_POLLING) {
+            mSlowLocationPoller.stop();
+            mSlowPolling = false;
+        }
+        else if (pollingMode == FAST_POLLING) {
+            mNormalLocationPoller.stop();
+            mFastPolling = false;
+        }
+        pollingMode = NO_POLLING;
+
+    }
+
+    /** polling state change .. check against current state to avoid stopping/starting unnecessarily */
+    @Subscribe
+    public void onPollingStateChange(LocationPollingStateEvent plse) {
+        Log.d(TAG, "PollingStateChange Event received, state is " + plse.toString());
+        Log.d(TAG, "Polling mode switching from " + pollingModes[pollingMode]);
+
+        if (plse.getState() == LocationPollingStateEvent.OFF) {
+            switchToNoPolling();
+        }
+
+        if (plse.getState() == LocationPollingStateEvent.FAST) {
+            // fast polling, recording or not
+            switchToFastPolling();
+        }
+
+        if (plse.getState() == LocationPollingStateEvent.SLOW) {
+            // fast polling, recording or not
+            switchToSlowPolling();
+        }
+        if (plse.getState() == LocationPollingStateEvent.VERY_SLOW) {
+            // fast polling, recording or not
+            switchToVerySlowPolling();
+        }
     }
 }
 

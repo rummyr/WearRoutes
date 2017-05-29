@@ -11,12 +11,10 @@ import android.view.ViewGroup;
 
 import uk.me.ponies.wearroutes.R;
 import uk.me.ponies.wearroutes.controller.Controller;
-import uk.me.ponies.wearroutes.controller.StateConstants;
+import uk.me.ponies.wearroutes.controller.ControllerState;
 import uk.me.ponies.wearroutes.mainactionpages.ActionPageFragment;
 
-/**
- * Created by rummy on 06/07/2016.
- */
+
 public class ActionPageStartFragment extends Fragment implements ActionPageFragment {
 
     private static final String TAG = ActionPageStartFragment.class.getSimpleName();
@@ -60,7 +58,7 @@ public class ActionPageStartFragment extends Fragment implements ActionPageFragm
             return;
         }
         ActionPage page = (ActionPage) v;
-        if (StateConstants.STATE_STOPPED == state) {
+        if (ControllerState.StateConstants.STATE_STOPPED == state) {
             // not started, hence enabled
            // page.setAlpha(1.0f);
             page.setText("Start");

@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 import uk.me.ponies.wearroutes.R;
 
 
-/**
- * Created by rummy on 19/07/2016.
- */
+
 public class ActionPageLaunchDeveloperCommandsFragment extends Fragment{
 
     @Override

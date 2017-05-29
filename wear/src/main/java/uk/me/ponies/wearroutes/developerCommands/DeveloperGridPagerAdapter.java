@@ -7,16 +7,14 @@ import android.support.wearable.view.FragmentGridPagerAdapter;
 
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
-/**
- * Created by rummy on 04/07/2016.
- */
+
 public class DeveloperGridPagerAdapter extends FragmentGridPagerAdapter {
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
 
-    final Context mContext;
+    private final Context mContext;
 //TODO: this would be better if the cache directory was passed in, not the context!
-    public DeveloperGridPagerAdapter(FragmentManager fm, Context context) {
+    DeveloperGridPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.mContext = context;
         //TODO: should be more dynamic!!!

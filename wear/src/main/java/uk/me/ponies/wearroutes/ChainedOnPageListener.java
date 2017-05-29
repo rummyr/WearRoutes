@@ -9,7 +9,7 @@ import java.util.List;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 /**
- * Created by rummy on 22/06/2016.
+ * On Page Listener that allows more than one listener to be registered
  */
 public class ChainedOnPageListener implements GridViewPager.OnPageChangeListener {
     @SuppressWarnings("unused")

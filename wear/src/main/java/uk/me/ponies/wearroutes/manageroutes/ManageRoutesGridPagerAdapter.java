@@ -9,12 +9,11 @@ import android.support.wearable.view.FragmentGridPagerAdapter;
 import java.io.File;
 import java.util.List;
 
-
-import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
 import uk.me.ponies.wearroutes.common.StoredRoute;
+import uk.me.ponies.wearroutes.utils.StoredRoutesUtils;
 
 /**
- * Created by rummy on 04/07/2016.
+ * GridPagerAdapter for Manage Routes
  */
 public class ManageRoutesGridPagerAdapter extends FragmentGridPagerAdapter {
     final List<StoredRoute> routes;

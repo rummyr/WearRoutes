@@ -25,7 +25,7 @@ public class MapScaleBarOverlay extends TextView {
     private static final String STR_KM = "km";
 
     //Constants and config
-    private static float scaleBarProportion = 0.5f;
+    private static float scaleBarProportion = 0.5f; // percentage of screen width
     private final float MARGIN_LEFT_DP = 4;
     private final float END_CAP_SIZE_DP = 8;
     private final float MARGIN_TOP_DP = 6;
@@ -169,6 +169,7 @@ public class MapScaleBarOverlay extends TextView {
         // super.draw(canvas, mapview, shadow);
         if (true
             //&& 1 < mapview.getZoomLevel()
+                && mapview != null // sometimes mapview *is* null, probably a knock on error from somewhere else!
                 ) {
 
             //Calculate scale bar size and units
@@ -256,7 +257,7 @@ public class MapScaleBarOverlay extends TextView {
     }
 
     /**
-     * call this when the map has loaded and we'll redraw oursleves
+     * call this when the map has loaded and we'll redraw ourselves
      */
     public void mapLoaded() {
         super.setVisibility(VISIBLE);
@@ -265,7 +266,7 @@ public class MapScaleBarOverlay extends TextView {
     }
 
     /**
-     * call this when the map starts to zoom and we'll clear oursleves
+     * call this when the map starts to zoom and we'll clear ourselves
      */
     public void mapZooming() {
         super.setVisibility(INVISIBLE);

@@ -15,14 +15,12 @@ import uk.me.ponies.wearroutes.Options;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
-/**
- * Created by rummy on 16/05/2016.
- */
+
 public class TrackLocationAndBearingOnMap implements LocationListener {
     public static String TAG = "TrackLocBearingOnMapRaw";
     /* Use soft reference to avoid memory pin leaks,
      * as long as the original exists then this will be valid! */
-    WeakReference<GoogleMap> mapRef = new WeakReference<GoogleMap>(null);
+    WeakReference<GoogleMap> mapRef = new WeakReference<>(null);
     private Location mCurrentLocation;
     private Location mPreviousLocation;
 
@@ -35,10 +33,10 @@ public class TrackLocationAndBearingOnMap implements LocationListener {
     public void onLocationChanged(Location location) {
         if (tagEnabled(TAG)) Log.d(TAG, "onLocationChanged Called with " + location);
 
-        // quick check, if our map has dissapeared!!!
+        // quick isNullAndLog, if our map has disappeared!!!
         GoogleMap osmDMap = mapRef.get();
         if (osmDMap == null) {
-            Log.e(TAG, "Well, thats interesting, our MapView seems to have pissed off!");
+            Log.e(TAG, "Well, that's interesting, our MapView seems to have pissed off!");
             mPreviousLocation = location;
             return;
         }

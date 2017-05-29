@@ -48,6 +48,7 @@ import uk.me.ponies.wearroutes.utils.FragmentLifecycleLogger;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
+import static uk.me.ponies.wearroutes.utils.IsNullAndLog.logNull;
 
 
 public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPagerListener {
@@ -239,7 +240,12 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         final String speedUnits = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(Keys.KEY_PREF_SPEED_UNITS, Keys.KEY_PREF_SPEED_UNIT_KPH);
 
 
-        LatLngLogger lll = Controller.getInstance().getLatLngLogger();
+        Controller controller = Controller.getInstance();
+        logNull(TAG, "controller", controller);
+        if (controller == null) {
+            return; // WTF!
+        }
+        LatLngLogger lll = controller.getLatLngLogger();
 
         float cumulativeDistanceMeters = lll == null ? 0 : lll.getCumulativeDistanceMeters();
 
@@ -250,6 +256,7 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
             distanceString = lll == null ? "N/A " + MILES : distanceFormatMiles.format(cumulativeDistanceMeters * 0.000621371);
         }
 
+
         mSavedPreviousDistanceString = distanceString; // for resume
 
 
@@ -259,7 +266,7 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         }
 
         // update average speed
-        double recordingTimeSeconds = Controller.getInstance().getRecordingDurationMs() / 1000.0;
+        double recordingTimeSeconds = controller.getRecordingDurationMs() / 1000.0;
         double averageSpeedMetersPerSecond = cumulativeDistanceMeters / recordingTimeSeconds;
 
         final String avgSpeedString;
@@ -300,7 +307,13 @@ public class SpeedPanel1 extends FragmentLifecycleLogger implements IGridViewPag
         mCalendar.setTimeInMillis(System.currentTimeMillis());
         mStaticClock.setText(android.text.format.DateFormat.format("HH:mm:ss", mCalendar));
 
-        long recordingDuration = Controller.getInstance().getRecordingDurationMs();
+        Controller controller = Controller.getInstance();
+        logNull(TAG, "controller", controller);
+        if (controller == null) {
+            return; // WTF!
+        }
+
+        long recordingDuration = controller.getRecordingDurationMs();
         if (recordingDuration <= 0) {
             mStaticChronometer.setText(R.string.chronometerNotStarted);
         } else {

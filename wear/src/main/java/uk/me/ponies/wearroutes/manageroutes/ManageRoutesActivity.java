@@ -8,7 +8,6 @@ import android.support.wearable.view.DotsPageIndicator;
 import android.support.wearable.view.GridViewPager;
 import android.view.View;
 import android.view.WindowInsets;
-import android.widget.TextView;
 
 import uk.me.ponies.wearroutes.R;
 
@@ -16,10 +15,8 @@ import uk.me.ponies.wearroutes.R;
 public class ManageRoutesActivity extends WearableActivity {
 
 
-
     private BoxInsetLayout mContainerView;
-    private TextView mTextView;
-    private TextView mClockView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +49,7 @@ public class ManageRoutesActivity extends WearableActivity {
         });
 
         ManageRoutesGridPagerAdapter manageRoutesGridPageAdapter = new ManageRoutesGridPagerAdapter(getFragmentManager(), getApplicationContext(), getFilesDir());
-        pager.setAdapter(manageRoutesGridPageAdapter );
+        pager.setAdapter(manageRoutesGridPageAdapter);
         DotsPageIndicator dotsPageIndicator = (DotsPageIndicator) findViewById(R.id.page_indicator);
         dotsPageIndicator.setPager(pager);
     }
@@ -80,23 +77,12 @@ public class ManageRoutesActivity extends WearableActivity {
             if (mContainerView != null) {
                 mContainerView.setBackgroundColor(getResources().getColor(android.R.color.black));
             }
-            if (mTextView != null) {
-                mTextView.setTextColor(getResources().getColor(android.R.color.white));
-            }
-            if (mClockView != null) {
-                mClockView.setVisibility(View.VISIBLE);
-            }
 
         } else {
             if (mContainerView != null) {
                 mContainerView.setBackground(null);
             }
-            if (mTextView != null) {
-                mTextView.setTextColor(getResources().getColor(android.R.color.black));
-            }
-            if (mClockView != null) {
-                mClockView.setVisibility(View.GONE);
-            }
+
         }
     }
 }

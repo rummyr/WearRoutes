@@ -1,8 +1,8 @@
 package uk.me.ponies.wearroutes.historylogger;
 
-import android.location.Location;
 import android.util.Log;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
@@ -15,11 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import uk.me.ponies.wearroutes.eventBusEvents.FlushLogsEvent;
-import uk.me.ponies.wearroutes.eventBusEvents.LocationEvent;
-import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
-
-import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
  * Logs to an internal backlog and writes to a GPX file on an EventBus FlushLogsEvent
@@ -29,6 +25,7 @@ public class SimpleTextLogger {
     private final static String TAG = "SimpleTextLogger";
     @SuppressWarnings("unused")
     private SingleInstanceChecker sic = new SingleInstanceChecker(this);
+    private static SimpleTextLogger instance;
     private boolean mIsLogging = false;
     private final File mBaseDir;
     private final String mBaseName;
@@ -54,12 +51,33 @@ public class SimpleTextLogger {
     // </metadata>
     // <trk><name>2015-04-19-08-53-40</name><desc></desc><trkseg>
 
-    public SimpleTextLogger(File baseDir, String baseName) {
+    private SimpleTextLogger(File baseDir, String baseName) {
         this.mBaseDir = baseDir;
         this.mBaseName = baseName;
     }
 
+    public static synchronized boolean isStarted() {
+        return instance != null;
+    }
 
+    public static synchronized SimpleTextLogger create(File baseDir, String baseName) {
+        instance = new SimpleTextLogger(baseDir, baseName);
+        EventBus.getDefault().register(instance);
+        return instance;
+    }
+
+    public synchronized void destroy() {
+        instance.stopLogging();
+        EventBus.getDefault().unregister(instance);
+        instance = null;
+    }
+
+    public static synchronized SimpleTextLogger getInstance() {
+        if (instance == null)  {
+            return null;
+        }
+        return instance;
+    }
 
     public boolean isLogging() {
         return mIsLogging;

@@ -8,7 +8,7 @@ import java.net.URL;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 /**
- * Created by rummy on 20/06/2016.
+ * Wont work as CustomURL not supported on Wear
  */
 public class CustomUrlTileProvider extends UrlTileProvider {
     @SuppressWarnings("unused")

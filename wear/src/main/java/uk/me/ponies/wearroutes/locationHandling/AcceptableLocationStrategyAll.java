@@ -5,9 +5,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 /**
- * Created by rummy on 02/09/2016.
+ * Accepts *all* locations
  */
-public class AcceptableLocationStrategyAll implements IAcceptableLocationStrategy {
+class AcceptableLocationStrategyAll implements IAcceptableLocationStrategy {
     @Override
     public void destroy() {
     }
@@ -17,7 +17,7 @@ public class AcceptableLocationStrategyAll implements IAcceptableLocationStrateg
     }
 
     @Override
-    public boolean isAcceptableLocation(@NonNull Location location) {
+    public boolean isAcceptableLocation(@NonNull Location location, String src) {
         return true;
     }
 

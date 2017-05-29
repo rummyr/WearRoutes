@@ -1,0 +1,12 @@
+<!-- drawable/ -->
+<!-- taken from http://www.fileformat.info/info/unicode/char/1d7ed/mathematical_sansserif_bold_digit_one.svg -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="24dp"
+    android:width="24dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+    <path
+        android:fillColor="#888"
+        android:pathData="M34.3125 365.625 L34.3125 343.125 L56.8125 343.125 L56.8125 201.9375 L34.3125 201.9375 L34.3125 194.0625 L59.625 168.75 L93.375 168.75 L93.375 343.125 L115.875 343.125 L115.875 365.625 L34.3125 365.625 Z"
+        />
+</vector>

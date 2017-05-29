@@ -2,9 +2,7 @@ package uk.me.ponies.wearroutes.eventBusEvents;
 
 import android.os.Bundle;
 
-/**
- * Created by rummy on 01/08/2016.
- */
+
 public class AmbientEvent {
     public Bundle getBundle() {
         return bundle;

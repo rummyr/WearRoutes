@@ -5,6 +5,12 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.LoggingEventBus;
+
+import uk.me.ponies.wearroutes.MainWearActivity;
+import uk.me.ponies.wearroutes.Options;
+
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
@@ -19,6 +25,9 @@ public class ActivityLifeCycleLogger implements Application.ActivityLifecycleCal
     private int stopped;
     private static final String TAG = "ActivityLifeCycleLogger";
 
+    public ActivityLifeCycleLogger() {
+        Log.d(TAG, "created");
+    }
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityCreated called");
@@ -27,6 +36,11 @@ public class ActivityLifeCycleLogger implements Application.ActivityLifecycleCal
     @Override
     public void onActivityDestroyed(Activity activity) {
         if (tagEnabled(TAG))Log.d(TAG, activity + " onActivityDestroyed called");
+        if (Options.DEVELOPER_MODE && activity.getClass() == MainWearActivity.class) {
+            LoggingEventBus leb = (LoggingEventBus)(EventBus.getDefault());
+            leb.dump();
+            SingleInstanceChecker.dumpRetainedReferences();
+        }
     }
 
     @Override

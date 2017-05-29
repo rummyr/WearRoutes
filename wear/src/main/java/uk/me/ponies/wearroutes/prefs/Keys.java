@@ -1,15 +1,6 @@
 package uk.me.ponies.wearroutes.prefs;
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
 
-import java.util.List;
-
-
-/**
- * Created by rummy on 27/06/2016.
- */
 public abstract class Keys {
 
     public static final String KEY_WEAR_WHEN_ON_MAP_SHOWS = "pref_wear_when_on_map_shows";

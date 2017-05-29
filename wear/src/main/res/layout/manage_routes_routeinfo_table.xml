@@ -57,10 +57,36 @@
             android:gravity="center_horizontal"
             android:textAlignment="center" />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Points:"
+        android:id="@+id/pointCountLabel"
+        android:layout_below="@+id/DateReceived"
+        android:layout_alignParentStart="false"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Wearable.Medium"
+        android:text="0"
+        android:id="@+id/pointCount"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_below="@+id/DateReceived"
+        android:layout_toRightOf="@+id/pointCountLabel" />
+
+
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Delete Button"
         android:id="@+id/deleteRouteButton"
         android:src="@drawable/materialdesignicons_delete"
         android:layout_alignParentBottom="true"

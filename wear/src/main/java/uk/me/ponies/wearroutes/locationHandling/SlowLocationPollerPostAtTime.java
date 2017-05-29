@@ -8,16 +8,14 @@ import android.util.Log;
 import org.greenrobot.eventbus.EventBus;
 
 import uk.me.ponies.wearroutes.common.logging.DebugEnabled;
-import uk.me.ponies.wearroutes.eventBusEvents.LogEvent;
+import uk.me.ponies.wearroutes.historylogger.LogEvent;
 
-/**
- * Created by rummy on 25/08/2016.
- */
-public class SlowLocationPollerPostAtTime extends SlowLocationPollerBase {
+
+class SlowLocationPollerPostAtTime extends SlowLocationPollerBase {
         private final static String TAG = "PostAtTimeSlowLocPoller";
         private final Handler mTickerHandler;
 
-        public SlowLocationPollerPostAtTime(LocationHandler master, Context context) {
+        SlowLocationPollerPostAtTime(LocationHandler master, Context context) {
             super(master, context);
             mTickerHandler = new Handler();
         }

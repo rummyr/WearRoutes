@@ -20,9 +20,7 @@ import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
-/**
- * Created by rummy on 30/07/2016.
- */
+
 
 // TODO: only write on a timed interval
 public class CSVLogger {
@@ -35,7 +33,7 @@ public class CSVLogger {
     private final SimpleDateFormat filenameFormatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
     private final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private final String CSVHEADER = "Time, Latitude, Longitude, Accuracy, Speed, Bearing, Provider"
-            +",Satellites, hdop, vdop, pdop, geoidHeight, ageOfGPSData, dgpsid";
+            +",Satellites, HDOP, VDOP, PDOP, geoidHeight, ageOfGPSData, dgpsid";
 
 
     public CSVLogger(File baseDir) {

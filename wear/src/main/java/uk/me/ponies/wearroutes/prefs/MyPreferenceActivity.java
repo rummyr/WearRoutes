@@ -7,9 +7,6 @@ import java.util.List;
 import uk.me.ponies.wearroutes.R;
 
 
-/**
- * Created by rummy on 15/07/2016.
- */
 public class MyPreferenceActivity extends PreferenceActivity {
     @Override
     public void onBuildHeaders(List<Header> target) {

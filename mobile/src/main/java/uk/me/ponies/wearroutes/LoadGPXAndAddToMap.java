@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
+import uk.me.ponies.wearroutes.common.GPXFileParser;
 import uk.me.ponies.wearroutes.tracksimplifaction.SimplifyV2;
 import uk.me.ponies.wearroutes.common.DataKeys;
 
@@ -138,7 +139,7 @@ public class LoadGPXAndAddToMap extends AsyncTask<Uri, Void, LoadGPXAndAddToMap.
         try {
             List<LatLng> srcPoints = result.gpxPoints;
             // Instantiates a new Polyline object and adds points to define a rectangle
-            PolylineOptions rectOptions = new PolylineOptions().addAll(srcPoints);
+            PolylineOptions rectOptions = new PolylineOptions().geodesic(false).addAll(srcPoints);
             rectOptions.color(ROUTE_COLOR);
             rectOptions.width(ROUTE_WIDTH);
             //Polyline polyline =
@@ -179,7 +180,7 @@ public class LoadGPXAndAddToMap extends AsyncTask<Uri, Void, LoadGPXAndAddToMap.
                     List<LatLng> simplified = SimplifyV2.simplify(srcPoints, 0.000001, estimagedRequiredPoints); // 0.00001 halved the number of points in bridleways_north_america(sic)_wgs84.gpx
                     long end = System.currentTimeMillis();
                     Log.d(TAG, "Simplify took " + (end - start) + "millis");
-                    PolylineOptions simplifiedPolyOpts = new PolylineOptions().addAll(simplified);
+                    PolylineOptions simplifiedPolyOpts = new PolylineOptions().geodesic(false).addAll(simplified);
                     simplifiedPolyOpts.color(Color.BLUE);
                     simplifiedPolyOpts.width(1);
                     simplifiedPolyOpts.geodesic(false); // not doing LONG lines!
@@ -209,7 +210,7 @@ public class LoadGPXAndAddToMap extends AsyncTask<Uri, Void, LoadGPXAndAddToMap.
                     List<LatLng> simplified = SimplifyV2.simplify(srcPoints, 0.000001, estimagedRequiredPoints); // 0.00001 halved the number of points in bridleways_north_america(sic)_wgs84.gpx
                     long end = System.currentTimeMillis();
                     Log.d(TAG, "Simplify took " + (end - start) + "millis");
-                    PolylineOptions simplifiedPolyOpts = new PolylineOptions().addAll(simplified);
+                    PolylineOptions simplifiedPolyOpts = new PolylineOptions().geodesic(false).addAll(simplified);
                     simplifiedPolyOpts.color(Color.BLUE);
                     simplifiedPolyOpts.width(1);
                     //Polyline polyline =
@@ -239,6 +240,8 @@ public class LoadGPXAndAddToMap extends AsyncTask<Uri, Void, LoadGPXAndAddToMap.
 
 
             PutDataRequest putDataReq = putDataMapReq.asPutDataRequest();
+            putDataReq.setUrgent();
+
             //TODO: handle Large data, small data transfers OK, but big stuff ~100k! doesnt!
             //TODO: we could compress?
             PendingResult<DataApi.DataItemResult> pendingResult =
@@ -249,6 +252,22 @@ public class LoadGPXAndAddToMap extends AsyncTask<Uri, Void, LoadGPXAndAddToMap.
                 public void onResult(@NonNull DataApi.DataItemResult result) {
                     Log.d(TAG, "putDataItem: resultCallback is " + result.toString() + " status: " + result.getStatus());
                     if (!result.getStatus().isSuccess()) {
+                        // now new'd in constructor new AlertDialog.Builder(context)
+                        mDialog
+                                .setTitle(android.R.string.dialog_alert_title)
+                                .setMessage(result.getStatus().getStatusMessage())
+                                .setCancelable(true)
+                                .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //TODO: do we need to dismiss the dialog?
+                                    }
+                                })
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .create()
+                                .show();
+
+                    }
+                    else if (result.getStatus().isSuccess()) {
                         // now new'd in constructor new AlertDialog.Builder(context)
                         mDialog
                                 .setTitle(android.R.string.dialog_alert_title)

@@ -4,11 +4,10 @@ import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-/**
- * Created by rummy on 02/09/2016.
- */
-public class AcceptableLocationStrategyVelocityAdjust extends  AcceptableLocationStrategySimpleAccuracy {
-    public AcceptableLocationStrategyVelocityAdjust(float acceptableAccuracy) {
+import uk.me.ponies.wearroutes.controller.Stats;
+
+AcceptableLocationStrategyVelocityAdjust extends  AcceptableLocationStrategySimpleAccuracy {
+    AcceptableLocationStrategyVelocityAdjust(float acceptableAccuracy) {
         super(acceptableAccuracy);
     }
 
@@ -23,8 +22,8 @@ public class AcceptableLocationStrategyVelocityAdjust extends  AcceptableLocatio
     }
 
     @Override
-    public boolean isAcceptableLocation(@NonNull Location location) {
-        if(super.isAcceptableLocation(location)) {
+    public boolean isAcceptableLocation(@NonNull Location location, String src) {
+        if(super.isAcceptableLocation(location, src)) {
             // if it's acceptable quite simply
             return true;
         }
@@ -34,6 +33,7 @@ public class AcceptableLocationStrategyVelocityAdjust extends  AcceptableLocatio
                 return true;
             }
         }
+        Stats.addUnacceptableLocation();
         return false;
     }
 

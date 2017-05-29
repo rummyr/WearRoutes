@@ -38,12 +38,11 @@ public class GPXLogger {
             + " version=\"1.1\"\n"
             + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
             + " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\"\n"
-            + " creator=\"wearRoutes\"\n>\n"
-            ;
+            + " creator=\"wearRoutes\"\n>\n";
     private static final String TRK_FOOTER = "</trkseg></trk></gpx>\n";
 
 
-    private final List<Location> backlog = new ArrayList<>();
+    private final List<LocationEvent> backlog = new ArrayList<>();
 
     // possibly add in metadata e.g.
     // <metadata>
@@ -64,7 +63,6 @@ public class GPXLogger {
     }
 
 
-
     public boolean isLogging() {
         return mIsLogging;
     }
@@ -72,8 +70,7 @@ public class GPXLogger {
     public void setLogging(boolean logging) {
         if (logging && !mIsLogging) { // starting to log
             startLogging();
-        }
-        else if (!logging && mIsLogging) { // stopping logging
+        } else if (!logging && mIsLogging) { // stopping logging
             stopLogging();
         }
 
@@ -90,14 +87,13 @@ public class GPXLogger {
         }
         mLogFile = new File(mBaseDir, logFileName);
         try {
-            RandomAccessFile out = new RandomAccessFile(mLogFile,"rw");
+            RandomAccessFile out = new RandomAccessFile(mLogFile, "rw");
             out.writeBytes(GPXHEADER);
-            out.writeBytes("<trk><name>"+filenameFormatter.format(calendar.getTime()) +"</name><desc></desc>\n");
+            out.writeBytes("<trk><name>" + filenameFormatter.format(calendar.getTime()) + "</name><desc></desc>\n");
             out.writeBytes("<trkseg>\n");
             out.writeBytes(TRK_FOOTER);
             out.close();
-        }
-        catch (IOException ioe) {
+        } catch (IOException ioe) {
             Log.e(TAG, "Exception writing gpx header!" + ioe);
         }
     }
@@ -119,14 +115,14 @@ public class GPXLogger {
         }
 
         synchronized (backlog) {
-            backlog.add(locationEvent.getLocation());
+            backlog.add(locationEvent);
         }
     }
 
     /* takes a copy of the backlog and writes them out */
     @Subscribe
     public void flushBackLog(FlushLogsEvent marker) {
-        List<Location> copyOfBackLog;
+        List<LocationEvent> copyOfBackLog;
         synchronized (backlog) {
             if (backlog.isEmpty()) {
                 return;
@@ -137,7 +133,7 @@ public class GPXLogger {
         writeLocations(copyOfBackLog);
     }
 
-    private void writeLocations(List<Location> locations) {
+    private void writeLocations(List<LocationEvent> locations) {
         if (locations == null || locations.isEmpty()) {
             return;
         }
@@ -151,34 +147,51 @@ public class GPXLogger {
             return; // nothing more we can do!
         }
 
-        for (Location l : locations) {
+        for (LocationEvent le : locations) {
+            Location l = le.getLocation();
             String line;
             synchronized (ISODateFormatter) {
-                line = String.format("<trkpt lat=\"%f\" lon=\"%f\"><ele>%f</ele><time>%s</time><hdop>%.2f</hdop><course>%.1f</course><speed>%.2f</speed></trkpt>\n"
-                        , l.getLatitude()
-                        , l.getLongitude()
-                        , l.getAltitude()
-                        , ISODateFormatter.format(l.getTime()),
-                        l.getAccuracy() / 4.0, // CLUDGE, was 5, but accuracy seemed to be a minimum of 4m (not 5)
-                        l.getBearing(),
-                        l.getSpeed()
-                );
-            }
+                if (l.hasAltitude() && l.getAltitude() != 0.0) {
+
+                    line = String.format("<trkpt lat=\"%f\" lon=\"%f\"><ele>%f</ele><time>%s</time><hdop>%.2f</hdop><course>%.1f</course><speed>%.2f</speed></trkpt>"
+                            , l.getLatitude()
+                            , l.getLongitude()
+                            , l.getAltitude()
+                            , ISODateFormatter.format(l.getTime()),
+                            l.getAccuracy() / 4.0, // CLUDGE, was 5, but accuracy seemed to be a minimum of 4m (not 5)
+                            l.getBearing(),
+                            l.getSpeed()
+                    );
+                } else { // no elevation
+                    line = String.format("<trkpt lat=\"%f\" lon=\"%f\"><time>%s</time><hdop>%.2f</hdop><course>%.1f</course><speed>%.2f</speed></trkpt>\n"
+                            , l.getLatitude()
+                            , l.getLongitude()
+                            , ISODateFormatter.format(l.getTime()),
+                            l.getAccuracy() / 4.0, // CLUDGE, was 5, but accuracy seemed to be a minimum of 4m (not 5)
+                            l.getBearing(),
+                            l.getSpeed()
+                    );
+                }
+            } // end synchronized on ISODateFormatter
+            // append source as a comment
+            line += "<!-- source:" + le.getSource() + "-->";
+            line += "\n";
             try {
                 out.writeBytes(line);
-                if (tagEnabled(TAG))Log.d(TAG, "Written " + line);
+                if (tagEnabled(TAG)) Log.d(TAG, "Written " + line);
             } catch (IOException ioe) {
                 //TODO: what do we want to do with a failed write?
                 Log.e(TAG, "failed to log " + line);
             }
-        }
+        } // end for each location
+
         try {
             out.writeBytes(TRK_FOOTER);
             out.close();
         } catch (IOException ioe) {
-            //TODO: what do we want to do with a failed write?
+            //TODO: what do we want to do with a failed write? Toast? Start Again?
             Log.e(TAG, "IOException trying to write gpx end tag to output gpx." + ioe);
-            return; // nothing more we can do!
+            // nothing more we can do!
         }
     } // end writeLocations
 

@@ -49,22 +49,22 @@
         android:gravity="center_horizontal">
 
         <TextView
+            android:id="@+id/labelChronometer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/timer"
-            android:id="@+id/labelChronometer"
             android:layout_column="0"
-            android:textColor="@color/white"
-            android:layout_gravity="right" />
+            android:layout_gravity="right"
+            android:text="@string/timer"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white" />
 
         <TextView
+            android:id="@+id/panel1StaticChronometer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/sample_chronometer_duration"
-            android:id="@+id/panel1StaticChronometer"
             android:layout_gravity="left"
+            android:text="@string/sample_chronometer_duration"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white" />
     </TableRow>
 

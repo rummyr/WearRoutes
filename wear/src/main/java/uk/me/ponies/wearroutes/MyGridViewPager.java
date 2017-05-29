@@ -9,12 +9,13 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import uk.me.ponies.wearroutes.common.Defeat;
 import uk.me.ponies.wearroutes.utils.SingleInstanceChecker;
 
 import static uk.me.ponies.wearroutes.common.logging.DebugEnabled.tagEnabled;
 
 /**
- * Created by rummy on 22/06/2016.
+ * probably a grandfathered in debug class
  */
 public class MyGridViewPager extends GridViewPager {
     @SuppressWarnings("unused")
@@ -39,9 +40,10 @@ public class MyGridViewPager extends GridViewPager {
         super.setOnPageChangeListener(masterListener);
     }
 
+    /* WARNING: actually adds, not sets */
     @Override
     public void setOnPageChangeListener(OnPageChangeListener listener) {
-        masterListener.addOnPageChangeListener(listener);
+        addOnPageChangeListener(listener);
     }
 
     public void addOnPageChangeListener(OnPageChangeListener listener) {
@@ -64,7 +66,7 @@ public class MyGridViewPager extends GridViewPager {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         Object o = getContext();
-        String.valueOf(o);
+        Defeat.noop(o);
         boolean isAmbient = false; // we might find it is, or not!
         final boolean rv;
         if (o instanceof WearableActivity) {
@@ -72,8 +74,16 @@ public class MyGridViewPager extends GridViewPager {
         }
         if (tagEnabled(TAG)) Log.d(TAG, "onTouch ambient is " + isAmbient + "event was:" + ev + "context is " + o);
 
+        //BUGFIX: saw a very unexpected illegal argument exception from within this code
         if (!isAmbient) {
-            rv = super.onTouchEvent(ev);
+            try {
+                rv = super.onTouchEvent(ev);
+            }
+            catch (IllegalArgumentException iae) {
+                Log.e(TAG, "woah! IAE from gridviewpager", iae);
+                // pretend it didn't happen!
+                return false;
+            }
         } else {
             // suppress the onTouch event when in ambient mode .. just in case its messing up return from ambient.
             rv = false;

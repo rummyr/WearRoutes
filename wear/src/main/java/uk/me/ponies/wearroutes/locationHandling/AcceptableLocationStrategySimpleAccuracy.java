@@ -9,16 +9,14 @@ import uk.me.ponies.wearroutes.Options;
 import uk.me.ponies.wearroutes.common.locationUtils.Utils;
 import uk.me.ponies.wearroutes.controller.Controller;
 
-/**
- * Created by rummy on 02/09/2016.
- */
-public class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLocationStrategy{
+
+class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLocationStrategy{
     private float minAllowedAccuracyRecording;
     private final String TAG = "SimpleLocStrategy";
     private Location prevLocation;
 
 
-    public AcceptableLocationStrategySimpleAccuracy(float acceptableAccuracy) {
+    AcceptableLocationStrategySimpleAccuracy(float acceptableAccuracy) {
         super();
         setAccuracy(acceptableAccuracy);
     }
@@ -34,25 +32,24 @@ public class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLoca
     }
 
     @Override
-    public boolean isAcceptableLocation(@NonNull Location location) {
+    public boolean isAcceptableLocation(@NonNull Location location, String src) {
 
-            if (location == null) {
-                return false;
-            }
+
         try { // finally to set prevLocation wherever we return from
 
-            if (Controller.getInstance().isRecording()) {
+            if (Controller.getInstance() != null // some odd cases can get here
+            && Controller.getInstance().isRecording()) {
                 // just too inaccurate
                 if (location.getAccuracy() > minAllowedAccuracyRecording) {
-                    Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy());
+                    Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy() + " from " + src);
                     return false;
                 }
                 // no altitude data (usually means phone mast or wifi)
                 // BUT we will accept if it's fairly accurate
                 if (location.getAltitude() == 0.0000 && !location.isFromMockProvider()) {
-                    // this could be a poor reading check that it is *fairly accurate* aka < 2/3 the MIN_ALLOWED_ACCURACY_METERS_RECORDING
+                    // this could be a poor reading isNullAndLog that it is *fairly accurate* aka < 2/3 the MIN_ALLOWED_ACCURACY_METERS_RECORDING
                     if (location.getAccuracy() * 1.5 >= minAllowedAccuracyRecording) {
-                        Log.w(TAG, "Location seen with zero elevation, not mocked and more than half the normal acceptable ");
+                        Log.w(TAG, "Location seen with zero elevation, not mocked and more than half the normal acceptable" + " from " + src);
                         return false;
                     }
                     if (prevLocation == null) {
@@ -66,18 +63,18 @@ public class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLoca
                         // moderately far from previous location, lets use it!
                         return true;
                     } else {
-                        Log.w(TAG, "Location seen with zero elevation, not mocked, just OK on stricter accuracy check, but too close to previous");
+                        Log.w(TAG, "Location seen with zero elevation, not mocked, just OK on stricter accuracy check, but too close to previous" + " from " + src);
                         return false;
                     }
                 }
                 if (prevLocation != null && location.getTime() == prevLocation.getTime()) {
-                    Log.w(TAG, "Location seen with duplicate timestamp");
+                    Log.w(TAG, "Location seen with duplicate timestamp"+ " from " + src);
                     return false;
                 }
             } else {
                 // not recording, we can be more lenient, accept no altitude and poorer accuracy
                 if (location.getAccuracy() > Options.MIN_ALLOWED_ACCURACY_METERS_NOT_RECORDING) {
-                    Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy());
+                    Log.w(TAG, "Location seen with poor accuracy " + location.getAccuracy()+ " from " + src);
                     return false;
                 }
                 // we also accept no elevation data when NOT recording
@@ -86,9 +83,7 @@ public class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLoca
 
             return true;
         } finally {
-            if (location != null) {
                 prevLocation = null;
-            }
         }
     }
 
@@ -103,7 +98,7 @@ public class AcceptableLocationStrategySimpleAccuracy implements IAcceptableLoca
         this.minAllowedAccuracyRecording = minAllowedAccuracyRecording;
     }
 
-    /** protected because I dont see why anyone else needs to know. */
+    /** protected because I don't see why anyone else needs to know. */
     protected float getAccuracy() {
         return this.minAllowedAccuracyRecording;
     }
