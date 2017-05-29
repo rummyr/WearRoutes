@@ -1,4 +1,0 @@
-2016-09-24 16:36:35.607: GPS: Normal Poller now requestingLocationUpdates at 2000ms intervals
-2016-09-24 16:36:36.650: GPS: Location received:Location[fused 53.512864,-1.679955 acc=19 et=+19h13m35s866ms]state is normallPoller
-2016-09-24 16:36:36.651: GPS: Good Location received:Location[fused 53.512864,-1.679955 acc=19 et=+19h13m35s866ms]
-2016-09-24 16:36:40.615: PWR: Ambient Entered

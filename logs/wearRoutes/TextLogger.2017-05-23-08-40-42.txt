@@ -1,4 +1,0 @@
-2017-05-23 08:40:42.364: ACT: MainWearActivity onCreate Complete
-2017-05-23 08:40:46.553: GPS: Location received:Location[fused 53.384072,-1.472039 acc=96 et=+8d16h43m37s989ms alt=141.0 vel=0.0]state is normallPoller
-2017-05-23 08:40:46.554: GPS: Good Location received:Location[fused 53.384072,-1.472039 acc=96 et=+8d16h43m37s989ms alt=141.0 vel=0.0] fromLocationHandler
-2017-05-23 08:41:43.416: ACT: MainWearActivity onStop Full Stopping

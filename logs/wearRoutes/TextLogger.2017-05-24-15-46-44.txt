@@ -1,9 +1,0 @@
-2017-05-24 15:46:44.204: ACT: MainWearActivity onCreate Complete
-2017-05-24 15:46:44.253: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
-2017-05-24 15:46:45.360: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
-2017-05-24 15:46:56.458: PWR: Ambient Entered
-2017-05-24 15:46:59.423: PWR: Ambient Exited
-2017-05-24 15:46:59.433: GPS: removing a locationListener that is NOT the last registered one! old:null new:uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@7552755
-2017-05-24 15:46:59.433: GPS: Removing a locationListener (uk.me.ponies.wearroutes.locationHandling.SlowLocationPollerAlarmWakeup@7552755(when we aren't listening for updates!
-2017-05-24 15:46:59.435: GPS: NormalLocation Poller now requestingLocationUpdates at 2000ms intervals
-2017-05-24 15:47:38.363: ACT: MainWearActivity onStop Full Stopping

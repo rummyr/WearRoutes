@@ -1,2 +1,0 @@
-2016-10-15 19:10:28.865: ACT: MainWearActivity onCreate Complete
-2016-10-15 19:10:31.659: ACT: MainWearActivity onStop Full Stopping
